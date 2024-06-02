@@ -5,7 +5,7 @@ Working Title: Coherent Hyper-Raman Four Wave Mixing Spectroscopies
 1. Clone this repository and make sure you have the package requirements (see `requirements.txt`)
 2. Create an environment with the package dependencies.  e.g. using conda:
   ```
-  conda create -n ultrafast_opas
+  conda create -n hyperraman
   conda install --file requirements.txt
   ```
 3. Run this script e.g. on Windows:
