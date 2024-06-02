@@ -39,7 +39,7 @@ def _build_documents():
 
 def _build_figures():
     print_with_line('figures')
-    print_then_call(python, str(here / "workup.py"))
+    print_then_call(python, str(here / "figures" / "workup.py"))
     # print_then_call(python, str(here / "figures" / "preamp.py"))
     # print_then_call(python, str(here / "figures" / "poweramp.py"))
     # print_then_call(python, str(here / "figures" / "powerampslice.py"))
