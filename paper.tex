@@ -88,7 +88,7 @@ Based upon these selection rules, we investigate SR-SIVE and DR-SIVE spectroscop
 
 \section{Experimental Methods}
 The ultrafast laser system has been described in detail elsewhere. \cite{RN278, Kaufman2024}
-Briefly, an 80 MHz Ti-Sapphire ultrafast oscillator (Spectra-Physics Tsunami) created 35 fs seed pulses, amplified by a 1 kHz regnerative amplifier (Spectra-Physics Spitfire Ace) to approximately 5 W.
+Briefly, an 80 MHz Ti-Sapphire ultrafast oscillator (Spectra-Physics Tsunami) created 35 fs seed pulses, amplified by a 1 kHz regnerative amplifier (Spectra-Physics Spitfire Ace) to approximately 0.5 W.
 A mask in the regenerative amplifier stretched the input pulses to roughly 1 ps.
 The resultant output was used to pump four independent OPAs, two of which are relevant for this study.
 OPA1 (TOPAS-800, Light Conversion), referred to as $\omega_1$, was tuned for difference frequency generation (DFG) with an external stage (NDFG "DF2", Light Conversion).
@@ -96,7 +96,7 @@ OPA2 (OPA-800C, Spectra Physics), referred to as $\omega_2$, was tuned in its si
 Grating and crystal positions in OPA1 was externally controlled using \texttt{WinTOPAS} (Light Conversion).
 Grating and BBO crystal positions in OPA2 were computer controlled through communication with 50 mm DC actuators (PMC). %todo: who tf makes PMC motors?
 The OPAs were independently tuned through the \texttt{Attune} package, controlled by the \texttt{yaqc} and \texttt{Bluesky} packages. \cite{RN414, RN386, SkyeOPA, KyleOPA}
-The power spectra and tuning results are found in Figure X.
+The power spectra and tuning results are found in Figure X.%todo: actually graph these
 Movable retroreflectors (Thorlabs) controlled by 50 mm DC actuators (PMC) are used to measure coherence dynamics.
 The beams are focused into the sample using a BOXCARS geometry.\cite{RN308, Kaufman2024}
 To enforce frequency dependent temporal pulse overlap, the maximum points of a third order cross correlation between $\omega_1$ and $\omega_3$ measured in CaF$_2$ were used to generate frequency dependent zero delay values.
