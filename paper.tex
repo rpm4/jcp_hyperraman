@@ -179,10 +179,10 @@ Unlike SFG spectroscopy, which is dependent upon both the infrared and Raman act
 To understand SR-SIVE selection rules more finely, the dipole and first hyperpolarizability operators are Taylor expanded in terms of an n$^{\text{th}}$ normal mode coordinate $Q_n$ about equilibrium: \cite{Long1970}
 \begin{subequations}
 	\begin{equation}
-		\mu = \mu_0 + \frac{\partial \mu}{\partial Q_n} Q_n + \order{\sum_{m,n}{Q_m Q_n}}
+		\mu = \mu_0 + \frac{\partial \mu}{\partial Q_n} Q_n + \order{{Q_m Q_n}}
 	\end{equation}
 	\begin{equation}
-		\beta = \beta_{0} + \frac{\partial \beta}{\partial Q_n} Q_n + \order{\sum_{m,n}{Q_m Q_n}}
+		\beta = \beta_{0} + \frac{\partial \beta}{\partial Q_n} Q_n + \order{{Q_m Q_n}}
 	\end{equation}
 \end{subequations}
 Substituting into \autoref{sivebeta} gives the SIVE-IR-I hyperpolarizability to $\order{Q_n}$ as \begin{equation}\label{SIVEselection}
@@ -258,7 +258,7 @@ These effects have been treated in excellent detail for three laser infrared-inf
 
 Most quantitative methods in an n$^{th}$ order CMDS experiment are used to extract $\chi^{(n)}$ values for comparing the relative strength of nonlinear processes in different media. \cite{Zhu87, RN351, RN345}
 The recorded $\chi^{(n)}$ values provide insight into how microscopic quantities ($\vec{\mu}, \alpha_{ij}, \beta_{ijk}$) impact nonlinear output.
-To our knowledge, only 2D-IR spectroscopy has taken advantage of orientationally averaged $\chi^{(3)}$ values to extract transition moments. \cite{Moilanen2009, RN245}
+To our knowledge, only vibraitonal SFG and 2D-IR spectroscopy has taken advantage of orientationally averaged $\chi^{(n)}$ values to extract transition moments. \cite{Shen90, Moilanen2009, RN245}
 Previous treatments did not consider using quantitative analysis in SIVE to measure $\beta_{ijk}$ values from SIVE spectra.
 It is thus useful to investigate how a simple treatment of orientational averaging can extract $\beta_{ijk}$ from a $\chi^{(3)}_{IJKL}$ expression.
 
