@@ -1,4 +1,4 @@
-\documentclass[aip, jcp, reprint, twocolumn]{revtex4-2}
+\documentclass[aip, jcp, reprint, onecolumn]{revtex4-2}
 
 \bibliographystyle{apsrev4-2}
 
@@ -28,10 +28,10 @@
 
 \begin{abstract}
 Nonlinear, four wave mixing vibrational spectroscopies are often used to probe intramolecular vibrational coupling and relaxation dynamics.
-Three wave mixing vibrational spectroscopies are similarly often used to understand the spectroscopy and dynamics of interfacial species.
+Three wave mixing vibrational spectroscopies are similarly used to understand the spectroscopy and dynamics of interfacial species.
 Most of these methods rely on infrared or Raman transitions to generate output. 
-The implementation of a nonlinear hyper-Raman spectroscopy, which first appears at third order perturbation theory, can provide a useful analogue to these techniques.
-Singly Vibrationally Enhanced (SIVE) spectroscopy, a type of nonlinear hyper-Raman spectroscopy, is an underdeveloped four wave mixing technique which shows promise to disentangle ultrafast vibrational dynamics in isotropic systems without need for anharmonicities.
+The implementation of a nonlinear hyper-Raman spectroscopy, which first appears at third order perturbation theory, can provide a useful analogue to these techniques to understand the spectroscopy and dynamics of isotropic systems.
+Singly Vibrationally Enhanced (SIVE) spectroscopy, a type of nonlinear hyper-Raman spectroscopy, is an underdeveloped four wave mixing technique which shows promise as a method to disentangle ultrafast vibrational dynamics in isotropic systems without need for anharmonicities.
 We derive selection rules and coherent interference effects in singly resonant SIVE (SR-SIVE).
 The theory of SR-SIVE is extended to account for vibronic coupling induced by two-photon absorption, i.e. doubly resonant SIVE (DR-SIVE), akin to a resonant hyper-Raman process. 
 DR-SIVE is shown to be a type of resonance IR spectroscopy and is likely able to resolve vibronic coupling.
@@ -102,6 +102,7 @@ The beams are focused into the sample using a BOXCARS geometry.\cite{RN308, Kauf
 To enforce frequency dependent temporal pulse overlap, the maximum points of a third order cross correlation between $\omega_1$ and $\omega_3$ measured in CaF$_2$ were used to generate frequency dependent zero delay values.
 The nonlinear output was isolated through chopping schemes and a set of spatial apertures, directed into a monochromator (Horiba Micro-HR) and homodyne detected through a photomultiplier tube (Hamamatsu H7422-20), recorded and converted to digital output using a data acquisition unit (National Instruments).
 \textit{in-situ} power corrections are performed by dividing the recorded spectra by OPA output measured by home-built pyroelectric detectors.
+All spectra are reported on the intensity scale. %@dan if we should change to amp lmk
 
 The cyanocobalamin (CNCbl) [DOT Scientific inc., CAS no. 68-19-9] samples were prepared as drop casted thin films.
 CNCbl was dissolved in methanol (MeOH) [Fisher Scientific, HPLC Grade, CAS no. 67-56-1] until a concentrated solution was formed (concentration $\sim$ 10 mg CNCbl/ mL MeOH). 
@@ -115,7 +116,7 @@ In this section, we make the connections between SIVE and hyper-Raman scattering
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=3.375in]{main/wmel1.png}
+	\includegraphics[width=3.375in]{wmel1.png}
 	\caption{Wave Mixing Energy Level (WMEL) diagrams of the relevant SR-SIVE pathways in the (a) $\vec{k}_4 = -\vec{k}_1 + \vec{k}_2 + \vec{k}_3$ and (b) $\vec{k}_4 = \vec{k}_1 + \vec{k}_2 + \vec{k}_3$ phasematching geometries. \cite{RN286, RN352}
 	$\ket{g}$ is the ground state, $\ket{v}$ is an infrared active vibration and $\ket{m}, \ket{n}$ are virtual states.
 	Solid and dashed horizontal lines indicate real and virtual states, whereas solid and dotted arrows indicate ket and bra side transitions, respectively. 
@@ -231,10 +232,12 @@ It is important to note that this derivation ignored absorption and orientationa
 Recent developments in nonlinear spectroscopy have demonstrated the feasibility of multidimensional infrared spectroscopy of gaseous and quasi-free species. \cite{Ziegler2018, Gronborg2022, RN325, Chen2024}
 DOVE and 2D-IR have been used to isolate coupling between fundamentals, overtones and combination bands of gaseous species in several molecular systems. 
 Since resonance hyper-Raman scattering spectroscopy was developed as a gas phase spectroscopy,\cite{RN515} we briefly investigate the properties of rovibrational SR-SIVE.
+In the discussion that follows, to avoid integration over velocity dependent distributions, we assume the experiment is performed at 0 K.
+The velocity dependence of output density matrix elements does not manipulate quantum mechanical selection rules. \cite{Bracamonte2003}
 
-The rovibrational selection rules are generated through calculating \autoref{sivebeta} in a $\ket{vJM} \equiv \ket{v} \otimes {\ket{JM}}$ basis, where $\{\ket{v}\}$ is a basis of vibrational states and $\{\ket{JM}\}$ is a basis of rotational states ($J$ is the rotational quantum number and $M$ is its z projection, respectively).
-By writing $\vec{\mu} = T_{q_1}^{(1)}$ and $\beta_{ijk} = T_{q_1}^{(1)} + T_{q_2}^{(2)} + T_{q_3}^{(3)}$, where $T^{(k)}_{q}$ is a rank $k$ spherical tensor, it is simple to evaluate the integrals in \autoref{sivebeta} through the Wigner-Eckart theorem. \cite{Kowzan2022}
-It is important to note that $\beta_{ijk}$ does not have complete tensor index symmetry.
+The rovibrational selection rules are generated through calculating \autoref{sivebeta} in a $\ket{vJM} \equiv \ket{v} \otimes {\ket{JM}}$ basis, where $\{\ket{v}\}$ is a basis of vibrational states and $\{\ket{JM}\}$ is a basis of rotational states ($J$ is the total angular momentum and $M$ is its projection onto the space fixed quantization axis).
+By writing $\vec{\mu} = T_{q_1}^{(1)}$ and $\beta_{ijk} = T_{q_1}^{(1)} + T_{q_2}^{(2)} + T_{q_3}^{(3)}$, where $T^{(k)}_{q}$ is a rank $k$ spherical tensor, the matrix elements in \autoref{sivebeta} can be evaluated through the Wigner-Eckart theorem.
+It is important to note that $\beta_{ijk}$ does not have complete tensor index symmetry.\cite{Andrews1978}
 Specifically, it has shown that the rank one spherical tensor ($T_{q_1}^{(1)}$, with $q_1 \in \{-1, 0 ,1\}$) fully contributes to $\beta_{ijk}$ but only select $T_{q_2}^{(2)} + T_{q_3}^{(3)}$ terms contribute. \cite{Andrews1978, Andrews1990}
 %there is some fancy way to note that theres no index constraint but i dont remember the language...
 As such, its decomposition into irreducible tensor form is allowed only if the values of $q', q''$ are constrained.
@@ -244,10 +247,13 @@ As a result, consistent with vibrational SR-SIVE, rovibrational SR-SIVE follows 
 
 \subsection{Quantitative SR-SIVE}
 With the selection rules of SR-SIVE understood for vibrational and rovibrational spectroscopy, it becomes possible to extract quantitative information from SIVE spectra to compare to incoherent methods and other CMDS methods.
-
 Lineshape analysis is essential for extracting quantitative information from CMDS spectra.
 Scanning across resonances create dispersive lineshapes, i.e, self-heterodyning, which inform on $\Re{\chi^{(3)}}$ and $\Im{\chi^{(3)}}$.\cite{Levenson1974_1, Levenson1974_2}
-Resonant SIVE lineshapes are complicated by amplitude level interference between the sample and its substrate and/or sample cell windows. \cite{RN362}
+In previous studies, following the method introduced by Levenson and Bloembergen, an internal standard was added to the sample.
+The internal standard in most experiments was chosen to be C$_6$H$_6$ or C$_6$D$_6$, due to the strong Raman activity and measured $\chi^{(3)}$ of its ring breathing mode ($\nu_2$ in Herzberg notation). \cite{Levenson1974_2, RN351, RN345}
+Interference between the sample and internal standard resonances allowed measurment of $\chi^{(3)}$.
+Such a method does not require measurment of absolute intensities and instead relies on self-heterodyning of the internal standard signal. 
+Resonant SIVE lineshapes are also complicated by amplitude level interference between the sample and its substrate and/or sample cell windows. \cite{RN362}
 These effects have been treated in excellent detail for three laser infrared-infrared-visible SIVE using the pathway in \autoref{fig:sivewmel}a, and provide methods to export quantitative information from SIVE spectra. \cite{RN418}
 
 Most quantitative methods in an n$^{th}$ order CMDS experiment are used to extract $\chi^{(n)}$ values for comparing the relative strength of nonlinear processes in different media. \cite{Zhu87, RN351, RN345}
@@ -259,11 +265,11 @@ It is thus useful to investigate how a simple treatment of orientational averagi
 The SIVE $\chi^{(3)}_{IJKL}$ expresson is
 \begin{equation}\label{chi3}
 \begin{split}
-		\chi^{(3)}_{IJKL} &\sim \langle \gamma_{ijkl} \rangle \sim \langle \beta_{ijk} \mu_l \rangle\\
+		\chi^{(3)}_{IJKL} &= NF(\omega_4) \langle \gamma_{ijkl} \rangle \sim \langle \beta_{ijk} \mu_l \rangle\\
 \end{split}
 \end{equation}
-The steps behind orientational averaging of $\gamma_{ijkl}$ are detailed elsewhere.\cite{Andrews1977, McDonnell2024}
-Orientational averaging for specific input polarizations shows that specific polarization schemes isolate linear combinations of different $\beta_{ijk}$ terms. 
+The steps behind orientational averaging of $\gamma_{ijkl}$, a rank four tensor in the molecular frame, are detailed elsewhere.\cite{Andrews1977, McDonnell2024}
+Orientational averaging shows specific polarization schemes isolate linear combinations of different $\beta_{ijk}$ terms. 
 Infrared spectra can provide values for different $\vec{\mu}$ components.
 Since $\vec{\mu}$ is a rank-one tensor, its three Cartesian components share the simple relationship $\langle {\mu^2_x} \rangle = \langle {\mu^2_y} \rangle = \langle {\mu^2_z} \rangle = \frac{1}{3}\langle {\mu^2} \rangle$. \cite{RN459}
 Neglecting rotational dependence, $\langle {\mu^2} \rangle = \abs{\mu}^2 = \mu^2$.
@@ -271,14 +277,14 @@ Substituting into \autoref{chi3} shows that
 \begin{subequations}
 	\begin{equation}
 		\begin{split}
-			\chi^{(3)}_{IJKL} &\sim \langle \beta_{ijk} \mu_l \rangle\\
+			\langle \gamma_{ijkl} \rangle &\sim \langle \beta_{ijk} \mu_l \rangle\\
 			&\sim \langle \beta_{ijk} \rangle \frac{\mu}{\sqrt{3}} 
 		\end{split}
 	\end{equation}
 This is done because any element of $\vec{\mu}$ is easily related to its magnitude through the directional cosine relationship shown above. 
-Continuing, we see
+Continuing by substituting in the results found in \autoref{SIVEselection}, we see
 	\begin{equation}
-		\langle \beta_{ijk} \rangle \sim \frac{\sqrt{3}}{\mu} \chi^{(3)}_{IJKL}
+		\langle \beta_{ijk} \rangle = - 24\sqrt{3} \frac{\hbar \varepsilon_0 \Delta_{gv}}{NF(\omega_4)\rho_{gg}} \frac{\chi^{(3)}_{IJKL}}{\mu}
 	\end{equation}
 \end{subequations}
 Since $\mu^2$ can be extracted by fitting infrared spectra,\cite{RN412} it is clear that different polarization schemes in SIVE spectroscopy give a measurement of $\beta_{ijk}$ values.
@@ -297,14 +303,14 @@ To this end, we investigate how the SIVE-IR-II and SIVE-Raman pathways (\autoref
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=3.375in]{main/wmel2.png}
+	\includegraphics[width=3.375in]{wmel2.png}
 	\caption{Wave Mixing Energy Level (WMEL) diagrams of interfering SR-SIVE pathways in the  $\vec{k}_4 = -\vec{k}_1 + \vec{k}_2 + \vec{k}_3$ phasematching geometry. 
-	(a) is similar to the process diagrammed in \autoref{fig:sivewmel}, whereas (b) is similar to a singly resonant coherent anti-Stokes Raman-type process.}
+	(a) is similar to the process diagrammed in \autoref{fig:sivewmel}, whereas (b) is similar to a coherent anti-Stokes Raman (CARS)-type process.}
 	\label{fig:sivewmel2}
 \end{figure}
 \begin{widetext}
 We employ the response function formalism of Mukamel for this analysis. \cite{RN287}
-The third order response functions, $R^{(3)}$, for SR-SIVE-IR-II ($R^{(3)}_{S_{II}}$) and SR-SIVE-Raman ($R^{(3)}_{R}$) (\autoref{fig:sivewmel2}a, b) are 
+The third order response functions, $R^{(3)}$, for SR-SIVE-IR-II ($R^{(3)}_{S_{II}}$) and SR-SIVE-Raman ($R^{(3)}_{R}$) (\autoref{fig:sivewmel2}a, b), suppressing tensor indices, are 
 \begin{subequations}
 	\begin{equation} \label{mixing:a}
 		R^{(3)}_{S_{II}} (t_2) = -\frac{i}{\hbar} [\beta(t_2), \mu(0)] \exp(-i\Delta_{v''g}t_2) \theta(t_2)
@@ -315,7 +321,7 @@ The third order response functions, $R^{(3)}$, for SR-SIVE-IR-II ($R^{(3)}_{S_{I
 		\end{split}
 	\end{equation}
 \end{subequations}
-By assuming that the beams which stimulate hyper-Raman scattering, $\vec{E}_1, \vec{E}_3$, interact simultaneously at some time $\tau$ after $\vec{E}_2$ interacts with the sample, the total output polarization, $\vec{P}^{(3)}(t)$, is written as \cite{Cho2001}
+By assuming that the fields which stimulate hyper-Raman scattering, $\vec{E}_1, \vec{E}_3$, interact simultaneously at some time $\tau$ after $\vec{E}_2$ interacts with the sample, the total output polarization, $\vec{P}^{(3)}(t)$, is written as \cite{Cho2001}
 	\begin{equation}\label{polarization_SRSIVE_a}
 		\begin{split}
 			\vec{P}^{(3)}(t) &= \vec{P}_{S_{II}}(t) + \vec{P}_{R}(t)\\
@@ -335,7 +341,7 @@ Generally, for nonlinear spectroscopies which share the same phasematching condi
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=3.375in]{main/wmel3.png}
+	\includegraphics[width=3.375in]{wmel3.png}
 	\caption{WMEL diagrams of some DR-SIVE pathways in the $-\vec{k}_1 + \vec{k}_2+ \vec{k}_3$  (I-a,I-b) and $\vec{k}_1 + \vec{k}_2+ \vec{k}_3$ (II-a,II-b) phasematching outputs. $\ket{g,0}$ denotes the ground states, $\ket{g,v}$ denotes a vibrational state on the ground electronic manifold; $\ket{m,n}$ denotes a virtual state, and $\ket{e,0}, \ket{e,v'}$ denote vibronic states.}
 	\label{fig:doubsive}
 \end{figure}
@@ -447,7 +453,7 @@ While not important for the discussion here, the implications of excited state p
 
 \begin{figure*}[!htbp]
 	\centering
-	\includegraphics[width=6.66in]{main/cob.png}
+	\includegraphics[width=6.66in]{cob.png}
 	\caption{
 		(a,c) Singly Resonant SIVE (SR-SIVE) and (b,d) Doubly Resonant SIVE (DR-SIVE) response of CNCbl using the $-\vec{k}_1 + 2\vec{k}_2$ and $\vec{k}_1 + 2\vec{k}_2$ phasematching geometries, respectively.
 		Here, $\omega_2 = 8000$ cm$^{-1}$.
@@ -549,7 +555,7 @@ Substituting into \autoref{contour}, we see:
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=3.375in]{main/corr_contour.png}
+	\includegraphics[width=3.375in]{corr_contour.png}
 	\caption{Poles (black dots) and contour (blue line) used to evaluate \autoref{integraly} for (a) anti-correlated and (b) correlated modes.} 
 	\label{fig:contours}
 \end{figure}
