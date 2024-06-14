@@ -13,7 +13,7 @@
 \graphicspath{{"figures/"}}
 \begin{document}
 %Title of paper
-\title{Coherent Hyper-Raman Four Wave Mixing Spectroscopies}
+\title{Coherent Hyper-Raman Four Wave Mixing Vibrational Spectroscopies}
 
 \author{Ryan P. McDonnell} 
 \author{Daniel D. Kohler}
@@ -256,18 +256,23 @@ Such a method does not require measurment of absolute intensities and instead re
 Resonant SIVE lineshapes are also complicated by amplitude level interference between the sample and its substrate and/or sample cell windows. \cite{RN362}
 These effects have been treated in excellent detail for three laser infrared-infrared-visible SIVE using the pathway in \autoref{fig:sivewmel}a, and provide methods to export quantitative information from SIVE spectra. \cite{RN418}
 
-Most quantitative methods in an n$^{th}$ order CMDS experiment are used to extract $\chi^{(n)}$ values for comparing the relative strength of nonlinear processes in different media. \cite{Zhu87, RN351, RN345}
+Most quantitative methods in an n$^{th}$ order CMDS experiment are used to extract $\chi^{(n)}$ values to compare the relative strength of nonlinear processes in different media. \cite{Zhu87, RN351, RN345}
 The recorded $\chi^{(n)}$ values provide insight into how microscopic quantities ($\vec{\mu}, \alpha_{ij}, \beta_{ijk}$) impact nonlinear output.
 To our knowledge, only vibraitonal SFG and 2D-IR spectroscopy has taken advantage of orientationally averaged $\chi^{(n)}$ values to extract transition moments. \cite{Shen90, Moilanen2009, RN245}
 Previous treatments did not consider using quantitative analysis in SIVE to measure $\beta_{ijk}$ values from SIVE spectra.
 It is thus useful to investigate how a simple treatment of orientational averaging can extract $\beta_{ijk}$ from a $\chi^{(3)}_{IJKL}$ expression.
 
-The SIVE $\chi^{(3)}_{IJKL}$ expresson is
+The SIVE $\chi^{(3)}_{IJKL}$ expression is
 \begin{equation}\label{chi3}
 \begin{split}
 		\chi^{(3)}_{IJKL} &= NF(\omega_4) \langle \gamma_{ijkl} \rangle \sim \langle \beta_{ijk} \mu_l \rangle\\
 \end{split}
 \end{equation}
+This expression cannot be exactly used to extract $\beta_{ijk}$, as $\beta_{ijk}$ is a Hermitian operator but $\Delta_{gv} \in \mathbb{C}$. 
+However, when on resonance, $\Delta_{gv} = -i\Gamma_{gv}$.
+Thus, below we consider cases where the experiment is resonant, so that $\chi^{(3)}_{IJKL}$ is purely imaginary, or, (insert equation).
+Clearly, we can then see that $\langle \beta_{ijk} \mu_l \rangle \sim -\frac{1}{\Gamma_{gv}}\Im(\chi^{(3)}_{IJKL})$ 
+
 The steps behind orientational averaging of $\gamma_{ijkl}$, a rank four tensor in the molecular frame, are detailed elsewhere.\cite{Andrews1977, McDonnell2024}
 Orientational averaging shows specific polarization schemes isolate linear combinations of different $\beta_{ijk}$ terms. 
 Infrared spectra can provide values for different $\vec{\mu}$ components.
