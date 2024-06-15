@@ -1,4 +1,4 @@
-\documentclass[aip, jcp, reprint, onecolumn]{revtex4-2}
+\documentclass[aip, jcp, draft, onecolumn]{revtex4-2}
 
 \bibliographystyle{apsrev4-2}
 
@@ -91,7 +91,7 @@ The ultrafast laser system has been described in detail elsewhere. \cite{RN278, 
 Briefly, an 80 MHz Ti-Sapphire ultrafast oscillator (Spectra-Physics Tsunami) created 35 fs seed pulses, amplified by a 1 kHz regnerative amplifier (Spectra-Physics Spitfire Ace) to approximately 0.5 W.
 A mask in the regenerative amplifier stretched the input pulses to roughly 1 ps.
 The resultant output was used to pump four independent OPAs, two of which are relevant for this study.
-OPA1 (TOPAS-800, Light Conversion), referred to as $\omega_1$, was tuned for difference frequency generation (DFG) with an external stage (NDFG "DF2", Light Conversion).
+OPA1 (TOPAS-800, Light Conversion), referred to as $\omega_1$, was tuned for difference frequency generation (DFG) with an external stage (NDFG \"DF2\", Light Conversion).
 OPA2 (OPA-800C, Spectra Physics), referred to as $\omega_2$, was tuned in its signal arrangement. 
 Grating and crystal positions in OPA1 was externally controlled using \texttt{WinTOPAS} (Light Conversion).
 Grating and BBO crystal positions in OPA2 were computer controlled through communication with 50 mm DC actuators (PMC). %todo: who tf makes PMC motors?
@@ -249,12 +249,10 @@ As a result, consistent with vibrational SR-SIVE, rovibrational SR-SIVE follows 
 With the selection rules of SR-SIVE understood for vibrational and rovibrational spectroscopy, it becomes possible to extract quantitative information from SIVE spectra to compare to incoherent methods and other CMDS methods.
 Lineshape analysis is essential for extracting quantitative information from CMDS spectra.
 Scanning across resonances create dispersive lineshapes, i.e, self-heterodyning, which inform on $\Re{\chi^{(3)}}$ and $\Im{\chi^{(3)}}$.\cite{Levenson1974_1, Levenson1974_2}
-In previous studies, following the method introduced by Levenson and Bloembergen, an internal standard was added to the sample.
-The internal standard in most experiments was chosen to be C$_6$H$_6$ or C$_6$D$_6$, due to the strong Raman activity and measured $\chi^{(3)}$ of its ring breathing mode ($\nu_2$ in Herzberg notation). \cite{Levenson1974_2, RN351, RN345}
-Interference between the sample and internal standard resonances allowed measurment of $\chi^{(3)}$.
-Such a method does not require measurment of absolute intensities and instead relies on self-heterodyning of the internal standard signal. 
-Resonant SIVE lineshapes are also complicated by amplitude level interference between the sample and its substrate and/or sample cell windows. \cite{RN362}
-These effects have been treated in excellent detail for three laser infrared-infrared-visible SIVE using the pathway in \autoref{fig:sivewmel}a, and provide methods to export quantitative information from SIVE spectra. \cite{RN418}
+In the method introduced by Levenson and Bloembergen, an internal standard, often chosen to be  
+C$_6$H$_6$ or C$_6$D$_6$, due to the strong Raman activity and measured $\chi^{(3)}$ of its ring breathing mode ($\nu_2$ in Herzberg notation), causes interference. \cite{Levenson1974_2, RN351, RN345}
+This interference measures $\chi^{(3)}$ and does not require measurement of absolute intensities; it instead relies on self-heterodyning of the internal standard signal. 
+Resonant lineshapes are also complicated by amplitude level interference between the sample and its substrate and/or sample cell windows. \cite{RN362, RN418}
 
 Most quantitative methods in an n$^{th}$ order CMDS experiment are used to extract $\chi^{(n)}$ values to compare the relative strength of nonlinear processes in different media. \cite{Zhu87, RN351, RN345}
 The recorded $\chi^{(n)}$ values provide insight into how microscopic quantities ($\vec{\mu}, \alpha_{ij}, \beta_{ijk}$) impact nonlinear output.
@@ -265,36 +263,27 @@ It is thus useful to investigate how a simple treatment of orientational averagi
 The SIVE $\chi^{(3)}_{IJKL}$ expression is
 \begin{equation}\label{chi3}
 \begin{split}
-		\chi^{(3)}_{IJKL} &= NF(\omega_4) \langle \gamma_{ijkl} \rangle \sim \langle \beta_{ijk} \mu_l \rangle\\
+		\chi^{(3)}_{IJKL} &= NF(\omega_4) \langle \gamma_{ijkl} \rangle = -\frac{NF}{24 \hbar \varepsilon_0 \Delta_{gv}} \langle \beta_{ijk} \mu_l \rangle \rho_{gg}\\
 \end{split}
 \end{equation}
-This expression cannot be exactly used to extract $\beta_{ijk}$, as $\beta_{ijk}$ is a Hermitian operator but $\Delta_{gv} \in \mathbb{C}$. 
-However, when on resonance, $\Delta_{gv} = -i\Gamma_{gv}$.
-Thus, below we consider cases where the experiment is resonant, so that $\chi^{(3)}_{IJKL}$ is purely imaginary, or, (insert equation).
-Clearly, we can then see that $\langle \beta_{ijk} \mu_l \rangle \sim -\frac{1}{\Gamma_{gv}}\Im(\chi^{(3)}_{IJKL})$ 
+This expression cannot be used as written to extract $\beta_{ijk}$, as $\beta_{ijk}$ is a Hermitian operator, but $\Delta_{gv} \in \mathbb{C}$. 
+However, since the real and imaginary parts of $\chi^{(3)}$ can be extracted from the Bloembergen experiment, we can choose to focus on either its real or imaginary part.
+For simplicity, we investigate $\Im(\chi^{(3)})$, giving, assuming resonance conditions, 
+\begin{equation}
+	\langle \beta_{ijk} \mu_{l} \rangle = \frac{24 \hbar \varepsilon_0}{NF} \Gamma_{gv} \frac{1}{\rho_{gg}} \Im(\chi^{(3)}_{IJKL})
+\end{equation}
 
 The steps behind orientational averaging of $\gamma_{ijkl}$, a rank four tensor in the molecular frame, are detailed elsewhere.\cite{Andrews1977, McDonnell2024}
 Orientational averaging shows specific polarization schemes isolate linear combinations of different $\beta_{ijk}$ terms. 
 Infrared spectra can provide values for different $\vec{\mu}$ components.
 Since $\vec{\mu}$ is a rank-one tensor, its three Cartesian components share the simple relationship $\langle {\mu^2_x} \rangle = \langle {\mu^2_y} \rangle = \langle {\mu^2_z} \rangle = \frac{1}{3}\langle {\mu^2} \rangle$. \cite{RN459}
-Neglecting rotational dependence, $\langle {\mu^2} \rangle = \abs{\mu}^2 = \mu^2$.
-Substituting into \autoref{chi3} shows that
-\begin{subequations}
-	\begin{equation}
-		\begin{split}
-			\langle \gamma_{ijkl} \rangle &\sim \langle \beta_{ijk} \mu_l \rangle\\
-			&\sim \langle \beta_{ijk} \rangle \frac{\mu}{\sqrt{3}} 
-		\end{split}
-	\end{equation}
-This is done because any element of $\vec{\mu}$ is easily related to its magnitude through the directional cosine relationship shown above. 
-Continuing by substituting in the results found in \autoref{SIVEselection}, we see
-	\begin{equation}
-		\langle \beta_{ijk} \rangle = - 24\sqrt{3} \frac{\hbar \varepsilon_0 \Delta_{gv}}{NF(\omega_4)\rho_{gg}} \frac{\chi^{(3)}_{IJKL}}{\mu}
-	\end{equation}
-\end{subequations}
-Since $\mu^2$ can be extracted by fitting infrared spectra,\cite{RN412} it is clear that different polarization schemes in SIVE spectroscopy give a measurement of $\beta_{ijk}$ values.
-SIVE can therefore provide useful insight into the sensitivity of hyper-Raman spectroscopy to different infrared active vibrations.
- 
+Neglecting rotational dependence (i.e., assuming only vibrational transitions), $\langle {\mu^2} \rangle = \abs{\mu}^2 = \mu^2$, so that $\langle \beta_{ijk} \mu_l \rangle = \langle \beta_{ijk} \rangle \frac{\mu}{\sqrt{3}}$.
+By introducing the reduced mass coordinate $q_n = \sqrt{\frac{1}{m_n}} Q_n$ and using the expansions of $\beta_{ijk}$ and $\mu_{l}$ found earlier, knowing that $(\mel{v}{q}{g})^2 = \frac{\hbar}{2\omega_{vg}}$ under the harmonic approximation, shows
+\begin{equation}\label{betasive}
+	\langle \frac{\partial \beta_{ijk}}{\partial q_n} \rangle = \varepsilon_0 \frac{48 \sqrt{3} }{NF}  \frac{\Gamma_{gv} \omega_{vg}}{\rho_{gg}} \frac{\Im(\chi^{(3)}_{IJKL})}{\frac{\partial \mu_{l}}{\partial q_n}}
+\end{equation}
+
+
 
 \subsection{Coherent Interference in SR-SIVE}
 It is well known that nonlinear wave mixing processes which share the same time ordering and output frequency will interfere. \cite{RN135, Bonn2024}
