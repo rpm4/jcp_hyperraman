@@ -185,8 +185,8 @@ To understand SR-SIVE selection rules more finely, the dipole and first hyperpol
 		\beta = \beta_{0} + \frac{\partial \beta}{\partial Q_n} Q_n + \order{{Q_m Q_n}}
 	\end{equation}
 \end{subequations}
-Substituting into \autoref{sivebeta} gives the SIVE-IR-I hyperpolarizability to $\order{Q_n}$ as \begin{equation}\label{SIVEselection}
-		\gamma_{ijkl} =	-\frac{1}{\varepsilon_0} \frac{1}{24 \hbar}  \frac{1}{{\Delta_{gv}}} \ \frac{\partial \beta^{(ijk)}}{\partial Q_n} {\frac{\partial \mu^{(l)}}{\partial Q_n}}  (\mel{g}{Q_n}{v})^2\ \rho_{gg}
+Substituting into \autoref{sivebeta}, and knowing that $\mel{v}{Q_n}{g} = \sqrt{\frac{\hbar}{2m_n\omega_{vg}}}$ under the harmonic approximation,\cite{RN230} where $m_n$ is the mass of the $Q_n$ mode, gives the SIVE-IR-I hyperpolarizability to $\order{Q_n}$ as \begin{equation}\label{SIVEselection}
+		\gamma_{ijkl} =	-\frac{1}{\varepsilon_0} \frac{1}{48 m_n \omega_{vg}}  \frac{1}{{\Delta_{gv}}} \ \frac{\partial \beta^{(ijk)}}{\partial Q_n} {\frac{\partial \mu^{(l)}}{\partial Q_n}}  \rho_{gg}
 \end{equation}
 Since this expression is non-zero in the harmonic oscillator limit, SR-SIVE output is allowed for harmonic transitions. 
 Similar to SFG, SR-SIVE does not demand anharmonic ground state potential energy surfaces for spectral output. \cite{Shen94, Cho2000}
@@ -240,7 +240,7 @@ By writing $\vec{\mu} = T_{q_1}^{(1)}$ and $\beta_{ijk} = T_{q_1}^{(1)} + T_{q_2
 It is important to note that $\beta_{ijk}$ does not have complete tensor index symmetry.\cite{Andrews1978}
 Specifically, it has shown that the rank one spherical tensor ($T_{q_1}^{(1)}$, with $q_1 \in \{-1, 0 ,1\}$) fully contributes to $\beta_{ijk}$ but only select $T_{q_2}^{(2)} + T_{q_3}^{(3)}$ terms contribute. \cite{Andrews1978, Andrews1990}
 %there is some fancy way to note that theres no index constraint but i dont remember the language...
-As such, its decomposition into irreducible tensor form is allowed only if the values of $q', q''$ are constrained.
+As such, its decomposition into irreducible tensor form is allowed only if the values of $q_2, q_3$ are constrained.
 By substituting the spherical tensor definitions of $\vec{\mu}$ and $\beta_{ijk}$ into \autoref{sivebeta}, it is clear that only $\Delta J = \pm 1$ transitions are allowed, i.e., SIVE-IR features arise only from P or R branches (assuming the ground state is $\ket{g00}$).
 This is expected since $\vec{\mu}$ transitions demand $\Delta J = \pm 1$.
 As a result, consistent with vibrational SR-SIVE, rovibrational SR-SIVE follows the same rules as common infrared rovibrational spectroscopy.
@@ -248,10 +248,10 @@ As a result, consistent with vibrational SR-SIVE, rovibrational SR-SIVE follows 
 \subsection{Quantitative SR-SIVE}
 With the selection rules of SR-SIVE understood for vibrational and rovibrational spectroscopy, it becomes possible to extract quantitative information from SIVE spectra to compare to incoherent methods and other CMDS methods.
 Lineshape analysis is essential for extracting quantitative information from CMDS spectra.
-Scanning across resonances create dispersive lineshapes, i.e, self-heterodyning, which inform on $\Re{\chi^{(3)}}$ and $\Im{\chi^{(3)}}$.\cite{Levenson1974_1, Levenson1974_2}
-In the method introduced by Levenson and Bloembergen, an internal standard, often chosen to be  
-C$_6$H$_6$ or C$_6$D$_6$, due to the strong Raman activity and measured $\chi^{(3)}$ of its ring breathing mode ($\nu_2$ in Herzberg notation), causes interference. \cite{Levenson1974_2, RN351, RN345}
-This interference measures $\chi^{(3)}$ and does not require measurement of absolute intensities; it instead relies on self-heterodyning of the internal standard signal. 
+Scanning across resonances create dispersive lineshapes, i.e, self-heterodyning, which inform on $\Re(\chi^{(3)})$ and $\Im(\chi^{(3)})$.\cite{Levenson1974_1, Levenson1974_2}
+In the method introduced by Levenson and Bloembergen (Bloembergen Interferometry Experiment), an internal standard interferes with the resonant lineshape.
+The internal standard is often chosen to be C$_6$H$_6$ or C$_6$D$_6$, due to the strong Raman activity and measured $\chi^{(3)}$ of its ring breathing mode ($\nu_2$ in Herzberg notation), causes interference. \cite{Levenson1974_2, RN351, RN345}
+The self-heterodyning method measures $\chi^{(3)}$ and does not require measurement of absolute intensities; it instead relies on self-heterodyning of the internal standard signal. 
 Resonant lineshapes are also complicated by amplitude level interference between the sample and its substrate and/or sample cell windows. \cite{RN362, RN418}
 
 Most quantitative methods in an n$^{th}$ order CMDS experiment are used to extract $\chi^{(n)}$ values to compare the relative strength of nonlinear processes in different media. \cite{Zhu87, RN351, RN345}
@@ -267,7 +267,7 @@ The SIVE $\chi^{(3)}_{IJKL}$ expression is
 \end{split}
 \end{equation}
 This expression cannot be used as written to extract $\beta_{ijk}$, as $\beta_{ijk}$ is a Hermitian operator, but $\Delta_{gv} \in \mathbb{C}$. 
-However, since the real and imaginary parts of $\chi^{(3)}$ can be extracted from the Bloembergen experiment, we can choose to focus on either its real or imaginary part.
+However, since the real and imaginary parts of $\chi^{(3)}$ can be extracted from the Bloembergen interferometry experiment, we can choose to focus on either its real or imaginary part.
 For simplicity, we investigate $\Im(\chi^{(3)})$, giving, assuming resonance conditions, 
 \begin{equation}
 	\langle \beta_{ijk} \mu_{l} \rangle = \frac{24 \hbar \varepsilon_0}{NF} \Gamma_{gv} \frac{1}{\rho_{gg}} \Im(\chi^{(3)}_{IJKL})
@@ -278,10 +278,16 @@ Orientational averaging shows specific polarization schemes isolate linear combi
 Infrared spectra can provide values for different $\vec{\mu}$ components.
 Since $\vec{\mu}$ is a rank-one tensor, its three Cartesian components share the simple relationship $\langle {\mu^2_x} \rangle = \langle {\mu^2_y} \rangle = \langle {\mu^2_z} \rangle = \frac{1}{3}\langle {\mu^2} \rangle$. \cite{RN459}
 Neglecting rotational dependence (i.e., assuming only vibrational transitions), $\langle {\mu^2} \rangle = \abs{\mu}^2 = \mu^2$, so that $\langle \beta_{ijk} \mu_l \rangle = \langle \beta_{ijk} \rangle \frac{\mu}{\sqrt{3}}$.
-By introducing the reduced mass coordinate $q_n = \sqrt{\frac{1}{m_n}} Q_n$ and using the expansions of $\beta_{ijk}$ and $\mu_{l}$ found earlier, knowing that $(\mel{v}{q}{g})^2 = \frac{\hbar}{2\omega_{vg}}$ under the harmonic approximation, shows
+By introducing the reduced mass coordinate $q_n = \sqrt{\frac{1}{m_n}} Q_n$ and using the expansions of $\beta_{ijk}$ and $\mu_{l}$ to $\order{Q_n}$ found earlier, we see
 \begin{equation}\label{betasive}
 	\langle \frac{\partial \beta_{ijk}}{\partial q_n} \rangle = \varepsilon_0 \frac{48 \sqrt{3} }{NF}  \frac{\Gamma_{gv} \omega_{vg}}{\rho_{gg}} \frac{\Im(\chi^{(3)}_{IJKL})}{\frac{\partial \mu_{l}}{\partial q_n}}
 \end{equation}
+Since $\mu$ values can be readily extracted from FT-IR spectra,\cite{RN412} this shows that SIVE can give quantitative information on the magnitude of $\beta_{ijk}$.
+
+A key result of \autoref{betasive} is that the sign of $\frac{\partial \beta_{ijk}}{\partial q_n}$ and $\frac{\partial \mu_{l}}{\partial q_n}$ can be extracted from SIVE spectra. 
+These ideas can prove useful when assessing the validity of computational methods which report on the sign of $\frac{\partial \beta_{ijk}}{\partial q_n}$.
+Similar ideas were first introduced by Shen to extract the sign of $\frac{\partial \mu_{l}}{\partial q_n}$ from vSFG spectra.\cite{Shen90}
+SIVE and vSFG together provide a unique picture of extracting signs for the microscopic observables that drive nonlinear output.
 
 
 
@@ -414,11 +420,11 @@ The strains shift resonance denominators, e.g., for $\omega_{ij} \rightarrow \om
 	\Delta_{ij}(\xi) = \omega_{ij} + c\xi -\omega_k - i\Gamma_{ij} \equiv \Delta_{ij}(0) + c\xi
 \end{equation}
 Without loss of generality, we assume c = 1 for correlated modes and c = -1 for anti-correlated modes.
-To understand the impact of inhomogeneity on spectral output, we convolute an output density matrix element $\rho_{ab}(\xi)$ with a normalized Lorentzian distribution $P(\xi)$ of half width $\sigma$ as \cite{Penner1976, Desiderio1979, Dick83_1, Carlson1990line} 
+To understand the impact of inhomogeneity on spectral output, we convolute an output density matrix element $\rho_{ab}(\xi)$ with a normalized Lorentzian distribution $P(\xi)$ of half width at half maximum $\sigma$ as
 \begin{equation}\label{contour}
 	\rho_{ab} = \int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \rho_{ab}(\xi)
 \end{equation} 
-While Gaussian distributions are commonly used to describe inhomogeneous broadening,\cite{druet1979line, RN307} Lorentzian distributions have successfully described inhomogeneous broadening in a variety of spectroscopies and yield easily interpreted closed-form solutions. \cite{Dick83_1, Carlson1990line}
+While Gaussian distributions are commonly used to describe inhomogeneous broadening,\cite{druet1979line, RN307, Ouellette1982} Lorentzian distributions have successfully described inhomogeneous broadening in a variety of spectroscopies and yield easily interpreted closed-form solutions. \cite{Penner1976, Desiderio1979, Dick83_1, Carlson1990line}
 For clarity, we evaluate the linenarrowing characteristics of pathway Ia (\autoref{fig:doubsive}) in detail in Appendix.
 The results for all pathways in \autoref{fig:doubsive} are summarized in \autoref{T:correlated}.
 
@@ -438,10 +444,11 @@ The results for all pathways in \autoref{fig:doubsive} are summarized in \autore
 
 Although \autoref{T:correlated} identifies that only Pathway I-a can line-narrow correlated modes, these results are only valid in limits where the input pulses only weakly populate excited states.
 When resonant pulses are significantly longer than the dephasing time of some state, then that state can become populated.
-Excited state population effects are particularly important for understanding the spectroscopy of electronic states using input pulses with relatively long pulsewidths ($\gtrsim$ 1 ps). \cite{RN319}
-First seen in fifth order perturbation theory ($\chi^{(5)}$ processes) in isotropic media, excited state populations can populate other modes, including the ground state and other vibrational/vibronic modes, inducing higher order processes.\cite{Carlson87, RN471}
-These feeding mechanisms can induce line-narrowing properties in spectroscopies that cannot line-narrow in third order perturbation theory.\cite{RN319, Carlson87, RN471, RN410}
-While not important for the discussion here, the implications of excited state populations are important when considering experiments using the methods in \autoref{fig:doubsive} with long pulsewidths. 
+A typical electronic dephasing time value is tens of femtoseconds. \cite{RN131}
+Excited state population effects become important for understanding the spectroscopy of electronic states when using input pulses with relatively long pulsewidths ($\gtrsim$ 500 fs). \cite{RN319, Yurs2011}
+First seen in fifth order perturbation theory in isotropic media ($\chi^{(5)}$ processes), excited state populations can populate other modes, including the ground state and other vibrational/vibronic modes, inducing higher order processes.\cite{Carlson87, RN471}
+These feeding mechanisms can induce line-narrowing properties in spectroscopies that cannot line-narrow in third order perturbation theory.\cite{Ouellette1982, RN319, Carlson87, RN471, RN410}
+Excited state populations become important when considering experiments using the methods in \autoref{fig:doubsive} with long pulsewidths or strong transition dipoles, as demonstrated on a variety of model systems using coherent Raman spectroscopies. \cite{Ouellette1982, RN471, RN338, Yurs2011} 
 
 \section{SIVE of cyanocobalamin}
 
@@ -516,7 +523,7 @@ Since SR-SIVE is always non-zero for IR active vibrations, the method could be u
 A method for measuring hyper-Raman polarizabilities, $\beta_{ijk}$, through SIVE spectroscopy was identified and discussed.
 Doubly resonant SIVE (DR-SIVE) processes show promise as a probe of vibronic coupling in molecular samples.
 Unlike SR-SIVE, DR-SIVE methods can linenarrow inhomogeneously broadened vibronic modes. 
-SR and DR-SIVE of cyanocobalamin (i.e., vitamin B-12) highlight the impact of hyper-Raman cross sections on SIVE output, and pave the way for future studies of complex phenomena in large molecular systems through two beam four wave mixing methods.
+SR and DR-SIVE of cyanocobalamin (vitamin B$_{12}$) highlight the impact of hyper-Raman cross sections on SIVE output, and pave the way for future studies of complex phenomena in large molecular systems through two beam four wave mixing methods.
 
 \section{Data Availability Statement}
 The data and workup scripts that support this study are permissively licensed and available for reuse at https://osf.io/2amkq/. 
@@ -525,7 +532,7 @@ The data and workup scripts that support this study are permissively licensed an
 This work received support from the Department of Energy, Office of Basic Energy Sciences, Division of Materials Sciences and Engineering (Grant no. DE-SC0002162).
 R.P.M. acknowledges support from the NSF Graduate Research Fellowship Program (Grant no. DGE-2137424). 
 
-\section{Appendix A: Evaluation of Pathway I-a Linenarrowing Capability}
+\section{Appendix A: Evaluation of DR-SIVE Pathway I-a Linenarrowing Capability}
 \begin{widetext}
 The output coherence  for this pathway is $\rho_{ev',gv}(\xi)$.
 Setting $\eta$ equal to the numerator of \autoref{drgamma_alpha_0} along with any constants, we see
@@ -538,7 +545,7 @@ Setting $\eta$ equal to the numerator of \autoref{drgamma_alpha_0} along with an
 \end{equation}
 
 For notational convenience, we map $\ket{g,0} \rightarrow \ket{g}$, $\ket{g,v} \rightarrow \ket{a}$ and $\ket{e,v'} \rightarrow \ket{b}$.
-Substituting into \autoref{contour}, we see:
+Substituting into \autoref{contour} and taking $P(\xi)$ to be a normalized Lorentzian distribution of half width at half maximum $\sigma$, we see:
 \begin{equation}\label{integraly}
 	\begin{split}
 		\rho_{ba} &= \int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \rho_{ba}(\xi)\\
