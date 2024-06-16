@@ -1,4 +1,4 @@
-\documentclass[aip, jcp, draft, onecolumn]{revtex4-2}
+\documentclass[aip, jcp, reprint, twocolumn]{revtex4-2}
 
 \bibliographystyle{apsrev4-2}
 
@@ -46,7 +46,7 @@ We showcase the difference in selection rules of SR-SIVE and DR-SIVE through a s
 \section{Introduction}
 Coherent multidimensional spectroscopy (CMDS) is a family of three and four wave mixing methods which form the optical analogue of multidimensional nuclear magnetic resonance (NMR) spectroscopy.\cite{Cho2008, RN335}
 Multiresonant, four wave mixing CMDS experiments, first proposed by Oudar and Shen in 1980,\cite{RN307} directly probe coupling between different vibrational, electronic, and vibronic states. \cite{RN307, RN281, RN342, Cho2008, RN335, Ogilvie2019, RN325} 
-CMDS has resolved intramolecular vibrational, vibronic, excitonic, and electronic coupling in numerous systems. \cite{Carlson1990, RN345, RN342, RN343, RN324, Czech2015, Gaynor2017, Ogilvie2019, RN325}
+CMDS has resolved anharmonicities and other intramolecular couplings in numerous systems. \cite{RN345, RN342, RN343, RN324, RN329, RN120, Czech2015, Gaynor2017, Ogilvie2019, RN325}
 A particular class of CMDS methods, coherent Raman based four wave mixing spectroscopies, can provide explicit probes of vibrational and excitonic coupling in a variety of systems.
 
 Not all CMDS methods are used to dissect intramolecular couplings.\cite{Shen1987_CPL}
@@ -61,13 +61,13 @@ In 1998, Cho et al. proposed a parametric six wave mixing technique which was th
 However, since most six wave mixing methods cascade into four wave mixing processes,\cite{RN243, Cho2000_Cascade} it is preferable to investigate coherent four wave mixing analogues to hyper-Raman scattering.
 
 While SIVE showed promise as an upconverted infrared spectroscopy method, it was quickly supplemented by a doubly vibrationally resonant method, doubly vibrationally enhanced (DOVE) spectroscopy, to investigate intra- and intermolecular vibrational coupling. \cite{RN345, RN101, Cho2000}
-As a result, investigations of SIVE stagnated; to date, there are less than a dozen studies which report on SR-SIVE. \cite{RN350, RN416, RN351, RN352, RN353, Chen1998, RN362, RN418, McDonnell2024, Bonn2024}
+As a result, investigations of SIVE stagnated; to date, there are less than a dozen studies which report on SR-SIVE. \cite{RN350, RN416, RN351, RN352, RN353, Chen1998, RN362, RN418, Bonn2024, McDonnell2024}
 Recent reports highlight non-negligible SIVE interference in DOVE experiments as well as the suitability of SIVE pathways to interpret ultrafast relaxation dynamics in isotropic systems. \cite{Bonn2024, McDonnell2024}
 These reports motivate deeper analysis on the properties of SIVE spectroscopy. 
 
 Fully coherent, ultrafast probes of vibronic coupling would yield insight into processes that control ultrafast electronic relaxation in molecular and biological systems. \cite{Bredenbeck2015, Arsenault2021}
 Some years ago, Cho proposed a parametric, doubly resonant infrared/visible pathway to probe vibronic coupling in isotropic systems. \cite{Cho2001}
-In this method, a single infrared pulse is resonant with a vibrational mode, and a two photon absorption event from a near infrared (NIR) or visible pulse is used to generate the four wave mixing signal.
+In this method, a single infrared pulse is resonant with a vibrational mode, and a two photon absorption event from a near infrared (NIR) or visible pulse resonant with an electronic or vibronic state is used to generate the four wave mixing signal.
 These pathways are referred to herein as DR-SIVE.
 Methods analogous to DR-SIVE, where two photon absorption from the infrared pulse and single photon absorption from the visible pulse is used to generate output, i.e., stimulated Raman processes, have been reported. \cite{RN301, RN120} 
 
@@ -90,15 +90,15 @@ Based upon these selection rules, we investigate SR-SIVE and DR-SIVE spectroscop
 
 \section{Experimental Methods}
 The ultrafast laser system has been described in detail elsewhere. \cite{RN278, Kaufman2024}
-Briefly, an 80 MHz Ti-Sapphire ultrafast oscillator (Spectra-Physics Tsunami) created 35 fs seed pulses, amplified by a 1 kHz regnerative amplifier (Spectra-Physics Spitfire Ace) to approximately 0.5 W.
+Briefly, an 80 MHz Ti-Sapphire ultrafast oscillator  (Spectra-Physics Tsunami) created 35 fs seed pulses, amplified by a 1 kHz regnerative amplifier (Spectra-Physics Spitfire Ace) to approximately 0.5 W.
 A mask in the regenerative amplifier stretched the input pulses to roughly 1 ps.
 The resultant output was used to pump four independent OPAs, two of which are relevant for this study.
-OPA1 (TOPAS-800, Light Conversion), referred to as $\omega_1$, was tuned for difference frequency generation (DFG) with an external stage (NDFG \"DF2\", Light Conversion).
+OPA1 (TOPAS-800, Light Conversion), referred to as $\omega_1$, was tuned for difference frequency generation (DFG) with an external stage (NDFG ``DF2'', Light Conversion).
 OPA2 (OPA-800C, Spectra Physics), referred to as $\omega_2$, was tuned in its signal arrangement. 
 Grating and crystal positions in OPA1 was externally controlled using \texttt{WinTOPAS} (Light Conversion).
 Grating and BBO crystal positions in OPA2 were computer controlled through communication with 50 mm DC actuators (PMC). %todo: who tf makes PMC motors?
 The OPAs were independently tuned through the \texttt{Attune} package, controlled by the \texttt{yaqc} and \texttt{Bluesky} packages. \cite{RN414, RN386, SkyeOPA, KyleOPA}
-The power spectra and tuning results are found in Figure X.%todo: actually graph these
+The power spectra and tuning results are found in Figure X. %todo: actually graph these
 Movable retroreflectors (Thorlabs) controlled by 50 mm DC actuators (PMC) are used to measure coherence dynamics.
 The beams are focused into the sample in a BOXCARS geometry.\cite{RN308, Kaufman2024}
 To enforce frequency dependent temporal pulse overlap, the maximum points of a third order cross correlation between $\omega_1$ and $\omega_3$ measured in CaF$_2$ were used to generate frequency dependent zero delay values.
@@ -220,13 +220,13 @@ To simplify analysis, orientational averaging is ignored (e.g., $\langle \beta_{
 \end{widetext}
 Ziegler has noted that for a field of intensity 10 GW/cm$^{2}$, $\frac{\beta E}{\alpha} \sim 10^{-3} $ for vibrational modes when $E(\omega_3)$ is largely detuned from electronic resonances. \cite{RN515}
 Such an intensity is easily obtained using modern ultrafast sources.
-As such,
+In this limit,
 \begin{equation}
 \begin{split}
 		P_{ratio} &\sim 10^4 \frac{\beta E(\omega_3)}{\alpha} \sim 10
 \end{split}
 \end{equation}
-Since the intensity ratio scales as $\abs{P_{ratio}}^2$, we see that the SIVE output is roughly 100 times stronger than vibrational SFG.
+Since the intensity ratio scales as $\abs{P_{ratio}}^2$, we see that the SIVE output is somewhat stronger than vibrational SFG, assuming only interfacial contributions in vSFG.
 It is important to note that this derivation ignored absorption and orientational averaging effects, which can significantly reduce output from either process. 
 
 \subsection{Rovibrational SR-SIVE Selection Rules} %this can probably be deleted but wanted to add just in case...
@@ -238,9 +238,9 @@ The velocity dependence of output density matrix elements does not manipulate qu
 
 The rovibrational selection rules are generated through calculating \autoref{sivebeta} in a $\ket{vJM} \equiv \ket{v} \otimes {\ket{JM}}$ basis, where $\{\ket{v}\}$ is a basis of vibrational states and $\{\ket{JM}\}$ is a basis of rotational states ($J$ is the total angular momentum and $M$ is its projection onto the space fixed quantization axis).
 By writing $\vec{\mu} = T_{q_1}^{(1)}$ and $\beta_{ijk} = T_{q_1}^{(1)} + T_{q_2}^{(2)} + T_{q_3}^{(3)}$, where $T^{(k)}_{q}$ is a rank $k$ spherical tensor, the matrix elements in \autoref{sivebeta} can be evaluated through the Wigner-Eckart theorem.
-It is important to note that $\beta_{ijk}$ does not have complete tensor index symmetry.\cite{Andrews1978}
-Specifically, it has shown that the rank one spherical tensor ($T_{q_1}^{(1)}$, with $q_1 \in \{-1, 0 ,1\}$) fully contributes to $\beta_{ijk}$ but only select $T_{q_2}^{(2)} + T_{q_3}^{(3)}$ terms contribute. \cite{Andrews1978, Altmann1982, Andrews1990}
-%there is some fancy way to note that theres no index constraint but i dont remember the language...
+It is important to note that $\beta_{ijk}$ does not have complete index symmetry.\cite{Andrews1978}
+Specifically, it has shown that $T_{q_1}^{(1)}$ fully contributes to $\beta_{ijk}$ but only select $T_{q_2}^{(2)}$ and  $T_{q_3}^{(3)}$ terms contribute. \cite{Andrews1978, Altmann1982, Andrews1990}
+%there is some fancy way to note that theres an index constraint but i dont remember the language... i think is fine
 As such, its decomposition into irreducible tensor form is allowed only if the values of $q_2, q_3$ are constrained.
 By substituting the spherical tensor definitions of $\vec{\mu}$ and $\beta_{ijk}$ into \autoref{sivebeta}, it is clear that only $\Delta J = \pm 1$ transitions are allowed, i.e., SIVE-IR features arise only from P or R branches (assuming the ground state is $\ket{g00}$).
 This is expected since $\vec{\mu}$ transitions demand $\Delta J = \pm 1$.
@@ -257,7 +257,7 @@ Resonant lineshapes are also complicated by amplitude level interference between
 
 Most quantitative methods in an n$^{th}$ order CMDS experiment are used to extract $\chi^{(n)}$ values to compare the relative strength of nonlinear processes in different media. \cite{Zhu87, RN351, RN345}
 The recorded $\chi^{(n)}$ values provide insight into how microscopic quantities ($\vec{\mu}, \alpha_{ij}, \beta_{ijk}$) impact nonlinear output.
-To our knowledge, only vibraitonal SFG and 2D-IR spectroscopy has taken advantage of orientationally averaged $\chi^{(n)}$ values to extract transition moments. \cite{Shen90, Moilanen2009, RN245}
+To our knowledge, only vibrational SFG and 2D-IR spectroscopy has taken advantage of orientationally averaged $\chi^{(n)}$ values to extract transition moments. \cite{Shen90, Moilanen2009, RN245}
 Previous treatments did not consider using quantitative analysis in SIVE to measure $\beta_{ijk}$ values from SIVE spectra.
 It is thus useful to investigate how a simple treatment of orientational averaging can extract $\beta_{ijk}$ from $\chi^{(3)}_{IJKL}$.
 
@@ -289,7 +289,7 @@ A key result of \autoref{betasive} is that the sign of $\frac{\partial \beta_{ij
 Since IR and spontaneous hyper-Raman spectroscopy report on $\Im(\chi^{(1)}) \sim \abs{\mu_{l}}^2$ and $\Im(\chi^{(5)}) \sim \abs{\beta_{ijk}}^2$,\cite{RN515} respectively, the absolute signs of $\frac{\partial \mu_{l}}{\partial q_n}$ and $\frac{\partial \beta_{ijk}}{\partial q_n}$ cannot be extracted from IR or hyper-Raman spectroscopy.
 These ideas can prove useful when assessing the validity of computational methods which report on the sign of $\frac{\partial \beta_{ijk}}{\partial q_n}$.
 Similar ideas were first introduced by Shen to extract the sign of $\frac{\partial \mu_{l}}{\partial q_n}$ from vSFG spectra.\cite{Shen90}
-SIVE and vSFG together provide a unique picture of extracting signs for the microscopic observables that drive nonlinear output.
+SIVE and vSFG together provide a unique picture of extracting signs for the microscopic quantities ($\mu, \alpha, \beta$) that drive nonlinear output.
 
 
 
@@ -359,7 +359,7 @@ Here, states are written assuming the Born-Oppenheimer approximation, such that 
 The goal of this section is to understand DR-SIVE-IR selection rules.
 We begin by inspecting the selection rules of a non-parametric DR-SIVE pathway (\autoref{fig:doubsive}I-a) in the driven limit. 
 The driven limit is useful as despite the sum over states approach, it avoids implications of ultrafast dephasing of the vibronic state.\cite{Cho2001} 
-For consistency with previous reports, we use $\vec{R}$ to denote electric transition dipole moments (not to be confused with the response function; $\mu$ is used for transitions between states on the ground electronic state.). \cite{Ziegler1974}
+For consistency with previous reports, we use $\vec{R}$ to denote electric transition dipole moments (not to be confused with the response function; $\vec{\mu}$ is used for transitions between states on the ground electronic state.). \cite{Ziegler1974}
 Following the approach which gave \autoref{sivegamma}, we find
 \begin{equation}\label{drgamma_notaylor}
 	\gamma_{ijkl} = -\frac{1}{\varepsilon_0} \frac{1}{24 \hbar^3} \sum_{m,n,v'} \frac{
@@ -410,7 +410,7 @@ Systems which provide strict parity induced selection rules (e.g., benzene) will
 
 \subsection{Line Narrowing in SIVE Spectroscopies}
 An unavoidable consequence in electronic spectroscopy is broadened lineshapes due to the inhomogeneity of electronic transitions (e.g., vibronic sidebands, molecular collisions). 
-Four wave mixing methods can line-narrow transitions and remove some impact of inhomogeneous broadening.\cite{Carlson1990line}
+Four wave mixing methods can line-narrow transitions, i.e., resolve inhomogeneous broadening.\cite{Carlson1990line}
 The line-narrowing properties of DR-SIVE are investigated so that the pathways which line-narrow correlated or anti-correlated modes (\textit{vide infra}) can be identified.
 SR-SIVE cannot linenarrow transitions as it is singly resonant. \cite{RN352}
 
@@ -426,7 +426,7 @@ To understand the impact of inhomogeneity on spectral output, we convolute an ou
 \begin{equation}\label{contour}
 	\rho_{ab} = \int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \rho_{ab}(\xi)
 \end{equation} 
-While Gaussian distributions are commonly used to describe inhomogeneous broadening,\cite{druet1979line, RN307, Ouellette1982} Lorentzian distributions have successfully described inhomogeneous broadening in a variety of spectroscopies and yield easily interpreted closed-form solutions. \cite{Penner1976, Desiderio1979, Dick83_1, Carlson1990line}
+While Gaussian distributions are used to describe inhomogeneous broadening,\cite{druet1979line, RN307, Ouellette1982} Lorentzian distributions have satisfactorily described inhomogeneous broadening in a variety of nonlinear spectroscopies and yield easily interpreted closed-form solutions to \autoref{contour}. \cite{Penner1976, Desiderio1979, Dick83_1, Carlson1990line}
 For clarity, we evaluate the linenarrowing characteristics of pathway Ia (\autoref{fig:doubsive}) in detail in Appendix.
 The results for all pathways in \autoref{fig:doubsive} are summarized in \autoref{T:correlated}.
 
@@ -445,8 +445,8 @@ The results for all pathways in \autoref{fig:doubsive} are summarized in \autore
 \end{table}
 
 Although \autoref{T:correlated} identifies that only Pathway I-a can line-narrow correlated modes, these results are only valid in limits where the input pulses only weakly populate excited states.
-When resonant pulses are significantly longer than the dephasing time of some state, then that state can become populated.
-A typical electronic dephasing time value is tens of femtoseconds. \cite{RN131}
+When resonant pulses are significantly longer than the dephasing rate of some state, then that state can become populated.
+A typical electronic dephasing rate is tens of femtoseconds. \cite{RN131}
 Excited state population effects become important for understanding the spectroscopy of electronic states when using input pulses with relatively long pulsewidths ($\gtrsim$ 500 fs). \cite{RN319, Yurs2011}
 First seen in fifth order perturbation theory in isotropic media ($\chi^{(5)}$ processes), excited state populations can populate other modes, including the ground state and other vibrational/vibronic modes, inducing higher order processes.\cite{Carlson87, RN471}
 These feeding mechanisms can induce line-narrowing properties in spectroscopies that cannot line-narrow in third order perturbation theory.\cite{Ouellette1982, RN319, Carlson87, RN471, RN410}
@@ -460,12 +460,12 @@ Excited state populations become important when considering experiments using th
 	\caption{
 		(a,c) Singly Resonant SIVE (SR-SIVE) and (b,d) Doubly Resonant SIVE (DR-SIVE) response of CNCbl using the $-\vec{k}_1 + 2\vec{k}_2$ and $\vec{k}_1 + 2\vec{k}_2$ phasematching geometries, respectively.
 		Here, $\omega_2 = 8000$ cm$^{-1}$.
-		$\omega_1$ is stepped in 10 $^{-1}$ intervals.
+		$\omega_1$ is stepped in 10 cm$^{-1}$ intervals.
 		The spectra are smoothed and power-normalized for frequency dependent power fluctuations during the scan.
 		Gray pixels indicate spectral noise.
 		The blue trace in (a), (b) corresponds to the spectrum at $\tau_{12}$ = 0 in (c,d), respectively.
 		The red trace is an FT-IR spectrum of CNCbl, sourced from NIST. 
-		All spectra are normalized to their most intense feature on $\omega \in [1300, 1700]$ cm$^{-1}$.}
+		The spectra are normalized to their most intense feature on $\omega \in [1300, 1700]$ cm$^{-1}$.}
 	\label{fig:cobsive}
 \end{figure*}
 
@@ -583,7 +583,7 @@ Following \autoref{fig:contours}, the contour that wraps the upper half of the c
 In words, we see the inhomogeneous envelope width $\sigma$ is added to the linewidth of each resonance (e.g., $\Gamma_{ba} \rightarrow \Gamma_{ba} + \sigma$).
 Therefore, pathway I-a cannot linenarrow anti-correlated modes. 
 \subsubsection{Correlated Modes}
-For correlated modes, the poles are situated in the complex plane as shown in \autoref{fig:contours}.
+For correlated modes, the poles are situated in the complex plane as shown in \autoref{fig:contours}b.
 It is clear that no matter which contour is chosen, there is a contribution to the final integral from either $\Delta_{ba}(0)$ or $\Delta_{ga}(0)$. 
 For the below calculation, we choose to evaluate along the contour in the bottom half of the complex plane, i.e., the poles ($\xi_k$) are $-i\sigma, \Delta_{ga}$.
 We stress that since the integral is evaluated over $\mathbb{R}$ and there are no degenerate poles, the results below can be obtained by evaluating the contour which wraps around the poles $i\sigma, \Delta_{ba}$ using the Residue theorem as 
