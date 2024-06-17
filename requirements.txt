@@ -5,3 +5,4 @@ attune == 0.4.5
 click
 progress
 docutils
+openpyxl
