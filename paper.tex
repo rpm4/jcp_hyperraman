@@ -34,11 +34,10 @@ Most of these methods rely on infrared or Raman transitions to generate output.
 The implementation of a nonlinear hyper-Raman spectroscopy, which first appears at third order perturbation theory, can provide a useful analogue to these techniques to understand the spectroscopy and dynamics of isotropic systems.
 Singly Vibrationally Enhanced (SIVE) spectroscopy, a type of nonlinear hyper-Raman spectroscopy, is an underdeveloped four wave mixing technique which shows promise as a method to disentangle ultrafast vibrational dynamics in isotropic systems without need for anharmonicities.
 %alternate name is hyper-(S/D)FG... which is more interesting and descriptive than SIVE imo. lmk your thoughts
-We derive selection rules and coherent interference effects in singly resonant SIVE (SR-SIVE).
-The theory of SR-SIVE is extended to account for vibronic coupling induced by two-photon absorption, i.e. doubly resonant SIVE (DR-SIVE), akin to a resonant hyper-Raman process. 
+We derive selection rules for singly resonant SIVE (SR-SIVE) and demonstrate that SR-SIVE response extracts hyper-Raman polarizabilities ($\beta$).
+The SIVE output is shown to be slightly stronger than vibrational sum frequency generation (vSFG), heavily driven by the number density probed by each process. 
+The theory of SIVE is extended to account for vibronic coupling induced by two-photon absorption, i.e. doubly resonant SIVE (DR-SIVE), akin to resonant hyper-Raman spectroscopy. 
 DR-SIVE is shown to be a type of resonance IR spectroscopy and is likely able to resolve vibronic coupling.
-The linenarrowing abilities of DR-SIVE are discussed.
-We showcase the difference in selection rules of SR-SIVE and DR-SIVE through a study of cyanocobalamin, highlighting the sensitivity of these measurements on non-resonant and resonant hyper-Raman hyperpolarizabilities, respectively.
 \end{abstract}
 
 \maketitle
@@ -86,32 +85,8 @@ This is akin to sum and difference frequency generation (SFG, DFG) being coheren
 We investigate properties of doubly resonant SIVE (DR-SIVE) to understand how coupling between vibrational and vibronic states can be measured through DR-SIVE.
 DR-SIVE is shown to demand one and two-photon absorptions between the ground and excited state.
 DR-SIVE is thus the four wave mixing analogue of doubly resonant infrared-visible sum frequency generation. \cite{Shen94}
-Based upon these selection rules, we investigate SR-SIVE and DR-SIVE spectroscopy of cyanocobalamin, highlighting the applicability of these methods to non-model systems.
 
-\section{Experimental Methods}
-The ultrafast laser system has been described in detail elsewhere. \cite{RN278, Kaufman2024}
-Briefly, an 80 MHz Ti-Sapphire ultrafast oscillator  (Spectra-Physics Tsunami) created 35 fs seed pulses, amplified by a 1 kHz regnerative amplifier (Spectra-Physics Spitfire Ace) to approximately 0.5 W.
-A mask in the regenerative amplifier stretched the input pulses to roughly 1 ps.
-The resultant output was used to pump four independent OPAs, two of which are relevant for this study.
-OPA1 (TOPAS-800, Light Conversion), referred to as $\omega_1$, was tuned for difference frequency generation (DFG) with an external stage (NDFG ``DF2'', Light Conversion).
-OPA2 (OPA-800C, Spectra Physics), referred to as $\omega_2$, was tuned in its signal arrangement. 
-Grating and crystal positions in OPA1 was externally controlled using \texttt{WinTOPAS} (Light Conversion).
-Grating and BBO crystal positions in OPA2 were computer controlled through communication with 50 mm DC actuators (PMC). %todo: who tf makes PMC motors?
-The OPAs were independently tuned through the \texttt{Attune} package, controlled by the \texttt{yaqc} and \texttt{Bluesky} packages. \cite{RN414, RN386, SkyeOPA, KyleOPA}
-The power spectra and tuning results are found in Figure X. %todo: actually graph these
-Movable retroreflectors (Thorlabs) controlled by 50 mm DC actuators (PMC) are used to measure coherence dynamics.
-The beams are focused into the sample in a BOXCARS geometry.\cite{RN308, Kaufman2024}
-To enforce frequency dependent temporal pulse overlap, the maximum points of a third order cross correlation between $\omega_1$ and $\omega_3$ measured in CaF$_2$ were used to generate frequency dependent zero delay values.
-The nonlinear output was isolated through chopping schemes and a set of spatial apertures, directed into a monochromator (Horiba Micro-HR) and homodyne detected through a photomultiplier tube (Hamamatsu H7422-20), recorded and converted to digital output using a data acquisition unit (National Instruments).
-\textit{in-situ} power corrections are performed by dividing the recorded spectra by OPA output measured by home-built pyroelectric detectors.
-All spectra are reported on the intensity scale. %@dan if we should change to amp lmk
-
-The cyanocobalamin (CNCbl) [DOT Scientific inc., CAS no. 68-19-9] samples were prepared as drop casted thin films.
-CNCbl was dissolved in methanol (MeOH) [Fisher Scientific, HPLC Grade, CAS no. 67-56-1] until a concentrated solution was formed (concentration $\sim$ 10 mg CNCbl/ mL MeOH). 
-All chemicals were used as obtained without further purification.
-The solution was deposited on a microscope coverslip and allowed to dry in a dessicator until a thin layer was formed.
-
-\section{Properties of SIVE Spectroscopy}
+\section{Results and Discussion}
 Singly resonant SIVE (SR-SIVE) spectroscopy has potential to provide deeper insight into single quantum decoherence times and molecular orientation in condensed systems.
 Similarities between SR-SIVE spectroscopy, infrared spectroscopy and spontaneous hyper-Raman scattering have been noted previously. \cite{RN352, Bonn2024}
 In this section, we make the connections between SIVE and hyper-Raman scattering explicit and remark on the properties of SIVE that become apparent after inspecting the selection rules.
@@ -139,28 +114,13 @@ where N is a number density, F is the Lorentz local field factor, and $\gamma_{i
 The brackets indicate an orientational average. 
 Uppercase letters refer to laboratory frame coordinates and lower case letters refer to molecular frame coordinates.
 
-Note that we choose the convention where an arbitrary electric field, assuming a plane wave, is written in Fourier components as 
-\begin{equation}
-	\vec{E}(\omega) = \frac{1}{2} \vec{E}_0 \exp(i(\vec{k}\cdot\vec{x} - \omega t)) + c.c.
-\end{equation}
-where $E_0$ is the pulse amplitude and $\vec{k}$ is a wavevector.
-%maybe talk about maxwell wave eqn for e fields ?
-Expressions for $\gamma_{ijkl}$ can be found by solving Liouville-von Neumann equation for an output density matrix element $\rho_{ij}$.
-Generally, under the electric dipole approximation, the density matrix, $\bar{\rho}(t)$, is propagated through the Liouville-von Neumann equation as \cite{RN455}
-\begin{equation}\label{matrix}
-	\dot{\bar{\rho}}(t) = \frac{1}{i \hbar}[H_0 - \vec{\mu}\cdot \sum_j E_j(\vec{x},t), \bar{\rho}(t)] + \bar{\Gamma} \bar{\rho}(t)
-\end{equation} %check if bar or double bar
-where $H_0$ is the system (time independent) Hamiltonian, $\vec{\mu}$ is the electric transition dipole moment, $\vec{E}(\vec{x},t)$ is a time dependent electric field, and the elements of $\bar{\Gamma}$, $\Gamma_{ij}$, are dephasing rates. 
-In the rotating frame, $\tilde{\rho}_{ij} = \rho_{ij} e^{-i \omega_{ij}t}$.
-By solving \autoref{matrix} under steady state ($\dot{\bar{\rho}}(t) = 0$) in the rotating frame, expressions for $\gamma_{ijkl}$ can be readily obtained by multiplying the output dipole moment, $\mu_i$ by the final density matrix element $\tilde{\rho}_{ij}$. 
-
 \subsection{Vibrational SR-SIVE Selection Rules}
 To make the connection between SR-SIVE and hyper-Raman scattering, we investigate the gross selection rules of SR-SIVE-IR.
 By propagating density matrix elements in the steady state limit, the SIVE hyperpolarizability is \cite{RN119}
 \begin{equation}\label{sivegamma}
 		\gamma_{ijkl} =	- \sum_{m, n} \frac{1}{\varepsilon_0} \frac{1}{4D} \frac{1}{\hbar^3} \frac{\mu^{i}_{v n} \mu^{j}_{nm} \mu^{k}_{mg} \mu^{l}_{gv} }{\Delta_{nv} \Delta_{mv}\Delta_{gv}}  \rho_{gg}
 \end{equation}
-where: $\mu^{j}_{ab}$ is the $j^{th}$ element of $\mel{a}{\vec{\mu}}{b}$, $\Delta_{kl} = \omega_{kl} - \omega_{j} - i\Gamma_{kl}$, $\omega_j$ is the frequency of the j$^{th}$ input field, $\Gamma_{kl}$ is the dephasing of $\rho_{kl}$ and $\rho_{gg}$ is the ground state density.
+where: $\mu^{j}_{ab}$ is the $j^{th}$ element of $\mel{a}{\vec{\mu}}{b}$, $\Delta_{kl} = \omega_{kl} - \omega_{j} - i\Gamma_{kl}$, $\omega_j$ is the frequency of the j$^{th}$ input field, $\Gamma_{kl}$ is the dephasing of $\rho_{kl}$ and $\rho_{gg}$ is the ground state population.
 For simplicity, we consider the results for the process diagrammed in \autoref{fig:sivewmel}a, but by multiplying by (-1) and taking a complex conjugate, which arise from the bra-side transition in \autoref{fig:sivewmel}a, results for the \autoref{fig:sivewmel}b  process are obtained.
 Note that $\omega_j \rightarrow -\omega_j$ for a bra side transition.
 D, the Maker-Terhune degeneracy factor, accounts for permutation symmetry in $\gamma_{ijkl}$ and is defined as $\frac{n!}{(n-m)!}$, where $n$ is the total number of input fields (3 for any four wave mixing experiment) and $m$ is the number of distinguishable input fields.\cite{RN134} 
@@ -197,7 +157,17 @@ A useful attribute of this selection rule is the added ability of polarization c
 Similar to polarization control in second harmonic and sum frequency generation experiments which probe different elements of the infrared transition dipole and Raman polarizability tensor,\cite{Heinz1982} probing different elements of the hyperpolarizability tensor in SR-SIVE can greatly assist in understanding ultrafast dynamics in isotropic systems. \cite{Shen90, Bonn2024}
 Polarization control in IR-pump-SIVE-probe, analogous to ultrafast transient absorption spectroscopy, would be an interesting venue to assess the sensitivity of SR-SIVE to different hyper-Raman tensor elements.
 
-To motivate the application of SIVE spectroscopy, we perform an approximate calculation to compare the output of parametric SIVE-IR (\autoref{fig:sivewmel}b) to that of vibrational SFG (vSFG) spectroscopy.
+\subsection{Comparison to Sum Frequency Generation}
+Since the hyper-Raman process is effectively a two-photon process, a setup using only two lasers can perform the SIVE experiment by investigating $\pm \vec{k}_1 + 2\vec{k}_2$ processes.
+The other commonly used two laser CMDS method is sum frequency generation, a $\chi^{(2)}$ technique, whose phasematching is dictated by $\vec{k}_1 + \vec{k}_2$.
+The SFG output scales as $\chi^{(2)}_{IJK} \sim \langle \alpha_{ij} \mu_k \rangle$, where $\alpha_{ij}$ is the Raman polarizability tensor.
+Since SFG is dependent upon transitions that transform like both rank-one and rank-two tensors, this enforces a microscopic constraint that SFG cannot yield output for centrosymmetric species under the electric dipole moment.
+This follows from simple parity arguments, where inversion centers demand states possess distinct parity selection rules. \cite{RN230}
+Macroscopically, inversion symmetry in the output polarization eliminates output from centrosymmetric species under the electric dipole approximation.
+As a result, the output of SFG is significantly reduced relative to most third order spectroscopies because the output only depends on surface species.
+However, since SIVE spectroscopy is dependent upon a hyper-Raman transition, it is useful to compare the relative output of the two processes to identify how SIVE output compares to SFG.
+
+To motivate the application of SIVE spectroscopy, we perform a calculation to compare the output of parametric SIVE-IR (\autoref{fig:sivewmel}b) to that of vibrational SFG (vSFG) spectroscopy.
 Absorption effects are neglected for simplicity.
 \begin{widetext}
 To allow comparison between the two methods, the output polarizations of each process is written as
@@ -209,7 +179,7 @@ To allow comparison between the two methods, the output polarizations of each pr
 			\abs{P^{(3)}_{\text{SIVE}}} = N_{bulk}  F(\omega_1+\omega_2 +\omega_3) \abs{\langle \beta_{ijk} \mu_{l} \rangle E_J{(\omega_3)}E_K(\omega_2)E_L(\omega_1)} \ell_{eff}
 		\end{equation}
 	\end{subequations}
-where $\alpha_{ij}$ is the Raman polarizability, N$_{bulk}$ is the bulk number density, and N$_{surf}$ is the surface number density (10$^{19}$ m$^{-2}$).\cite{RN133, RN503}	
+where N$_{bulk}$ is the bulk number density, and N$_{surf}$ is the surface number density (10$^{19}$ m$^{-2}$).\cite{RN133, RN503}	
 For liquids with molar masses less than $\sim$100 g mol$^{-1}$ and densities roughly equal to that of H$_2$O$_{(l)}$ at room temperature, N$_{bulk} \sim$ 10$^{28}$ m$^{-3}$.
 We take the bulk optical interaction length ($\ell_{eff}$) to be 10 $\mu$m.\cite{RN133} %see chapter 25 of Shen's NLO book... idk something here seems wrong
 A normal dispersion curve is assumed so that $F(\omega_1+\omega_2) \approx F(\omega_1+\omega_2 +\omega_3)$.
@@ -229,25 +199,10 @@ In this limit,
 Since the intensity ratio scales as $\abs{P_{ratio}}^2$, we see that the SIVE output is somewhat stronger than vibrational SFG, assuming only interfacial contributions in vSFG.
 It is important to note that this derivation ignored absorption and orientational averaging effects, which can significantly reduce output from either process. 
 
-\subsection{Rovibrational SR-SIVE Selection Rules} %this can probably be deleted but wanted to add just in case...
-Recent developments in nonlinear spectroscopy have demonstrated the feasibility of multidimensional infrared spectroscopy of gaseous and quasi-free species. \cite{Ziegler2018, Gronborg2022, RN325, Chen2024}
-DOVE and 2D-IR have been used to isolate coupling between fundamentals, overtones and combination bands of gaseous species in several molecular systems. 
-Since resonance hyper-Raman scattering spectroscopy was developed as a gas phase spectroscopy,\cite{RN515} we briefly investigate the properties of rovibrational SR-SIVE.
-In the discussion that follows, to avoid integration over velocity dependent distributions, we assume the experiment is performed at 0 K.
-The velocity dependence of output density matrix elements does not manipulate quantum mechanical selection rules. \cite{Bracamonte2003}
 
-The rovibrational selection rules are generated through calculating \autoref{sivebeta} in a $\ket{vJM} \equiv \ket{v} \otimes {\ket{JM}}$ basis, where $\{\ket{v}\}$ is a basis of vibrational states and $\{\ket{JM}\}$ is a basis of rotational states ($J$ is the total angular momentum and $M$ is its projection onto the space fixed quantization axis).
-By writing $\vec{\mu} = T_{q_1}^{(1)}$ and $\beta_{ijk} = T_{q_1}^{(1)} + T_{q_2}^{(2)} + T_{q_3}^{(3)}$, where $T^{(k)}_{q}$ is a rank $k$ spherical tensor, the matrix elements in \autoref{sivebeta} can be evaluated through the Wigner-Eckart theorem.
-It is important to note that $\beta_{ijk}$ does not have complete index symmetry.\cite{Andrews1978}
-Specifically, it has shown that $T_{q_1}^{(1)}$ fully contributes to $\beta_{ijk}$ but only select $T_{q_2}^{(2)}$ and  $T_{q_3}^{(3)}$ terms contribute. \cite{Andrews1978, Altmann1982, Andrews1990}
-%there is some fancy way to note that theres an index constraint but i dont remember the language... i think is fine
-As such, its decomposition into irreducible tensor form is allowed only if the values of $q_2, q_3$ are constrained.
-By substituting the spherical tensor definitions of $\vec{\mu}$ and $\beta_{ijk}$ into \autoref{sivebeta}, it is clear that only $\Delta J = \pm 1$ transitions are allowed, i.e., SIVE-IR features arise only from P or R branches (assuming the ground state is $\ket{g00}$).
-This is expected since $\vec{\mu}$ transitions demand $\Delta J = \pm 1$.
-As a result, consistent with vibrational SR-SIVE, rovibrational SR-SIVE follows the same rules as common infrared rovibrational spectroscopy.
 
 \subsection{Quantitative SR-SIVE}
-With the selection rules of SR-SIVE understood for vibrational and rovibrational spectroscopy, it becomes possible to extract quantitative information from SIVE spectra to compare to incoherent methods and other CMDS methods.
+With the selection rules of SR-SIVE understood for vibrational spectroscopy, it becomes possible to extract quantitative information from SIVE spectra to compare to incoherent methods and other CMDS methods.
 Lineshape analysis is essential for extracting quantitative information from CMDS spectra.
 Scanning across resonances create dispersive lineshapes, i.e, self-heterodyning, which inform on $\Re(\chi^{(3)})$ and $\Im(\chi^{(3)})$.\cite{Levenson1974_1, Levenson1974_2}
 In the method introduced by Levenson and Bloembergen (Bloembergen Interferometry Experiment), an internal standard interferes with the resonant lineshape.
@@ -290,56 +245,6 @@ Since IR and spontaneous hyper-Raman spectroscopy report on $\Im(\chi^{(1)}) \si
 These ideas can prove useful when assessing the validity of computational methods which report on the sign of $\frac{\partial \beta_{ijk}}{\partial q_n}$.
 Similar ideas were first introduced by Shen to extract the sign of $\frac{\partial \mu_{l}}{\partial q_n}$ from vSFG spectra.\cite{Shen90}
 SIVE and vSFG together provide a unique picture of extracting signs for the microscopic quantities ($\mu, \alpha, \beta$) that drive nonlinear output.
-
-
-
-\subsection{Coherent Interference in SR-SIVE}
-It is well known that nonlinear wave mixing processes which share the same time ordering and output frequency will interfere. \cite{RN135, Bonn2024}
-Understanding interfering pathways is useful because they can, in some cases, eliminate output. \cite{RN342, RN135}
-The WMEL diagrams presented in \autoref{fig:sivewmel} outline resonant SIVE processes when the infrared pulse $(\omega_1)$ is resonant with a vibrational mode. 
-However, if $\omega_2$ becomes vibrationally resonant and $\omega_1$ is non-resonant, then other SIVE pathways appear.\cite{McDonnell2024} 
-While the methods in \autoref{fig:sivewmel2} possess identical selection rules to \autoref{fig:sivewmel}, the WMEL diagrams presented in \autoref{fig:sivewmel2} may significantly interfere with DOVE-IR and DOVE-Raman spectra.
-The time ordering in DOVE-IR and DOVE-Raman spectra is used to interpret anharmonicities, as DOVE-IR and DOVE-Raman destructively interfere when outputs are at the same frequency. \cite{RN135, RN324}
-It is therefore important to understand how the corresponding SIVE pathways interfere.
-To this end, we investigate how the SIVE-IR-II and SIVE-Raman pathways (\autoref{fig:sivewmel2}a, b, respectively) interfere under the rotating wave approximation. 
-
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=3.375in]{wmel2.png}
-	\caption{Wave Mixing Energy Level (WMEL) diagrams of interfering SR-SIVE pathways in the  $\vec{k}_4 = -\vec{k}_1 + \vec{k}_2 + \vec{k}_3$ phasematching geometry. 
-	(a) is similar to the process diagrammed in \autoref{fig:sivewmel}, whereas (b) is similar to a coherent anti-Stokes Raman (CARS)-type process.}
-	\label{fig:sivewmel2}
-\end{figure}
-\begin{widetext}
-We employ the response function formalism of Mukamel for this analysis. \cite{RN287}
-The third order response functions, $R^{(3)}$, for SR-SIVE-IR-II ($R^{(3)}_{S_{II}}$) and SR-SIVE-Raman ($R^{(3)}_{R}$) (\autoref{fig:sivewmel2}a, b), suppressing tensor indices, are 
-\begin{subequations}
-	\begin{equation} \label{mixing:a}
-		R^{(3)}_{S_{II}} (t_2) = -\frac{i}{\hbar} [\beta(t_2), \mu(0)] \exp(-i\Delta_{v''g}t_2) \theta(t_2)
-	\end{equation}
-	\begin{equation}\label{mixing:b}
-		\begin{split}
-			R^{(3)}_{R} (t_2) & = \frac{i}{\hbar} [\beta(t_2), \mu(0)] \exp(-i\Delta_{v''g}t_2) \theta(t_2) = - R^{(3)}_{S_{II}} (t_2)\\
-		\end{split}
-	\end{equation}
-\end{subequations}
-By assuming that the fields which stimulate hyper-Raman scattering, $\vec{E}_1, \vec{E}_3$, interact simultaneously at some time $\tau$ after $\vec{E}_2$ interacts with the sample, the total output polarization, $\vec{P}^{(3)}(t)$, is written as \cite{Cho2001}
-	\begin{equation}\label{polarization_SRSIVE_a}
-		\begin{split}
-			\vec{P}^{(3)}(t) &= \vec{P}_{S_{II}}(t) + \vec{P}_{R}(t)\\
-			&= \int_0^\infty \mathrm{d}t_2 (R^{(3)}_{S_{II}} (t_2) + R^{(3)}_{R} (t_2))\vdots \vec{E}_3(t) \vec{E}_1(t) \vec{E}_2(t-t_2 + \tau)\\
-			&= \int_0^\infty \mathrm{d}t_2 (R^{(3)}_{S_{II}} (t_2) - R^{(3)}_{S_{II}} (t_2))\vdots \vec{E}_3(t) \vec{E}_1(t) \vec{E}_2(t-t_2 + \tau) \\
-			&= 0
-		\end{split}
-	\end{equation}
-It is clear the total output polarization for SR-SIVE-IR-II and SR-SIVE-Raman vanishes, or, SR-SIVE-IR-II and SR-SIVE-Raman perfectly destructively interfere.
-\end{widetext}
-The absence of SR-SIVE-IR-II pathways in ultrafast DOVE work is rationalized by this calculation. \cite{RN367, McDonnell2024}
-In the case of the time ordered SR-SIVE-IR-I pathway, there are no opportunities for interference as all other pathways are nonresonant with the first interaction. 
-A possible mechanism for interfering output in the SR-SIVE-I pathway are cascaded second order processes (SFG, DFG). \cite{RN243, RN300}
-In isotropic media, SFG and DFG vanish under the electric dipole approximation,\cite{Zhu87} so cascades are unlikely to inhibit output in centrosymmetric media.
-In media where SFG and DFG are allowed, e.g. surfaces or noncentrosymmetric media, second order cascades may become important. 
-Generally, for nonlinear spectroscopies which share the same phasematching conditions as SR-SIVE (e.g., DOVE), it is useful to note that SR-SIVE-IR-I is not canceled, whereas SR-SIVE-IR-II and SR-SIVE-Raman permanently cancel.
 
 \begin{figure}[!htbp]
 	\centering
@@ -406,7 +311,7 @@ As such, the DR-SIVE methods discussed here are coherent, resonance hyper-Raman 
 This makes DR-SIVE a type of resonance IR spectroscopy, as introduced by Boyle et al.\cite{RN491} 
 However, in the methods described by \autoref{drgamma_alpha_0}, $|e)$ must be accessible through one and two photon transitions from $|g)$.
 Conversely, the resonance-IR method demonstrated by Boyle et al. only requires one photon transitions between $|g)$ and $|e)$.
-Systems which provide strict parity induced selection rules (e.g., benzene) will be useful for assessing the validity of these selection rules and comparing the method described here and that of Boyle et al. \cite{RN491}
+Systems which provide strict parity selection rules (e.g., benzene) will be useful for assessing the validity of these selection rules and comparing the method described here and that of Boyle et al. \cite{RN491}
 
 \subsection{Line Narrowing in SIVE Spectroscopies}
 An unavoidable consequence in electronic spectroscopy is broadened lineshapes due to the inhomogeneity of electronic transitions (e.g., vibronic sidebands, molecular collisions). 
@@ -452,83 +357,14 @@ First seen in fifth order perturbation theory in isotropic media ($\chi^{(5)}$ p
 These feeding mechanisms can induce line-narrowing properties in spectroscopies that cannot line-narrow in third order perturbation theory.\cite{Ouellette1982, RN319, Carlson87, RN471, RN410}
 Excited state populations become important when considering experiments using the methods in \autoref{fig:doubsive} with long pulsewidths or strong transition dipoles, as demonstrated on a variety of model systems using coherent Raman spectroscopies. \cite{Ouellette1982, RN471, RN338, Yurs2011} 
 
-\section{SIVE of cyanocobalamin}
-
-\begin{figure*}[!htbp]
-	\centering
-	\includegraphics[width=6.66in]{cob.png}
-	\caption{
-		(a,c) Singly Resonant SIVE (SR-SIVE) and (b,d) Doubly Resonant SIVE (DR-SIVE) response of CNCbl using the $-\vec{k}_1 + 2\vec{k}_2$ and $\vec{k}_1 + 2\vec{k}_2$ phasematching geometries, respectively.
-		Here, $\omega_2 = 8000$ cm$^{-1}$.
-		$\omega_1$ is stepped in 10 cm$^{-1}$ intervals.
-		The spectra are smoothed and power-normalized for frequency dependent power fluctuations during the scan.
-		Gray pixels indicate spectral noise.
-		The blue trace in (a), (b) corresponds to the spectrum at $\tau_{12}$ = 0 in (c,d), respectively.
-		The red trace is an FT-IR spectrum of CNCbl, sourced from NIST. 
-		The spectra are normalized to their most intense feature on $\omega \in [1300, 1700]$ cm$^{-1}$.}
-	\label{fig:cobsive}
-\end{figure*}
-
-To demonstrate the results of Equations \eqref{SIVEselection} and \eqref{drgamma_alpha_0} on realistic, non-model systems, we compare singly and doubly resonant SIVE spectra of cyanocobalamin in the 1300 - 1700 cm$^{-1}$ region to its infrared spectrum (\autoref{fig:cobsive}).
-Cyanocobalamin (CNCbl), or vitamin B$_{12}$ is an important form of cobalamin which forms functional coenzyme derivatives in humans.
-In addition to its important biological properties, CNCbl possesses a complex electronic structure.\cite{Stich2003}
-There has been a variety of spectroscopic studies on cyanocobalamin. 
-Most CNCbl spectroscopic studies are focused on the vibronic structure of its electronic states.\cite{Stich2003, RN276, Salerno2020, Elmendorf2023} 
-Here, we take advantage of the spectroscopic studies of CNCbl to interpret the SR-SIVE and DR-SIVE selection rules.
-To our knowledge, there are no reported resonance or non-resonance hyper-Raman spectra of CNCbl, which inhibits our analysis of the CNCbl SIVE spectra.
-
-The lowest energy electronic transition in cyanocobalamin, the $\alpha$ feature, is reported to be centered at roughly 18050 cm$^{-1}$ with a linewidth of approximately 1000 cm$^{-1}$. \cite{Stich2003, RN276}
-For the Placzek approximation to hold for SR-SIVE, the two photon absorption and resultant SIVE output in \autoref{fig:sivewmel} must be below $\sim$17000 cm$^{-1}$.
-A non-parametric pathway (\autoref{fig:sivewmel}a) is therefore used to experimentally collect singly resonant SIVE spectra.
-
-The singly resonant SIVE spectrum (blue trace, \autoref{fig:cobsive}a) has rather limited structure relative to its FT-IR spectrum (red trace, \autoref{fig:cobsive}a).
-The most intense feature is due to a vibrational mode situated at roughly 1585 cm$^{-1}$.
-Based upon its relative spectral width, this feature is likely comprised of multiple vibrational modes in close vicinity, consistent with the FT-IR spectrum and a previous TSF spectrum of CNCbl. \cite{RN276}
-This is confirmation that the selection rule presented in \autoref{SIVEselection} is appropriate for this method. 
-The FT-IR spectrum shows the presence of several strong modes in the 1430 - 1560 cm$^{-1}$ which are only weakly resolved in the SIVE spectrum.
-Since the input infrared beam is H polarized, it is possible that the IR pulses only weakly couples into those modes, resulting in limited output.
-
-More interesting are the modes present at $\sim$ 1340 - 1400 and 1510 cm$^{-1}$, strongly observable in the FT-IR spectrum. 
-At zero delay, these modes possess roughly 20\% SR-SIVE intensity as the 1585 cm$^{-1}$ mode.
-Considering the relative infrared strength of these modes, it is likely that the 1585 cm$^{-1}$ mode possesses significant hyper-Raman character, i.e., the rank 2 and 3 components of the $\beta_{ijk}$ operator for the 1585 cm$^{-1}$ mode are important.
-While non-resonant hyper-Raman studies on CNCbl are required to confirm these assignments, it appears that SIVE is a reasonable method for understanding higher order polarizabilities of infrared active modes without the need for complex hyper-Raman experiments.
-
-Unlike the singly resonant SIVE spectrum, the doubly resonant SIVE spectrum shows many vibrational modes in CNCbl, more consistent with the infrared spectrum (\autoref{fig:doubsive}b,d).
-Across the spectrum, the response at zero delay is significantly more intense than that of SR-SIVE,  
-likely due to the resonance hyper-Raman process.
-Resonance hyper-Raman scattering is known to increase spectral output by orders of magnitude relative to non-resonance hyper-Raman scattering in gaseous systems. \cite{RN515}.
-These spectra also indicate that the low lying electronic states of cobalamin are one and two photon allowed transitions, or, the lowest lying electronic state has mixed parity, as it accessible by operators that transform as odd (dipole) and even (two photon absorption) functions.
-
-A recent resonance Raman study on vibronic coupling in CNCbl highlights a mode at 1510 cm$^{-1}$ (labeled as $\nu_1$) which strongly couples to the low lying ($\alpha, \beta$) electronic states.\cite{Elmendorf2023}
-The same study suggests the mode at 1585 cm$^{-1}$ weakly couples to the $\alpha$ and $\beta$ states. 
-Conversely, the DR-SIVE spectrum of CNCbl instead suggests the opposite: the 1585 cm$^{-1}$ mode strongly couples to the $\alpha$ and $\beta$ states, whereas $\nu_1$ only slightly couples (\autoref{fig:cobsive}).
-This is identified through the relative intensity of the zero delay trace at 1510 and 1585 cm$^{-1}$ (\autoref{fig:cobsive}b).
-These differences likely arise due to the relative hyper-Raman cross sections of these modes.
-Since $\nu_1$ possesses a strong infrared cross section (\autoref{fig:cobsive}a), the weakness of $\nu_1$ in the SR-SIVE spectrum suggests it has a rather weak hyper-Raman cross section.
-The weakness of the $\nu_1$ singly resonant hyper-Raman cross section may rationalize its weakness in the DR-SIVE spectrum.
-
-In addition to the 1580 cm$^{-1}$ mode shown to significantly couple to electronic states, the modes at roughly 1340 - 1400 cm$^{-1}$ also show considerable intensity relative to the singly resonant spectrum.
-The resonance Raman study above indeed highlights a variety of modes in the 1340 - 1400 cm$^{-1}$ region responsible for this coupling, consistent with the observed spectral signatures in the zero delay trace of the DR-SIVE spectrum.\cite{Elmendorf2023}
-However, in the CNCbl resonance Raman study, these modes are only weakly coupled to the $\alpha$ and $\beta$ states.
-These modes accordingly have some sort of strong connection to the $\alpha$ and $\beta$ states that can only be resolved through hyper-Raman spectroscopy. 
-To understand these properties further, a resonance hyper-Raman study of CNCbl, and its comparison to a CNCbl resonance Raman study, is required. 
-
-Generally, the SR-SIVE and DR-SIVE spectra of CNCbl agree with previously reported spectra.
-Apparent differences in coupling between the vibrational and electronic/vibronic states to those found in resonance Raman studies likely arise from hyper-Raman selection rules. 
-A more thorough analysis of vibronic coupling involving these 1300 - 1500 cm$^{-1}$ modes in CNCbl is currently under investigation and will be published elsewhere. \cite{Kaufman2024_1}
-Generally, these preliminary studies demonstrate the feasibility of SIVE as a coherent analogue of hyper-Raman spectroscopy and motivate further resonant and non-resonant hyper-Raman studies on complex structures for quantitative use of SIVE.\cite{MyersKelley2008}
-
 \section{Conclusions}
 Coherent vibrational, hyper-Raman coherent four wave mixing spectroscopies are identified and discussed.
 Singly resonant SIVE (SR-SIVE) processes are shown to be the coherent hyper-Raman analogue of infrared active vibrations.
 Since SR-SIVE is always non-zero for IR active vibrations, the method could be used as an analytical method to optically upconvert infrared transitions with small transition dipoles.
 A method for measuring hyper-Raman polarizabilities, $\beta_{ijk}$, through SIVE spectroscopy was identified and discussed.
+Extracting the magnitude and sign of $\beta_{ijk}$ using SIVE methods can help assess the quality of theoretical methods which calculate hyper-Raman spectra. 
 Doubly resonant SIVE (DR-SIVE) processes show promise as a probe of vibronic coupling in molecular samples.
 Unlike SR-SIVE, DR-SIVE methods can linenarrow inhomogeneously broadened vibronic modes. 
-SR and DR-SIVE of cyanocobalamin (vitamin B$_{12}$) highlight the impact of hyper-Raman cross sections on SIVE output, and pave the way for future studies of complex phenomena in large molecular systems through two beam four wave mixing methods.
-
-\section{Data Availability Statement}
-The data and workup scripts that support this study are permissively licensed and available for reuse at https://osf.io/2amkq/. 
 
 \section{Acknowledgments}
 This work received support from the Department of Energy, Office of Basic Energy Sciences, Division of Materials Sciences and Engineering (Grant no. DE-SC0002162).
