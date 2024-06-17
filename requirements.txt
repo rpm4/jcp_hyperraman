@@ -1,8 +1,4 @@
 WrightTools
 pandas
 osfclient == 0.0.5
-attune == 0.4.5
 click
-progress
-docutils
-openpyxl
