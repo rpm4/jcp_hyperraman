@@ -9,4 +9,4 @@ paper.bbl
 paper.aux
 figures/cob.png
 *.wt5
-data/osfstorage/*
+data/osfstorage/**
