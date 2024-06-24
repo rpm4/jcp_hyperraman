@@ -1,4 +1,4 @@
-\documentclass[aip, jcp, reprint, twocolumn]{revtex4-2}
+\documentclass[aip, jcp, reprint, onecolumn]{revtex4-2}
 
 \bibliographystyle{apsrev4-2}
 
@@ -32,12 +32,13 @@ Nonlinear, four wave mixing vibrational spectroscopies are often used to probe i
 Three wave mixing vibrational spectroscopies are similarly used to understand the spectroscopy and dynamics of interfacial species.
 Most of these methods rely on infrared or Raman transitions to generate output. 
 The implementation of a nonlinear hyper-Raman spectroscopy, which first appears at third order perturbation theory, can provide a useful analogue to these techniques to understand the spectroscopy and dynamics of isotropic systems.
-Singly Vibrationally Enhanced (SIVE) spectroscopy, a type of nonlinear hyper-Raman spectroscopy, is an underdeveloped four wave mixing technique which shows promise as a method to disentangle ultrafast vibrational dynamics in isotropic systems without need for anharmonicities.
-%alternate name is hyper-(S/D)FG... which is more interesting and descriptive than SIVE imo. lmk your thoughts
-We derive selection rules for singly resonant SIVE (SR-SIVE) and demonstrate that SR-SIVE response extracts hyper-Raman polarizabilities ($\beta$).
-The SIVE output is shown to be slightly stronger than vibrational sum frequency generation (vSFG), heavily driven by the number density probed by each process. 
-The theory of SIVE is extended to account for vibronic coupling induced by two-photon absorption, i.e. doubly resonant SIVE (DR-SIVE), akin to resonant hyper-Raman spectroscopy. 
-DR-SIVE is shown to be a type of resonance IR spectroscopy and is likely able to resolve vibronic coupling.
+Hyper Difference Frequency Generation (hyper-DFG) spectroscopy, a type of nonlinear hyper-Raman spectroscopy also known as singly vibrationally enhanced spectroscopy (SIVE), is an underdeveloped four wave mixing technique which shows promise as a method to disentangle ultrafast vibrational dynamics in isotropic systems without need for anharmonicities.
+We derive selection rules for singly resonant hyper-DFG and demonstrate it provides a simpler method to extract hyper-Raman polarizabilities ($\beta$).
+The hyper-DFG output is shown to be slightly stronger than vibrational difference frequency generation (vSFG), heavily driven by the number density probed by each process. 
+We demonstrate the capabilities of hyper-DFG through probing the spectra and coherence dynamics of the $\nu$(CH) modes in CH$_3$CN.
+The theory of hyper-DFG is extended to account for vibronic coupling induced by two-photon absorption, i.e. doubly resonant hyper-Raman (DR-HDFG), akin to resonant hyper-Raman spectroscopy. 
+DR-HDFG is shown to be a type of resonance IR spectroscopy and is likely able to resolve vibronic coupling.
+
 \end{abstract}
 
 \maketitle
@@ -50,51 +51,53 @@ A particular class of CMDS methods, coherent Raman based four wave mixing spectr
 
 Not all CMDS methods are used to dissect intramolecular couplings.\cite{Shen1987_CPL}
 Singly vibrationally enhanced (SIVE) is a four wave mixing method which, when detuned from  electronic resonances, does not probe intramolecular couplings. 
-Non-parametric, singly resonant SIVE (SR-SIVE) spectroscopy was the first infrared CMDS method to successfully discriminate against non-resonant background.\cite{RN351, RN352}
-In SR-SIVE, an infrared pulse is resonant with a vibrational mode, and two other input pulses are used to induce a scattering process to provide output.
-SIVE was documented long ago to have characteristics similar to spontaneous hyper-Raman scattering spectroscopy. \cite{RN352}
+Non-parametric, hyper difference frequency generation (hyper-DFG) spectroscopy was the first infrared CMDS method to successfully discriminate against non-resonant background.\cite{RN351, RN352}
+Hyper-DFG has also been refered to as singly vibrationally enhanced (SIVE) spectroscopy. \cite{RN351}
+In hyper-DFG, an infrared pulse is resonant with a vibrational mode, and two other input pulses are used to induce a scattering process to provide output.
+Hyper-DFG was documented long ago to have characteristics similar to spontaneous hyper-Raman scattering spectroscopy. \cite{RN352}
 Hyper-Raman scattering is the two photon analogue to Raman scattering. \cite{Cyvin1965, Terhune1965}
 Compared to Raman spectroscopy, hyper-Raman scattering cross sections are often small, making it a difficult technique to successfully implement.\cite{RN515, Kelley2010} 
 The different selection rules of hyper-Raman scattering, however, make it a unique alternative to Raman scattering to understand vibrational spectra and vibronic coupling in molecular systems.
 In 1998, Cho et al. proposed a parametric six wave mixing technique which was the coherent analogue of hyper-Raman scattering. \cite{Cho1998}
 However, since most six wave mixing methods cascade into four wave mixing processes,\cite{RN243, Cho2000_Cascade} it is preferable to investigate coherent four wave mixing analogues to hyper-Raman scattering.
 
-While SIVE showed promise as an upconverted infrared spectroscopy method, it was quickly supplemented by a doubly vibrationally resonant method, doubly vibrationally enhanced (DOVE) spectroscopy, to investigate intra- and intermolecular vibrational coupling. \cite{RN345, RN101, Cho2000}
-As a result, investigations of SIVE stagnated; to date, there are less than a dozen studies which report on SR-SIVE. \cite{RN350, RN416, RN351, RN352, RN353, Chen1998, RN362, RN418, Bonn2024, McDonnell2024}
-Recent reports highlight non-negligible SIVE interference in DOVE experiments as well as the suitability of SIVE pathways to interpret ultrafast relaxation dynamics in isotropic systems. \cite{Bonn2024, McDonnell2024}
-These reports motivate deeper analysis on the properties of SIVE spectroscopy. 
+While hyper-DFG showed promise as an upconverted infrared spectroscopy method, it was quickly supplemented by a doubly vibrationally resonant method, doubly vibrationally enhanced (DOVE) spectroscopy, to investigate intra- and intermolecular vibrational coupling. \cite{RN345, RN101, Cho2000}
+As a result, investigations of hyper-DFG stagnated; to date, there are less than a dozen studies which report on hyper-DFG. \cite{RN350, RN416, RN351, RN352, RN353, Chen1998, RN362, RN418, Bonn2024, McDonnell2024}
+Recent reports highlight non-negligible hyper-DFG interference in DOVE experiments as well as the suitability of hyper-DFG pathways to interpret ultrafast relaxation dynamics in isotropic systems. \cite{Bonn2024, McDonnell2024}
+These reports motivate deeper analysis on the properties of hyper-DFG spectroscopy. 
 
 Fully coherent, ultrafast probes of vibronic coupling would yield insight into processes that control ultrafast electronic relaxation in molecular and biological systems. \cite{Bredenbeck2015, Arsenault2021}
 Some years ago, Cho proposed a parametric, doubly resonant infrared/visible pathway to probe vibronic coupling in isotropic systems. \cite{Cho2001}
 In this method, a single infrared pulse is resonant with a vibrational mode, and a two photon absorption event from a near infrared (NIR) or visible pulse resonant with an electronic or vibronic state is used to generate the four wave mixing signal.
-These pathways are referred to herein as DR-SIVE.
-Methods analogous to DR-SIVE, where two photon absorption from the infrared pulse and single photon absorption from the visible pulse is used to generate output, i.e., stimulated Raman processes, have been reported. \cite{RN301, RN120} 
+These pathways are referred to herein as doubly resonant hyper-DFG (DR-HDFG).
+Methods analogous to DR-HDFG, where two photon absorption from the infrared pulse and single photon absorption from the visible pulse is used to generate output, i.e., stimulated Raman processes, have been reported. \cite{RN301, RN120} 
 
 An experimental complexity in executing four wave mixing experiments is the demand of three separate input pulses, often all at different frequencies.
 For example, in the case of DOVE, two of the three input pulses must be scanable infrared pulses. \cite{RN345} 
 Only recently have methods been developed for seamless tuning and scanning of ultrafast optical parametric amplifiers across swaths of frequency space. \cite{RN162, McDonnell2024, SkyeOPA, KyleOPA}
-Since SR-SIVE demands only a single resonance to be scanned, the experiment can be performed using two input pulses: one tunable, infrared OPA to scan across vibrational resonances, and a two photon absorption from the signal process of a separate OPA, or output from the oscillator which pumps the infrared OPA.
-As such, laboratories experienced in sum frequency generation (SFG) spectroscopy can perform SIVE spectroscopy to understand bulk dynamics and spectroscopy using nearly the same setup.\cite{Shen1987_CPL}
+Since HDFG demands only a single resonance to be scanned, the experiment can be performed using two input pulses: one tunable, infrared OPA to scan across vibrational resonances, and a two photon absorption from the signal process of a separate OPA, or output from the oscillator which pumps the infrared OPA.
+As such, laboratories experienced in sum frequency generation (SFG) spectroscopy can perform HDFG spectroscopy to understand bulk dynamics and spectroscopy using nearly the same setup.\cite{Shen1987_CPL}
 
-Inspired by recent work which demonstrated the presence of SIVE in ultrafast DOVE experiments,\cite{McDonnell2024} we investigate the parameters which result in both SR and DR-SIVE output. \cite{Cho2000, Bonn2024}
-We develop simple expressions which relate transition dipoles and hyper-Raman polarizabilties and the overall SR-SIVE output, yielding gross selection rules. 
-It is shown that a SIVE active mode must be both IR and hyper-Raman active.
-Since any IR active vibration is also hyper-Raman active, \cite{Andrews1978} we demonstrate that SIVE is a coherent analogue of hyper-Raman scattering spectroscopy for IR active vibrations, i.e., SIVE is an optically upconverted infrared spectroscopy.
+Inspired by recent work which demonstrated the presence of HDFG in ultrafast DOVE experiments,\cite{McDonnell2024} we investigate the parameters which result in both SR and DR-SIVE output. \cite{Cho2000, Bonn2024}
+We develop simple expressions which relate transition dipoles and hyper-Raman polarizabilties and the overall HDFG output, yielding gross selection rules. 
+It is shown that a HDFG active mode must be both IR and hyper-Raman active.
+Since any IR active vibration is also hyper-Raman active, \cite{Andrews1978} we demonstrate that HDFG is a coherent analogue of hyper-Raman scattering spectroscopy for IR active vibrations, i.e., HDFG is an optically upconverted infrared spectroscopy.
 This is akin to sum and difference frequency generation (SFG, DFG) being coherent Raman analogues for IR active vibrations. \cite{Shen90}
 
-We investigate properties of doubly resonant SIVE (DR-SIVE) to understand how coupling between vibrational and vibronic states can be measured through DR-SIVE.
-DR-SIVE is shown to demand one and two-photon absorptions between the ground and excited state.
-DR-SIVE is thus the four wave mixing analogue of doubly resonant infrared-visible sum frequency generation. \cite{Shen94}
+We investigate properties of DR-HDFG to understand how coupling between vibrational and vibronic states can be measured.
+DR-HDFG is shown to demand one and two-photon absorptions between the ground and excited state.
+DR-HDFG is thus the four wave mixing analogue of doubly resonant infrared-visible sum frequency generation. \cite{Shen94}
 
-\section{Results and Discussion}
-Singly resonant SIVE (SR-SIVE) spectroscopy has potential to provide deeper insight into single quantum decoherence times and molecular orientation in condensed systems.
-Similarities between SR-SIVE spectroscopy, infrared spectroscopy and spontaneous hyper-Raman scattering have been noted previously. \cite{RN352, Bonn2024}
-In this section, we make the connections between SIVE and hyper-Raman scattering explicit and remark on the properties of SIVE that become apparent after inspecting the selection rules.
+\section{Steady State Hyper-DFG Spectroscopy}
+\subsection{Singly Resonant HDFG}
+Singly resonant hyper difference generation spectroscopy (HDFG) spectroscopy has potential to provide deeper insight into single quantum decoherence times and molecular orientation in condensed systems.
+Similarities between HDFG spectroscopy, infrared spectroscopy and spontaneous hyper-Raman scattering have been noted previously. \cite{RN352, Bonn2024}
+In this section, we make the connections between HDFG and hyper-Raman scattering explicit and its properties.
 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=3.375in]{wmel1.png}
-	\caption{Wave Mixing Energy Level (WMEL) diagrams of the relevant SR-SIVE pathways in the (a) $\vec{k}_4 = -\vec{k}_1 + \vec{k}_2 + \vec{k}_3$ and (b) $\vec{k}_4 = \vec{k}_1 + \vec{k}_2 + \vec{k}_3$ phasematching geometries. \cite{RN286, RN352}
+	\caption{Wave Mixing Energy Level (WMEL) diagrams of the relevant HDFG pathways in the (a) $\vec{k}_4 = -\vec{k}_1 + \vec{k}_2 + \vec{k}_3$ and (b) $\vec{k}_4 = \vec{k}_1 + \vec{k}_2 + \vec{k}_3$ phasematching geometries. \cite{RN286, RN352}
 	$\ket{g}$ is the ground state, $\ket{v}$ is an infrared active vibration and $\ket{m}, \ket{n}$ are virtual states.
 	Solid and dashed horizontal lines indicate real and virtual states, whereas solid and dotted arrows indicate ket and bra side transitions, respectively. 
 	These diagrams can be permuted to generate additional resonant WMEL diagrams.}
@@ -114,9 +117,8 @@ where N is a number density, F is the Lorentz local field factor, and $\gamma_{i
 The brackets indicate an orientational average. 
 Uppercase letters refer to laboratory frame coordinates and lower case letters refer to molecular frame coordinates.
 
-\subsection{Vibrational SR-SIVE Selection Rules}
-To make the connection between SR-SIVE and hyper-Raman scattering, we investigate the gross selection rules of SR-SIVE-IR.
-By propagating density matrix elements in the steady state limit, the SIVE hyperpolarizability is \cite{RN119}
+To make the connection between HDFG and hyper-Raman scattering, we investigate its gross selection rules.
+By propagating density matrix elements in the steady state limit, the HDFG hyperpolarizability is \cite{RN119}
 \begin{equation}\label{sivegamma}
 		\gamma_{ijkl} =	- \sum_{m, n} \frac{1}{\varepsilon_0} \frac{1}{4D} \frac{1}{\hbar^3} \frac{\mu^{i}_{v n} \mu^{j}_{nm} \mu^{k}_{mg} \mu^{l}_{gv} }{\Delta_{nv} \Delta_{mv}\Delta_{gv}}  \rho_{gg}
 \end{equation}
@@ -124,7 +126,7 @@ where: $\mu^{j}_{ab}$ is the $j^{th}$ element of $\mel{a}{\vec{\mu}}{b}$, $\Delt
 For simplicity, we consider the results for the process diagrammed in \autoref{fig:sivewmel}a, but by multiplying by (-1) and taking a complex conjugate, which arise from the bra-side transition in \autoref{fig:sivewmel}a, results for the \autoref{fig:sivewmel}b  process are obtained.
 Note that $\omega_j \rightarrow -\omega_j$ for a bra side transition.
 D, the Maker-Terhune degeneracy factor, accounts for permutation symmetry in $\gamma_{ijkl}$ and is defined as $\frac{n!}{(n-m)!}$, where $n$ is the total number of input fields (3 for any four wave mixing experiment) and $m$ is the number of distinguishable input fields.\cite{RN134} 
-For a SIVE experiment using two or three distinct input fields, as considered here, D = 6.
+For a HDFG experiment using two or three distinct input fields, as considered here, D = 6.
 Note that $\ket{m}, \ket{n}$ are virtual states (\autoref{fig:sivewmel}).
 By contracting over the virtual states to form the hyper-Raman hyperpolarizability $\beta$ (i.e., Placzek approximation), this expression can be simplified immensely.\cite{Long1970} 
 Note, however, that if $\omega_2$, $\omega_3$, as depicted in \autoref{fig:sivewmel}, are nearly resonant with any state, the Placzek approximation fails. \cite{Placzek1934, Long1970}
@@ -132,12 +134,7 @@ Assuming the validity of the Placzek approximation, \autoref{sivegamma} is writt
 \begin{equation}\label{sivebeta}
 	\gamma_{ijkl} =	-\frac{1}{\varepsilon_0} \frac{1}{24 \hbar}\frac{\beta^{(ijk)}_{gv} \mu^{(l)}_{gv}}{\Delta_{gv}} \rho_{gg}
 \end{equation}
-As such, any mode that is SIVE active must be both hyper-Raman and IR active.
-However, since any IR active vibrational mode is hyper-Raman active,\cite{Cyvin1965, Andrews1978} any IR active mode is SIVE active.
-This makes SIVE an optically upconverted infrared spectroscopy of isotropic samples, as its selection rules are identically those of IR spectroscopy, but its output is generally in the visible.
-Unlike SFG spectroscopy, which is dependent upon both the infrared and Raman activity of a mode (through symmetry constraints, this demands that the microscopic SFG output from centrosymmetric species vanishes),\cite{Shen90, Cotton} SIVE is a nonlinear, optically upconverted spectroscopy for any infrared active mode.
-
-To understand SR-SIVE selection rules more finely, the dipole and first hyperpolarizability operators are Taylor expanded in terms of an n$^{\text{th}}$ normal mode coordinate $Q_n$ about equilibrium: \cite{Long1970}
+Taylor expanding the dipole and first hyperpolarizability operators in terms of an n$^{\text{th}}$ normal mode coordinate $Q_n$ about equilibrium: \cite{Long1970}
 \begin{subequations}
 	\begin{equation}
 		\mu = \mu_0 + \frac{\partial \mu}{\partial Q_n} Q_n + \order{{Q_m Q_n}}
@@ -146,28 +143,30 @@ To understand SR-SIVE selection rules more finely, the dipole and first hyperpol
 		\beta = \beta_{0} + \frac{\partial \beta}{\partial Q_n} Q_n + \order{{Q_m Q_n}}
 	\end{equation}
 \end{subequations}
-Substituting into \autoref{sivebeta}, and knowing that $\mel{v}{Q_n}{g} = \sqrt{\frac{\hbar}{2m_n\omega_{vg}}}$ under the harmonic approximation,\cite{RN230} where $m_n$ is the mass of the $Q_n$ mode, gives the SIVE-IR-I hyperpolarizability to $\order{Q_n}$ as \begin{equation}\label{SIVEselection}
-		\gamma_{ijkl} =	-\frac{1}{\varepsilon_0} \frac{1}{48 m_n \omega_{vg}}  \frac{1}{{\Delta_{gv}}} \ \frac{\partial \beta^{(ijk)}}{\partial Q_n} {\frac{\partial \mu^{(l)}}{\partial Q_n}}  \rho_{gg}
+Substituting into \autoref{sivebeta}, and knowing that $\mel{v}{Q_n}{g} = \sqrt{\frac{\hbar}{2m_n\omega_{vg}}}$ under the harmonic approximation,\cite{RN230} where $m_n$ is the mass of the $Q_n$ mode, gives the HDFG hyperpolarizability to $\order{Q_n}$ as \begin{equation}\label{SIVEselection}
+	\gamma_{ijkl} =	-\frac{1}{\varepsilon_0} \frac{1}{48 m_n \omega_{vg}}  \frac{1}{{\Delta_{gv}}} \ \frac{\partial \beta^{(ijk)}}{\partial Q_n} {\frac{\partial \mu^{(l)}}{\partial Q_n}}  \rho_{gg}
 \end{equation}
-Since this expression is non-zero in the harmonic oscillator limit, SR-SIVE output is allowed for harmonic transitions. 
-Similar to SFG, SR-SIVE does not demand anharmonic ground state potential energy surfaces for spectral output. \cite{Shen94, Cho2000}
-This selection rule is generally valid for any SR-SIVE process in the $-\vec{k}_1 + \vec{k}_2  + \vec{k}_3$ and $\vec{k}_1 + \vec{k}_2  + \vec{k}_3$ phasematching geometries when the Placzek approximation is valid.
+Since this expression is non-zero in the harmonic oscillator limit, HDFG output is allowed for harmonic transitions. 
+Similar to SFG, HDFG does not demand anharmonic ground state potential energy surfaces for spectral output. \cite{Shen94, Cho2000}
+This selection rule is generally valid for any HDFG or hyper sum frequency generation (HSFG) process in the $-\vec{k}_1 + \vec{k}_2  + \vec{k}_3$ and $\vec{k}_1 + \vec{k}_2  + \vec{k}_3$ phasematching geometries when the Placzek approximation is valid.
 
+\autoref{SIVEselection} shows any HDFG active mode must be both hyper-Raman and IR active.
+However, since any IR active vibrational mode is hyper-Raman active,\cite{Cyvin1965, Andrews1978} any IR active mode is HDFG active.
+This makes HDFG an optically upconverted infrared spectroscopy of isotropic samples, as its selection rules are identically those of IR spectroscopy, but its output is generally in the visible.
 A useful attribute of this selection rule is the added ability of polarization control arising from the hyperpolarizability tensor. 
-Similar to polarization control in second harmonic and sum frequency generation experiments which probe different elements of the infrared transition dipole and Raman polarizability tensor,\cite{Heinz1982} probing different elements of the hyperpolarizability tensor in SR-SIVE can greatly assist in understanding ultrafast dynamics in isotropic systems. \cite{Shen90, Bonn2024}
-Polarization control in IR-pump-SIVE-probe, analogous to ultrafast transient absorption spectroscopy, would be an interesting venue to assess the sensitivity of SR-SIVE to different hyper-Raman tensor elements.
+Similar to polarization control in second harmonic and sum frequency generation experiments which probe different elements of the infrared transition dipole and Raman polarizability tensor,\cite{Heinz1982} probing different elements of the hyperpolarizability tensor in HDFG can greatly assist in understanding ultrafast dynamics in isotropic systems. \cite{Shen90, Bonn2024}
+Polarization control in IR-pump-HDFG-probe, analogous to ultrafast transient absorption spectroscopy, would be an interesting venue to assess the sensitivity of HDFG to different hyper-Raman tensor elements.
 
-\subsection{Comparison to Sum Frequency Generation}
-Since the hyper-Raman process is effectively a two-photon process, a setup using only two lasers can perform the SIVE experiment by investigating $\pm \vec{k}_1 + 2\vec{k}_2$ processes.
+Since the hyper-Raman process is stimulated by a two-photon process, a setup using only two lasers can perform the HDFG experiment by investigating $\pm \vec{k}_1 + 2\vec{k}_2$ processes, assuming a two photon absorption from a single pulse stimulates the hyper-Raman process.
 The other commonly used two laser CMDS method is sum frequency generation, a $\chi^{(2)}$ technique, whose phasematching is dictated by $\vec{k}_1 + \vec{k}_2$.
 The SFG output scales as $\chi^{(2)}_{IJK} \sim \langle \alpha_{ij} \mu_k \rangle$, where $\alpha_{ij}$ is the Raman polarizability tensor.
 Since SFG is dependent upon transitions that transform like both rank-one and rank-two tensors, this enforces a microscopic constraint that SFG cannot yield output for centrosymmetric species under the electric dipole moment.
 This follows from simple parity arguments, where inversion centers demand states possess distinct parity selection rules. \cite{RN230}
 Macroscopically, inversion symmetry in the output polarization eliminates output from centrosymmetric species under the electric dipole approximation.
 As a result, the output of SFG is significantly reduced relative to most third order spectroscopies because the output only depends on surface species.
-However, since SIVE spectroscopy is dependent upon a hyper-Raman transition, it is useful to compare the relative output of the two processes to identify how SIVE output compares to SFG.
+However, since HDFG is dependent upon a hyper-Raman transition, it is useful to compare the relative output of the two processes to identify how HDFG output compares to SFG.
 
-To motivate the application of SIVE spectroscopy, we perform a calculation to compare the output of parametric SIVE-IR (\autoref{fig:sivewmel}b) to that of vibrational SFG (vSFG) spectroscopy.
+To motivate the application of HDFG spectroscopy, we perform a calculation to compare HDFG and vibrational SFG (vSFG) output.
 Absorption effects are neglected for simplicity.
 \begin{widetext}
 To allow comparison between the two methods, the output polarizations of each process is written as
@@ -176,33 +175,25 @@ To allow comparison between the two methods, the output polarizations of each pr
 			\abs{P^{(2)}_{\text{SFG}}} = N_{surf} F(\omega_1+\omega_2) \abs{\langle \alpha_{ij}\mu_{k} \rangle E_J(\omega_2)E_K(\omega_1)} 
 		\end{equation}
 		\begin{equation}
-			\abs{P^{(3)}_{\text{SIVE}}} = N_{bulk}  F(\omega_1+\omega_2 +\omega_3) \abs{\langle \beta_{ijk} \mu_{l} \rangle E_J{(\omega_3)}E_K(\omega_2)E_L(\omega_1)} \ell_{eff}
+			\abs{P^{(3)}_{\text{HDFG}}} = N_{bulk}  F(-\omega_1+\omega_2 +\omega_3) \abs{\langle \beta_{ijk} \mu_{l} \rangle E_J{(\omega_3)}E_K(\omega_2)E_L(-\omega_1)} \ell_{eff}
 		\end{equation}
 	\end{subequations}
 where N$_{bulk}$ is the bulk number density, and N$_{surf}$ is the surface number density (10$^{19}$ m$^{-2}$).\cite{RN133, RN503}	
 For liquids with molar masses less than $\sim$100 g mol$^{-1}$ and densities roughly equal to that of H$_2$O$_{(l)}$ at room temperature, N$_{bulk} \sim$ 10$^{28}$ m$^{-3}$.
 We take the bulk optical interaction length ($\ell_{eff}$) to be 10 $\mu$m.\cite{RN133} %see chapter 25 of Shen's NLO book... idk something here seems wrong
-A normal dispersion curve is assumed so that $F(\omega_1+\omega_2) \approx F(\omega_1+\omega_2 +\omega_3)$.
+A normal dispersion curve is assumed so that $F(\omega_1+\omega_2) \approx F(-\omega_1+\omega_2 +\omega_3)$.
 To simplify analysis, orientational averaging is ignored (e.g., $\langle \beta_{ijk} \mu_{l} \rangle \approx \beta \mu$) and the input and output fields are taken to be co-polarized, so that
 \begin{equation}
-		P_{ratio} \equiv \frac{\abs{P^{(3)}_{\text{SIVE}}}}{\abs{P^{(2)}_{\text{SFG}}}} \approx \frac{N_{bulk}}{N_{surf}} \frac{\beta}{\alpha} E(\omega_3) \ell_{eff} \sim 10^4 \frac{\beta}{\alpha} E(\omega_3)\\
+		P_{ratio} \equiv \frac{\abs{P^{(3)}_{\text{HDFG}}}}{\abs{P^{(2)}_{\text{SFG}}}} \approx \frac{N_{bulk}}{N_{surf}} \frac{\beta}{\alpha} E(\omega_3) \ell_{eff} \sim 10^4 \frac{\beta}{\alpha} E(\omega_3)\\
 \end{equation}
 \end{widetext}
 Ziegler has noted that for a field of intensity 10 GW/cm$^{2}$, $\frac{\beta E}{\alpha} \sim 10^{-3} $ for vibrational modes when $E(\omega_3)$ is largely detuned from electronic resonances. \cite{RN515}
 Such an intensity is easily obtained using modern ultrafast sources.
-In this limit,
-\begin{equation}
-\begin{split}
-		P_{ratio} &\sim 10^4 \frac{\beta E(\omega_3)}{\alpha} \sim 10
-\end{split}
-\end{equation}
-Since the intensity ratio scales as $\abs{P_{ratio}}^2$, we see that the SIVE output is somewhat stronger than vibrational SFG, assuming only interfacial contributions in vSFG.
+In this limit, $P_\text{ratio} \sim 10$.
+Since the intensity ratio scales as $\abs{P_{ratio}}^2$, we see that the HDFG output is somewhat stronger than vibrational SFG, assuming only interfacial contributions in vSFG.
 It is important to note that this derivation ignored absorption and orientational averaging effects, which can significantly reduce output from either process. 
 
-
-
-\subsection{Quantitative SR-SIVE}
-With the selection rules of SR-SIVE understood for vibrational spectroscopy, it becomes possible to extract quantitative information from SIVE spectra to compare to incoherent methods and other CMDS methods.
+With the selection rules of HDFG understood for vibrational spectroscopy, it becomes possible to extract quantitative information from its spectra.
 Lineshape analysis is essential for extracting quantitative information from CMDS spectra.
 Scanning across resonances create dispersive lineshapes, i.e, self-heterodyning, which inform on $\Re(\chi^{(3)})$ and $\Im(\chi^{(3)})$.\cite{Levenson1974_1, Levenson1974_2}
 In the method introduced by Levenson and Bloembergen (Bloembergen Interferometry Experiment), an internal standard interferes with the resonant lineshape.
@@ -216,7 +207,7 @@ To our knowledge, only vibrational SFG and 2D-IR spectroscopy has taken advantag
 Previous treatments did not consider using quantitative analysis in SIVE to measure $\beta_{ijk}$ values from SIVE spectra.
 It is thus useful to investigate how a simple treatment of orientational averaging can extract $\beta_{ijk}$ from $\chi^{(3)}_{IJKL}$.
 
-The SIVE $\chi^{(3)}_{IJKL}$ expression is
+The HDFG $\chi^{(3)}_{IJKL}$ expression is
 \begin{equation}\label{chi3}
 \begin{split}
 		\chi^{(3)}_{IJKL} &= NF(\omega_4) \langle \gamma_{ijkl} \rangle = -\frac{NF}{24 \hbar \varepsilon_0 \Delta_{gv}} \langle \beta_{ijk} \mu_l \rangle \rho_{gg}\\
@@ -231,38 +222,34 @@ For simplicity, we investigate $\Im(\chi^{(3)})$, giving, assuming resonance con
 
 The steps behind orientational averaging of $\gamma_{ijkl}$, a rank four tensor in the molecular frame, are detailed elsewhere.\cite{Andrews1977, McDonnell2024}
 Orientational averaging shows specific polarization schemes isolate linear combinations of different $\beta_{ijk}$ terms. 
-Infrared spectra can provide values for different $\vec{\mu}$ components.
+Infrared spectra can provide $\vec{\mu}$ values.
 Since $\vec{\mu}$ is a rank-one tensor, its three Cartesian components share the simple relationship $\langle {\mu^2_x} \rangle = \langle {\mu^2_y} \rangle = \langle {\mu^2_z} \rangle = \frac{1}{3}\langle {\mu^2} \rangle$. \cite{RN459}
-Neglecting rotational dependence (i.e., assuming only vibrational transitions), $\langle {\mu^2} \rangle = \abs{\mu}^2 = \mu^2$, so that $\langle \beta_{ijk} \mu_l \rangle = \langle \beta_{ijk} \rangle \frac{\mu}{\sqrt{3}}$.
+Neglecting rotational dependence (i.e., assuming only vibrational transitions), $\langle {\mu^2} \rangle = \mu^2$, so that $\langle \beta_{ijk} \mu_l \rangle = \langle \beta_{ijk} \rangle \frac{\abs{\mu}}{\sqrt{3}}$.
 By introducing the reduced mass coordinate $q_n = \sqrt{\frac{1}{m_n}} Q_n$ and using the expansions of $\beta_{ijk}$ and $\mu_{l}$ to $\order{Q_n}$ found earlier, we see
 \begin{equation}\label{betasive}
 	\langle \frac{\partial \beta_{ijk}}{\partial q_n} \rangle = \varepsilon_0 \frac{48 \sqrt{3} }{NF}  \frac{\Gamma_{gv} \omega_{vg}}{\rho_{gg}} \frac{\Im(\chi^{(3)}_{IJKL})}{\frac{\partial \mu}{\partial q_n}}
 \end{equation}
-Since $\abs{\mu}$ values can be readily extracted from FT-IR spectra,\cite{RN412} this shows that SIVE can give quantitative information on the magnitude of $\beta_{ijk}$.
-
-A key result of \autoref{betasive} is that the sign of $\frac{\partial \beta_{ijk}}{\partial q_n}$ and $\frac{\partial \mu_{l}}{\partial q_n}$ can be extracted from SIVE spectra. 
-Since IR and spontaneous hyper-Raman spectroscopy report on $\Im(\chi^{(1)}) \sim \abs{\mu_{l}}^2$ and $\Im(\chi^{(5)}) \sim \abs{\beta_{ijk}}^2$,\cite{RN515} respectively, the absolute signs of $\frac{\partial \mu_{l}}{\partial q_n}$ and $\frac{\partial \beta_{ijk}}{\partial q_n}$ cannot be extracted from IR or hyper-Raman spectroscopy.
-These ideas can prove useful when assessing the validity of computational methods which report on the sign of $\frac{\partial \beta_{ijk}}{\partial q_n}$.
-Similar ideas were first introduced by Shen to extract the sign of $\frac{\partial \mu_{l}}{\partial q_n}$ from vSFG spectra.\cite{Shen90}
-SIVE and vSFG together provide a unique picture of extracting signs for the microscopic quantities ($\mu, \alpha, \beta$) that drive nonlinear output.
+Since $\abs{\mu}$ values can be readily extracted from FT-IR spectra,\cite{RN412} this shows that HDFG can give quantitative information on the magnitude of $\beta_{ijk}$.
+HDFG and vSFG together provide a unique picture of extracting the microscopic quantities ($\mu, \alpha, \beta$) that drive nonlinear output.
 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=3.375in]{wmel3.png}
-	\caption{WMEL diagrams of some DR-SIVE pathways in the $-\vec{k}_1 + \vec{k}_2+ \vec{k}_3$  (I-a,I-b) and $\vec{k}_1 + \vec{k}_2+ \vec{k}_3$ (II-a,II-b) phasematching outputs. $\ket{g,0}$ denotes the ground states, $\ket{g,v}$ denotes a vibrational state on the ground electronic manifold; $\ket{m,n}$ denotes a virtual state, and $\ket{e,0}, \ket{e,v'}$ denote vibronic states.}
+	\caption{WMEL diagrams of some (I-a,I-b) DR-HDFG and (II-a,II-b) DR-HSFG pathways. $\ket{g,0}$ denotes the ground states, $\ket{g,v}$ denotes a vibrational state on the ground electronic manifold; $\ket{m,n}$ denotes a virtual state, and $\ket{e,0}, \ket{e,v'}$ denote vibronic states.}
 	\label{fig:doubsive}
 \end{figure}
 
-\subsection{DR-SIVE-IR Selection Rules} %%most of this can probably be scrapped because... we don't really learn much new here.
-DR-SIVE (where a vibrational and vibronic state are resonantly coupled) can provide a tool for measuring vibronic coupling.
-This method is analogous to doubly resonant sum frequency generation. \cite{Shen94}
-Multi-resonant nonlinear spectroscopies, such as coherent anti-Stokes Raman spectroscopy (CARS), 2D Electronic Vibrational (2D-EV) spectroscopy and triply resonant sum frequency generation (TRSF) spectroscopy, have been employed to resolve vibronic coupling in molecular samples. \cite{Carlson1990, Gaynor2017, RN276}
-DR-SIVE provides methods to investigate vibronic coupling with only two laser pulses, as long as the electronic state is accessible via two photon absorption from the ground state (\textit{vide infra}).
-Two beam, parametric and non-parametric DR-SIVE processes are diagrammed in \autoref{fig:doubsive}.
+\subsection{Doubly Resonant HDFG}
+While HDFG can provide useful information about the properties of molecular vibrations, it is immediately apparent that \autoref{fig:sivewmel} can inform on molecular electronic structure by making the hyper-Raman transition resonant with a vibronic state.
+DR-HDFG (where a vibrational and vibronic state are resonantly coupled) can provide a tool for measuring vibronic coupling.
+This method is analogous to doubly resonant sum frequency generation (DR-SFG). \cite{Shen94}
+Many multi-resonant nonlinear spectroscopies have been developed to resolve vibronic coupling in molecular samples. \cite{Carlson1990, Gaynor2017, RN276}
+DR-HDFG provides methods to investigate vibronic coupling with only two laser pulses, as long as the electronic state is accessible via two photon absorption from the ground state (\textit{vide infra}).
+Two beam, parametric and non-parametric DR-HDFG processes are diagrammed in \autoref{fig:doubsive}.
 Here, states are written assuming the Born-Oppenheimer approximation, such that $\ket{a,b} = |a) \otimes \ket{b}$ for electronic states $\{|a)\}$ and vibrational states $\{\ket{b}\}$. \cite{BornOppenheimer, Albrecht1960}
 
 The goal of this section is to understand DR-SIVE-IR selection rules.
-We begin by inspecting the selection rules of a non-parametric DR-SIVE pathway (\autoref{fig:doubsive}I-a) in the driven limit. 
+We begin by inspecting the selection rules of a non-parametric DR-HDFG pathway (\autoref{fig:doubsive}I-a) in the driven limit. 
 The driven limit is useful as despite the sum over states approach, it avoids implications of ultrafast dephasing of the vibronic state.\cite{Cho2001} 
 For consistency with previous reports, we use $\vec{R}$ to denote electric transition dipole moments (not to be confused with the response function; $\vec{\mu}$ is used for transitions between states on the ground electronic state.). \cite{Ziegler1974}
 Following the approach which gave \autoref{sivegamma}, we find
@@ -281,7 +268,6 @@ where $R^{i}_{gv,ev'}$ is the i$^{th}$ element of $\mel{g,v}{\vec{R}}{e,v'}$.
 For generality, we assume that the vibronic  $\ket{e,v'}$ does not share the same vibration with $\ket{g,v}$. \cite{Ziegler1988}
 Using our definition of vibronic states, we write $\vec{M}_{ab} = (a|\vec{M}|b)$ so that, for example,
 $R^{i}_{gv,ev'} = \mel{v}{M^i_{ge}}{v'}$.\cite{Albrecht1960}
-\begin{widetext}
 Using these ideas rewrites \autoref{drgamma_notaylor} as
 \begin{equation}\label{drgamma_notaylor_1}
 	\gamma_{ijkl} = -\frac{1}{\varepsilon_0} \frac{1}{24 \hbar^3} \sum_{m,n,v'} \frac{
@@ -293,31 +279,29 @@ Using these ideas rewrites \autoref{drgamma_notaylor} as
 		\Delta_{ev', mn}
 		\Delta_{mn, g0}	}
 \end{equation}
-Contracting over $m,n$ in \autoref{drgamma_notaylor_1} by invoking the two photon absorption polarizability $\Lambda$ gives \cite{McClain1977, Simpson2004, Olson2018}
-\begin{equation}\label{drgamma_alpha_0}
-	\gamma_{ijkl} = -\frac{1}{\varepsilon_0} \frac{1}{24 \hbar^2} \sum_{v'} \frac{
-		\mel{v}{M^{i}_{ge}}{v'} 
-		\mel{v'}{\Lambda^{jk}_{eg}}{v}
-		\mel{v}{M^{l}_{gg}}{0}
-	}{\Delta_{g0,gv}
-		\Delta_{ev', g0}
-	}
-\end{equation}
-where ${\Lambda^{jk}_{eg}} = (e|\Lambda^{jk}|g)$. 
-\end{widetext}
-Since $\Lambda^{jk}$ transforms like a rank two tensor, it is clear that the electronic transition must be both one and two photon allowed for non-zero output, similar to resonant second harmonic generation spectroscopy. \cite{Heinz1982, Nguyen1986, Simpson2004}
-This is identical to a selection rule in resonance hyper-Raman scattering, as derived by Chung and Ziegler. \cite{Ziegler1988}
-As such, the DR-SIVE methods discussed here are coherent, resonance hyper-Raman analogues. 
-This makes DR-SIVE a type of resonance IR spectroscopy, as introduced by Boyle et al.\cite{RN491} 
-However, in the methods described by \autoref{drgamma_alpha_0}, $|e)$ must be accessible through one and two photon transitions from $|g)$.
-Conversely, the resonance-IR method demonstrated by Boyle et al. only requires one photon transitions between $|g)$ and $|e)$.
-Systems which provide strict parity selection rules (e.g., benzene) will be useful for assessing the validity of these selection rules and comparing the method described here and that of Boyle et al. \cite{RN491}
+The first three terms in the numerator coorespond to a resonance hyper-Raman scattering process, whose selection rules have been derived in detail by Chung and Ziegler. \cite{Ziegler1988}
+As such, the DR-HDFG methods discussed here are coherent, resonance hyper-Raman analogues. 
+A typical Albrecht $A,B,C$ decomposition of these vibronic operators, as shown by Chung and Ziegler, demonstrates the feasibility for one and two photon electronic transitions.
+Briefly,... %todo: discuss Ziegler ABC terms in some detail. They are what drive this paper.
+A simulated spectrum highlighting the contributions of these terms (\autoref{fig:doubres_spec}) shows...
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=3.375in]{drsive_spectrum.png}
+	\caption{Spectrum showing sensitivity of DR-HDFG to well displacements in vibronic coupling.
+		Model includes both Franck-Condon and Herzberg Teller effects.
+		(a) Potential energy surfaces, (b) 2D spectrum including all A,B,C components, (c,d,e) A, B, C term contributions (respectively) to (b).}
+	\label{fig:doubres_spec}
+\end{figure}
 
-\subsection{Line Narrowing in SIVE Spectroscopies}
+%These results also make DR-HDFG a type of resonance IR spectroscopy, as introduced by Boyle et al for resonant triple sum frequency generation.\cite{RN491} 
+%However, in the methods described by \autoref{drgamma_alpha_0}, $|e)$ must be accessible through one and two photon transitions from $|g)$.
+%Conversely, the resonance-IR method demonstrated by Boyle et al. only requires one photon transitions between $|g)$ and $|e)$.
+%Systems which provide strict parity selection rules (e.g., benzene) will be useful for assessing the validity of these selection rules and comparing the method described here and that of Boyle et al. \cite{RN491}
+
 An unavoidable consequence in electronic spectroscopy is broadened lineshapes due to the inhomogeneity of electronic transitions (e.g., vibronic sidebands, molecular collisions). 
 Four wave mixing methods can line-narrow transitions, i.e., resolve inhomogeneous broadening.\cite{Carlson1990line}
-The line-narrowing properties of DR-SIVE are investigated so that the pathways which line-narrow correlated or anti-correlated modes (\textit{vide infra}) can be identified.
-SR-SIVE cannot linenarrow transitions as it is singly resonant. \cite{RN352}
+The line-narrowing properties of DR-HDFG are investigated so that the pathways which line-narrow correlated or anti-correlated modes (\textit{vide infra}) can be identified.
+Singly resonant HDFG cannot linenarrow transitions. \cite{RN352}
 
 In the discussion that follows, we assume that a vibrational mode in the ground state, $\ket{g,v}$, is correlated to the frequency of a vibronic $\ket{e,v}$.\cite{Carlson1990}
 If the frequency of $\ket{g,v}$ is written as $\omega_{gv} + \xi$, where $\xi$ is some external strain (e.g. molecular collisions), then the frequency of $\ket{e,v}$ is $\omega_{ev} + c\xi$, where c is a shift coefficient.
@@ -357,7 +341,66 @@ First seen in fifth order perturbation theory in isotropic media ($\chi^{(5)}$ p
 These feeding mechanisms can induce line-narrowing properties in spectroscopies that cannot line-narrow in third order perturbation theory.\cite{Ouellette1982, RN319, Carlson87, RN471, RN410}
 Excited state populations become important when considering experiments using the methods in \autoref{fig:doubsive} with long pulsewidths or strong transition dipoles, as demonstrated on a variety of model systems using coherent Raman spectroscopies. \cite{Ouellette1982, RN471, RN338, Yurs2011} 
 
-\section{Conclusions}
+\section{Mixed-Domain Hyper-DFG}
+Some words about why mixed domain is great (kill NRB, isolate FID based stuff etc)
+Then introduce problems (pathway interference) which can screw things up. This then leads into the main section.
+
+It is well known that nonlinear wave mixing processes which share the same time ordering and output frequency will interfere. \cite{RN135, Bonn2024}
+Understanding interfering pathways is useful because they can, in some cases, eliminate output. \cite{RN342, RN135}
+The WMEL diagrams presented in \autoref{fig:sivewmel} outline resonant HDFG processes when the infrared pulse $(\omega_1)$ is resonant with a vibrational mode. 
+However, if $\omega_2$ becomes resonant and $\omega_1$ is non-resonant, then other HDFG pathways appear.\cite{McDonnell2024} 
+While the methods in \autoref{fig:sivewmel2} possess identical selection rules to \autoref{fig:sivewmel}, the WMEL diagrams presented in \autoref{fig:sivewmel2} may significantly interfere with DOVE-IR and DOVE-Raman spectra.
+The time ordering in DOVE-IR and DOVE-Raman spectra is used to interpret anharmonicities, as DOVE-IR and DOVE-Raman destructively interfere when outputs are at the same frequency. \cite{RN135, RN324}
+It is therefore important to understand how the corresponding HDFG pathways interfere.
+To this end, we investigate how the HDFG-IR-II and HDFG-Raman pathways (\autoref{fig:sivewmel2}a, b, respectively) interfere under the rotating wave approximation. 
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=3.375in]{figures/wmel2.png}
+	\caption{Wave Mixing Energy Level (WMEL) diagrams of interfering hyper-DFG pathways in the  $\vec{k}_4 = -\vec{k}_1 + \vec{k}_2 + \vec{k}_3$ phasematching geometry. 
+		(a) is similar to the process diagrammed in \autoref{fig:sivewmel}, whereas (b) is similar to a singly resonant coherent anti-Stokes Raman-type process.}
+	\label{fig:sivewmel2}
+\end{figure}
+
+We employ the response function formalism of Mukamel for this analysis. \cite{RN287}
+The third order response functions, $R^{(3)}$, for \autoref{fig:sivewmel2}a ($R^{(3)}_{a}$) and \autoref{fig:sivewmel2}b ($R^{(3)}_{b}$) are 
+\begin{subequations}
+	\begin{equation} \label{mixing:a}
+		R^{(3)}_{a} (t_2) = -\frac{i}{\hbar} [\beta(t_2), \mu(0)] \exp(-i\Delta_{v''g}t_2) \theta(t_2)
+	\end{equation}
+	\begin{equation}\label{mixing:b}
+		\begin{split}
+			R^{(3)}_{b} (t_2) & = \frac{i}{\hbar} [\beta(t_2), \mu(0)] \exp(-i\Delta_{v''g}t_2) \theta(t_2)\\
+		\end{split}
+	\end{equation}
+\end{subequations}
+The total response function is $R^{(3)}_\text{tot} (t_2) = R^{(3)}_{a} (t_2) + R^{(3)}_{b} (t_2) = 0$. 
+Since the total output response function vanishes in this time-ordering, the pathways in \autoref{fig:sivewmel2} perfectly destructively interfere.
+Therefore, to measure coherent dynamics via hyper-DFG, the time ordering shown in \autoref{fig:sivewmel} should be used.
+These ideas have been seen experimentally in ultrafast DOVE work, as described elsewhere. \cite{RN367, McDonnell2024}
+In the case of the time ordered (\autoref{fig:sivewmel}a) pathway, there are no opportunities for interference as all other pathways are nonresonant with the first interaction. 
+A possible mechanism for interfering output in the (\autoref{fig:sivewmel}a) pathway are cascaded second order processes (SFG, DFG). \cite{RN243, RN300}
+In isotropic media, SFG and DFG vanish under the electric dipole approximation,\cite{RN231} so cascades are unlikely to inhibit output in centrosymmetric media.
+In media where SFG and DFG are allowed, e.g. surfaces or noncentrosymmetric media, second order cascades may become important. 
+
+
+%todo: measuring Coherence and Population Lifetimes
+
+\section{Experimental Hyper-DFG Results}
+With the theoretical description of HDFG provided, we will investigate steady state and transient HDFG spectra of $\nu$(CH) modes in CH$_3$CN.
+
+\subsection{dynamics} 
+Look at coherence dynamics of v(CH), v(CN) in CH3CN. 
+THIS EXPERIMENT IS DEFINITELY EASIER THAN EXTRACTING CHI3. 
+ 
+\subsection{Calculation of $\beta$ for v(CH) modes in CH3CN}
+do the classic C6D6 at CH3CN expt ? (or CaF2, whatever) - get interferogram, fit, get numbers.
+Dipoles of CH3CN fitted by John in the 2003 paper, so only need to get $\beta$. 
+Compare this to the theoretical CH3CN hyper Raman paper.
+We can decide if this is worth it. 
+
+
+\section{Conclusions}%didn't change to HDFG down here because lazy
 Coherent vibrational, hyper-Raman coherent four wave mixing spectroscopies are identified and discussed.
 Singly resonant SIVE (SR-SIVE) processes are shown to be the coherent hyper-Raman analogue of infrared active vibrations.
 Since SR-SIVE is always non-zero for IR active vibrations, the method could be used as an analytical method to optically upconvert infrared transitions with small transition dipoles.
