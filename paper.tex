@@ -31,13 +31,13 @@
 Nonlinear, four wave mixing vibrational spectroscopies are often used to probe intramolecular vibrational coupling and relaxation dynamics.
 Three wave mixing vibrational spectroscopies are similarly used to understand the spectroscopy and dynamics of interfacial species.
 Most of these methods rely on infrared or Raman transitions to generate output. 
-The implementation of a nonlinear hyper-Raman spectroscopy, which first appears at third order perturbation theory, can provide a useful analogue to these techniques to understand the spectroscopy and dynamics of isotropic systems.
-Hyper Difference Frequency Generation (hyper-DFG) spectroscopy, a type of nonlinear hyper-Raman spectroscopy also known as singly vibrationally enhanced spectroscopy (SIVE), is an underdeveloped four wave mixing technique which shows promise as a method to disentangle ultrafast vibrational dynamics in isotropic systems without need for anharmonicities.
+Implementing a nonlinear spectroscopy involving hyper-Raman transitions, first appearing under third order perturbation theory, can provide a useful analogue to infrared and Raman based nonlinear spectroscopies to understand the spectroscopy and dynamics of isotropic systems.
+Hyper Difference Frequency Generation (HDFG) spectroscopy, also known as singly vibrationally enhanced spectroscopy (SIVE), is an underdeveloped, hyper-Raman based four wave mixing vibrational spectroscopy. 
+However, the spectroscopic and dynamic properties of HDFG have not been fully explored.
 We derive selection rules for singly resonant hyper-DFG and demonstrate it provides a simpler method to extract hyper-Raman polarizabilities ($\beta$).
-The hyper-DFG output is shown to be slightly stronger than vibrational difference frequency generation (vSFG), heavily driven by the number density probed by each process. 
-We demonstrate the capabilities of hyper-DFG through probing the spectra and coherence dynamics of the $\nu$(CH) modes in CH$_3$CN.
-The theory of hyper-DFG is extended to account for vibronic coupling induced by two-photon absorption, i.e. doubly resonant hyper-Raman (DR-HDFG), akin to resonant hyper-Raman spectroscopy. 
-DR-HDFG is shown to be a type of resonance IR spectroscopy and is likely able to resolve vibronic coupling.
+HDFG output is shown to be similar in magnitude to vibrational sum frequency generation (vSFG). 
+We demonstrate the properties and capabilities of HDFG through measuring spectra and coherence dynamics of multiple infrared active modes in CH$_3$CN.
+HDFG shows promise as a method to disentangle ultrafast vibrational dynamics in isotropic systems without need for anharmonicities.
 
 \end{abstract}
 
@@ -49,10 +49,20 @@ Multiresonant, four wave mixing CMDS experiments, first proposed by Oudar and Sh
 CMDS has resolved anharmonicities and other intramolecular couplings in numerous systems. \cite{RN345, RN342, RN343, RN324, RN329, RN120, Czech2015, Gaynor2017, Ogilvie2019, RN325}
 A particular class of CMDS methods, coherent Raman based four wave mixing spectroscopies, can provide explicit probes of vibrational and excitonic coupling in a variety of systems.
 
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=3.375in]{dfg_hdfg_hr_wmel.png}
+	\caption{Wave Mixing Energy Level (WMEL) diagrams of difference frequency generation (DFG), hyper difference frequency generation (HDFG) and spontaneous hyper-Raman scattering. \cite{RN286, RN352}
+		$\ket{g}$ is the ground state, $\ket{v}$ is an infrared active vibration and $\ket{m}, \ket{n}$ are virtual states.
+		Solid and dashed horizontal lines indicate real and virtual states, whereas solid and dotted arrows indicate ket and bra side transitions, respectively. %todo: add Raman to this WMEL! dfg Raman hyperDFG hyperRaman 
+		}
+	\label{fig:comparisonwmel}
+\end{figure}
+
 Not all CMDS methods are used to dissect intramolecular couplings.\cite{Shen1987_CPL}
-Singly vibrationally enhanced (SIVE) is a four wave mixing method which, when detuned from  electronic resonances, does not probe intramolecular couplings. 
-Non-parametric, hyper difference frequency generation (hyper-DFG) spectroscopy was the first infrared CMDS method to successfully discriminate against non-resonant background.\cite{RN351, RN352}
-Hyper-DFG has also been refered to as singly vibrationally enhanced (SIVE) spectroscopy. \cite{RN351}
+Non-parametric, hyper difference frequency generation (hyper-DFG) spectroscopy, similar to difference frequency generation (\autoref{fig:comparisonwmel}), is a four wave mixing method which, when detuned from  electronic resonances, does not probe intramolecular couplings. 
+HDFG was the first infrared CMDS method to successfully discriminate against non-resonant background.\cite{RN351, RN352}
+Hyper-DFG has also been referred to as singly vibrationally enhanced (SIVE) spectroscopy. \cite{RN351}
 In hyper-DFG, an infrared pulse is resonant with a vibrational mode, and two other input pulses are used to induce a scattering process to provide output.
 Hyper-DFG was documented long ago to have characteristics similar to spontaneous hyper-Raman scattering spectroscopy. \cite{RN352}
 Hyper-Raman scattering is the two photon analogue to Raman scattering. \cite{Cyvin1965, Terhune1965}
@@ -69,8 +79,8 @@ These reports motivate deeper analysis on the properties of hyper-DFG spectrosco
 Fully coherent, ultrafast probes of vibronic coupling would yield insight into processes that control ultrafast electronic relaxation in molecular and biological systems. \cite{Bredenbeck2015, Arsenault2021}
 Some years ago, Cho proposed a parametric, doubly resonant infrared/visible pathway to probe vibronic coupling in isotropic systems. \cite{Cho2001}
 In this method, a single infrared pulse is resonant with a vibrational mode, and a two photon absorption event from a near infrared (NIR) or visible pulse resonant with an electronic or vibronic state is used to generate the four wave mixing signal.
-These pathways are referred to herein as doubly resonant hyper-DFG (DR-HDFG).
-Methods analogous to DR-HDFG, where two photon absorption from the infrared pulse and single photon absorption from the visible pulse is used to generate output, i.e., stimulated Raman processes, have been reported. \cite{RN301, RN120} 
+The non-parametric pathways similar to this method are referred to herein as doubly resonant hyper-DFG (DR-HDFG).
+Methods analogous to DR-HDFG, where two photon absorption from the infrared pulse and one photon absorption from the visible pulse is used to generate output, i.e., stimulated Raman processes, have been reported. \cite{RN301, RN120} 
 
 An experimental complexity in executing four wave mixing experiments is the demand of three separate input pulses, often all at different frequencies.
 For example, in the case of DOVE, two of the three input pulses must be scanable infrared pulses. \cite{RN345} 
@@ -89,10 +99,9 @@ DR-HDFG is shown to demand one and two-photon absorptions between the ground and
 DR-HDFG is thus the four wave mixing analogue of doubly resonant infrared-visible sum frequency generation. \cite{Shen94}
 
 \section{Steady State Hyper-DFG Spectroscopy}
-\subsection{Singly Resonant HDFG}
 Singly resonant hyper difference generation spectroscopy (HDFG) spectroscopy has potential to provide deeper insight into single quantum decoherence times and molecular orientation in condensed systems.
 Similarities between HDFG spectroscopy, infrared spectroscopy and spontaneous hyper-Raman scattering have been noted previously. \cite{RN352, Bonn2024}
-In this section, we make the connections between HDFG and hyper-Raman scattering explicit and its properties.
+In this section, we make the connections between HDFG and hyper-Raman scattering explicit and investigate the steady state properties of singly resonant HDFG.
 
 \begin{figure}[!htbp]
 	\centering
@@ -153,16 +162,112 @@ This selection rule is generally valid for any HDFG or hyper sum frequency gener
 \autoref{SIVEselection} shows any HDFG active mode must be both hyper-Raman and IR active.
 However, since any IR active vibrational mode is hyper-Raman active,\cite{Cyvin1965, Andrews1978} any IR active mode is HDFG active.
 This makes HDFG an optically upconverted infrared spectroscopy of isotropic samples, as its selection rules are identically those of IR spectroscopy, but its output is generally in the visible.
-A useful attribute of this selection rule is the added ability of polarization control arising from the hyperpolarizability tensor. 
-Similar to polarization control in second harmonic and sum frequency generation experiments which probe different elements of the infrared transition dipole and Raman polarizability tensor,\cite{Heinz1982} probing different elements of the hyperpolarizability tensor in HDFG can greatly assist in understanding ultrafast dynamics in isotropic systems. \cite{Shen90, Bonn2024}
-Polarization control in IR-pump-HDFG-probe, analogous to ultrafast transient absorption spectroscopy, would be an interesting venue to assess the sensitivity of HDFG to different hyper-Raman tensor elements.
+A useful attribute of the $\beta_{ijk}$ dependence in HDFG output is added polarization control. 
+Similar to SHG and SFG experiments that probe different elements of the infrared transition dipole and Raman polarizability tensors,\cite{Heinz1982} probing different elements of $\beta_{ijk}$ in HDFG can greatly assist in understanding ultrafast dynamics in isotropic systems, as suggested by Seliya et al. \cite{Shen90, Bonn2024}
+Polarization control in IR-pump-HDFG-probe, analogous to ultrafast transient absorption spectroscopy for vibrational modes, would be an interesting venue to assess the sensitivity of HDFG to different hyper-Raman tensor elements. 
 
-Since the hyper-Raman process is stimulated by a two-photon process, a setup using only two lasers can perform the HDFG experiment by investigating $\pm \vec{k}_1 + 2\vec{k}_2$ processes, assuming a two photon absorption from a single pulse stimulates the hyper-Raman process.
+
+Previous spontaneous hyper-Raman work interpreted the origin of hyper-Raman signal in terms of Franck-Condon, Herzberg-Teller and Duschinsky type couplings.\cite{Ziegler1988} %todo: cite the other papers.
+As such, we investigate \autoref{SIVEselection} using an Albrecht ABC type formalism which naturally incorporates these types of couplings.
+To do so, we write the states in terms of a Born-Oppenheimer basis $\ket{a,b}$, where $\ket{a,b} = |a) \otimes \ket{b}$ for electronic states $\{|a)\}$ and vibrational states $\{\ket{b}\}$. \cite{BornOppenheimer, Albrecht1960}
+Here, $\ket{g}, \ket{v}$ are vibrational states on the ground electronic state $|g)$ and $\ket{m} \rightarrow \ket{m,j}$, $\ket{n} \rightarrow \ket{n,k}$ are virtual states.
+For consistency with previous reports, we use $\vec{R}$ to denote electric transition dipole moments ($\vec{\mu}$ is used for transitions between states on the ground electronic state.). \cite{Ziegler1974}
+Following the approach which gave \autoref{sivegamma}, we find
+\begin{equation}\label{drgamma_notaylor}
+	\gamma_{ijkl} = -\frac{1}{\varepsilon_0} \frac{1}{24 \hbar^3} \sum_{m,n,j,k} \frac{
+		R^{i}_{gv, nk} 
+		R^{j}_{nk,mj} 
+		R^{k}_{mj,gg} 
+		R^{l}_{gv,gg} 
+	}{\Delta_{g0,gg}
+		\Delta_{nk, mj}
+		\Delta_{mj, gg}
+	}
+\end{equation}
+where $R^{i}_{ab,cd}$ is the i$^{th}$ element of $\mel{a,b}{\vec{R}}{c,d}$.\cite{Ziegler1988}
+Using our definition of vibronic states, we write $\vec{M}_{ab} = (a|\vec{M}|b)$ so that, for example,
+$R^{i}_{gv,ev'} = \mel{v}{M^i_{ge}}{v'}$.\cite{Albrecht1960}
+Using these ideas rewrites \autoref{drgamma_notaylor} as
+\begin{equation}\label{drgamma_notaylor_1}
+	\begin{split}
+		\gamma_{ijkl} &= -\frac{1}{\varepsilon_0} \frac{1}{24 \hbar^3} \sum_{m,n,v'} \frac{
+			\mel{v}{M^{i}_{ge}}{v'} 
+			\mel{v'}{M^{j}_{em}}{n}
+			\mel{n}{M^{k}_{mg} }{v}
+			\mel{v}{M^{l}_{gg}}{0}
+		}{\Delta_{g0,gv}
+			\Delta_{ev', mn}
+			\Delta_{mn, g0}	} \\
+	\end{split}
+\end{equation}
+Chung and Ziegler showed some years ago that expanding ${\vec{M}_{ij}}$ to $\order{Q}$ yields $A, B, C$ coefficients similar to the Albrecht formalism of Raman scattering. \cite{Albrecht1961, Ziegler1988}
+The $A$ term depends upon Franck-Condon $\order{Q^0}$ transitions, the $B$ term depends upon Herzberg-Teller ($\order{Q}$) transitions, and the $C$ term depends on Duschinsky ($\order{Q^2}$) transitions. 
+Here, we ignore the C term as it depends on one and two photon forbidden transitions which have yet to be observed in spontaneous hyper-Raman scattering. \cite{Ziegler1988}
+The full derivation of $A,B$ have been given elsewhere, so only their final forms will be given.
+
+By compiling all the terms that scale with $\order{Q^0}$, i.e. $\vec{M}_{ij_0}$, $A$ is written as
+\begin{equation}
+	\begin{split}
+		A_{ijk} &= \text{crap times Franck Condon}\\
+	\end{split}
+\end{equation}
+where terms such as $\langle v | v' \rangle$ are Franck-Condon factors.
+
+something about the A term. SHOW THAT IT VANISHES FOR SINGLY RES TERMS
+
+It is important to note that in the case of singly resonant HDFG, $A_{ijk}$ vanishes, or only Herzberg-Teller contributions are present in SR-HDFG. \cite{Neddersen1989}
+
+Similarly, the $B$ terms scale with $\order{Q}$, such that
+\begin{equation}
+	\begin{split}
+		B_{ijk} &= \text{crap}\\
+	\end{split}
+\end{equation}
+Then B term. 
+B term has new sum over another normal mode Ql that must be included because when I expand in terms of Q there are 3N-6-1 normal modes I can talk to (3N-6-1, assuming nonlinear and that the -1 comes from assuming we end in v)
+Blah Blah Blah
+%todo: So clearly HDFG has heavy dependence on HT type couplings! 
+%This likely explains the relative weakness of HDFG in solvents such as hexane. \cite{RN351}
+%fix the equation so that the dipole is clearly isolated from the hyper Raman part. Write beta as A+B+C?
+%todo: segue into vibronic coupling
+
+While HDFG can provide useful information about the properties of molecular vibrations, it is immediately apparent that \autoref{fig:sivewmel} can inform on molecular electronic structure by making the hyper-Raman transition resonant with a vibronic state.
+DR-HDFG (where a vibrational and vibronic state are resonantly coupled) can provide a tool for measuring vibronic coupling.
+This method is analogous to doubly resonant sum frequency generation (DR-SFG). \cite{Shen94}
+Many multi-resonant nonlinear spectroscopies have been developed to resolve vibronic coupling in molecular samples. \cite{Carlson1990, Gaynor2017, RN276}
+DR-HDFG provides methods to investigate vibronic coupling with only two laser pulses, as long as the electronic state is accessible via two photon absorption from the ground state (\textit{vide infra}).
+Two beam, parametric and non-parametric DR-HDFG processes are diagrammed in \autoref{fig:doubsive}.
+%todo: insert discussion on ABC terms
+%todo: write hamiltonian like Gaynor to make clear what we are doing (and put in a picture in Figure doubbleresspec)
+
+To interpret HDFG selection rules, we use a slightly modified version of equation xyz to account for the added vibronic resonance. 
+This change immediately makes the A term nonzero in the case of noncentrosymmetric systems.
+
+A simulated spectrum highlighting the contributions of these terms (\autoref{fig:doubres_spec}) on potential wells with displacements $\Delta$ shows... 
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=3.375in]{drsive_spectrum.png}
+	\caption{Spectrum showing sensitivity of DR-HDFG to well displacements in vibronic coupling.
+		Model includes both Franck-Condon and Herzberg Teller effects.
+		(a) Potential energy surfaces, 2D spectrum where (b) $\Delta = 0$, (c) $\Delta = 0.5$, (d) $\Delta = 1$}
+	\label{fig:doubres_spec}
+\end{figure}
+
+%These results also make DR-HDFG a type of resonance IR spectroscopy, as introduced by Boyle et al for resonant triple sum frequency generation.\cite{RN491} 
+%However, in the methods described by \autoref{drgamma_alpha_0}, $|e)$ must be accessible through one and two photon transitions from $|g)$.
+%Conversely, the resonance-IR method demonstrated by Boyle et al. only requires one photon transitions between $|g)$ and $|e)$.
+%Systems which provide strict parity selection rules (e.g., benzene) will be useful for assessing the validity of these selection rules and comparing the method described here and that of Boyle et al. \cite{RN491}
+
+
+
+
+\subsection{Quantification}
+Since the hyper-Raman process is stimulated by a two-photon process, a setup using only two lasers can perform a coherent four wave mixing hyper-Raman experiment by investigating $\pm \vec{k}_1 + 2\vec{k}_2$ processes, assuming a two photon absorption from a single pulse stimulates the hyper-Raman process.
 The other commonly used two laser CMDS method is sum frequency generation, a $\chi^{(2)}$ technique, whose phasematching is dictated by $\vec{k}_1 + \vec{k}_2$.
 The SFG output scales as $\chi^{(2)}_{IJK} \sim \langle \alpha_{ij} \mu_k \rangle$, where $\alpha_{ij}$ is the Raman polarizability tensor.
-Since SFG is dependent upon transitions that transform like both rank-one and rank-two tensors, this enforces a microscopic constraint that SFG cannot yield output for centrosymmetric species under the electric dipole moment.
-This follows from simple parity arguments, where inversion centers demand states possess distinct parity selection rules. \cite{RN230}
-Macroscopically, inversion symmetry in the output polarization eliminates output from centrosymmetric species under the electric dipole approximation.
+Since SFG is dependent upon transitions that transform like both rank-one and rank-two tensors, this enforces a microscopic constraint that SFG cannot yield output for centrosymmetric species under the electric dipole approximation.
+This follows from the presence of an inversion center in centrosymmetric systems, which demands strict parity selection rules. \cite{RN230}
+Macroscopically, inversion symmetry in the output polarization eliminates output from centrosymmetric species under the electric dipole approximation.\cite{RN227, RN132}
 As a result, the output of SFG is significantly reduced relative to most third order spectroscopies because the output only depends on surface species.
 However, since HDFG is dependent upon a hyper-Raman transition, it is useful to compare the relative output of the two processes to identify how HDFG output compares to SFG.
 
@@ -198,13 +303,13 @@ Lineshape analysis is essential for extracting quantitative information from CMD
 Scanning across resonances create dispersive lineshapes, i.e, self-heterodyning, which inform on $\Re(\chi^{(3)})$ and $\Im(\chi^{(3)})$.\cite{Levenson1974_1, Levenson1974_2}
 In the method introduced by Levenson and Bloembergen (Bloembergen Interferometry Experiment), an internal standard interferes with the resonant lineshape.
 The internal standard is often chosen to be C$_6$H$_6$ or C$_6$D$_6$, due to the strong Raman activity and measured $\chi^{(3)}$ of its ring breathing mode ($\nu_2$ in Herzberg notation). \cite{Levenson1974_2, RN351, RN345}
+%okay clearly this wont work lol we need something that is IR active... CaF2?%
 Self-heterodyning of the internal standard signal measures $\chi^{(3)}$ and does not require measurement of absolute intensities. 
 Resonant lineshapes are also complicated by amplitude level interference between the sample and its substrate and/or sample cell windows, which must be accounted for to obtain quantitatively correct $\chi^{(3)}$ values. \cite{RN362, RN418}
 
 Most quantitative methods in an n$^{th}$ order CMDS experiment are used to extract $\chi^{(n)}$ values to compare the relative strength of nonlinear processes in different media. \cite{Zhu87, RN351, RN345}
 The recorded $\chi^{(n)}$ values provide insight into how microscopic quantities ($\vec{\mu}, \alpha_{ij}, \beta_{ijk}$) impact nonlinear output.
 To our knowledge, only vibrational SFG and 2D-IR spectroscopy has taken advantage of orientationally averaged $\chi^{(n)}$ values to extract transition moments. \cite{Shen90, Moilanen2009, RN245}
-Previous treatments did not consider using quantitative analysis in SIVE to measure $\beta_{ijk}$ values from SIVE spectra.
 It is thus useful to investigate how a simple treatment of orientational averaging can extract $\beta_{ijk}$ from $\chi^{(3)}_{IJKL}$.
 
 The HDFG $\chi^{(3)}_{IJKL}$ expression is
@@ -214,7 +319,7 @@ The HDFG $\chi^{(3)}_{IJKL}$ expression is
 \end{split}
 \end{equation}
 This expression cannot be used as written to extract $\beta_{ijk}$, as $\beta_{ijk}$ is a Hermitian operator, but $\Delta_{gv} \in \mathbb{C}$. 
-However, since the real and imaginary parts of $\chi^{(3)}$ can be extracted from the Bloembergen interferometry experiment, we can choose to focus on either its real or imaginary part.
+However, since the real and imaginary parts of $\chi^{(3)}$ can be extracted from the Bloembergen interferometry experiment, and $\beta_{ijk}$ is present in either term, we can choose to focus on the real or imaginary part of $\chi^{(3)}$.
 For simplicity, we investigate $\Im(\chi^{(3)})$, giving, assuming resonance conditions, 
 \begin{equation}
 	\langle \beta_{ijk} \mu_{l} \rangle = \frac{24 \hbar \varepsilon_0}{NF} \Gamma_{gv} \frac{1}{\rho_{gg}} \Im(\chi^{(3)}_{IJKL})
@@ -230,7 +335,7 @@ By introducing the reduced mass coordinate $q_n = \sqrt{\frac{1}{m_n}} Q_n$ and 
 	\langle \frac{\partial \beta_{ijk}}{\partial q_n} \rangle = \varepsilon_0 \frac{48 \sqrt{3} }{NF}  \frac{\Gamma_{gv} \omega_{vg}}{\rho_{gg}} \frac{\Im(\chi^{(3)}_{IJKL})}{\frac{\partial \mu}{\partial q_n}}
 \end{equation}
 Since $\abs{\mu}$ values can be readily extracted from FT-IR spectra,\cite{RN412} this shows that HDFG can give quantitative information on the magnitude of $\beta_{ijk}$.
-HDFG and vSFG together provide a unique picture of extracting the microscopic quantities ($\mu, \alpha, \beta$) that drive nonlinear output.
+HDFG and vSFG together provide unique methods to extract the microscopic quantities ($\mu, \alpha, \beta$) that drive nonlinear output.
 
 \begin{figure}[!htbp]
 	\centering
@@ -239,107 +344,11 @@ HDFG and vSFG together provide a unique picture of extracting the microscopic qu
 	\label{fig:doubsive}
 \end{figure}
 
-\subsection{Doubly Resonant HDFG}
-While HDFG can provide useful information about the properties of molecular vibrations, it is immediately apparent that \autoref{fig:sivewmel} can inform on molecular electronic structure by making the hyper-Raman transition resonant with a vibronic state.
-DR-HDFG (where a vibrational and vibronic state are resonantly coupled) can provide a tool for measuring vibronic coupling.
-This method is analogous to doubly resonant sum frequency generation (DR-SFG). \cite{Shen94}
-Many multi-resonant nonlinear spectroscopies have been developed to resolve vibronic coupling in molecular samples. \cite{Carlson1990, Gaynor2017, RN276}
-DR-HDFG provides methods to investigate vibronic coupling with only two laser pulses, as long as the electronic state is accessible via two photon absorption from the ground state (\textit{vide infra}).
-Two beam, parametric and non-parametric DR-HDFG processes are diagrammed in \autoref{fig:doubsive}.
-Here, states are written assuming the Born-Oppenheimer approximation, such that $\ket{a,b} = |a) \otimes \ket{b}$ for electronic states $\{|a)\}$ and vibrational states $\{\ket{b}\}$. \cite{BornOppenheimer, Albrecht1960}
 
-The goal of this section is to understand DR-SIVE-IR selection rules.
-We begin by inspecting the selection rules of a non-parametric DR-HDFG pathway (\autoref{fig:doubsive}I-a) in the driven limit. 
-The driven limit is useful as despite the sum over states approach, it avoids implications of ultrafast dephasing of the vibronic state.\cite{Cho2001} 
-For consistency with previous reports, we use $\vec{R}$ to denote electric transition dipole moments (not to be confused with the response function; $\vec{\mu}$ is used for transitions between states on the ground electronic state.). \cite{Ziegler1974}
-Following the approach which gave \autoref{sivegamma}, we find
-\begin{equation}\label{drgamma_notaylor}
-	\gamma_{ijkl} = -\frac{1}{\varepsilon_0} \frac{1}{24 \hbar^3} \sum_{m,n,v'} \frac{
-		R^{i}_{gv,ev'} 
-		R^{j}_{ev',mn} 
-		R^{k}_{mn,gv} 
-		R^{l}_{gv,g0} 
-	}{\Delta_{g0,gv}
-		\Delta_{ev', mn}
-		\Delta_{mn, g0}
-	}
-\end{equation}
-where $R^{i}_{gv,ev'}$ is the i$^{th}$ element of $\mel{g,v}{\vec{R}}{e,v'}$.
-For generality, we assume that the vibronic  $\ket{e,v'}$ does not share the same vibration with $\ket{g,v}$. \cite{Ziegler1988}
-Using our definition of vibronic states, we write $\vec{M}_{ab} = (a|\vec{M}|b)$ so that, for example,
-$R^{i}_{gv,ev'} = \mel{v}{M^i_{ge}}{v'}$.\cite{Albrecht1960}
-Using these ideas rewrites \autoref{drgamma_notaylor} as
-\begin{equation}\label{drgamma_notaylor_1}
-	\gamma_{ijkl} = -\frac{1}{\varepsilon_0} \frac{1}{24 \hbar^3} \sum_{m,n,v'} \frac{
-		\mel{v}{M^{i}_{ge}}{v'} 
-		\mel{v'}{M^{j}_{em}}{n}
-		\mel{n}{M^{k}_{mg} }{v}
-		\mel{v}{M^{l}_{gg}}{0}
-	}{\Delta_{g0,gv}
-		\Delta_{ev', mn}
-		\Delta_{mn, g0}	}
-\end{equation}
-The first three terms in the numerator coorespond to a resonance hyper-Raman scattering process, whose selection rules have been derived in detail by Chung and Ziegler. \cite{Ziegler1988}
-As such, the DR-HDFG methods discussed here are coherent, resonance hyper-Raman analogues. 
-A typical Albrecht $A,B,C$ decomposition of these vibronic operators, as shown by Chung and Ziegler, demonstrates the feasibility for one and two photon electronic transitions.
-Briefly,... %todo: discuss Ziegler ABC terms in some detail. They are what drive this paper.
-A simulated spectrum highlighting the contributions of these terms (\autoref{fig:doubres_spec}) shows...
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=3.375in]{drsive_spectrum.png}
-	\caption{Spectrum showing sensitivity of DR-HDFG to well displacements in vibronic coupling.
-		Model includes both Franck-Condon and Herzberg Teller effects.
-		(a) Potential energy surfaces, (b) 2D spectrum including all A,B,C components, (c,d,e) A, B, C term contributions (respectively) to (b).}
-	\label{fig:doubres_spec}
-\end{figure}
 
-%These results also make DR-HDFG a type of resonance IR spectroscopy, as introduced by Boyle et al for resonant triple sum frequency generation.\cite{RN491} 
-%However, in the methods described by \autoref{drgamma_alpha_0}, $|e)$ must be accessible through one and two photon transitions from $|g)$.
-%Conversely, the resonance-IR method demonstrated by Boyle et al. only requires one photon transitions between $|g)$ and $|e)$.
-%Systems which provide strict parity selection rules (e.g., benzene) will be useful for assessing the validity of these selection rules and comparing the method described here and that of Boyle et al. \cite{RN491}
+\subsection{Comparison to 2DEV and 2DVE spectroscopy}
+Compare James' stuff and make connections.
 
-An unavoidable consequence in electronic spectroscopy is broadened lineshapes due to the inhomogeneity of electronic transitions (e.g., vibronic sidebands, molecular collisions). 
-Four wave mixing methods can line-narrow transitions, i.e., resolve inhomogeneous broadening.\cite{Carlson1990line}
-The line-narrowing properties of DR-HDFG are investigated so that the pathways which line-narrow correlated or anti-correlated modes (\textit{vide infra}) can be identified.
-Singly resonant HDFG cannot linenarrow transitions. \cite{RN352}
-
-In the discussion that follows, we assume that a vibrational mode in the ground state, $\ket{g,v}$, is correlated to the frequency of a vibronic $\ket{e,v}$.\cite{Carlson1990}
-If the frequency of $\ket{g,v}$ is written as $\omega_{gv} + \xi$, where $\xi$ is some external strain (e.g. molecular collisions), then the frequency of $\ket{e,v}$ is $\omega_{ev} + c\xi$, where c is a shift coefficient.
-Similarly, we take the frequency of $\ket{e,0}$ as $\omega_{e0} \rightarrow \omega_{e0} + \xi$.
-The strains shift resonance denominators, e.g., for $\omega_{ij} \rightarrow \omega_{ij} + c\xi$, as
-\begin{equation}
-	\Delta_{ij}(\xi) = \omega_{ij} + c\xi -\omega_k - i\Gamma_{ij} \equiv \Delta_{ij}(0) + c\xi
-\end{equation}
-Without loss of generality, we assume c = 1 for correlated modes and c = -1 for anti-correlated modes.
-To understand the impact of inhomogeneity on spectral output, we convolute an output density matrix element $\rho_{ab}(\xi)$ with a normalized Lorentzian distribution $P(\xi)$ of half width at half maximum $\sigma$ as
-\begin{equation}\label{contour}
-	\rho_{ab} = \int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \rho_{ab}(\xi)
-\end{equation} 
-While Gaussian distributions are used to describe inhomogeneous broadening,\cite{druet1979line, RN307, Ouellette1982} Lorentzian distributions have satisfactorily described inhomogeneous broadening in a variety of nonlinear spectroscopies and yield easily interpreted closed-form solutions to \autoref{contour}. \cite{Penner1976, Desiderio1979, Dick83_1, Carlson1990line}
-For clarity, we evaluate the linenarrowing characteristics of pathway Ia (\autoref{fig:doubsive}) in detail in Appendix.
-The results for all pathways in \autoref{fig:doubsive} are summarized in \autoref{T:correlated}.
-
-\begin{table}[!htbp]
-	\caption{\label{T:correlated} Line narrowing capabilities of pathways outlined in \autoref{fig:doubsive} for correlated and anti-correlated modes, as evaluated through \autoref{contour}, assuming no population feeding or saturation effects.}
-	\begin{ruledtabular}
-		\begin{tabular}{ccc}
-			Pathway & Correlated & Anti-Correlated\\
-			\hline  
-			I-a & Yes & No \\
-			I-b & No & Yes\\
-			II-a & No & Yes\\
-			II-a & No & Yes\\
-		\end{tabular}
-	\end{ruledtabular}
-\end{table}
-
-Although \autoref{T:correlated} identifies that only Pathway I-a can line-narrow correlated modes, these results are only valid in limits where the input pulses only weakly populate excited states.
-When resonant pulses are significantly longer than the dephasing rate of some state, then that state can become populated.
-A typical electronic dephasing rate is tens of femtoseconds. \cite{RN131}
-Excited state population effects become important for understanding the spectroscopy of electronic states when using input pulses with relatively long pulsewidths ($\gtrsim$ 500 fs). \cite{RN319, Yurs2011}
-First seen in fifth order perturbation theory in isotropic media ($\chi^{(5)}$ processes), excited state populations can populate other modes, including the ground state and other vibrational/vibronic modes, inducing higher order processes.\cite{Carlson87, RN471}
-These feeding mechanisms can induce line-narrowing properties in spectroscopies that cannot line-narrow in third order perturbation theory.\cite{Ouellette1982, RN319, Carlson87, RN471, RN410}
-Excited state populations become important when considering experiments using the methods in \autoref{fig:doubsive} with long pulsewidths or strong transition dipoles, as demonstrated on a variety of model systems using coherent Raman spectroscopies. \cite{Ouellette1982, RN471, RN338, Yurs2011} 
 
 \section{Mixed-Domain Hyper-DFG}
 Some words about why mixed domain is great (kill NRB, isolate FID based stuff etc)
@@ -348,7 +357,7 @@ Then introduce problems (pathway interference) which can screw things up. This t
 It is well known that nonlinear wave mixing processes which share the same time ordering and output frequency will interfere. \cite{RN135, Bonn2024}
 Understanding interfering pathways is useful because they can, in some cases, eliminate output. \cite{RN342, RN135}
 The WMEL diagrams presented in \autoref{fig:sivewmel} outline resonant HDFG processes when the infrared pulse $(\omega_1)$ is resonant with a vibrational mode. 
-However, if $\omega_2$ becomes resonant and $\omega_1$ is non-resonant, then other HDFG pathways appear.\cite{McDonnell2024} 
+However, if $\omega_2$ ($\omega_1$) becomes resonant (non-resonant), then other HDFG pathways appear.\cite{McDonnell2024} 
 While the methods in \autoref{fig:sivewmel2} possess identical selection rules to \autoref{fig:sivewmel}, the WMEL diagrams presented in \autoref{fig:sivewmel2} may significantly interfere with DOVE-IR and DOVE-Raman spectra.
 The time ordering in DOVE-IR and DOVE-Raman spectra is used to interpret anharmonicities, as DOVE-IR and DOVE-Raman destructively interfere when outputs are at the same frequency. \cite{RN135, RN324}
 It is therefore important to understand how the corresponding HDFG pathways interfere.
@@ -358,7 +367,9 @@ To this end, we investigate how the HDFG-IR-II and HDFG-Raman pathways (\autoref
 	\centering
 	\includegraphics[width=3.375in]{figures/wmel2.png}
 	\caption{Wave Mixing Energy Level (WMEL) diagrams of interfering hyper-DFG pathways in the  $\vec{k}_4 = -\vec{k}_1 + \vec{k}_2 + \vec{k}_3$ phasematching geometry. 
-		(a) is similar to the process diagrammed in \autoref{fig:sivewmel}, whereas (b) is similar to a singly resonant coherent anti-Stokes Raman-type process.}
+		(a) is similar to the process diagrammed in \autoref{fig:sivewmel}, whereas (b) is similar to a singly resonant coherent anti-Stokes Raman-type process.
+		%todo: add pump-SIVE-probe to this set of WMELs
+		}
 	\label{fig:sivewmel2}
 \end{figure}
 
@@ -413,75 +424,6 @@ Unlike SR-SIVE, DR-SIVE methods can linenarrow inhomogeneously broadened vibroni
 This work received support from the Department of Energy, Office of Basic Energy Sciences, Division of Materials Sciences and Engineering (Grant no. DE-SC0002162).
 R.P.M. acknowledges support from the NSF Graduate Research Fellowship Program (Grant no. DGE-2137424). 
 
-\section{Appendix A: Evaluation of DR-SIVE Pathway I-a Linenarrowing Capability}
-\begin{widetext}
-The output coherence  for this pathway is $\rho_{ev',gv}(\xi)$.
-Setting $\eta$ equal to the numerator of \autoref{drgamma_alpha_0} along with any constants, we see
-\begin{equation}\label{ev'gv}
-	\begin{split}
-		\rho_{ev',gv}(\xi) &= \frac{\eta}{\Delta_{g0,gv}(\xi) \Delta_{ev',gv}(c\xi)}\\
-		&=  \frac{\eta}{(-\omega_{g0,gv} - \xi + \omega_1 - i\Gamma_{g0,gv})(\omega_{ev',gv} + c\xi - (2\omega_3 + \omega_1) - i\Gamma_{ev',gv})}\\ 
-		&= \frac{\eta}{(\Delta_{g0,gv}(0) - \xi)(\Delta_{ev',gv}(0) + c\xi)}\\ 
-	\end{split}
-\end{equation}
-
-For notational convenience, we map $\ket{g,0} \rightarrow \ket{g}$, $\ket{g,v} \rightarrow \ket{a}$ and $\ket{e,v'} \rightarrow \ket{b}$.
-Substituting into \autoref{contour} and taking $P(\xi)$ to be a normalized Lorentzian distribution of half width at half maximum $\sigma$, we see:
-\begin{equation}\label{integraly}
-	\begin{split}
-		\rho_{ba} &= \int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \rho_{ba}(\xi)\\
-		&= \int_{-\infty}^\infty \mathrm{d}\xi \frac{\sigma}{\pi} \frac{1}{\xi^2 + \sigma^2} \eta \frac{1}{\Delta_{ga}(0) - \xi} \frac{1}{\Delta_{ba}(0) + c\xi}\\
-		&= \frac{\eta \sigma}{\pi} \int_{-\infty}^\infty \mathrm{d}\xi\frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga}(0) - \xi} \frac{1}{\Delta_{ba}(0) + c\xi}\\
-	\end{split}
-\end{equation}
-
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=3.375in]{corr_contour.png}
-	\caption{Poles (black dots) and contour (blue line) used to evaluate \autoref{integraly} for (a) anti-correlated and (b) correlated modes.} 
-	\label{fig:contours}
-\end{figure}
-
-\subsubsection{Anti-correlated Modes}
-For anti-correlated modes, the poles are situated in the complex plane as shown in \autoref{fig:contours}a.
-Since \autoref{integraly} is evaluated along the real axis, one can choose to evaluate the contour in the upper or lower half of the complex plane.
-Since evaluating the residues in the upper or lower half of the complex plane yields the same result for \autoref{integraly}, we choose the contour which wraps around the least number of poles.
-
-It is clear for c = -1 that there are four poles: $\pm i \sigma, \Delta_{ga}(0), \Delta_{ba}(0)$. 
-Following \autoref{fig:contours}, the contour that wraps the upper half of the complex plane has only one pole, $i \sigma$; as such, we choose to evaluate \autoref{integraly} in the upper half of the complex plane for the case of anti-correlated modes through the residue theorem as
-	\begin{equation}
-		\begin{split}
-			\rho_{ba} = \int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \rho_{ba}(\xi) &= 2\pi i \sum_k \lim_{\xi \rightarrow \xi_k} P(\xi) \rho_{ba}(\xi) (\xi - \xi_k)\\
-			&= 2\pi i \frac{\eta \sigma}{\pi} \lim_{\xi \rightarrow i\sigma} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga}(0) - \xi} \frac{1}{\Delta_{ba}(0) - \xi} (\xi - i \sigma)\\
-			&= 2\eta \sigma i \frac{1}{2i\sigma} \frac{1}{\Delta_{ga}(0) - i\sigma} \frac{1}{\Delta_{ba}(0) - i\sigma}\\
-			&= \frac{\eta}{\Delta_{ga}(i\sigma)\Delta_{ba}(i \sigma)}\\
-		\end{split}
-	\end{equation}
-
-
-In words, we see the inhomogeneous envelope width $\sigma$ is added to the linewidth of each resonance (e.g., $\Gamma_{ba} \rightarrow \Gamma_{ba} + \sigma$).
-Therefore, pathway I-a cannot linenarrow anti-correlated modes. 
-\subsubsection{Correlated Modes}
-For correlated modes, the poles are situated in the complex plane as shown in \autoref{fig:contours}b.
-It is clear that no matter which contour is chosen, there is a contribution to the final integral from either $\Delta_{ba}(0)$ or $\Delta_{ga}(0)$. 
-For the below calculation, we choose to evaluate along the contour in the bottom half of the complex plane, i.e., the poles ($\xi_k$) are $-i\sigma, \Delta_{ga}$.
-We stress that since the integral is evaluated over $\mathbb{R}$ and there are no degenerate poles, the results below can be obtained by evaluating the contour which wraps around the poles $i\sigma, \Delta_{ba}$ using the Residue theorem as 
-
-	\begin{equation}
-		\begin{split}
-			\int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \rho_{ba}(\xi) &= 2\pi i \sum_k \lim_{\xi \rightarrow \xi_k} P(\xi) \rho_{ba}(\xi) (\xi - \xi_k)\\
-			&= 2\pi i \frac{\eta \sigma}{\pi} ( \lim_{\xi \rightarrow -i\sigma} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga}(0) - \xi} \frac{1}{\Delta_{ba}(0) - \xi} (\xi + i \sigma) \\ &+
-			\lim_{\xi \rightarrow \Delta_{ga}(0)} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga}(0) - \xi} \frac{1}{\Delta_{ba}(0) - \xi} (\xi - \Delta_{ga}))\\
-%			&= 2 \eta i \sigma (\frac{1}{2 i \sigma} \frac{1}{-i \sigma - \Delta_{ga}(0)} \frac{1}{\Delta_{ba}(0) - i\sigma} ) - 2 \eta i \sigma (\frac{1}{\sigma^2 + (\Delta_{ga} (0))^2} \frac{1}{\Delta_{ga}(0) + \Delta_{ba}(0)} )\\
-			&= -\frac{\eta}{\Delta_{ga}(0) + i \sigma} (\frac{1}{\Delta_{ba}(0) - i \sigma} + \frac{2i\sigma}{(\Delta_{ga}(0) - i \sigma)(\Delta_{ga}(0) + \Delta_{ba}(0))})\\
-		\end{split}
-	\end{equation}
-The final line of the above equation shows the presence of a new term, $\frac{2i\sigma}{\Delta_{ga}(0) + \Delta_{ba}(0)}$. 
-This term is amplified by the width of the inhomogeneous envelope ($\sigma$) and has a linewidth $\Gamma_{ba} + \Gamma_{ga}$, which linenarrows the transition. 
-Results for the other pathways follow the same technique.
-\end{widetext}
-%Generally, when starting from the ground state, non-parametric spectroscopies line-narrow correlated modes, and parametric spectroscopies line-narrow anti-correlated modes. \cite{Dick83_1, RN425}
-
 
 \section{References}
 % Create the reference section using BibTeX:
@@ -489,5 +431,5 @@ Results for the other pathways follow the same technique.
 
 \end{document}
 %
-% ****** End of file apstemplate.tex ******
+
 
