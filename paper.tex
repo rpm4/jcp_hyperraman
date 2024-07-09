@@ -51,10 +51,10 @@ A particular class of CMDS methods, coherent Raman based four wave mixing spectr
 
 \begin{figure*}[!htbp]
 	\centering
-	\includegraphics[width=6.66in]{f1.png}
+	\includegraphics[width=6.66in]{comparisonwmel.png}
 	\caption{Wave Mixing Energy Level (WMEL) diagrams of difference frequency generation (DFG), spontaneous Raman scattering, hyper difference frequency generation (HDFG) and spontaneous hyper-Raman scattering. \cite{RN286, RN352}
 		$\ket{g}$ is the ground state, $\ket{v}$ is an infrared active vibration and $\ket{m}, \ket{n}$ are virtual states.
-		Solid and dashed horizontal lines indicate real and virtual states, whereas solid and dotted arrows indicate ket and bra side transitions, respectively. %todo: add Raman to this WMEL! dfg Raman hyperDFG hyperRaman 
+		Solid and dashed horizontal lines indicate real and virtual states, whereas solid and dotted arrows indicate ket and bra side transitions, respectively. 
 		}
 	\label{fig:comparisonwmel}
 \end{figure*}
@@ -124,7 +124,6 @@ By propagating density matrix elements in the steady state limit, the HDFG hyper
 where: $\mu^{ab}_{j}$ is the $j^{th}$ element of $\mel{a}{\vec{\mu}}{b}$, $\Delta_{kl} = \omega_{kl} - \omega_{j} - i\Gamma_{kl}$, $\omega_j$ is the frequency of the j$^{th}$ input field, $\Gamma_{kl}$ is the dephasing of $\rho_{kl}$ and $\rho_{gg}$ is the ground state population.
 D, the Maker-Terhune degeneracy factor, accounts for permutation symmetry in $\gamma_{ijkl}$.\cite{RN134} 
 For a HDFG experiment using two or three distinct input fields, as considered here, D = 6.
-Note that $\ket{m}, \ket{n}$ are virtual states (\autoref{fig:sivewmel}).
 By contracting over the virtual states to form the hyper-Raman hyperpolarizability $\beta$, this expression can be simplified immensely.\cite{Long1970} 
 Note, however, that if $\omega_2$, $\omega_3$, as depicted in \autoref{fig:comparisonwmel}, are nearly resonant with any state, the contraction is not allowed. \cite{Placzek1934, Long1970}
 Assuming $\omega_2$, $\omega_3$ are significantly detuned from any local resonance, \autoref{sivegamma} is written as 
@@ -256,7 +255,7 @@ Two beam, parametric and non-parametric DR-HDFG processes are diagrammed in \aut
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=3.375in]{wmel3.png}
+	\includegraphics[width=3.375in]{drwmel.png}
 	\caption{WMEL diagrams of some (I-a,I-b) DR-HDFG and (II-a,II-b) DR-HSFG pathways. $\ket{g,0}$ denotes the ground states, $\ket{g,v}$ denotes a vibrational state on the ground electronic manifold; $\ket{m,n}$ denotes a virtual state, and $\ket{e,0}, \ket{e,v'}$ denote vibronic states.}
 	\label{fig:doubsive}
 \end{figure}
@@ -375,16 +374,12 @@ Then introduce problems (pathway interference) which can screw things up. This t
 
 It is well known that nonlinear wave mixing processes which share the same time ordering and output frequency will interfere. \cite{RN135, Bonn2024}
 Understanding interfering pathways is useful because they can, in some cases, eliminate output. \cite{RN342, RN135}
-The WMEL diagrams presented in \autoref{fig:sivewmel} outline resonant HDFG processes when the infrared pulse $(\omega_1)$ is resonant with a vibrational mode. 
+The WMEL diagram presented in \autoref{fig:comparisonwmel} outlines a resonant HDFG process where the infrared pulse $(\omega_1)$ is resonant with a vibrational mode. 
 However, if $\omega_2$ ($\omega_1$) becomes resonant (non-resonant), then other HDFG pathways appear.\cite{McDonnell2024} 
-While the methods in \autoref{fig:sivewmel2} possess identical selection rules to \autoref{fig:sivewmel}, the WMEL diagrams presented in \autoref{fig:sivewmel2} may significantly interfere with DOVE-IR and DOVE-Raman spectra.
-The time ordering in DOVE-IR and DOVE-Raman spectra is used to interpret anharmonicities, as DOVE-IR and DOVE-Raman destructively interfere when outputs are at the same frequency. \cite{RN135, RN324}
-It is therefore important to understand how the corresponding HDFG pathways interfere.
-To this end, we investigate how the HDFG-IR-II and HDFG-Raman pathways (\autoref{fig:sivewmel2}a, b, respectively) interfere under the rotating wave approximation. 
-
+While the methods in \autoref{fig:sivewmel2} possess identical selection rules to \autoref{fig:sivewmel}, the WMEL diagrams presented in \autoref{fig:sivewmel2} will interfere.
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=3.375in]{figures/wmel2.png}
+	\includegraphics[width=3.375in]{figures/timeorderedwmel.png}
 	\caption{Wave Mixing Energy Level (WMEL) diagrams of interfering hyper-DFG pathways in the  $\vec{k}_4 = -\vec{k}_1 + \vec{k}_2 + \vec{k}_3$ phasematching geometry. 
 		(a) is similar to the process diagrammed in \autoref{fig:sivewmel}, whereas (b) is similar to a singly resonant coherent anti-Stokes Raman-type process.
 		%todo: add pump-SIVE-probe to this set of WMELs
@@ -392,8 +387,8 @@ To this end, we investigate how the HDFG-IR-II and HDFG-Raman pathways (\autoref
 	\label{fig:sivewmel2}
 \end{figure}
 
-We employ the response function formalism of Mukamel for this analysis. \cite{RN287}
-The third order response functions, $R^{(3)}$, for \autoref{fig:sivewmel2}a ($R^{(3)}_{a}$) and \autoref{fig:sivewmel2}b ($R^{(3)}_{b}$) are 
+To investigate interfering pathways, we employ the response function formalism of Mukamel. \cite{RN287}
+The third order response functions for \autoref{fig:sivewmel2}a ($R^{(3)}_{a}$) and \autoref{fig:sivewmel2}b ($R^{(3)}_{b}$) are 
 \begin{subequations}
 	\begin{equation} \label{mixing:a}
 		R^{(3)}_{a} (t_2) = -\frac{i}{\hbar} [\beta(t_2), \mu(0)] \exp(-i\Delta_{v''g}t_2) \theta(t_2)
@@ -404,12 +399,12 @@ The third order response functions, $R^{(3)}$, for \autoref{fig:sivewmel2}a ($R^
 		\end{split}
 	\end{equation}
 \end{subequations}
-The total response function is $R^{(3)}_\text{tot} (t_2) = R^{(3)}_{a} (t_2) + R^{(3)}_{b} (t_2) = 0$. 
+The total response function is therefore $R^{(3)}_\text{tot} (t_2) = R^{(3)}_{a} (t_2) + R^{(3)}_{b} (t_2) = 0$. 
 Since the total output response function vanishes in this time-ordering, the pathways in \autoref{fig:sivewmel2} perfectly destructively interfere.
-Therefore, to measure coherent dynamics via hyper-DFG, the time ordering shown in \autoref{fig:sivewmel} should be used.
+Therefore, to measure coherent dynamics via hyper-DFG, the time ordering shown in \autoref{fig:comparisonwmel} should be used.
 These ideas have been seen experimentally in ultrafast DOVE work, as described elsewhere. \cite{RN367, McDonnell2024}
-In the case of the time ordered (\autoref{fig:sivewmel}a) pathway, there are no opportunities for interference as all other pathways are nonresonant with the first interaction. 
-A possible mechanism for interfering output in the (\autoref{fig:sivewmel}a) pathway are cascaded second order processes (SFG, DFG). \cite{RN243, RN300}
+In the case of the \autoref{fig:comparisonwmel} pathway, there are no opportunities for interference, as all other pathways are nonresonant with the first interaction. 
+A possible mechanism for interfering output in the \autoref{fig:comparisonwmel} pathway are cascaded second order processes (SFG, DFG). \cite{RN243, RN300}
 In isotropic media, SFG and DFG vanish under the electric dipole approximation,\cite{RN231} so cascades are unlikely to inhibit output in centrosymmetric media.
 In media where SFG and DFG are allowed, e.g. surfaces or noncentrosymmetric media, second order cascades may become important. 
 
