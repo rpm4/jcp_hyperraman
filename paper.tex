@@ -13,7 +13,7 @@
 \graphicspath{{"figures/"}}
 \begin{document}
 %Title of paper
-\title{Coherent Hyper-Raman Four Wave Mixing Vibrational Spectroscopies}
+\title{Coherent Hyper-Raman Four Wave Mixing Vibrational Spectroscopy}
 
 
 \author{Ryan P. McDonnell} 
@@ -194,8 +194,9 @@ Using these ideas rewrites \autoref{drgamma_notaylor} as
 \end{equation}
 Chung and Ziegler showed some years ago that expanding $\vec{M}^{ij}$ to $\order{Q}$ as
 \begin{equation}
-\vec{M}^{ij} = \vec{M}^{ij}_0 + \sum_z \frac{\partial\vec{M}^{ij}}{\partial Q_z}
-\end{equation} yields $A, B, C$ coefficients similar to those in the Albrecht formalism of Raman scattering, \cite{Albrecht1961, Ziegler1988} so that
+\vec{M}^{ij} = \vec{M}^{ij}_0 + \sum_z \frac{\partial\vec{M}^{ij}}{\partial Q_z} Q_z
+\end{equation} 
+yields $A, B, C$ coefficients similar to those in the Albrecht formalism of Raman scattering, \cite{Albrecht1961, Ziegler1988} so that
 \begin{equation}
 		\gamma_{ijkl} \sim \frac{(A_{ijk} + B_{ijk} + C_{ijk})\mel{v}{\mu_{l}}{0}} {\Delta_{g0,gv}}
 \end{equation}
@@ -239,16 +240,13 @@ where terms such as $\langle a | b \rangle$ are Franck-Condon factors and $\mel{
 
 When $\omega_2$ and $\omega_3$ are largely detuned from a local resonance, the resonance denominators lose their dependence on vibrational quantum number.
 In the case of the $A$ term, the sum can now be contracted over ${j, k}$. 
-Assuming a normal mode basis, $A_{ijk} \sim \sum_{j,k}\langle v | k \rangle \langle k | j \rangle \langle j | g \rangle = \delta_{vg} = 0$, or, A$_{ijk}$ vanishes for singly resonant HDFG. \cite{Neddersen1989}
-The B terms do not suffer from this problem.
-The Herzberg-Teller matrix elements, where $\ket{z} \neq \{\ket{g}, \ket{v}\}$ is a normal mode, allows for non-zero B terms.
-As a result, singly resonant HDFG has significant dependence upon those modes which participate in Herzberg-Teller coupling. 
-This likely explains the relative weakness of HDFG response from hexane $\nu$(CH) modes. \cite{RN351}
-The singly resonant HDFG susceptibility can then be approximated as
+Assuming a normal mode basis, $A_{qrs} \sim \sum_{j,k}\langle v | k \rangle \langle k | j \rangle \langle j | g \rangle = \delta_{vg} = 0$, i.e., A$_{qrs}$ vanishes for singly resonant HDFG. \cite{Neddersen1989}
+The Herzberg-Teller matrix elements, where $\ket{z} \neq \{\ket{g}, \ket{v}\}$ is a normal mode, do not vanish under these conditions.
+As a result, the singly resonant HDFG susceptibility can be approximated as
 \begin{equation}
 	\chi^{(3)}_{IJKL} \sim \langle B_{ijk} \mu_l \rangle
 \end{equation}
-or, while a vibrational mode must be infrared active for HDFG output, large $B$ values are a necessity for singly resonant HDFG response.
+or, while a vibrational mode must be infrared active for HDFG output, vibronic activity is a necessity for singly resonant HDFG response.
 \subsection{Doubly Resonant}
 While HDFG can provide useful information about the properties of molecular vibrations, it is apparent that HDFG can inform on molecular electronic structure by making the hyper-Raman transition resonant with a vibronic state, i.e. doubly resonant HDFG (DR-HDFG).
 DR-HDFG (where a vibrational and vibronic state are resonantly coupled) can provide a tool for measuring vibronic coupling, analogous to fully resonant DFG. \cite{Dick83_1, Shen94}
