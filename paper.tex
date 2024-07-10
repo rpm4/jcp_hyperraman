@@ -32,7 +32,7 @@ Nonlinear, four wave mixing vibrational spectroscopies are often used to probe i
 Three wave mixing vibrational spectroscopies are similarly used to understand the spectroscopy and dynamics of interfacial species.
 Most of these methods rely on infrared or Raman transitions to generate output. 
 Implementing a nonlinear spectroscopy involving hyper-Raman transitions, first appearing under third order perturbation theory, can provide a useful analogue to infrared and Raman based nonlinear spectroscopies to understand the spectroscopy and dynamics of isotropic systems.
-Hyper Difference Frequency Generation (HDFG) spectroscopy, also known as singly vibrationally enhanced spectroscopy (SIVE), is an underdeveloped, hyper-Raman based four wave mixing vibrational spectroscopy. 
+Hyper Difference Frequency Generation (hyper-DFG, or HDFG) spectroscopy, also known as singly vibrationally enhanced spectroscopy (SIVE), is an underdeveloped, hyper-Raman based four wave mixing vibrational spectroscopy. 
 The spectroscopic and dynamic properties of HDFG have not been fully explored.
 We derive selection rules for singly resonant hyper-DFG and demonstrate it provides a simpler method to extract hyper-Raman polarizabilities ($\beta$).
 HDFG output is shown to be similar in magnitude to vibrational sum frequency generation (vSFG). 
@@ -44,10 +44,10 @@ HDFG shows promise as a method to disentangle ultrafast vibrational dynamics in 
 \maketitle
 
 \section{Introduction}
-Coherent multidimensional spectroscopy (CMDS) is a family of three and four wave mixing methods which form the optical analogue of multidimensional nuclear magnetic resonance (NMR) spectroscopy.\cite{Cho2008, RN335}
-Multiresonant, four wave mixing CMDS experiments, first proposed by Oudar and Shen in 1980,\cite{RN307} directly probe coupling between different vibrational, electronic, and vibronic states. \cite{RN307, RN281, RN342, Cho2008, RN335, Ogilvie2019, RN325} 
+Coherent multidimensional spectroscopy (CMDS) is a family of three and four wave mixing methods which form the optical analogue of multidimensional nuclear magnetic resonance (NMR) spectroscopy.\cite{RN103, Cho2008, RN335}
+Multiresonant, four wave mixing CMDS experiments, first proposed by Oudar and Shen in 1980,\cite{RN307} directly probe coupling between different vibrational, electronic, and vibronic states. \cite{RN307, RN281, RN103, RN342, Cho2008, RN335, Ogilvie2019, RN325} 
 CMDS has resolved anharmonicities and other intramolecular couplings in numerous systems. \cite{RN345, RN342, RN343, RN324, RN329, RN120, Czech2015, Gaynor2017, Ogilvie2019, RN325}
-A particular class of CMDS methods, coherent Raman based four wave mixing spectroscopies, can provide explicit probes of vibrational and excitonic coupling in a variety of systems.
+A particular class of CMDS methods, coherent Raman based four wave mixing spectroscopies, can provide explicit probes of these couplings in a variety of systems. \cite{RN103, RN335}
 
 \begin{figure*}[!htbp]
 	\centering
@@ -60,26 +60,27 @@ A particular class of CMDS methods, coherent Raman based four wave mixing spectr
 \end{figure*}
 
 Not all CMDS methods are used to dissect intramolecular couplings.\cite{Shen1987_CPL}
-Non-parametric, hyper difference frequency generation (hyper-DFG) spectroscopy, similar to difference frequency generation (\autoref{fig:comparisonwmel}), is a four wave mixing method which, when detuned from  electronic resonances, does not probe intramolecular couplings. 
+The most well known example is sum frequency generation (SFG), a three wave mixing technique used to interpret vibrational structure and dynamics at interfaces. \cite{RN394, Piontek2023}
+Non-parametric, hyper difference frequency generation (hyper-DFG, or HDFG) spectroscopy, similar to difference frequency generation (\autoref{fig:comparisonwmel}), is a four wave mixing method which, when detuned from  electronic resonances, does not probe intramolecular couplings. 
 HDFG was the first infrared CMDS method to successfully discriminate against non-resonant background.\cite{RN351, RN352}
-Hyper-DFG has also been referred to as singly vibrationally enhanced (SIVE) spectroscopy. \cite{RN351}
-In hyper-DFG, an infrared pulse is resonant with a vibrational mode, and two other input pulses are used to induce a scattering process to provide output.
-Hyper-DFG was documented long ago to have characteristics similar to spontaneous hyper-Raman scattering spectroscopy. \cite{RN352}
+HDFG has also been referred to as singly vibrationally enhanced (SIVE) spectroscopy. \cite{RN351}
+In HDFG, an infrared pulse is resonant with a vibrational mode, and two other input pulses are used to induce a scattering process to provide output.
+HDFG was documented long ago to have characteristics similar to spontaneous hyper-Raman scattering spectroscopy. \cite{RN352}
 Hyper-Raman scattering is the two photon analogue to Raman scattering. \cite{Cyvin1965, Terhune1965}
 Compared to Raman spectroscopy, hyper-Raman scattering cross sections are often small, making it a difficult technique to successfully implement.\cite{RN515, Kelley2010} 
 The different selection rules of hyper-Raman scattering, however, make it a unique alternative to Raman scattering to understand vibrational spectra and vibronic coupling in molecular systems.
 Some years ago, Cho et al. proposed parametric six wave mixing techniques as the coherent analogue of hyper-Raman scattering. \cite{Cho1997, Cho1998}
 However, since most six wave mixing methods cascade into four wave mixing processes,\cite{RN243, Cho2000_Cascade}, and their output would be dependent upon the square magnitude of the hyper-Raman scattering cross section, a small number,\cite{RN515} it is preferable to investigate coherent four wave mixing analogues to hyper-Raman scattering.
 
-While hyper-DFG showed promise as an upconverted infrared spectroscopy method, it was quickly supplemented by a doubly vibrationally resonant method, doubly vibrationally enhanced (DOVE) spectroscopy, to investigate intra- and intermolecular vibrational coupling. \cite{RN345, RN101, Cho2000}
-As a result, investigations of hyper-DFG stagnated; to date`Z, there are less than a dozen studies which report on hyper-DFG. \cite{RN350, RN416, RN351, RN352, RN353, Chen1998, RN362, RN418, Bonn2024, McDonnell2024}
-Recent reports highlight non-negligible hyper-DFG interference in DOVE experiments as well as the suitability of hyper-DFG pathways to interpret ultrafast relaxation dynamics in isotropic systems. \cite{Bonn2024, McDonnell2024}
-These reports motivate deeper analysis on the properties of hyper-DFG spectroscopy. 
+While HDFG showed promise as an upconverted infrared spectroscopy method, it was quickly supplemented by a doubly vibrationally resonant method, doubly vibrationally enhanced (DOVE) spectroscopy, to investigate intra- and intermolecular vibrational coupling. \cite{RN345, RN101, Cho2000}
+As a result, investigations of HDFG stagnated; to date, there are less than a dozen studies which report on HDFG. \cite{RN350, RN416, RN351, RN352, RN353, Chen1998, RN362, RN418, Bonn2024, McDonnell2024}
+Recent reports highlight non-negligible HDFG interference in DOVE experiments as well as the suitability of HDFG pathways to interpret ultrafast relaxation dynamics in isotropic systems. \cite{Bonn2024, McDonnell2024}
+These reports motivate deeper analysis on the properties of HDFG spectroscopy. 
 
 Fully coherent, ultrafast probes of vibronic coupling would yield insight into processes that control ultrafast electronic relaxation in molecular and biological systems. \cite{Bredenbeck2015, Arsenault2021}
 Some years ago, Cho proposed a parametric, doubly resonant infrared/visible pathway to probe vibronic coupling in isotropic systems. \cite{Cho2001}
 In this method, a single infrared pulse is resonant with a vibrational mode, and a two photon absorption event from a near infrared (NIR) or visible pulse resonant with an electronic or vibronic state is used to generate the four wave mixing signal.
-The non-parametric pathways similar to this method are referred to herein as doubly resonant hyper-DFG (DR-HDFG).
+The non-parametric pathways similar to this method are referred to herein as doubly resonant HDFG (DR-HDFG).
 Methods analogous to DR-HDFG, where two photon absorption from the infrared pulse and one photon absorption from the visible pulse is used to generate output, i.e., stimulated Raman processes, have been reported. \cite{RN301, RN120} 
 
 An experimental complexity in executing four wave mixing experiments is the demand of three separate input pulses, often all at different frequencies.
@@ -94,6 +95,8 @@ It is shown that a HDFG active mode must be both IR and hyper-Raman active.
 Since any IR active vibration is also hyper-Raman active, \cite{Andrews1978} we demonstrate that HDFG is a coherent analogue of hyper-Raman scattering spectroscopy for IR active vibrations, i.e., HDFG is an optically upconverted infrared spectroscopy.
 This is akin to sum and difference frequency generation (SFG, DFG) being coherent Raman analogues for IR active vibrations. \cite{Shen90}
 
+%todo: discussion on ABC terms and what they mean.
+
 We investigate properties of DR-HDFG to understand how coupling between vibrational and vibronic states can be measured.
 DR-HDFG is shown to demand one and two-photon absorptions between the ground and excited state.
 DR-HDFG is thus the four wave mixing analogue of doubly resonant infrared-visible sum frequency generation. \cite{Shen94}
@@ -103,8 +106,8 @@ Singly resonant hyper difference generation spectroscopy (HDFG) spectroscopy has
 Similarities between HDFG spectroscopy, infrared spectroscopy and spontaneous hyper-Raman scattering have been noted previously. \cite{RN352, Bonn2024}
 In this section, we make the connections between HDFG and hyper-Raman scattering explicit and investigate the steady state properties of singly resonant HDFG.
 
-It is useful to expose relationships between transition dipoles, Raman polarizabilities and hyper-Raman polarizabilities in the driven limit. \cite{Simpson2004, RN120}
-In the driven limit, under the electric dipole approximation, the I$^{th}$ component of the third order nonlinear output polarization, ${P}^{(3)}_I$, of any four wave mixing process, induced by electric fields E, at output frequency $\omega_4$ is written as \cite{RN307}
+It is useful to expose relationships between transition dipoles, Raman polarizabilities and hyper-Raman polarizabilities in the driven limit. \cite{Druet1978, Simpson2004}
+In the driven limit, under the electric dipole approximation, the I$^{th}$ component of the third order nonlinear output polarization, ${P}^{(3)}_I$, of any four wave mixing process, induced by electric fields E, at output frequency $\omega_4$ is written as (using Einstein summation) \cite{RN307}
 \begin{equation} \label{polarization}
 {P}^{(3)}_I (\omega_4)  = \chi^{(3)}_{IJKL} E_J E_K E_L 
 \end{equation}
@@ -291,8 +294,8 @@ The other commonly used two laser CMDS method is sum frequency generation, a $\c
 The SFG output scales as $\chi^{(2)}_{IJK} \sim \langle \alpha_{ij} \mu_k \rangle$, where $\alpha_{ij}$ is the Raman polarizability tensor.
 Since SFG is dependent upon transitions that transform like both rank-one and rank-two tensors, this enforces a microscopic constraint that SFG cannot yield output for centrosymmetric species under the electric dipole approximation.
 This follows from the presence of an inversion center in centrosymmetric systems, which demands strict parity selection rules. \cite{RN230}
-Macroscopically, inversion symmetry in the output polarization eliminates output from centrosymmetric species under the electric dipole approximation.\cite{RN227, RN132}
-As a result, the output of SFG is significantly reduced relative to most third order spectroscopies because the output only depends on surface species.
+Macroscopically, oddness in spatial inversion of the output polarization eliminates output from centrosymmetric species under the electric dipole approximation.\cite{RN227, RN132}
+As a result, the output of SFG is significantly reduced relative to most third order spectroscopies because the output depends on surface species.
 However, since HDFG is dependent upon a hyper-Raman transition, it is useful to compare the relative output of the two processes to identify how HDFG output compares to SFG.
 
 To motivate the application of HDFG spectroscopy, we perform a calculation to compare HDFG and vibrational SFG (vSFG) output.
@@ -380,7 +383,7 @@ While the methods in \autoref{fig:sivewmel2} possess identical selection rules t
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=3.375in]{figures/timeorderedwmel.png}
-	\caption{Wave Mixing Energy Level (WMEL) diagrams of interfering hyper-DFG pathways in the  $\vec{k}_4 = -\vec{k}_1 + \vec{k}_2 + \vec{k}_3$ phasematching geometry. 
+	\caption{Wave Mixing Energy Level (WMEL) diagrams of interfering HDFG pathways in the  $\vec{k}_4 = -\vec{k}_1 + \vec{k}_2 + \vec{k}_3$ phasematching geometry. 
 		(a) is similar to the process diagrammed in \autoref{fig:sivewmel}, whereas (b) is similar to a singly resonant coherent anti-Stokes Raman-type process.
 		%todo: add pump-SIVE-probe to this set of WMELs
 		}
@@ -401,7 +404,7 @@ The third order response functions for \autoref{fig:sivewmel2}a ($R^{(3)}_{a}$) 
 \end{subequations}
 The total response function is therefore $R^{(3)}_\text{tot} (t_2) = R^{(3)}_{a} (t_2) + R^{(3)}_{b} (t_2) = 0$. 
 Since the total output response function vanishes in this time-ordering, the pathways in \autoref{fig:sivewmel2} perfectly destructively interfere.
-Therefore, to measure coherent dynamics via hyper-DFG, the time ordering shown in \autoref{fig:comparisonwmel} should be used.
+Therefore, to measure coherent dynamics via HDFG, the time ordering shown in \autoref{fig:comparisonwmel} should be used.
 These ideas have been seen experimentally in ultrafast DOVE work, as described elsewhere. \cite{RN367, McDonnell2024}
 In the case of the \autoref{fig:comparisonwmel} pathway, there are no opportunities for interference, as all other pathways are nonresonant with the first interaction. 
 A possible mechanism for interfering output in the \autoref{fig:comparisonwmel} pathway are cascaded second order processes (SFG, DFG). \cite{RN243, RN300}
