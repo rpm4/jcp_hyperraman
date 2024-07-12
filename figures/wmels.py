@@ -7,10 +7,12 @@ Created on Mon Jul  8 10:53:49 2024
 
 import matplotlib.pyplot as plt 
 from WrightTools.diagrams import WMEL
+import WrightTools as wt
 
-comparisonwmel = True
-timeorderedwmel = True
-drwmel = True
+comparisonwmel = False
+hdfg = True
+timeorderedwmel = False
+drwmel = False
 
 if comparisonwmel:
     fig = WMEL.Artist([4,1], [0, 0.2, 0.6, 1], state_names=("$\mathsf{| g\\rangle}$",
@@ -43,6 +45,19 @@ if comparisonwmel:
     fig.label_columns(['$\mathsf{DFG}$','$\mathsf{Raman}$', '$\mathsf{HDFG}$', '$\mathsf{Hyper-Raman}$'], font_size = 10)
     
     plt.savefig("comparisonwmel.png", bbox_inches='tight')
+
+if hdfg:
+    fig = WMEL.Artist([1,1], [0, 0.2, 0.6, 1], state_names=("$\mathsf{| g, 0\\rangle}$",
+                                                                   "$\mathsf{|g, v\\rangle}$", 
+                                                                   "$\mathsf{|m, n\\rangle}$",
+                                                                   "$\mathsf{|e, v'\\rangle}$"), number_of_interactions=5, state_font_size=9, state_text_buffer = 0.6, virtual = [2])
+
+    fig.add_arrow([0,0], 0, [0,1], kind='bra', color="k", label = "$\mathsf{1}$", head_length = 0.075)
+    fig.add_arrow([0,0], 1, [0,2], kind='ket', color="k", label = "$\mathsf{2}$", head_length = 0.075)
+    fig.add_arrow([0,0], 2, [2,3], kind='ket', color="k", label = "$\mathsf{3}$", head_length = 0.075)
+    fig.add_arrow([0,0], 3, [3,1], kind='out', color="blue", label = "$\mathsf{4}$", head_length = 0.075)
+    
+    fig.label_columns(['$(\mathsf{b})$'], font_size = 10)
 
 if timeorderedwmel:
     fig = WMEL.Artist([2,1], [0, 0.2, 0.6, 1], state_names=("$\mathsf{| g\\rangle}$",
