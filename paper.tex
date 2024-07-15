@@ -60,7 +60,7 @@ A particular class of CMDS methods, coherent Raman based four wave mixing spectr
 \end{figure*}
 
 Not all CMDS methods are used to dissect intramolecular couplings.\cite{Shen1987_CPL}
-The most well known example is sum frequency generation (SFG), a three wave mixing technique used to interpret vibrational structure and dynamics at interfaces. \cite{RN431, Piontek2023}
+The most well known example is sum frequency generation (SFG), a three wave mixing technique used to interpret vibrational structure and dynamics at interfaces. \cite{RN224, Piontek2023}
 Non-parametric, hyper difference frequency generation (hyper-DFG, or HDFG) spectroscopy, similar to difference frequency generation (\autoref{fig:comparisonwmel}), is a four wave mixing method which, when detuned from  electronic resonances, does not probe intramolecular couplings. 
 HDFG was the first infrared CMDS method to successfully discriminate against non-resonant background.\cite{RN351, RN352}
 HDFG has also been referred to as singly vibrationally enhanced (SIVE) spectroscopy. \cite{RN351}
@@ -70,7 +70,7 @@ Hyper-Raman scattering is the two photon analogue to Raman scattering. \cite{Cyv
 Compared to Raman spectroscopy, hyper-Raman scattering cross sections are often small, making it a difficult technique to successfully implement.\cite{RN515, Kelley2010} 
 The different selection rules of hyper-Raman scattering, however, make it a unique alternative to Raman scattering to understand vibrational spectra and vibronic coupling in molecular systems.
 Some years ago, Cho et al. proposed parametric six wave mixing techniques as the coherent analogue of hyper-Raman scattering. \cite{Cho1997, Cho1998}
-However, since most six wave mixing methods cascade into four wave mixing processes,\cite{RN243, RN302, Cho2000_Cascade}, and their output would be dependent upon the square magnitude of the hyper-Raman scattering cross section, a small number,\cite{RN515} it is preferable to investigate coherent four wave mixing analogues to hyper-Raman scattering.
+However, since most six wave mixing methods cascade into four wave mixing processes,\cite{RN243, Cho2000_Cascade}, and their output would be dependent upon the square magnitude of the hyper-Raman scattering cross section, a small number,\cite{RN515} it is preferable to investigate coherent four wave mixing analogues to hyper-Raman scattering.
 
 While HDFG showed promise as an upconverted infrared spectroscopy method, it was quickly supplemented by a doubly vibrationally resonant method, doubly vibrationally enhanced (DOVE) spectroscopy, to investigate intra- and intermolecular vibrational coupling. \cite{RN345, RN101, Cho2000}
 As a result, investigations of HDFG stagnated; to date, there are less than a dozen studies which report on HDFG. \cite{RN350, RN416, RN351, RN352, RN353, Chen1998, RN362, RN418, Bonn2024, McDonnell2024}
@@ -89,15 +89,15 @@ Only recently have methods been developed for seamless tuning and scanning of ul
 Since HDFG demands only a single resonance to be scanned, the experiment can be performed using two input pulses: one tunable, infrared OPA to scan across vibrational resonances, and a two photon absorption from the signal process of a separate OPA, or output from the oscillator which pumps the infrared OPA. \cite{Wang2021}
 As such, laboratories experienced in sum frequency generation (SFG) spectroscopy can perform HDFG spectroscopy to understand bulk dynamics and spectroscopy using nearly the same setup.\cite{Shen1987_CPL}
 
-Inspired by recent work which demonstrated the presence of HDFG in ultrafast DOVE experiments,\cite{McDonnell2024} we investigate the parameters which result in both SR and DR-SIVE output. \cite{Cho2000, Bonn2024}
+Inspired by recent work which demonstrated the presence of HDFG in ultrafast DOVE experiments, we investigate the parameters which result in both SR and DR-SIVE output. \cite{Cho2000, Bonn2024, McDonnell2024}
 This paper is outlined as follows.
-In section \ref{steadystate}, we discuss the selection rules behind singly and doubly resonant HDFG in terms of hyper-Raman A,B,C coefficients.
-In section \ref{quant}, the quantitative aspects of HDFG is discussed.
+In section \ref{steadystate}, we discuss the selection rules behind singly and doubly resonant HDFG first through the Placzek approximation, and then through hyper-Raman A,B,C coefficients.
+In section \ref{quant}, the quantitative aspects of HDFG are discussed, and a method to extract hyper-Raman hyperpolarizabilities ($\beta_{ijk}$) from HDFG spectra is identified.
 In section \ref{mixeddomain}, mixed time-frequency domain HDFG is discussed, and is applied to the simple case of CH$_3$CN in section \ref{Expt}. 
-\section{Experimental}\label{experimental}
 
+\section{Experimental}\label{experimental}
 The ultrafast laser system has been described in detail elsewhere. \cite{RN278}
-Briefly, an 80 MHz Ti-Sapphire ultrafast oscillator  (Spectra-Physics Tsunami) created 35 fs seed pulses, amplified by a 1 kHz regnerative amplifier (Spectra-Physics Spitfire Ace) to approximately 0.5 W.
+Briefly, an 80 MHz Ti-Sapphire ultrafast oscillator  (Spectra-Physics Tsunami) created 35 fs seed pulses, amplified by a 1 kHz regenerative amplifier (Spectra-Physics Spitfire Ace) to approximately 0.5 W.
 A mask in the regenerative amplifier stretched the input pulses to roughly 1 ps.
 The resultant output was used to pump four independent OPAs, two of which are relevant for this study.
 OPA1 (TOPAS-800, Light Conversion), referred to as $\omega_1$, was tuned for difference frequency generation (DFG) with an external stage (NDFG ``DF2'', Light Conversion).
@@ -120,11 +120,12 @@ All chemicals were used as obtained without further purification.
 The solution was deposited on a microscope coverslip and allowed to dry in a dessicator until a thin layer was formed.
 
 \section{Steady State HDFG Spectroscopy}\label{steadystate}
+\subsection{Placzek Method}
 Singly resonant hyper difference generation spectroscopy (HDFG) spectroscopy has potential to provide deeper insight into single quantum decoherence times and molecular orientation in condensed systems.
-Similarities between HDFG spectroscopy, infrared spectroscopy and spontaneous hyper-Raman scattering have been noted previously. \cite{RN352, Bonn2024}
+Similarities between HDFG spectroscopy, infrared spectroscopy and spontaneous hyper-Raman scattering have been noted previously. \cite{RN352, Bonn2024, McDonnell2024}
 In this section, we investigate the steady state properties of HDFG and make the connections between HDFG and hyper-Raman scattering explicit.
 
-It is useful to expose relationships between transition dipoles, Raman polarizabilities and hyper-Raman polarizabilities in the driven limit. \cite{Druet1978, Simpson2004}
+It is useful to expose relationships between transition dipoles, Raman polarizabilities and hyper-Raman hyperpolarizabilities in the driven limit. \cite{Druet1978, Simpson2004}
 In the driven limit, under the electric dipole approximation, the I$^{th}$ component of the third order nonlinear output polarization, ${P}^{(3)}_I$, of any four wave mixing process, induced by electric fields E, at output frequency $\omega_4$ is written as (using Einstein summation) \cite{RN307}
 \begin{equation} \label{polarization}
 {P}^{(3)}_I (\omega_4)  = \chi^{(3)}_{IJKL} E_J E_K E_L 
@@ -146,7 +147,7 @@ where: $\mu^{ab}_{j}$ is the $j^{th}$ element of $\mel{a}{\vec{\mu}}{b}$, $\Delt
 D, the Maker-Terhune degeneracy factor, accounts for permutation symmetry in $\gamma_{ijkl}$.\cite{RN134} 
 For a HDFG experiment using two or three distinct input fields, as considered here, D = 6.
 We first investigate the selection rules through a Placzek type formalism.
-Contracting over the virtual states forms the hyper-Raman hyperpolarizability $\beta$.\cite{Long1970, Willetts1992} 
+Contracting over the virtual states forms the hyper-Raman hyperpolarizability $\beta$.\cite{Long1970} 
 Assuming $\omega_2$, $\omega_3$ are significantly detuned from any local resonance (\autoref{fig:comparisonwmel}),\cite{Placzek1934, Long1970} \autoref{sivegamma} is written as 
 \begin{equation}\label{sivebeta}
 	\gamma_{ijkl} =	-\frac{1}{\varepsilon_0} \frac{1}{24 \hbar}\frac{\beta^{gv}_{ijk} \mu^{gv}_{l}}{\Delta_{gv}} \rho_{gg}
@@ -176,8 +177,8 @@ This selection rule is generally valid for any HDFG or hyper sum frequency gener
 	}
 	\label{fig:hdfg}
 \end{figure}
-
-While Placzek type arguments provide general source of HDFG output, it is insightful to interpret the origin of signal in terms of Albrecht ABC type terms.\cite{Ziegler1988} 
+\subsection{Albrecht Type Expansion}
+While Placzek type arguments provide the general source of HDFG output, it is insightful to interpret the origin of signal in terms of Albrecht ABC type terms.\cite{Ziegler1988} 
 We write $\beta_{ijk}$ in \autoref{SIVEselection} using the hyper-Raman ABC formalism to understand how vibronic coupling manipulates selection rules for singly and doubly resonant HDFG (\autoref{fig:hdfg}). \cite{Ziegler1988, Baranov1990}
 To employ this formalism, we write the states in terms of a Born-Oppenheimer basis $\ket{a,b}$, where $\ket{a,b} = |a(Q)) \otimes \ket{b}$ for electronic states $\{|a(Q))\}$ and vibrational states $\{\ket{b}\}$ (i.e., adiabatic approximation). \cite{BornOppenheimer, Tang1970}
 The dependence of the electronic states on the adiabatic parameter $Q$ is suppressed for simplicity.
@@ -209,14 +210,6 @@ Using these ideas rewrites \autoref{drgamma_notaylor} as
 		}{\Delta_{g0,gv}
 			\Delta_{ev', mn}
 			\Delta_{mn, g0}	} \\
-%	&= 	-\frac{1}{\varepsilon_0} \frac{1}{24 \hbar^3} \sum_{m,n,v'} \frac{
-%		\mel{v}{M_{i}^{ge}}{v'} 
-%		\mel{v'}{M_{j}^{em}}{n}
-%		\mel{n}{M_{k}^{mg} }{v}
-%		\mel{v}{\mu_{l}}{0}
-%	}{\Delta_{g0,gv}
-%		\Delta_{ev', mn}
-%		\Delta_{mn, g0}	} \\
 	\end{split}
 \end{equation}
 Chung and Ziegler showed some years ago that expanding $\vec{M}^{ij}$ to $\order{Q}$ as
@@ -229,7 +222,7 @@ yields $A, B, C$ coefficients similar to those in the Albrecht formalism of Rama
 \end{equation}
 The $A$ term depends upon $\order{Q^0}$ transitions (i.e., Condon approximation), the $B$ term depends upon $\order{Q}$ transitions, and the $C$ term depends on $\order{Q^2}$ transitions. 
 The C term is suppressed in the following discussion as it depends on one and two photon forbidden transitions. \cite{Ziegler1988, Neddersen1989, Bonang1992}
-Note that some reports obtain $A, B, C$ coefficients through a Herzberg-Teller expansion of the electronic states, $|a) = |a)_0 + \sum_{a \neq b} \frac{(\partial H / \partial Q )_0  Q}{E_a - E_b} |a)_0$, to explicitly expose vibronic couplings in terms of $\partial H / \partial Q $, where H is the electronic Hamiltonian.\cite{HerzbergTeller1933, Petrov1985, Neddersen1989, Baranov1990}
+Note that some reports obtain $A, B, C$ coefficients through a Herzberg-Teller expansion of the electronic states, $|a) = |a)_0 + \sum_z \sum_{a \neq b} \frac{(\partial H / \partial Q_z )_0  Q_z}{E_a - E_b} |a)_0$, to explicitly expose vibronic couplings in terms of $\partial H / \partial Q_z $, where H is the electronic Hamiltonian.\cite{HerzbergTeller1933, Petrov1985, Neddersen1989, Baranov1990}
 This approach is not used here as the expansion of $\vec{M}^{ij}$ in normal mode coordinates provides sufficient physical insight into hyper-Raman selection rules. 
 
 By contracting over the virtual vibrational states $\ket{n}$, the $A$ and $B$ coefficients, where $B = B_1 + B_2$, are written as
@@ -265,7 +258,7 @@ By contracting over the virtual vibrational states $\ket{n}$, the $A$ and $B$ co
 \end{widetext}
 where terms such as $\langle a | b \rangle$ are Franck-Condon factors. 
 These expressions are valid for both singly and doubly resonant HDFG, but based upon the resonance schemes, further simplifications can be made (\textit{vide infra}).
-
+\subsubsection{Singly Resonant HDFG}
 In the case of singly resonant HDFG, $\omega_3$ is also detuned from any resonance, which permits contraction over ${v'}$ as the dependence on $\ket{v'}$ in the resonance denominator can be neglected. 
 Assuming a normal mode basis, we see for singly resonant HDFG that
 \begin{subequations}
@@ -290,7 +283,7 @@ The singly resonant HDFG susceptibility can be approximated as
 \end{equation}
 or, while a vibrational mode must be infrared active for HDFG output, vibronic activity is necessary for singly resonant HDFG response.
 The breakdown of the Condon approximation in singly resonant HDFG supports the relative small HDFG $\chi^{(3)}$ values ($\sim$ order of magnitude larger than nonresonant background) in hexane and similar organic solvents. \cite{RN350, RN351, RN353}
-
+\subsubsection{Doubly Resonant HDFG}
 The selection rules for DR-HDFG are different. 
 DR-HDFG (where a vibrational and vibronic state are resonantly coupled) can provide a tool for measuring vibronic coupling, analogous to fully resonant DFG. \cite{Dick83_1, Shen94}
 Many multi-resonant nonlinear spectroscopies have been developed to resolve vibronic coupling in molecular samples. \cite{Carlson1990, Gaynor2017, RN276}
@@ -325,21 +318,23 @@ Since the hyper-Raman process is stimulated by a two-photon process, a setup usi
 The most commonly used two laser CMDS method is sum frequency generation, a $\chi^{(2)}$ technique whose phasematching is dictated by $\vec{k}_1 + \vec{k}_2$.
 SFG output scales as $\chi^{(2)}_{IJK} \sim \langle \alpha_{ij} \mu_k \rangle$, where $\alpha_{ij}$ is the Raman polarizability tensor.
 Since SFG is dependent upon transitions that transform like both rank-one and rank-two tensors, parity enforces a microscopic constraint that SFG cannot yield output for centrosymmetric species under the electric dipole approximation due to the presence of an inversion center. \cite{RN230}
-Macroscopically, oddness in spatial inversion of the output polarization eliminates output from centrosymmetric species under the electric dipole approximation.\cite{RN227, RN132}
+Macroscopically, oddness in spatial inversion of the output polarization eliminates output from centrosymmetric species under the electric dipole approximation.\cite{RN133, RN132}
 As a result, the output of SFG is significantly reduced relative to most third order spectroscopies because the output depends on surface species.
 However, since HDFG is dependent upon a hyper-Raman transition, it is useful to compare the relative output of the two processes to identify how HDFG output compares to SFG.
 
 To motivate the application of HDFG spectroscopy, we perform a calculation to compare HDFG and vibrational SFG (vSFG) output.
 Absorption effects are neglected for simplicity.
 The output polarizations of each process is written as
+\begin{widetext}
 	\begin{subequations}
-		\begin{equation}
-			\abs{P^{(2)}_{\text{SFG}}} = N_{surf} F(\omega_1+\omega_2) \abs{\langle \alpha_{ij}\mu_{k} \rangle E(\omega_2)E(\omega_1)} 
-		\end{equation}
-		\begin{equation}
-			\abs{P^{(3)}_{\text{HDFG}}} = N_{bulk}  F(2\omega_2-\omega_1) \abs{\langle \beta_{ijk} \mu_{l} \rangle E{(\omega_2)}E(\omega_2)E(-\omega_1)} \ell_{eff}
-		\end{equation}
-	\end{subequations}
+	\begin{equation}
+		\abs{P^{(2)}_{\text{SFG}}} = N_{surf} F(\omega_1+\omega_2) \abs{\langle \alpha_{ij}\mu_{k} \rangle E(\omega_2)E(\omega_1)} 
+	\end{equation}
+	\begin{equation}
+		\abs{P^{(3)}_{\text{HDFG}}} = N_{bulk}  F(2\omega_2-\omega_1) \abs{\langle \beta_{ijk} \mu_{l} \rangle E{(\omega_2)}E(\omega_2)E(-\omega_1)} \ell_{eff}
+	\end{equation}
+\end{subequations}
+\end{widetext}
 where N$_{bulk}$ is the bulk number density, and N$_{surf}$ is the surface number density (10$^{19}$ m$^{-2}$).\cite{RN133, RN503}	
 For liquids with molar masses less than $\sim$100 g mol$^{-1}$ and densities roughly equal to that of H$_2$O$_{(l)}$ at room temperature, N$_{bulk} \sim$ 10$^{28}$ m$^{-3}$.
 We take the bulk optical interaction length ($\ell_{eff}$) to be 10 $\mu$m.\cite{RN133} %see chapter 25 of Shen's NLO book... idk something here seems wrong
@@ -410,8 +405,8 @@ Isolating different pulse orderings can isolate pathway specific signal and mini
 Mixed domain HDFG can resolve frequency dependent free induction decay, which could prove useful for understanding isotropic dynamics of single quantum coherences. 
 Mixed domain resonant HDFG, using pathways similar to those in \autoref{fig:hdfg}b, could also measure electronic-vibrational correlation functions, as discussed by Cho. \cite{Cho2001}
 
-It is well known that nonlinear wave mixing processes which share the same time ordering and output frequency will interfere. \cite{RN135, Bonn2024}
-Understanding interfering pathways is useful because they can, in some cases, eliminate output. \cite{RN342, RN135}
+It is well known that nonlinear wave mixing processes which share the same time ordering and output frequency will interfere. \cite{RN342, RN135}
+Understanding interfering pathways is useful because they can, in some cases, eliminate output. 
 While we have only isolated one specific HDFG process so far, there are at least fourteen different WMELs which can provide HDFG output. \cite{RN352}
 If $\omega_2$ ($\omega_1$) becomes resonant (non-resonant), then other HDFG pathways appear (\autoref{fig:sivewmel2}).\cite{McDonnell2024} 
 While the methods in \autoref{fig:sivewmel2} possess identical selection rules to \autoref{fig:hdfg}, the WMEL diagrams presented in \autoref{fig:sivewmel2} will interfere, as they share the same phasematching condition but have oppositely signed amplitudes.
