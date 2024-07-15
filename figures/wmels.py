@@ -7,12 +7,12 @@ Created on Mon Jul  8 10:53:49 2024
 
 import matplotlib.pyplot as plt 
 from WrightTools.diagrams import WMEL
-import WrightTools as wt
+# import WrightTools as wt
 
-comparisonwmel = False
+comparisonwmel = True
 hdfg = True
-timeorderedwmel = False
-drwmel = False
+timeorderedwmel = True
+drwmel = True
 
 if comparisonwmel:
     fig = WMEL.Artist([4,1], [0, 0.2, 0.6, 1], state_names=("$\mathsf{| g\\rangle}$",
@@ -112,3 +112,4 @@ if drwmel:
     fig.label_columns(['$(\mathsf{a})$','$(\mathsf{b})$'], font_size = 10)
     fig.label_rows(['$\mathsf{I}$','$\mathsf{II}$'], font_size=15, text_buffer=1.5)
     plt.savefig("drwmel.png", bbox_inches='tight')
+    
