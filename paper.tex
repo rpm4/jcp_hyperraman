@@ -1,4 +1,4 @@
-\documentclass[aip, jcp, reprint, twocolumn]{revtex4-2}
+\documentclass[aip, jcp, reprint, onecolumn]{revtex4-2}
 
 \bibliographystyle{apsrev4-2}
 
@@ -227,7 +227,7 @@ This approach is not used here as the expansion of $\vec{M}^{ij}$ in normal mode
 
 By contracting over the virtual vibrational states $\ket{n}$, the $A$ and $B$ coefficients, where $B = B_1 + B_2$, are written as
 \begin{widetext}
-\begin{subequations}
+\begin{subequations}\label{ABterms}
 \begin{equation}
 	\begin{split}
 		A_{ijk} = \frac{1}{\hbar^2}\sum_{m,e,v'} M^{ge}_{0,i} 
@@ -260,7 +260,7 @@ where terms such as $\langle a | b \rangle$ are Franck-Condon factors.
 These expressions are valid for both singly and doubly resonant HDFG, but based upon the resonance schemes, further simplifications can be made (\textit{vide infra}).
 \subsubsection{Singly Resonant HDFG}
 In the case of singly resonant HDFG, $\omega_3$ is also detuned from any resonance, which permits contraction over ${v'}$ as the dependence on $\ket{v'}$ in the resonance denominator can be neglected. 
-Assuming a normal mode basis, we see for singly resonant HDFG that
+Assuming a normal mode basis, we see for singly resonant HDFG that 
 \begin{subequations}
 \begin{equation}
 	A_{ijk} \sim \sum_{v'}\langle v | v' \rangle \langle v' | 0 \rangle = \delta_{v0} = 0
@@ -277,12 +277,12 @@ Assuming a normal mode basis, we see for singly resonant HDFG that
 \end{equation}
 \end{subequations}
 i.e., A$_{ijk}$ vanishes, but B$_{ijk}$ is non-zero, for singly resonant HDFG. 
-The singly resonant HDFG susceptibility can be approximated as
+The singly resonant HDFG susceptibility can be approximated as 
 \begin{equation}
 	\chi^{(3)}_{IJKL} \sim \langle B_{ijk} \mu_l \rangle
 \end{equation}
 or, while a vibrational mode must be infrared active for HDFG output, vibronic activity is necessary for singly resonant HDFG response.
-The breakdown of the Condon approximation in singly resonant HDFG supports the relative small HDFG $\chi^{(3)}$ values ($\sim$ order of magnitude larger than nonresonant background) in hexane and similar organic solvents. \cite{RN350, RN351, RN353}
+The breakdown of the Condon approximation in singly resonant HDFG supports the relatively small HDFG $\chi^{(3)}$ values ($\sim$ order of magnitude larger than nonresonant background) in hexane and similar organic solvents. \cite{RN350, RN351, RN353}
 \subsubsection{Doubly Resonant HDFG}
 The selection rules for DR-HDFG are different. 
 DR-HDFG (where a vibrational and vibronic state are resonantly coupled) can provide a tool for measuring vibronic coupling, analogous to fully resonant DFG. \cite{Dick83_1, Shen94}
@@ -292,26 +292,64 @@ DR-HDFG output is dependent upon the $A,B$ terms prior to contraction over $\ket
 Based upon the presence of the $A$ term in DR-HDFG, it is apparent that DR-HDFG can inform on molecular electronic structure.
 
 The impact of vibronic coupling in the 2D spectrum is made clear by using a simple model.
-Using a two-well system described by $H_g = p^2/2m + 1/2 \hbar \omega q^2$ and $H_e = p^2/2m + 1/2 \hbar \omega (q-\Delta)^2$, the A and B contributions can be easily evaluated using Franck-Condon type integrals tabulated elsewhere. \cite{Carlson1988thesis}
-
-%todo: write hamiltonian like Gaynor to make clear what we are doing (and put in a picture in Figure doubbleresspec)
-To interpret HDFG selection rules, we use a slightly modified version of equation xyz to account for the added vibronic resonance. 
-This change immediately makes the A term nonzero in the case of noncentrosymmetric systems.
-
-A simulated spectrum highlighting the contributions of these terms (\autoref{fig:doubres_spec}) on potential wells with displacements $\Delta$ shows... 
+Using a two-well system described by $H_g = p^2/2m + 1/2 \hbar \omega q^2$ and $H_e = p^2/2m + 1/2 \hbar \omega (q-\Delta)^2 +\hbar \omega_{eg}$, the A and B contributions can be easily evaluated using Franck-Condon and Herzberg-Teller integrals tabulated elsewhere. \cite{Carlson1988thesis} 
+By working only in terms of a single normal mode (i.e. removing the sum over $z$) and assuming electronic transitions occur only between $|g), |e)$ and that $v' = \{0,1,2\}$, the A and B terms are rewritten as
+\begin{widetext}
+	\begin{subequations}\label{ABterms_DR}
+		\begin{equation}
+			\begin{split}
+				A_{ijk} = \frac{1}{\hbar}\sum_{v'} M^{ge}_{0,i} 
+				\Lambda^{eg}_{0,jk}
+				\langle v | v' \rangle
+				\langle v' | 0 \rangle 
+				\frac{1}{\Delta_{ev',g0}}
+				\\
+			\end{split}
+		\end{equation}
+		\begin{equation}
+			\begin{split}
+				B_{1_{ijk}} &= \frac{1}{\hbar^2} \sum_{v',m} M^{ge}_{0,i} \langle v | v' \rangle \lbrack
+				\frac{\partial M^{em}_{j}}{\partial Q} M^{mg}_{0,k} \mel{v'}{Q}{0} 
+				+M^{em}_{0,j} \frac{\partial M^{mg}_{k}}{\partial Q} \mel{v'}{Q}{0} \rbrack \frac{1}{\Delta_{ev',m} \Delta_{m, g0}}\\
+			\end{split}
+		\end{equation}
+		\begin{equation}
+			\begin{split}
+				B_{2_{ijk}} = \frac{1}{\hbar} \sum_{v'} \frac{\partial M^{ge}_{i}}{\partial Q} 
+				\Lambda^{eg}_{0,jk} 
+				\mel{v}{Q}{v'} 
+				\langle v' | 0 \rangle 
+				\frac{1}{\Delta_{ev',g0}}
+			\end{split}
+		\end{equation}
+	\end{subequations}
+\end{widetext}
+where the electronic two photon absorption operator, $\Lambda$ was invoked to simplify summation over virtual states. \cite{McClain1977}
+It is clear from \autoref{ABterms_DR} that the Condon approximation breaks down for centrosymmetric molecules, as centrosymmetry invokes strict parity constraints that make states not accessible via both one and two photon transitions.
+This makes DR-HDFG a unique tool for studying the electronic structure of centrosymmetric species in isotropic media, as it is sensitive to non-Condon effects.
+A simulated spectrum highlighting the contributions of these terms (\autoref{fig:doubres_spec}) on potential wells with displacements $\Delta$ using arbitrary values listed in \autoref{T:hdfgvalues} show...
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=3.375in]{drsive_spectrum.png}
-	\caption{Spectrum showing sensitivity of DR-HDFG to well displacements in vibronic coupling.
-		Model includes both Franck-Condon and Herzberg Teller effects.
-		(a) Potential energy surfaces, 2D spectrum where (b) $\Delta = 0$, (c) $\Delta = 0.5$, (d) $\Delta = 1$}
+	\caption{DR-HDFG $\gamma_{ijkl}$ spectrum for a simple two harmonic well system.
+		(a) Potential energy surface, (b) 2D DR-HDFG spectrum for $\Delta = 0.5$.}
 	\label{fig:doubres_spec}
 \end{figure}
 
-%These results also make DR-HDFG a type of resonance IR spectroscopy, as introduced by Boyle et al for resonant triple sum frequency generation.\cite{RN491} 
-%However, in the methods described by \autoref{drgamma_alpha_0}, $|e)$ must be accessible through one and two photon transitions from $|g)$.
-%Conversely, the resonance-IR method demonstrated by Boyle et al. only requires one photon transitions between $|g)$ and $|e)$.
-%Systems which provide strict parity selection rules (e.g., benzene) will be useful for assessing the validity of these selection rules and comparing the method described here and that of Boyle et al. \cite{RN491}
+\begin{table}[!htbp]
+	\caption{\label{T:hdfgvalues} Values used to generate the 2D DR-HDFG plot. 
+	All Franck-Condon and Herzberg-Teller integrals are evaluated as tabulated by Carlson \cite{Carlson1988thesis}}
+	\begin{ruledtabular}
+		\begin{tabular}{cc}
+			Quantity & Value\\
+			\hline  
+			$\mel{g}{\mu}{v}$ & 0.1 D\\
+			I-b & No\\
+			II-a & No\\
+			II-a & No\\
+		\end{tabular}
+	\end{ruledtabular}
+\end{table}
 
 \section{Quantitative Aspects of HDFG}\label{quant}
 
@@ -359,8 +397,8 @@ Resonant lineshapes are also complicated by amplitude level interference between
 
 Most quantitative methods in an n$^{th}$ order CMDS experiment are used to extract $\chi^{(n)}$ values to compare the relative strength of nonlinear processes in different media. \cite{Zhu87, RN351, RN345}
 The recorded $\chi^{(n)}$ values provide insight into how microscopic quantities ($\vec{\mu}, \alpha_{ij}, \beta_{ijk}$) impact nonlinear output.
-Calculating $\beta_{ijk}$ values from hyper-Raman experiments is difficult and has only been performed for a selection of molecular vibrations. \cite{Xu1997, Shoute2005, Kelley2010}
-Methods reported in the literature to measure absolute hyper-Raman polarizabilities depend upon external standards such as hyperpolarizabilities of dissolved samples or two-photon absorption cross sections (also difficult to measure).
+Calculating $\beta_{ijk}$ values from hyper-Raman experiments is difficult and has only been performed for a few molecular vibrations. \cite{Xu1997, Shoute2005, Kelley2010}
+Methods reported in the literature to measure absolute hyper-Raman polarizabilities depend upon external standards such as hyperpolarizabilities of dissolved samples or two-photon absorption cross sections, also difficult to measure.
 Since the Bloembergen interferometry experiment only relies on the third order susceptibility for measured species (such as benzene or CaF$_2$), it is possible to use quantitative four wave mixing spectroscopy to calculcate $\beta_{ijk}$ values.
 It is thus useful to investigate how a treatment of orientational averaging can extract $\beta_{ijk}$ from $\chi^{(3)}_{IJKL}$.
 
@@ -383,7 +421,7 @@ By introducing the reduced mass coordinate $q_n = \sqrt{\frac{1}{m_n}} Q_n$ and 
 \begin{equation}\label{betasive}
 	\langle \frac{\partial \beta_{ijk}}{\partial q_n} {\frac{\partial \mu_l}{\partial q_n}} \rangle = \frac{48 \varepsilon_0}{NF}  \frac{\Gamma_{gv} \omega_{vg}}{\rho_{gg}} {\Im(\chi^{(3)}_{IJKL})}
 \end{equation}
-Since $\abs{\mu}$ values can be readily extracted from FT-IR spectra,\cite{RN119, RN412} HDFG can give quantitative information on the magnitude of $\beta_{ijk}$.
+Since $\abs{\mu}$ values can be readily extracted from FT-IR spectra,\cite{RN109, RN412} HDFG can give quantitative information on the magnitude of $\beta_{ijk}$.
 
 \section{Mixed-Domain HDFG}\label{mixeddomain}
 The properties of steady state HDFG (complete pulse overlap) are useful for understanding the selection rules that drive output.
@@ -419,18 +457,18 @@ While the methods in \autoref{fig:sivewmel2} possess identical selection rules t
 	\label{fig:sivewmel2}
 \end{figure}
 
-The third order response functions for \autoref{fig:sivewmel2}a ($R^{(3)}_{a}$) and \autoref{fig:sivewmel2}b ($R^{(3)}_{b}$) are 
+The third order response functions for the pathways detailed in \autoref{fig:sivewmel2} when $\omega_1$ and $\omega_3$ are temporally overlapped are 
 \begin{subequations}
 	\begin{equation} \label{mixing:a}
-		R^{(3)}_{a} (t_2) = -\frac{i}{\hbar} [\beta(t_2), \mu(0)] \exp(-i\Delta_{v''g}t_2) \theta(t_2)
+		R^{(3)}_{a} (t_2) = R^{(3)}_{c} (t_2) = -\frac{i}{\hbar} [\beta(t_2), \mu(0)] \exp(-i\Delta_{vg}t_2) \theta(t_2)
 	\end{equation}
 	\begin{equation}\label{mixing:b}
 		\begin{split}
-			R^{(3)}_{b} (t_2) & = \frac{i}{\hbar} [\beta(t_2), \mu(0)] \exp(-i\Delta_{v''g}t_2) \theta(t_2)\\
+			R^{(3)}_{b} (t_2) = R^{(3)}_{d} (t_2) & = \frac{i}{\hbar} [\beta(t_2), \mu(0)] \exp(-i\Delta_{vg}t_2) \theta(t_2)\\
 		\end{split}
 	\end{equation}
 \end{subequations}
-The total response function in this time ordering is therefore $R^{(3)}_\text{tot} (t_2) = R^{(3)}_{a} (t_2) + R^{(3)}_{b} (t_2) = 0$. 
+The total response function in this time ordering is therefore $R^{(3)}_\text{tot} (t_2) = R^{(3)}_{a} (t_2) + R^{(3)}_{b} (t_2) + R^{(3)}_{c} (t_2) + R^{(3)}_{d} (t_2) = 0$. 
 Since the total output response function vanishes in this time-ordering, the pathways in \autoref{fig:sivewmel2} perfectly destructively interfere.
 Therefore, to measure dynamics via HDFG, the time ordering shown in \autoref{fig:hdfg} should be used.
 These ideas have been seen experimentally in ultrafast DOVE work. \cite{RN367, McDonnell2024}
