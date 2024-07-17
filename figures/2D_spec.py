@@ -67,11 +67,18 @@ def f01(q): #<0|1>
 def f10(q): #<1|0>
     return -1*f01(q)
 
+def f11(q):
+    return (1 - q**2/2) *f00(q)
+
 def f02(q): #<0|2>
     return q**2/(2*np.sqrt(2)) * f00(q)
 
 def f20(q): #<2|0>
     return f02(q)
+
+def f12(q): #<1|2>
+    return -q * (1 - q**2/4) *f00(q)
+    
 
 #define Herzberg Teller overlap integrals following page 165 of Roger Carlson's thesis in terms of Delta
 def h00(q): #<0|Q|0>
@@ -85,5 +92,26 @@ def h10(q): #<1|Q|0>
 
 def h11(q): #<1|Q|1>
     return -q/2 * (1 - q**2 / 2) * f00(q)
+
+#define resonance denominator
+def Deltaevgo(v,x,j):
+    Gammaev =[500, 500, 500]
+    weg = 30000
+    return 1/(weg + 1500*v - x - 1j*Gammaev[j])
+
+
+#define numbers for AB terms
+Mge = 0.1
+alphage = 0.01
+dMegedQ = 0.05
+dMem = 0.025
+dMmg = 0.025
+
+#define terms
+x = np.linspace(29000, 35000, 6000)
+
+A = Mge * alphage * (f10(0.5)*f00(0.5)*Deltaevgo(0,x,0) + f11(0.5)*f10(0.5)*Deltaevgo(1,x,1) + f12(0.5)*f20(0.5)*Deltaevgo(2,x,2))
+
+B1 = 
 
 
