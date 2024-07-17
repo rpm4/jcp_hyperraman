@@ -67,9 +67,11 @@ def f01(q): #<0|1>
 def f10(q): #<1|0>
     return -1*f01(q)
 
-def f02(q): #<2|0> = <0|2>
+def f02(q): #<0|2>
     return q**2/(2*np.sqrt(2)) * f00(q)
 
+def f20(q): #<2|0>
+    return f02(q)
 
 #define Herzberg Teller overlap integrals following page 165 of Roger Carlson's thesis in terms of Delta
 def h00(q): #<0|Q|0>
@@ -81,7 +83,7 @@ def h01(q): #<0|Q|1>
 def h10(q): #<1|Q|0>
     return 1/np.sqrt(2) * (1 - q**2 /2) * f00(q)
 
-def h11(q):
+def h11(q): #<1|Q|1>
     return -q/2 * (1 - q**2 / 2) * f00(q)
 
 
