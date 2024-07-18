@@ -11,7 +11,7 @@ import numpy as np
 import WrightTools as wt
 import matplotlib.pyplot as plt 
 
-save = True
+save = False
 
 
 #define harmonic wells and coordinates
@@ -24,6 +24,8 @@ def es(k):
 kg = np.linspace(-2.5, 2.5, 500) #ground state coordinates
 ke = np.linspace(-2, 3, 500) #excited state coordinates
 
+#todo: make an array so I can just call specific matrix element of the fc and ht factors, then do a for loop over that array, should work out well.
+
 
 #define Franck-Condon factors following page 164 of Roger Carlson's thesis in terms of Delta
 def f00(q): #<0|0>
@@ -35,7 +37,7 @@ def f01(q): #<0|1>
 def f10(q): #<1|0>
     return -1*f01(q)
 
-def f11(q):
+def f11(q): #<1|1>
     return (1 - q**2/2) *f00(q)
 
 def f02(q): #<0|2>
@@ -61,7 +63,7 @@ def h10(q): #<1|Q|0>
 def h11(q): #<1|Q|1>
     return -q/2 * (1 - q**2 / 2) * f00(q)
 
-def h12(q):
+def h12(q): #<1|Q|2>
     return (1 + q**2/4 - q**4/8) * f00(q)
 
 def h20(q): #<2|Q|0>
@@ -78,9 +80,9 @@ def Deltaevgo(v,x,l):
 #define numbers for AB terms
 Mge = 0.1
 alphage = 0.01
-dMem = 0.0025
-dMmg = 0.0025
-dMgedQ = 0.05
+dMem = 0.00005
+dMmg = 0.00005
+dMgedQ = 0.0005
 
 
 #define terms
