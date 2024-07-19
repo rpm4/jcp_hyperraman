@@ -27,7 +27,7 @@ ke = np.linspace(-2, 3, 500) #excited state coordinates
 #todo: make an array so I can just call specific matrix element of the fc and ht factors, then do a for loop over that array, should work out well.
 
 
-#define Franck-Condon factors following page 164 of Roger Carlson's thesis in terms of Delta
+#define Franck-Condon factors following page 164 of Roger Carlson's thesis in terms of 'q', the offset
 def f00(q): #<0|0>
     return np.e**(-q**2/4)
 
@@ -73,20 +73,20 @@ def h20(q): #<2|Q|0>
 #define resonance denominator
 def Deltaevgo(v,x,l):
     weg = 30000
-    G = [1000, 1000, 1000] #linewidths
+    G = [1000, 1000,1000] #linewidths
     return 1/(weg + 1500*v - x - 1j*G[l]) #assuming the |0> -> |n> transiton is 1500*n 
 
 
 #define numbers for AB terms
 Mge = 0.1
 alphage = 0.01
-dMem = 0.00005
-dMmg = 0.00005
-dMgedQ = 0.0005
+dMem = 0.0025
+dMmg = 0.0025
+dMgedQ = 0.05
 
 
 #define terms
-y = np.linspace(25000, 35000, 10000)
+y = np.linspace(20000, 40000, 20000)
 d = 0.5 #offset
 
 A = Mge * alphage * (f10(d)*f00(d)*Deltaevgo(0,y,0) + f11(d)*f10(d)*Deltaevgo(1,y,1) + f12(d)*f20(d)*Deltaevgo(2,y,2)) #there must be a simpler way to do this but idk
@@ -105,18 +105,25 @@ B22 = dMgedQ * alphage *(h12(d) * f20(d)) * Deltaevgo(2, y, 2) #the v' = 2 term
 
 B2 = B20 + B21 + B22
 
+#conjugate - This is because these quantities are imaginary. We need to plot sqrt(Re(A)^2 + Im(A)^2) to get the actual lineshape. Re(A) is just the dispersive lineshape (index of refraction)
+A = (A * A.conjugate()) 
+B1 = B1 * B1.conjugate()
+B2 = B2 * B2.conjugate()
+
+#plot 
 cols = [1, 1] 
 aspects = [[[0, 0], 1], [[1, 0], 0.2]] 
 
 fig, gs = wt.artists.create_figure(width="dissertation", nrows=2, cols=cols, aspects=aspects, wspace=1) 
 
 ax0 = plt.subplot(gs[0,0])
-ax0.plot(kg,grs(kg), linewidth = '4',label = '$C_{\chi = + 1}$', color = 'cyan')
-ax0.plot(ke,es(ke), linewidth = '4',label = '$C_{\chi = - 1}$', color = 'orange')
+ax0.plot(kg,grs(kg), linewidth = '4', color = 'cyan')
+ax0.plot(ke,es(ke), linewidth = '4', color = 'orange')
+
 # delta
 ax0.axvline(x=0.5, color = 'purple', linestyle='--', label = '$\Delta$')
 
-ax0.set_ylabel('$\mathsf{Energy}$')
+ax0.set_ylabel('$\mathsf{Potential \ Energy}$')
 ax0.set_xlabel('$\mathsf{Q \ (arb)}$')
 plt.ylim(-0.1, 1.4)
 plt.xlim(-3.5,3.5)
@@ -125,12 +132,12 @@ plt.xticks(ticks = [])
 
 
 ax1 = plt.subplot(gs[0,1])
-ax1.plot(y, 10**7*A, linewidth = '2',label = '$A$', color = 'cyan')
-ax1.plot(y, 10**7*B1, linewidth = '2',label = '$B_1$', color = 'orange')
-ax1.plot(y, 10**7*B2, linewidth = '2',label = '$B_2$', color = 'green')
-ax1.plot(y, (A+B1+B2)*10**7, linewidth = '2',label = '$A+B$', color = 'black')
+ax1.plot(y, np.sqrt(A), linewidth = '2', label = '$\mathsf{A}$', color = 'cyan')
+ax1.plot(y, np.sqrt(B1), linewidth = '2', label = '$\mathsf{B_1}$', color = 'orange')
+ax1.plot(y, np.sqrt(B2), linewidth = '2', label = '$\mathsf{B_2}$', color = 'green')
+ax1.plot(y, np.sqrt(A+B1+B2), linewidth = '2', label = '$\mathsf{A + B}$', color = 'black')
 ax1.set_ylabel('$\mathsf{Amplitude \ (arb.)}$')
-ax1.set_xlabel(r'$\mathsf{\omega_2 + \omega_3} \ (\mathsf{cm}^{-1})$')
+ax1.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$')
 
 plt.legend()
 
