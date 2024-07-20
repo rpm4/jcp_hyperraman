@@ -11,7 +11,7 @@ import numpy as np
 import WrightTools as wt
 import matplotlib.pyplot as plt 
 
-save = False
+save = True
 
 
 #define harmonic wells and coordinates
@@ -86,7 +86,7 @@ dMgedQ = 0.05
 
 
 #define terms
-y = np.linspace(20000, 40000, 20000)
+y = np.linspace(20000, 40000, 40000)
 d = 0.5 #offset
 
 A = Mge * alphage * (f10(d)*f00(d)*Deltaevgo(0,y,0) + f11(d)*f10(d)*Deltaevgo(1,y,1) + f12(d)*f20(d)*Deltaevgo(2,y,2)) #there must be a simpler way to do this but idk
