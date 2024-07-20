@@ -59,11 +59,12 @@ HDFG was the first infrared CMDS method to successfully discriminate against non
 HDFG has also been referred to as singly vibrationally enhanced (SIVE) spectroscopy. \cite{RN351}
 In HDFG, an infrared pulse is resonant with a vibrational mode, and two other input pulses are used to stimulate a scattering process.
 HDFG was documented long ago to have characteristics similar to both infrared spectroscopy and spontaneous hyper-Raman scattering. \cite{RN352}
-Hyper-Raman scattering is the two photon analogue to Raman scattering. \cite{Cyvin1965, Terhune1965, Kozich2007}
+Hyper-Raman scattering is the two photon analogue to Raman scattering. \cite{Cyvin1965, Terhune1965, Andrews1978}
 Hyper-Raman scattering cross sections are commonly several orders of magnitude smaller than Raman scattering cross sections, making hyper-Raman a difficult process to detect.\cite{RN515, Kelley2010} 
+However, unlike Raman spectroscopy, all infrared active modes are hyper-Raman active, which allows infrared active modes to be probed through an inelastic scattering event. \cite{Andrews1978}
 The different selection rules of hyper-Raman scattering make it a unique alternative to Raman scattering to understand vibrational spectra and vibronic coupling in molecular systems. \cite{Olson2018}
 Some years ago, Cho et al. proposed parametric six wave mixing techniques as the coherent analogue of hyper-Raman scattering. \cite{Cho1997, Cho1998}
-However, since most six wave mixing methods cascade into four wave mixing processes and their homodyned output would be dependent upon the square magnitude of the hyper-Raman scattering cross section, \cite{RN243, RN515, Cho1997, Cho2000_Cascade} it is preferable to investigate four wave mixing analogues to hyper-Raman scattering.
+However, since most six wave mixing methods cascade into four wave mixing processes and their homodyned output would be dependent upon the hyper-Raman scattering cross section, \cite{RN243, RN515, Cho1997, Cho2000_Cascade} it is preferable to investigate four wave mixing analogues to hyper-Raman scattering.
 
 \begin{figure*}[!htbp]
 	\centering
@@ -128,11 +129,12 @@ For a HDFG experiment using two (three) distinct input fields, D = 3 (6).
 \subsection{Placzek Method}
 We first investigate the selection rules through a Placzek type formalism.
 Contracting over the virtual states forms the hyper-Raman hyperpolarizability $\beta$.\cite{Long1970} 
-Assuming $\omega_2$, $\omega_3$ are significantly detuned from any resonance (\autoref{fig:comparisonwmel}),\cite{Placzek1934, Long1970} \autoref{sivegamma} is written as 
+Assuming $\omega_2$, $\omega_3$ are significantly detuned from any resonance (\autoref{fig:comparisonwmel}),\cite{Placzek1934, Long1970, Altmann1982} \autoref{sivegamma} is written as 
 \begin{equation}\label{sivebeta}
 	\gamma_{ijkl}^{vg} =	-\frac{1}{\varepsilon_0} \frac{1}{4D \hbar}\frac{\beta^{vg}_{ijk} \mu^{gv}_{l}}{\Delta_{gv}} \rho_{gg}
 \end{equation}
-It is important to note that the symmetry properties of $\beta_{ijk}$ change dependent upon whether $\omega_2$ and $\omega_3$ are degenerate. \cite{Denisov1986}
+All infrared active transitions are hyper-Raman active, making HDFG allowed for any infrared active transition. \cite{Andrews1978}
+It is important to note that the symmetry properties of $\beta_{ijk}$ change dependent upon whether $\omega_2$ and $\omega_3$ are degenerate. \cite{Denisov1986, Kozich2007}
 Taylor expanding the dipole and first hyperpolarizability operators in terms of an n$^{\text{th}}$ reduced normal mode coordinate $Q_n$ about equilibrium as\cite{Long1970, Shen90}
 \begin{subequations}
 	\begin{equation}
@@ -310,14 +312,14 @@ These effects are under investigation and will the subject of a future publicati
 The impact of vibronic coupling in the 2D spectrum is made clear by using a simple model.
 Using a two-well system described by $H_g = p^2/2m + 1/2 \hbar \omega Q^2$ and $H_e = p^2/2m + 1/2 \hbar \omega (Q-\Delta)^2 +\hbar \omega_{eg}$, the A and B contributions can be easily evaluated using Franck-Condon and Herzberg-Teller integrals tabulated elsewhere. \cite{Carlson1988thesis} 
 A simulated spectrum highlighting the contributions of these terms (\autoref{fig:doubres_spec}) on potential wells with $\Delta = 0.5$ using values listed in \autoref{T:hdfgvalues} dissects the $A$ and $B$ contributions to the DR-SIVE spectrum.
-%stimulated hyper Raman spectrum -- relationship
-\begin{figure}[!htbp]
+%stimulated hyper Raman spectrum -- relationship; make clear that this spectrum highlights anything that ends in |gv> from the IR transition!
+\begin{figure*}[!htbp]
 	\centering
-	\includegraphics[width=3.375in]{drsive_spectrum.png}
+	\includegraphics[width=6.66in]{drsive_spectrum.png}
 	\caption{DR-HDFG $\gamma_{ijkl}$ spectrum for a simple two harmonic well system.
 		(a) Potential energy surface, (b) HDFG spectrum for $\Delta = 0.5$.}
 	\label{fig:doubres_spec}
-\end{figure}
+\end{figure*}
 
 \begin{table}[!htbp]
 	\caption{\label{T:hdfgvalues} Values used to generate the 2D DR-HDFG plot. 
