@@ -15,7 +15,7 @@ timeorderedwmel = True
 drwmel = True
 
 if comparisonwmel:
-    fig = WMEL.Artist([4,1], [0, 0.2, 0.6, 1], state_names=("$\mathsf{| g\\rangle}$",
+    fig = WMEL.Artist([6,1], [0, 0.2, 0.6, 1], state_names=("$\mathsf{| g\\rangle}$",
                                                                    "$\mathsf{|v\\rangle}$", 
                                                                    "$\mathsf{|m\\rangle}$",
                                                                    "$\mathsf{|n\\rangle}$"), number_of_interactions=5, state_font_size=9, state_text_buffer = 0.6, virtual = [2,3])
@@ -25,24 +25,33 @@ if comparisonwmel:
     fig.add_arrow([0,0], 1, [0,3], kind='ket', color="k", label = "$\mathsf{2}$", head_length = 0.075)
     fig.add_arrow([0,0], 2, [3,1], kind='out', color="blue", label = "$\mathsf{3}$", head_length = 0.075)
     
-    fig.add_arrow([1,0], 0, [0,3], kind='bra', color="k", label = "$\mathsf{1}$", head_length = 0.075)
-    fig.add_arrow([1,0], 1, [3,1], kind='bra', color="k", label = "$\mathsf{2}$", head_length = 0.075)
-    fig.add_arrow([1,0], 2, [0,3], kind='ket', color="k", label = "$\mathsf{3}$", head_length = 0.075)    
-    fig.add_arrow([1,0], 3, [3,1], kind='out', color="blue", label = "$\mathsf{4}$", head_length = 0.075)
-
-    fig.add_arrow([2,0], 0, [0,1], kind='bra', color="k", label = "$\mathsf{1}$", head_length = 0.075)
-    fig.add_arrow([2,0], 1, [0,2], kind='ket', color="k", label = "$\mathsf{2}$", head_length = 0.075)
-    fig.add_arrow([2,0], 2, [2,3], kind='ket', color="k", label = "$\mathsf{3}$", head_length = 0.075)
-    fig.add_arrow([2,0], 3, [3,1], kind='out', color="blue", label = "$\mathsf{4}$", head_length = 0.075)
+    fig.add_arrow([1,0], 0, [0,1], kind='ket', color="k", label = "$\mathsf{1}$", head_length = 0.075)
+    fig.add_arrow([1,0], 1, [1,3], kind='ket', color="k", label = "$\mathsf{2}$", head_length = 0.075)
+    fig.add_arrow([1,0], 2, [3,0], kind='out', color="blue", label = "$\mathsf{3}$", head_length = 0.075)
     
-    fig.add_arrow([3,0], 0, [0,2], kind='bra', color="k", label = "$\mathsf{1}$", head_length = 0.075)
-    fig.add_arrow([3,0], 0, [2,3], kind='bra', color="k", label = "$\mathsf{1}$", head_length = 0.075)
-    fig.add_arrow([3,0], 1, [3,1], kind='bra', color="k", label = "$\mathsf{2}$", head_length = 0.075)
-    fig.add_arrow([3,0], 2, [0,2], kind='ket', color="k", label = "$\mathsf{3}$", head_length = 0.075)    
-    fig.add_arrow([3,0], 2, [2,3], kind='ket', color="k", label = "$\mathsf{3}$", head_length = 0.075)
-    fig.add_arrow([3,0], 3, [3,1], kind='out', color="blue", label = "$\mathsf{4}$", head_length = 0.075)     
+    fig.add_arrow([2,0], 0, [0,3], kind='bra', color="k", label = "$\mathsf{1}$", head_length = 0.075)
+    fig.add_arrow([2,0], 1, [3,1], kind='bra', color="k", label = "$\mathsf{2}$", head_length = 0.075)
+    fig.add_arrow([2,0], 2, [0,3], kind='ket', color="k", label = "$\mathsf{3}$", head_length = 0.075)    
+    fig.add_arrow([2,0], 3, [3,1], kind='out', color="blue", label = "$\mathsf{4}$", head_length = 0.075)
 
-    fig.label_columns(['$\mathsf{DFG}$','$\mathsf{Raman}$', '$\mathsf{HDFG}$', '$\mathsf{Hyper-Raman}$'], font_size = 10)
+    fig.add_arrow([3,0], 0, [0,1], kind='bra', color="k", label = "$\mathsf{1}$", head_length = 0.075)
+    fig.add_arrow([3,0], 1, [0,2], kind='ket', color="k", label = "$\mathsf{2}$", head_length = 0.075)
+    fig.add_arrow([3,0], 2, [2,3], kind='ket', color="k", label = "$\mathsf{3}$", head_length = 0.075)
+    fig.add_arrow([3,0], 3, [3,1], kind='out', color="blue", label = "$\mathsf{4}$", head_length = 0.075)
+    
+    fig.add_arrow([4,0], 0, [0,1], kind='ket', color="k", label = "$\mathsf{1}$", head_length = 0.075)
+    fig.add_arrow([4,0], 1, [1,2], kind='ket', color="k", label = "$\mathsf{2}$", head_length = 0.075)
+    fig.add_arrow([4,0], 2, [2,3], kind='ket', color="k", label = "$\mathsf{3}$", head_length = 0.075)
+    fig.add_arrow([4,0], 3, [3,0], kind='out', color="blue", label = "$\mathsf{4}$", head_length = 0.075)
+    
+    fig.add_arrow([5,0], 0, [0,2], kind='bra', color="k", label = "$\mathsf{1}$", head_length = 0.075)
+    fig.add_arrow([5,0], 0, [2,3], kind='bra', color="k", label = "$\mathsf{1}$", head_length = 0.075)
+    fig.add_arrow([5,0], 1, [3,1], kind='bra', color="k", label = "$\mathsf{2}$", head_length = 0.075)
+    fig.add_arrow([5,0], 2, [0,2], kind='ket', color="k", label = "$\mathsf{3}$", head_length = 0.075)    
+    fig.add_arrow([5,0], 2, [2,3], kind='ket', color="k", label = "$\mathsf{3}$", head_length = 0.075)
+    fig.add_arrow([5,0], 3, [3,1], kind='out', color="blue", label = "$\mathsf{4}$", head_length = 0.075)     
+
+    fig.label_columns(['$\mathsf{DFG}$','$\mathsf{SFG}$','$\mathsf{Raman}$', '$\mathsf{HDFG}$', '$\mathsf{HSFG}$','$\mathsf{Hyper-Raman}$'], font_size = 10)
     
     plt.savefig("comparisonwmel.png", bbox_inches='tight')
 
