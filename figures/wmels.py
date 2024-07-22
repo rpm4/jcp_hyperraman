@@ -10,9 +10,9 @@ from WrightTools.diagrams import WMEL
 # import WrightTools as wt
 
 comparisonwmel = True
-hdfg = True
+hdfg = False
 timeorderedwmel = True
-drwmel = True
+drwmel = False
 
 if comparisonwmel:
     fig = WMEL.Artist([6,1], [0, 0.2, 0.6, 1], state_names=("$\mathsf{| g\\rangle}$",
