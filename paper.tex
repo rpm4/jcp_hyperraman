@@ -1,4 +1,4 @@
-\documentclass[aip, jcp, reprint, onecolumn]{revtex4-2}
+\documentclass[aip, jcp, reprint, twocolumn]{revtex4-2}
 
 \bibliographystyle{apsrev4-2}
 
@@ -29,9 +29,9 @@
 
 \begin{abstract}
 Nonlinear, four wave mixing vibrational spectroscopies are often used to probe intramolecular vibrational coupling and relaxation dynamics in isotropic media.
-Three wave mixing vibrational spectroscopies are similarly used to understand the spectroscopy and dynamics of interfacial species.
-Most of these methods rely on infrared or Raman transitions to generate output. 
-Implementing a nonlinear spectroscopy involving hyper-Raman transitions, first appearing under third order perturbation theory, can provide a useful analogue to infrared and Raman based nonlinear spectroscopies to understand the spectroscopy and dynamics of isotropic systems.
+Three wave mixing vibrational spectroscopies, such as vibrational sum frequency generation (vSFG) are similarly used to probe the spectroscopy and dynamics of interfacial species.
+Most of these methods rely on infrared and/or Raman transitions to generate output. 
+Implementing a nonlinear spectroscopy involving hyper-Raman transitions, first appearing at third order perturbation theory, can provide a useful analogue to infrared and Raman based nonlinear spectroscopies to understand the spectroscopy and dynamics of isotropic systems.
 Hyper Difference Frequency Generation (Hyper-DFG, or HDFG) spectroscopy, also known as singly vibrationally enhanced spectroscopy (SIVE), is an underdeveloped, hyper-Raman based four wave mixing vibrational spectroscopy. 
 Despite several experimental reports on HDFG, its spectroscopic properties have not been fully explored.
 To this end, we explore the selection rules and response functions of HDFG spectroscopy.
@@ -48,15 +48,15 @@ HDFG shows promise as a method to disentangle vibrational spectra and dynamics i
 \maketitle
 
 \section{Introduction}
-Coherent multidimensional spectroscopy (CMDS) is a family of three and four wave mixing methods which form the optical analogue of multidimensional nuclear magnetic resonance (NMR) spectroscopy.\cite{RN103, Cho2008}
-Multiresonant, four wave mixing CMDS experiments, first proposed by Oudar and Shen in 1980,\cite{RN307} directly probe coupling and correlations between different vibrational, electronic, and vibronic states. \cite{RN307, RN281, RN103, Cho2008} 
+Coherent multidimensional spectroscopy (CMDS) is a family of three and four wave mixing methods which form the optical analogue of multidimensional nuclear magnetic resonance (NMR) spectroscopy.\cite{Cho2008}
+Multiresonant, four wave mixing CMDS experiments, first proposed by Oudar and Shen in 1980,\cite{RN307} directly probe coupling and correlations between different vibrational, electronic, and vibronic states. \cite{RN281, RN103, Cho2008} 
 Four wave mixing CMDS has resolved anharmonicities, ultrafast dynamics, and other intramolecular couplings in numerous systems. \cite{Cho2008, Gaynor2017, Ziegler2018, Ogilvie2019, Bonn2021, RN325}
 
 Not all CMDS methods are used to dissect intramolecular couplings.\cite{Shen1987_CPL}
 The most well known example of such a spectroscopy is vibrational sum frequency generation (vSFG), a three wave mixing technique used to probe vibrational structure and dynamics at interfaces. \cite{Shen1987_CPL, RN224}
 Non-parametric, hyper difference frequency generation (hyper-DFG, or HDFG) spectroscopy, similar to difference frequency generation (\autoref{fig:comparisonwmel}), is a four wave mixing method which, when detuned from  electronic resonances, does not probe intramolecular couplings. 
 HDFG was one of the first infrared CMDS methods to successfully discriminate against non-resonant background.\cite{RN351, RN352}
-HDFG has also been referred to as singly vibrationally enhanced (SIVE) spectroscopy. \cite{RN351}
+HDFG has also been referred to as singly vibrationally enhanced (SIVE) spectroscopy. \cite{RN352}
 In HDFG, an infrared pulse is resonant with a vibrational mode, and two other input pulses are used to stimulate a scattering process.
 HDFG was documented long ago to have characteristics similar to both infrared spectroscopy and spontaneous hyper-Raman scattering. \cite{RN352}
 Hyper-Raman scattering is the two photon analogue to Raman scattering. \cite{Terhune1965, Cyvin1965, Andrews1978}
@@ -118,7 +118,7 @@ The brackets indicate an orientational average.
 Uppercase letters refer to laboratory frame coordinates and lower case letters refer to molecular frame coordinates.
 
 To make the connection between HDFG and hyper-Raman scattering, we investigate its gross selection rules.
-By propagating density matrix elements in the steady state limit, the HDFG hyperpolarizability is \cite{RN133}
+By propagating density matrix elements in the steady state limit under the rotating wave approximation, the HDFG hyperpolarizability is \cite{RN133}
 \begin{equation}\label{sivegamma}
 		\gamma_{ijkl}^{vg} =	- \sum_{m, n} \frac{1}{\varepsilon_0} \frac{1}{4D} \frac{1}{\hbar^3} \frac{\mu^{vn}_{i} \mu^{nm}_{j} \mu^{mg}_{k} \mu^{gv}_{l} }{\Delta_{nv} \Delta_{mv}\Delta_{gv}}  \rho_{gg}
 \end{equation}
@@ -127,7 +127,7 @@ D, the Maker-Terhune degeneracy factor, accounts for permutation symmetry in $\g
 For a HDFG experiment using two (three) distinct input fields, D = 3 (6).
 
 \subsection{Placzek Method}
-We first investigate the selection rules through a Placzek type formalism.
+We first investigate the HDFG selection rules through a Placzek type formalism.
 Contracting over the virtual states forms the hyper-Raman hyperpolarizability $\beta$.\cite{Long1970} 
 Assuming $\omega_2$, $\omega_3$ are significantly detuned from any resonance (\autoref{fig:comparisonwmel}),\cite{Placzek1934, Long1970, Altmann1982} \autoref{sivegamma} is written as 
 \begin{equation}\label{sivebeta}
@@ -308,8 +308,9 @@ $B_2$ contributions are sensitive to vibronic coupling between the first excited
 		(a) Potential energy surfaces for a two-well system, (b) 1D HDFG spectrum for $\xi = 0.5$, $\omega_1 = \omega_{g1, g0}$. 
 		It is assumed that $\omega_2 = \omega_3$.
 		Note that (b) shows magnitudes of the labeled quantities.
-		The vibrational states on the $|g)$ and $|e)$ manifolds are spaced 2200 cm$^{-1}$ apart, with the vibronic states $\ket{e,v}$ given linewidths of 700 cm$^{-1}$ and $\hbar \omega_{eg}$ = 30000 cm$^{-1}$.
-		Dotted lines in (b) denote placement of vibronic resonances for $v'$ = 0, 1, 2. }
+		The vibrational states on the $|g)$ and $|e)$ manifolds are spaced 2200 cm$^{-1}$ apart, with the vibronic states $\ket{e,v'}$ given linewidths of 700 cm$^{-1}$ and $\hbar \omega_{eg}$ = 30000 cm$^{-1}$.
+		Dotted lines in (b) denote the $v'$ = 0, 1, 2 vibronic resonances. 
+		The vibronic one and two photon absorption operators are scaled such that $\abs{B_j}/\abs{A} \sim$ 0.01}
 	\label{fig:doubres_spec}
 \end{figure*}
 
@@ -374,9 +375,10 @@ The output polarizations under the electric dipole approximation are written as
 	\end{equation}
 \end{subequations}
 \end{widetext}
-where N$_{bulk}$ is the bulk number density, and N$_{surf}$ is the surface number density ($\sim$ 10$^{17}$ m$^{-2}$).\cite{RN133, Du1994}	
+where N$_{bulk}$ is the bulk number density, and N$_{surf}$ is the surface number density ($\sim$ 10$^{16}$ m$^{-2}$ for H$_2$O adsorbed at quartz).\cite{RN133, Du1994}	
+We assumed here that $\int_{0^-}^\ell \mathrm{d}z \langle \alpha_{ij}\mu_{k} \rangle \approx \ell \langle \alpha_{ij}\mu_{k} \rangle$, where $z$ is oriented along the surface normal and $0^{-}$ is the edge of the interface where substrate begins. \cite{RN133}
+We take the film thickness ($\ell$) that can be probed by vSFG to be 1 nm, much less than the vSFG coherence length.\cite{RN133, Su1998}
 For liquids with molar masses less than $\sim$100 g mol$^{-1}$ and densities roughly equal to that of H$_2$O$_{(l)}$ at room temperature, N$_{bulk} \sim$ 10$^{28}$ m$^{-3}$.
-We take the length of layers along the surface normal ($\ell$) to be 10 nm.\cite{RN133}
 A normal dispersion curve is assumed so that $F(\omega_1+\omega_2) \approx F(2\omega_2-\omega_1)$.
 To simplify analysis, orientational averaging is ignored (e.g., $\langle \beta_{ijk} \mu_{l} \rangle \approx \beta \mu$) and the input and output fields are taken to be co-polarized, so that
 \begin{equation}
@@ -386,7 +388,7 @@ Ziegler has noted that for a field with intensity 10 GW/cm$^{2}$, $\frac{\beta E
 Such an intensity is easily obtained using modern ultrafast sources.
 In this limit, $P_\text{ratio} \sim 1$.
 Since the intensity ratio scales as $\abs{P_{ratio}}^2$, we see that the HDFG output is roughly as strong as vSFG, assuming only interfacial contributions in vSFG.
-It is important to note that this derivation ignored absorption and orientational averaging effects, which can significantly reduce output from either process. 
+It is important to note that this calculation assumed negligible dipole and Raman polarizability dependence upon the distance from surface normal, ignored orientational averaging effects, and presumed equivalence of local field factors, all of which can significantly reduce output from either process. 
 Nevertheless, since HDFG produces a number of photons similar to that of vSFG, HDFG is a viable technique for investigating bulk systems.
 
 With the selection rules of HDFG understood for vibrational spectroscopy, and with HDFG generating a large enough output polarization, it becomes possible to extract quantitative information from its spectra.
@@ -432,10 +434,20 @@ These quantitative aspects of HDFG could prove useful to examine how well comput
 \section{Mixed-Domain HDFG}\label{mixeddomain}
 The properties of steady state HDFG (complete pulse overlap) are useful for understanding the selection rules that drive HDFG output, motivating time domain experiments.
 Time domain HDFG could be a useful alternative technique for measuring single quantum coherence dephasing times.
-The response function for the HDFG pathway illustrated in \autoref{fig:hdfg}a, assuming $\omega_2$ and $\omega_3$ are temporally overlapped, is \cite{RN287, Cho2001}
+Working under the rotating wave approximation and neglecting spatial components, the output polarization is written in the time domain as 
 \begin{equation}
-	R^{(3)}(t) = \frac{i}{\hbar} \beta_{ijk} \mu_l \exp(-i\Delta_{gv}t) \theta(t) 
+	\begin{split}
+			\vec{P}(t) &= \int_0^\infty \mathrm{d}t_3 \int_0^\infty \mathrm{d}t_2 \int_0^\infty \mathrm{d}t_1 R^{(3)}(t_1, t_2, t_3)  \vdots \vec{E}_3(t-t_3) \\
+			&\vec{E}_2(t-t_3-t_2 - \tau_{23}) \vec{E}_1(t-t_3-t_2-t_1 - \tau_{13}) 
+	\end{split}
+\end{equation}
+where the electric fields are labeled according to their placement in the WMEL diagrams, $\tau_{ij} = \tau_i - \tau_j$ is the time delay between pulses $i$ and $j$, and R is the response function. \cite{RN287} 
+Here, we will focus on the response function formalism for singly resonant HDFG, as the extension to doubly resonant HDFG has been treated by Cho. \cite{Cho2001}
+The response function for the HDFG pathway illustrated in \autoref{fig:hdfg}a, assuming $\omega_2$ and $\omega_3$ are temporally overlapped, not electronically resonant, and $\rho(-\infty) = 1$, in the limit of homogeneous broadening is \cite{Cho2001, Meyer2004, RN367}
+\begin{equation}
+	R^{(3)}(t_1) = \frac{i}{\hbar} \beta_{ijk}(t_1) \mu_l(0) \exp(-i\Delta_{gv}t_1) \theta(t_1) 
 \end{equation}  
+where $\theta$ is the Heaviside function.
 The pure time-domain HDFG output reports on the dephasing characteristics of the $\ket{g}\bra{v}$ coherence. 
 This method provides practitioners of sum frequency generation the ability to probe isotropic dephasing dynamics without many meaningful changes in their optical setup, and thus compare $\ket{g}\bra{v}$ dephasing in the bulk and at the interface.\cite{RN224}
 
@@ -443,13 +455,6 @@ Transient HDFG spectroscopy, or pump-HDFG-probe, similar to transient vSFG spect
 A useful attribute of the $\beta_{ijk}$ dependence in HDFG output is added polarization control. 
 Similar to SFG experiments that probe different elements of the infrared transition dipole and Raman polarizability tensors, probing different elements of $\beta_{ijk}$ in HDFG can greatly assist in understanding ultrafast dynamics in isotropic systems, as suggested by Seliya et al. \cite{Shen90, RN224, Bonn2024}
 Polarization control in IR-pump-HDFG-probe, analogous to ultrafast transient absorption spectroscopy for vibrational modes, would be an interesting venue to assess the sensitivity of HDFG to different hyper-Raman tensor elements. 
-
-Combinations of time and frequency domain spectroscopy, also called mixed domain spectroscopy, are useful ways to understand frequency-dependent dynamics. \cite{RN135, RN171, RN131}
-Mixed domain spectroscopy is a useful alternative to steady state spectroscopy as pulse separation can eliminate nonresonant background and isolate specific pulse ordering sequences. \cite{RN372, RN324, McDonnell2024}
-Isolating different pulse orderings can isolate pathway specific signal and minimize interference from unwanted pathways which share the same phasematching constraints. 
-Mixed domain HDFG can resolve frequency dependent free induction decay, which could prove useful for understanding isotropic dynamics of single quantum coherences. 
-Mixed domain resonant HDFG, using pathways similar to those in \autoref{fig:hdfg}b, could also measure time-dependent electronic-vibrational fluctuations, as discussed by Cho. \cite{Cho2001}
-These methods should be able to provide complimentary information to that found in 2D Electronic-Vibrational (2D-EV) spectroscopy. \cite{Dong2015, Lewis2015, Gaynor2017}
 
 It is well known that nonlinear wave mixing processes which share the same time ordering and output frequency will interfere. \cite{RN342, RN135}
 Understanding interfering pathways is useful because they can eliminate nonlinear output. 
@@ -481,6 +486,13 @@ In the case of the \autoref{fig:hdfg}a time ordering, there are no opportunities
 However, a possible mechanism for interfering output in the \autoref{fig:hdfg}a pathway is a cascaded second order process (SFG, DFG). \cite{RN300}
 While unimportant in achiral isotropic systems,\cite{Belkin2000} second order cascades may become important in media where SFG and DFG are allowed, e.g. chiral media, interfaces or noncentrosymmetric media. 
 
+Combinations of time and frequency domain spectroscopy, also called mixed domain spectroscopy, are useful ways to understand frequency-dependent dynamics. \cite{RN135, RN367, RN171, RN131}
+Mixed domain spectroscopy is a useful alternative to steady state spectroscopy as pulse separation can eliminate nonresonant background and isolate specific pulse ordering sequences. \cite{RN372, RN324, McDonnell2024}
+Isolating different pulse orderings can isolate pathway specific signal and minimize interference from unwanted pathways which share the same phasematching constraints. 
+Mixed domain HDFG can resolve frequency dependent free induction decay, which could prove useful for understanding isotropic dynamics of single quantum coherences. 
+Mixed domain resonant HDFG, using pathways similar to those in \autoref{fig:hdfg}b, could also measure time-dependent electronic-vibrational fluctuations, as discussed by Cho. \cite{Cho2001}
+These methods should be able to provide complimentary information to that found in 2D Electronic-Vibrational (2D-EV) spectroscopy. \cite{Dong2015, Lewis2015, Gaynor2017}
+
 \section{Conclusions}
 Coherent vibrational, hyper-Raman coherent four wave mixing spectroscopies are identified and discussed.
 Singly resonant hyper difference frequency generation (SR-HDFG) processes are shown to be the coherent hyper-Raman analogue of infrared active vibrations.
@@ -490,8 +502,8 @@ It is found that the $A$ term dominates in DR-HDFG, but vanishes in SR-HDFG and 
 The non-Condon effects that are present in the absence of $A$ might prove useful for dissecting the structure of modes which involve particular IR active vibrations in vibronic coupling.
 Through a simple treatment, it is seen that HDFG and vibrational sum frequency generation (vSFG) have roughly the same output intensities. 
 This makes HDFG a reasonable spectroscopy for systems outside of the ideal solvents tested in the literature, and should be readily extended to a variety of non-ideal molecular and materials systems. 
-Based upon a simple treatment of orientational averaging, we show that HDFG can provide a probe of the hyper-Raman hyperpolarizability without a need for technically difficult, analytically rigorous hyper-Raman scattering experiments. 
-The HDFG method shows promise as a spectroscopic probe of unique electronic structure effects in a variety of molecular systems, but also for understanding the dynamics of single vibrational modes. 
+Based upon a simple treatment of orientational averaging, we show that HDFG can extract the hyper-Raman hyperpolarizability without a need for technically difficult, analytically rigorous hyper-Raman scattering experiments. 
+The HDFG method shows promise as a spectroscopic probe of unique electronic structure effects in a variety of molecular systems, but also for understanding the dynamics of single quantum coherences. 
 \section{Data Availability}
 The workup scripts which support this work can be found at [insert github link here].
 

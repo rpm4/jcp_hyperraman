@@ -11,7 +11,7 @@ from matplotlib.patches import FancyArrowPatch
 
 wt.artists.apply_rcparams(kind="publication")
 
-save = False
+save = True
 
 fontsize = 18
 
@@ -20,10 +20,10 @@ d = 0.5 #offset for es
 do = 0 #gs placement
 
 def grs(k):
-    return 0.125*(k-do)**2
+    return 0.125*(k-do)**2 #arbitrary curvature
 
 def es(k):
-    return 0.125*(k-d-do)**2 + 0.7
+    return 0.125*(k-d-do)**2 + 0.7 #arbitrary curvature and vertical offset
 
 kg = np.linspace(-2, 2, 500) #ground state coordinates
 ke = np.linspace(-1.75, 2.75, 500) #excited state coordinates
