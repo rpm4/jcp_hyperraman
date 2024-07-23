@@ -9,7 +9,7 @@ import WrightTools as wt
 import matplotlib.pyplot as plt 
 from matplotlib.patches import FancyArrowPatch
 
-wt.artists.apply_rcparams(kind="publication")
+# wt.artists.apply_rcparams(kind="publication")
 
 save = True
 
@@ -46,7 +46,7 @@ myArrow1 = FancyArrowPatch(posA=(-0.35, yarrowstop[1]), posB=(-0.35, yarrow[1]),
 ax0.add_artist(myArrow0)
 ax0.add_artist(myArrow1)
 
-ax0.text(-0.65, (grs(0.6) + es(1.3))/2 - 0.023, '$\mathsf{\hbar \omega_{eg}}$', fontsize = 24)
+ax0.text(-0.65, (grs(0.6) + es(1.3))/2 - 0.023, r'$\mathsf{\hbar \omega_{eg}}$', fontsize = 24)
 
 #xi line 
 ax0.vlines(x = do, ymin = -0.0257, ymax = grs(do), color = 'gray', linestyle = '--', linewidth = 1)
@@ -58,7 +58,7 @@ xiarrow = FancyArrowPatch(posA=(xarrow[0], -0.0257), posB=(xarrow[1], -0.0257), 
 ax0.add_artist(xiarrow)
 
 
-ax0.text((do+d)/2-0.08, -0.101, '$\mathsf{\\xi}$', fontsize = 24)
+ax0.text((do+d)/2-0.08, -0.101, r'$\mathsf{\xi}$', fontsize = 24)
 
 #labeling vibrational states
 jgs = [0.6, 1.0, 1.29965]
@@ -73,14 +73,14 @@ for i in [0,1,2]:
 
     
 #harmonic surface labels
-ax0.text(kg.max()+0.12, grs(kg.max())-0.05, '$\mathsf{|g)}$', fontsize = 24)
-ax0.text(ke.max()+0.12, es(ke.max())-0.05, '$\mathsf{|e)}$', fontsize = 24)
+ax0.text(kg.max()+0.12, grs(kg.max())-0.05, r'$\mathsf{|g)}$', fontsize = 24)
+ax0.text(ke.max()+0.12, es(ke.max())-0.05, r'$\mathsf{|e)}$', fontsize = 24)
 
 #plot it
 ax0.plot(kg,grs(kg), linewidth = '4', color = 'cornflowerblue')
 ax0.plot(ke,es(ke), linewidth = '4', color = 'cornflowerblue')
-ax0.set_ylabel('$\mathsf{Energy \ (cm^{-1})}$', fontsize = fontsize)
-ax0.set_xlabel('$\mathsf{q}$', fontsize = fontsize)
+ax0.set_ylabel(r'$\mathsf{Energy \ (cm^{-1})}$', fontsize = fontsize)
+ax0.set_xlabel(r'$\mathsf{q}$', fontsize = fontsize)
 plt.ylim(-0.13, 1.4)
 plt.xlim(-2.2,3.25)
 plt.yticks(ticks = [])
@@ -143,8 +143,8 @@ def Deltaevgo(v,x,l):
 #define numbers for AB terms
 Mge = 0.1 #M^eg_0
 Lge = 0.01 #Lambda^eg_0
-dLeg = 0.00008 #dLambda^eg / dQ
-dMgedQ = 0.0008 #dM^eg / dQ
+dLeg = 0.0008 #dLambda^eg / dQ
+dMgedQ = 0.008 #dM^eg / dQ
 
 
 #define terms
@@ -179,35 +179,24 @@ AIm = A.imag / totIm.max()
 B1Im = B1.imag / totIm.max()
 B2Im = B1.imag / totIm.max()
 
-
-#conjugate - This is because these quantities are imaginary. We need to plot sqrt(Re(A)^2 + Im(A)^2) to get the actual lineshape. Re(A) is just the dispersive lineshape (index of refraction)
-A = A * A.conjugate()
-B1 = B1 * B1.conjugate()
-B2 = B2 * B2.conjugate()
-
-
-
-#math on the A and B so that we can log plot and normalize / inspect
-tot = np.sqrt((A+B1+B2))
-A = np.sqrt(A)/(tot.max())  ##normalizing wrt \sqrt(A+B) to demonstrate how each term contributes
-B1 = np.sqrt(B1)/(tot.max())
-B2 = np.sqrt(B2)/(tot.max())
-tot[:] = (tot[:] - tot.min()) / (tot.max() - tot.min())
+# absolute value
+tot = np.abs(A+B1+B2)
+abs_max = tot.max()
 
 #plot the A and B
 ax1 = plt.subplot(gs[0,1])
-ax1.plot(y, tot , linewidth = '2', label = '$\mathsf{|A + B|}$', color = 'black', zorder = 4)
-ax1.plot(y, A, linewidth = '2', label = '$\mathsf{|A|}$', color = 'cyan', zorder = 3)
-ax1.plot(y, B1, linewidth = '2', label = '$\mathsf{|B_1|}$', color = 'orange', zorder = 2)
-ax1.plot(y, B2, linewidth = '2', label = '$\mathsf{|B_2|}$', color = 'green', zorder = 1)
-ax1.set_ylabel('$\mathsf{Amplitude \ (norm.)}$', fontsize = fontsize)
+ax1.plot(y, tot / tot.max(), linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
+ax1.plot(y, np.abs(A) / abs_max, linewidth = '2', label = r'$\mathsf{|A|}$', color = 'cyan', zorder = 3)
+ax1.plot(y, np.abs(B1) / abs_max, linewidth = '2', label = r'$\mathsf{|B_1|}$', color = 'orange', zorder = 2)
+ax1.plot(y, np.abs(B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B_2|}$', color = 'green', zorder = 1)
+ax1.set_ylabel(r'$\mathsf{Amplitude \ (norm.)}$', fontsize = fontsize)
 ax1.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
 
 ax1.set_yscale('log')
 ax1.set_xlim(17500, 42500)
 xticks = np.linspace(17500, 42500, 6)
 ax1.set_xticks(xticks)
-ax1.set_ylim(0.0005, 4)
+ax1.set_ylim(0.005, 3)
 ax1.legend(loc = 1)
 
 
@@ -220,10 +209,10 @@ if others:
     #plot Re A and B
     ax2 = plt.subplot(gs[1,0])
     # ax2.plot(y, totRe , linewidth = '2', label = '$\mathsf{A + B}$', color = 'black', zorder = 4)
-    ax2.plot(y, ARe, linewidth = '2', label = '$\mathsf{A}$', color = 'cyan', zorder = 3)
-    ax2.plot(y, B1Re, linewidth = '2', label = '$\mathsf{B_1}$', color = 'orange', zorder = 2)
-    ax2.plot(y, B2Re, linewidth = '2', label = '$\mathsf{B_2}$', color = 'green', zorder = 1)
-    ax2.set_ylabel('$\mathsf{Re(\gamma) \ (norm.)}$', fontsize = fontsize)
+    ax2.plot(y, ARe, linewidth = '2', label = r'$\mathsf{A}$', color = 'cyan', zorder = 3)
+    ax2.plot(y, B1Re, linewidth = '2', label = r'$\mathsf{B_1}$', color = 'orange', zorder = 2)
+    ax2.plot(y, B2Re, linewidth = '2', label = r'$\mathsf{B_2}$', color = 'green', zorder = 1)
+    ax2.set_ylabel(r'$\mathsf{Re(\gamma) \ (norm.)}$', fontsize = fontsize)
     ax2.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
     
     #ax2.set_yscale('log')
@@ -234,10 +223,10 @@ if others:
     #plot Im A and B
     ax3 = plt.subplot(gs[1,1])
     # ax3.plot(y, totIm , linewidth = '2', label = '$\mathsf{A + B}$', color = 'black', zorder = 4)
-    ax3.plot(y, AIm, linewidth = '2', label = '$\mathsf{A}$', color = 'cyan', zorder = 3)
-    ax3.plot(y, B1Im, linewidth = '2', label = '$\mathsf{B_1}$', color = 'orange', zorder = 2)
-    ax3.plot(y, B2Im, linewidth = '2', label = '$\mathsf{B_2}$', color = 'green', zorder = 1)
-    ax3.set_ylabel('$\mathsf{Im(\gamma) \ (norm.)}$', fontsize = fontsize)
+    ax3.plot(y, AIm, linewidth = '2', label = r'$\mathsf{A}$', color = 'cyan', zorder = 3)
+    ax3.plot(y, B1Im, linewidth = '2', label = r'$\mathsf{B_1}$', color = 'orange', zorder = 2)
+    ax3.plot(y, B2Im, linewidth = '2', label = r'$\mathsf{B_2}$', color = 'green', zorder = 1)
+    ax3.set_ylabel(r'$\mathsf{Im(\gamma) \ (norm.)}$', fontsize = fontsize)
     ax3.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
     
     # ax3.set_yscale('log')
