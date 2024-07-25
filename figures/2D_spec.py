@@ -9,7 +9,7 @@ import WrightTools as wt
 import matplotlib.pyplot as plt 
 from matplotlib.patches import FancyArrowPatch
 
-# wt.artists.apply_rcparams(kind="publication")
+wt.artists.apply_rcparams(kind="publication")
 
 save = True
 
@@ -143,12 +143,12 @@ def Deltaevgo(v,x,l):
 #define numbers for AB terms
 Mge = 0.1 #M^eg_0
 Lge = 0.01 #Lambda^eg_0
-dLeg = 0.0008 #dLambda^eg / dQ
-dMgedQ = 0.008 #dM^eg / dQ
+dLeg = 0.0007 #dLambda^eg / dQ
+dMgedQ = 0.007 #dM^eg / dQ
 
 
 #define terms
-y = np.linspace(12500, 47500, 500000)
+y = np.linspace(10000, 50000, 1000000)
 
 
 A = Mge * Lge * (f10(d)*f00(d)*Deltaevgo(0,y,0) + f11(d)*f10(d)*Deltaevgo(1,y,1) + f12(d)*f20(d)*Deltaevgo(2,y,2)) #there must be a simpler way to do this but idk
@@ -187,14 +187,15 @@ abs_max = tot.max()
 ax1 = plt.subplot(gs[0,1])
 ax1.plot(y, tot / tot.max(), linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
 ax1.plot(y, np.abs(A) / abs_max, linewidth = '2', label = r'$\mathsf{|A|}$', color = 'cyan', zorder = 3)
+ax1.plot(y, np.abs(B1+B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B|}$', color = 'red', zorder = 3)
 ax1.plot(y, np.abs(B1) / abs_max, linewidth = '2', label = r'$\mathsf{|B_1|}$', color = 'orange', zorder = 2)
 ax1.plot(y, np.abs(B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B_2|}$', color = 'green', zorder = 1)
 ax1.set_ylabel(r'$\mathsf{Amplitude \ (norm.)}$', fontsize = fontsize)
 ax1.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
 
 ax1.set_yscale('log')
-ax1.set_xlim(17500, 42500)
-xticks = np.linspace(17500, 42500, 6)
+ax1.set_xlim(15000, 45000)
+xticks = np.linspace(15000, 45000, 7)
 ax1.set_xticks(xticks)
 ax1.set_ylim(0.005, 3)
 ax1.legend(loc = 1)
