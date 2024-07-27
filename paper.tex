@@ -137,13 +137,15 @@ where: $\mu^{ab}_{j}$ is the $j^{th}$ element of $\mel{a}{\vec{\mu}}{b}$, $\Delt
 $D$, the Maker-Terhune degeneracy factor, accounts for permutation symmetry of the excitation fields.\cite{RN134} 
 For a HDFG experiment using two (three) distinct input fields, $D = 3 (6)$.
 
-\subsection{Electronically Non-resonant}
-Assuming $\omega_2$, $\omega_3$ are significantly detuned from any resonance (\autoref{fig:comparisonwmel}),\cite{Placzek1934, Long1970, Altmann1982} \autoref{sivegamma} is written as 
+% DDK: or should this be "Vibrational Selection Rules"?  Does Placzek == nonresonant?
+\subsection{Electronically Non-resonant: Vibrational Selection Rules}
+When $\omega_2+\omega_3$ is significantly detuned from resonance,\cite{Placzek1934, Long1970, Altmann1982} \autoref{sivegamma} 
+% DDK: broken thought here
 When there is no electronic resonance, HDFG has also been referred to as singly vibrationally enhanced (SIVE) spectroscopy. \cite{RN352}
 We first investigate the HDFG selection rules through a Placzek type formalism.
-Contracting over the virtual states forms the hyper-Raman hyperpolarizability $\beta$.\cite{Long1970} 
+Contracting over the virtual states forms the hyper-Raman hyperpolarizability $\beta$:\cite{Long1970} 
 \begin{equation}\label{sivebeta}
-	\gamma_{ijkl}^{vg} =	-\frac{1}{\varepsilon_0} \frac{1}{4D \hbar}\frac{\beta^{vg}_{ijk} \mu^{gv}_{l}}{\Delta_{gv}} \rho_{gg}
+	\gamma_{ijkl}^{vg} =	-\frac{1}{\varepsilon_0} \frac{1}{4D \hbar}\frac{\beta^{vg}_{ijk} \mu^{gv}_{l}}{\Delta_{gv}} \rho_{gg}.
 \end{equation}
 All infrared active transitions are hyper-Raman active, making HDFG allowed for any infrared active transition. \cite{Andrews1978}
 This selection rule is generally valid for any HDFG when $\omega_2$ and $\omega_3$ are sufficiently detuned from any resonance.
@@ -151,8 +153,8 @@ This selection rule is generally valid for any HDFG when $\omega_2$ and $\omega_
 % DDK: not important, I think?  does this have any bearing on our analysis?
 
 The formula gets simpler when we consider IR excitation of a normal mode.  
-Assume $\omega_1$ is tune to the $n^{\text{th}}$ reduced normal mode.
-Taylor expanding the dipole and first hyperpolarizability operators in terms of an $n^{\text{th}}$ reduced normal mode coordinate $Q_n$ to $\order{Q_n}$ about equilibrium as\cite{Long1970, Shen90}
+Assume state $v$ is the $n^{\text{th}}$ reduced normal mode.
+We Taylor expand the dipole and first hyperpolarizability operators to first order in the reduced normal mode coordinate $Q_n$ about equilibrium:\cite{Long1970, Shen90}
 \begin{subequations}
 	\begin{equation}
 		\mu_l = \mu_{l,0} + \left(\frac{\partial \mu_l}{\partial Q_n}\right)_0 Q_n 
@@ -161,11 +163,11 @@ Taylor expanding the dipole and first hyperpolarizability operators in terms of 
 		\beta_{ijk} = \beta_{ijk,0} + \left(\frac{\partial \beta_{ijk}}{\partial Q_n}\right)_0 Q_n
 	\end{equation}
 \end{subequations}
-and substituting into \autoref{sivebeta} gives the HDFG hyperpolarizability to $\order{Q_n}$ as \begin{equation}\label{SIVEselection}
+Substituting into \autoref{sivebeta} gives the HDFG hyperpolarizability to $\order{Q_n}$ as \begin{equation}\label{SIVEselection}
 	\gamma_{ijkl}^{vg} =	-\frac{1}{\varepsilon_0} \frac{1}{8D m_n \omega_{vg}}  \frac{1}{{\Delta_{gv}}} \ \left(\frac{\partial \beta^{vg}_{ijk}}{\partial Q_n}\right)_0 \left({\frac{\partial \mu^{gv}_{l}}{\partial Q_n}}\right)_0  \rho_{gg}
 \end{equation}
 % DDK: do we call m_n the reduced mass, or the effective mass?
-where we have used $\mel{n}{Q_n}{g} = \sqrt{\frac{\hbar}{2m_n\omega_{ng}}}$, $m_n$ is the reduced mass of the normal mode and $\omega_{ng}$ is the characteristic frequency.\cite{RN230}
+where we have used $\mel{v}{Q_n}{g} = \sqrt{\frac{\hbar}{2m_n\omega_{ng}}}$, $m_n$ is the reduced mass of the normal mode, and $\omega_{ng}$ is the characteristic frequency.\cite{RN230}
 Since this expression is non-zero in the harmonic oscillator limit, HDFG output is allowed for normal modes in the harmonic limit. 
 
 % DDK: wait, this is a little different; we are considering w2 as resonant with a vibrational state; we have not considered that yet...
@@ -174,12 +176,13 @@ Since this expression is non-zero in the harmonic oscillator limit, HDFG output 
 % Specifically, when pulse 2 or 3 interacts before pulse 1, and pulse 2 is resonant with a vibrational state, there is interference between competing pathways that is highly destructive.  
 % \autoref{fig:hdfg} illustrates the competing pathways; (a) and (b) ((c) and (d)) have the same pulse ordering, but in one pathway pulse 1 stimulates a ket-side transition and in the other a bra-side transition, which imparts a $\pi$ phase shift difference.(CITE) 
 
-\subsection{Electronically resonant and pre-resonant}
+\subsection{Electronically resonant and pre-resonant: Vibronic Selection Rules}
+% TODO: note that the IR dipole selection rule persists here--this is all about w2+w3 resonance
 
-While Placzek treatment provides the general source of HDFG output, it does not predict the behavior of $\beta_{ijk}$ as $\omega_2 + \omega_3$ is changed.
+While the Placzek treatment provides the general source of HDFG output, it does not predict the behavior of $\beta_{ijk}$ as $\omega_2 + \omega_3$ is changed.
 We now explicitly consider electronic resonances through the $A,B,C$ decomposition of $\beta$ introduced by Chung and Ziegler, analogous to those found in Albrecht's treatment of Raman spectroscopy.\cite{Albrecht1961, Ziegler1988} 
 To employ this formalism, we write the states in a Born-Oppenheimer basis $\ket{a,b}$, where $\ket{a,b} = |a(Q)) \otimes \ket{b}$ for electronic states $\{|a(Q))\}$ and vibrational states $\{\ket{b}\}$ (i.e., adiabatic approximation). \cite{BornOppenheimer, Tang1970}
-The dependence of the electronic states on the adiabatic parameter $Q$ is suppressed for simplicity.
+We will henceforth suppress the dependence of the electronic states on $Q$ for simplicity.
 % DDK: can label with fig:comparisonwmel if desired
 % The states are labeled as shown in \autoref{fig:hdfg}.
 For consistency with previous reports, we use $\vec{R}$ to denote electric transition dipole moments; $\vec{\mu}$ is reserved for transitions on the ground electronic state. \cite{Tang1970}
@@ -210,7 +213,8 @@ The C term is suppressed in the following discussion as it depends on one and tw
 Note that some reports obtain $A, B$ coefficients through a Herzberg-Teller expansion of the electronic states to expose vibronic couplings via $\partial H / \partial Q$, where H is the electronic Hamiltonian.\cite{HerzbergTeller1933, Petrov1985, Neddersen1989, Baranov1990}
 This approach is not used here as the expansion of $\vec{M}^{ij}$ in normal mode coordinates provides sufficient physical insight into hyper-Raman selection rules. 
 
-By contracting over the virtual vibrational states $\ket{n}$, the $A$ and $B$ coefficients, where $B = B_1 + B_2$, are written as
+% By contracting over the virtual vibrational states $\ket{n}$, 
+The $A$ and $B$ coefficients, where $B = B_1 + B_2$, are written as:
 \begin{widetext}
 \begin{subequations}\label{ABterms}
 \begin{equation}
@@ -242,15 +246,17 @@ By contracting over the virtual vibrational states $\ket{n}$, the $A$ and $B$ co
 \end{subequations}
 \end{widetext}
 where terms such as $\langle a | b \rangle$ and $\mel{a}{Q}{b}$ are Franck-Condon factors and Herzberg-Teller-type integrals, respectively. 
-These expressions are valid for both singly and doubly resonant HDFG, but based upon the resonance schemes, further simplifications can be made (\textit{vide infra}).
+At this point, the expressions are valid for both electronically resonant and non-resonant cases.
 
-The selection rules for HDFG can be made clearer by small manipulations of \autoref{ABterms}. 
+For the case of electronic resonance, further simplifications can be made.
+We restrict consideration to electronic transitions between $|g)$ and $|e)$.  
+% The selection rules for HDFG can be made clearer by small manipulations of \autoref{ABterms}. 
 %HDFG (where a vibrational and vibronic state are resonantly coupled) can provide a tool for measuring vibronic coupling, analogous to fully resonant DFG. \cite{Dick83_1, Shen94}
 % Many multi-resonant nonlinear spectroscopies have been developed to resolve vibronic coupling in molecular samples. \cite{Carlson1990, Gaynor2017, RN276}
 % HDFG provides methods to investigate vibronic coupling with only two laser pulses.
 % HDFG experiment selectively excites quanta in ground state vibrational modes, making it similar to a stimulated hyper-Raman experiment. 
 % As a result, the spectrum along the electronic scanning axis ($\omega_2 + \omega_3$) is significantly simplified as the coupling between the vibronic states are isolated to only $\ket{g,0}$ and $\ket{g,1}$, assuming the infrared pulse puts a single quantum in the normal mode of interest ($\ket{g,1}$).
-By working only in terms of a single normal mode (i.e. removing the sum over $z$ and $v=1$) and assuming electronic transitions occur only between $|g), |e)$, 
+By working only in terms of a single normal mode (i.e. removing the sum over $z$ and $v=1$), 
 % $v' = \{0,1,2\}$, 
 the A and B terms are rewritten as 
 	\begin{subequations}\label{ABterms_DR}
@@ -281,21 +287,25 @@ the A and B terms are rewritten as
 			\end{split}
 		\end{equation}
 	\end{subequations}
-where the electronic two photon absorption operator, $\Lambda$ was invoked to simplify summation over virtual states. \cite{McClain1977}
-The constraint of $v' = \{0,1,2\}$ is done for simplicity. 
+% DDK: give Lambda an explicit definition, rather than describing it?
+where $\Lambda^{eg}_{0,jk}$ is the electronic two photon transition moment between $g$ and $e$.\cite{McClain1977}
+$\Lambda$ contains the summation over $m$ in \autoref{ABterms}.
 
-The selection rules for DR-HDFG follow more clearly from \autoref{ABterms_DR}.
-It is clear from \autoref{ABterms_DR} that the Condon approximation breaks down for centrosymmetric molecules, as inversion centers invoke strict parity constraints that make states not accessible via both one and two photon transitions. \cite{Milojevich2013, RN230}
-This makes DR-HDFG a unique tool for studying the electronic structure of centrosymmetric species in isotropic media, as it is sensitive to non-Condon effects. \cite{Olson2018}
+\autoref{ABterms} shows the selection rules for the vibronic transitions.
+The $A$ term is allowed whenever an electronic transition has a one- and two- photon transition moment.
+The brightness is controlled by vibrational overlap (Franck-Condon factors).
+For centrosymmetric molecules, however, an electronic transition cannot be both one- and two- photon allowed, so the $A$ term will vanish.\cite{Milojevich2013, RN230}
+This makes HDFG a unique tool for studying the electronic structure of centrosymmetric species in isotropic media, as it is sensitive to non-Condon effects.\cite{Olson2018}
+In the absence of an $A$ term, the $B$ terms will dominate.
 The $B_1$ and $B_2$ terms involve different types of vibronic coupling pathways.
 In $B_1$, the Herzberg-Teller coupling is associated with the two-photon absorption process, whereas in $B_2$, the Herzberg-Teller coupling is associated with one-photon emission.
-As such, $B_1$ contributions to a DR-HDFG spectrum will be sensitive to vibronic coupling between the ground state of a mode and vibrational states on the $|e)$ surface. 
+As such, $B_1$ contributions to a HDFG spectrum will be sensitive to vibronic coupling between the ground state of a mode and vibrational states on the $|e)$ surface. 
 $B_2$ contributions are sensitive to vibronic coupling between the first excited state of a mode $\ket{g,1}$ and vibrational states on $|e)$.
 
 \begin{figure*}[!htbp]
 	\centering
 	\includegraphics[width=6.66in]{drsive_spectrum.png}
-	\caption{Contributions of $A, B$ (\autoref{ABterms_DR}) to DR-HDFG spectrum for a simple two harmonic well system.
+	\caption{Contributions of $A, B$ (\autoref{ABterms_DR}) to HDFG spectrum for a simple two harmonic well system.
 		(a) Potential energy surfaces for a two-well system, (b) 1D HDFG spectrum for $\xi = 0.5$, $\omega_1 = \omega_{g1, g0}$. 
 		It is assumed that $\omega_2 = \omega_3$.
 		Note that (b) plots magnitudes of the labeled quantities.
@@ -319,18 +329,18 @@ and
 for the ground ($H_g$) and first excited ($H_e$) states, where $p$ is the momentum of the normal mode, the A and B contributions can be evaluated using Franck-Condon and Herzberg-Teller integrals tabulated in terms of the dimensionless normal mode $q$ and offset parameter $\xi$ (\autoref{fig:doubres_spec}a). \cite{Carlson1988thesis} 
 Note that $q = \sqrt{\frac{m^2\omega}{\hbar}} Q$.
 The spectrum is simulated for an electronic state which is both one and two photon allowed.
-A simulated spectrum   (\autoref{fig:doubres_spec}b) highlighting the contributions of these terms on potential wells with $\xi = 0.5$ dissects the $A$ and $B$ contributions to the DR-HDFG spectrum.
-This stimulated hyper-Raman type spectrum would be the expected result in a DR-HDFG experiment when investigating the vibronic structure of the electronic state coupled to $\ket{g,v}$.
+A simulated spectrum (\autoref{fig:doubres_spec}b) highlighting the contributions of these terms on potential wells with $\xi = 0.5$ dissects the $A$ and $B$ contributions to the HDFG spectrum.
+This stimulated hyper-Raman type spectrum would be the expected result in a HDFG experiment when investigating the vibronic structure of the electronic state coupled to $\ket{g,v}$.
 
-Simulating the DR-HDFG spectrum for the simple two-well system allows dissection of selection rules and spectral signatures without the need for complex couplings.
+Simulating the HDFG spectrum for the simple two-well system allows dissection of selection rules and spectral signatures without the need for complex couplings.
 There are two relevant regions of interest: the resonant region (2$\omega_2$ $\in$ [29000, 35000] cm$^{-1}$) and the non-resonant region.
 Focusing far away from the resonant region ($2\omega_2 \sim$ 20000 cm$^{-1}$), the nonresonant $A$ term response is roughly equivalent to that of the resonant $B$ term response. 
 Previous reports suggest that $A$ term contributions may become negligible when significantly detuned from a resonance such that $\Delta_{ev', g0} \approx \Delta_{eg}$, i.e., the resonance denominator loses $\ket{v'}$ dependence. \cite{Neddersen1989}
 The lack of $\ket{v'}$ dependence in the resonance denominator causes $A$ to vanish through closure ($A_{ijk} \sim \sum_{v'} \langle 1|v' \rangle \langle v'|0\rangle$ = $\delta_{10} = 0$).
-However, the simulated spectrum (\autoref{fig:doubres_spec}b) shows a non-negligible $A$ contribution to DR-HDFG output well beyond $\sim$ 20000 cm$^{-1}$, the limit for this model system where $\abs{\omega_{ev',g0} - 2\omega_2} \gg 2\Gamma_{ev',g0}$.
+However, the simulated spectrum (\autoref{fig:doubres_spec}b) shows a non-negligible $A$ contribution to HDFG output well beyond $\sim$ 20000 cm$^{-1}$, the limit for this model system where $\abs{\omega_{ev',g0} - 2\omega_2} \gg 2\Gamma_{ev',g0}$.
 As such, it is difficult to eliminate $A$ term resonances in HDFG spectra, even when largely detuned ($\gg 2\Gamma_{ev',g0}$) from the electronic state. 
 Similar ideas have been seen in spontaneous Raman scattering. \cite{Li1990, Gong2015}
-As such, it may prove difficult to examine non-Condon effects in DR-HDFG spectra of noncentrosymmetric systems. 
+As such, it may prove difficult to examine non-Condon effects in HDFG spectra of noncentrosymmetric systems. 
 
 In the resonant region, the $A$ term contains character from all three possible transitions between $\ket{g,0}$, $\ket{e,v'}$ and $\ket{g,1}$. 
 Significant contributions from $\ket{e,0}$ and $\ket{e,1}$ in the spectrum correspond well with expectations given the relative wavefunction overlap in \autoref{fig:doubres_spec}a. 
@@ -347,10 +357,7 @@ However, the $0-2$ transition is smaller in amplitude than the $0-1$ transition 
 In a realistic molecular system, where higher order contributions (e.g. Duschinsky coupling) affect vibronic coupling signatures, the spectral signatures will change to incorporate anharmonicites. \cite{Duschinsky1937, Carlson1990, Kundu2022}
 Investigating coupling between $\ket{g,2v}$ and the same $\ket{e,v'}$ vibronic states will likely assist in dissecting the site-selective electronic spectra.
 
-\section{Applications of HDFG}\label{quant}
-% DDK: the problem is "applications" does not fit well into the story we have framed in the intro.  
-% DDK: what about "comparisons of HDFG with other spectroscopies"?
-% also, can some of these things really be called applications?  is site-selectivity an application?  is turning a v-SFG measurement into a HDFG measurement an application?
+\section{Comparisons with other spectroscopies}\label{quant}
 \subsection{Site Selectivity}
 Unlike resonant hyper-Raman spectroscopy, which allows transitions between different normal modes of varying quanta, the infrared pulse in the HDFG provides a type of site selectivity,\cite{RN103, Carlson1991} so that only the mode pumped by $\omega_1$ can be involved in vibronic coupling.  
 % DDK: I kind of understand this point...but a hyper-Raman spectrum would clearly select the vibrational mode based on the Raman shift, correct?
@@ -359,7 +366,7 @@ Unlike resonant hyper-Raman spectroscopy, which allows transitions between diffe
 % - experiment takes place over a short time window, so pump-probe experiments are easily implemented
 % - laser scatter is easily avoided
 % - IR active, not 
-HDFG methods should be able to supplement older coherent Raman based methods as a method to investigate vibronic coupling mechanisms between a specific vibration on the ground state and vibrational states on an arbitrary excited state.\cite{RN103}
+HDFG methods can supplement other coherent Raman based methods as a method to investigate vibronic coupling mechanisms between a specific vibration on the ground state and vibrational states on an arbitrary excited state.\cite{RN103}
 The combined infrared and hyper-Raman properties of HDFG make it highly sensitive to molecular electronic structure.
 Particularly in the case of a centrosymmetric species, non-Condon effects dominate in the spectrum as the $A$ term vanishes from the presence of an inversion center.
 The site selective properties of HDFG can allow for parsing of non-Condon effects in different vibrational modes, and extend the use of CMDS to understand the electronic and vibronic structure of simple and complex species.
@@ -368,13 +375,14 @@ The hybrid infrared / hyper-Raman properties of HDFG make it an intriguing analo
 First demonstrated by Boyle et al., resonance IR uses a $2\vec{k}_1 + \vec{k}_3$ pathway to amplify weak infrared modes through vibronic coupling, dependent upon the Raman $A,B$ coefficients. \cite{RN491}
 However, the $2\vec{k}_1 + \vec{k}_3$ resonance IR method implicitly depends upon the coupling of an overtone $\ket{g,2v}$ to vibronics $\ket{e,v'}$.
 % DDK: did we not already discuss this?  Why is this not the introduction?
-Alternatively, DR-HDFG provides another form of resonance IR spectroscopy, but only requires coupling between $\ket{g,v}$ and $\ket{e,v'}$.
+Alternatively, HDFG provides another form of resonance IR spectroscopy, but only requires coupling between $\ket{g,v}$ and $\ket{e,v'}$.
 This form of resonance IR spectroscopy would also uniquely depend upon one and two-photon absorption components, as discussed in terms of the hyper-Raman $A,B$ coefficients.
 By combining resonance IR in the HDFG and $2\vec{k}_1 + \vec{k}_3$ geometries, the sensitivity of the Raman and hyper-Raman $A,B$ coefficients to ground state vibrations and electronic structure can be assessed. 
 Such experiments can help assess the quality of computationally calculated ground and excited state potential energy surfaces. 
 
 \subsection{Comparison to Sum Frequency Generation}
-% this whole argument is we only need two colors...why is there a whole section on this?
+% this whole argument is we only need two colors...condense this
+% also note the intro covers this now
 Despite these attributes of HDFG, four wave mixing techniques are usually unfeasible for most laboratories, as they usually demand the use of multiple optical parametric amplifiers and/or complex acousto-optic modulators. \cite{RN245}  % I don't understand the citation, but also a citation is not necessary...
 Unlike most four wave mixing techniques, HDFG can be performed using only two input beams (i.e., two color HDFG).
 In the case of two color HDFG, only one tunable infrared optical parametric amplifier is needed, as the oscillator which pumps the infrared OPA can be used to perform the two-photon upconversion needed to generate HDFG output, i.e., $-\vec{k}_1 + 2\vec{k}_2$.
@@ -455,7 +463,7 @@ Briefly, a tensor in the molecular frame, A$_{ijkl}$, is transformed into an ele
 Orientational averaging shows specific polarization schemes isolate linear combinations of different $\beta_{ijk}$ terms. \cite{Bersohn1966, Willetts1992, Kauranen1996}
 By using the expansions of $\beta_{ijk}$ and $\mu_{l}$ to $\order{Q_n}$ found earlier, and knowing that $\Re(\chi^{(3)})$ vanishes when resonant, we see
 \begin{equation}\label{betasive}
-	\langle \frac{\partial \beta_{ijk}}{\partial Q_n} {\frac{\partial \mu_l}{\partial Q_n}} \rangle = -\frac{8D \varepsilon_0}{NF}  {\Gamma_{gv} \omega_{vg}} {\Im(\chi^{(3)}_{IJKL})}
+	\left\langle \frac{\partial \beta_{ijk}}{\partial Q_n} {\frac{\partial \mu_l}{\partial Q_n}} \right\rangle = -\frac{8D \varepsilon_0}{NF}  {\Gamma_{gv} \omega_{vg}} {\Im(\chi^{(3)}_{IJKL})}
 \end{equation}
 Since $\abs{\partial \mu / \partial Q}$ values can be extracted from FT-IR spectra, HDFG can give quantitative information on the magnitude of $\beta_{ijk}$ for infrared active vibrations.
 Additionally, by using non-degenerate input frequencies to stimulate the hyper-Raman transition, the asymmetric properties of $\beta_{ijk}$ can be examined and quantified. \cite{Christie1971, Denisov1986, Kozich2007}
@@ -466,9 +474,9 @@ These quantitative aspects of HDFG could prove useful to examine how well comput
 Coherent vibrational, hyper-Raman coherent four wave mixing spectroscopies are identified and discussed.
 Singly resonant hyper difference frequency generation (SR-HDFG) processes are shown to be the coherent hyper-Raman analogue of infrared active vibrations.
 We find that HDFG is always allowed for harmonic transitions, making it a potential tool for measuring single quantum coherence lifetimes. 
-Through an examination of the hyper-Raman $A,B,C$ terms as they appear in the doubly resonant HDFG (DR-HDFG) output, the impact of vibronic coupling in DR-HDFG spectrum was examined.
+Through an examination of the hyper-Raman $A,B,C$ terms, the impact of electronic resonance and vibronic coupling in HDFG spectrum was examined.
 The non-Condon effects that are present in the absence of $A$ might prove useful for resolving the electronic structure of centrosymmetric species.
-DR-HDFG possesses types of site-selective properties analogous to those of nanosecond coherent Raman experiments. 
+HDFG possesses types of site-selective properties analogous to those of nanosecond coherent Raman experiments. 
 Site-selective properties should allow for a thorough analysis of vibronic coupling schemes in isotropic systems.
 Through a simple treatment, it is seen that HDFG and vibrational sum frequency generation (vSFG) have roughly the same output intensities. 
 This makes HDFG a reasonable spectroscopy for systems outside of the ideal solvents tested in the literature, and should be readily extended to a variety of non-ideal molecular and materials systems. 
