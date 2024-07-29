@@ -87,12 +87,12 @@ When the hyper-Raman excitation is resonant or near-resonant with electronic sta
 The electronic spectrum can inform on processes that control ultrafast electronic relaxation in molecular and biological systems in similar ways to resonance Raman.\cite{Bredenbeck2015, Arsenault2021}
 Since the selection rules of hyper-Raman scattering differ from Raman scattering, the hyper-Raman excitation spectra give a unique alternative to Raman scattering to understand vibrational spectra, electronic structure and vibronic coupling in molecular systems. \cite{Olson2018}
 
-Inspired by recent work that demonstrated the presence of HDFG in ultrafast DOVE and terahertz-IR-visible (TIRV) experiments, we investigate the parameters which result in HDFG output. \cite{Bonn2024, McDonnell2024}
-This paper is organized as follows.
-In \autoref{steadystate}, we first identify the selection rules that drives HDFG in the absence of electronic resonance. 
+This paper investigates the microscopic parameters that control HDFG output. \cite{Bonn2024, McDonnell2024}
+In \autoref{steadystate}, we first identify the vibrational selection rules. 
 The selection rules of electronically-resonant HDFG are then identified through a Herzberg-Teller dipole expansion.
 HDFG is found to be allowed in any harmonic system that has infrared active vibrations.
 A simple harmonic oscillator model system is used to simulate HDFG spectra and illustrate how the excited state potential energy surface affects the hyper-Raman excitation spectrum.
+% DDK: potentially need to change this sentence, depending on how latter sections are reworked.
 After developing selection rules, the site selective properties, useful experimental aspects of HDFG, and a new scheme to extract the hyper-Raman hyperpolarizability ($\beta_{ijk}$) from HDFG spectra are discussed in \autoref{quant}.
 The main findings are summarized in \autoref{conclusion}.
 
@@ -311,8 +311,6 @@ This makes HDFG a unique tool for studying the electronic structure of centrosym
 In the absence of an $A$ term, the $B$ terms will dominate.
 The $B_1$ and $B_2$ terms involve different types of vibronic coupling pathways.
 In $B_1$, the Herzberg-Teller coupling is associated with the two-photon absorption process, whereas in $B_2$, the Herzberg-Teller coupling is associated with one-photon emission.
-As such, $B_1$ contributions to a HDFG spectrum will be sensitive to vibronic coupling between the ground state of a mode and vibrational states on the $|e)$ surface. 
-$B_2$ contributions are sensitive to vibronic coupling between the first excited state of a mode $\ket{g,1}$ and vibrational states on $|e)$.
 
 \begin{figure*}[!htbp]
 	\centering
@@ -429,7 +427,7 @@ Using \autoref{eq:nfgamma} and \autoref{sivebeta}, we can write
 \end{equation}
 For simplicity, we take $\rho_{gg} = 1$.
 The steps behind orientational averaging of $\gamma_{ijkl}$, a rank four tensor in the molecular frame, are detailed elsewhere.\cite{Andrews1977, McDonnell2024}
-Briefly, a tensor in the molecular frame, A$_{ijkl}$, is transformed into an element of the same tensor in the laboratory frame, A$_{IJKL}$, through A$_{IJKL}$ = $\theta^{ijkl}_{IJKL} A_{ijkl} = \langle A_{ijkl} \rangle$, where summation over repeated indices is implied and $\theta$ is the transformation operator. \cite{McDonnell2024}
+Briefly, a tensor in the molecular frame, A$_{ijkl}$, is transformed into an element of the same tensor in the laboratory frame, $A_{IJKL}$, through $A_{IJKL}$ = $\theta^{ijkl}_{IJKL} A_{ijkl} = \langle A_{ijkl} \rangle$, where summation over repeated indices is implied and $\theta$ is the transformation operator. \cite{McDonnell2024}
 Orientational averaging shows specific polarization schemes isolate linear combinations of different $\beta_{ijk}$ terms. \cite{Bersohn1966, Willetts1992, Kauranen1996}
 By using the expansions of $\beta_{ijk}$ and $\mu_{l}$ to $\order{Q_v}$ found earlier, and knowing that $\Re(\chi^{(3)})$ vanishes when resonant, we see
 \begin{equation}\label{betasive}
