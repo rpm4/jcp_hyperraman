@@ -45,9 +45,8 @@ HDFG shows promise as a method to disentangle vibrational spectra and dynamics i
 Coherent multidimensional spectroscopy (CMDS) is a family of nonlinear spectroscopy methods that form the optical analogue of multidimensional nuclear magnetic resonance (NMR) spectroscopy.\cite{Cho2008}
 Multiresonant, four wave mixing CMDS experiments, first proposed by Oudar and Shen in 1980,\cite{RN307} directly probe coupling and correlations between different vibrational, electronic, and vibronic states. \cite{RN281, RN103, Cho2008} 
 Four wave mixing CMDS has resolved anharmonicities, ultrafast dynamics, and other inter- and intra-molecular couplings in numerous systems. \cite{Cho2008, Gaynor2017, Ziegler2018, Ogilvie2019, Bonn2021, RN325, Chen2024}
-To target vibrational and electronic coupling, methods commonly make use of Raman transitions, e.g., doubly vibrationally enhanced spectroscopy (DOVE), triple sum frequency (TSF), coherent anti-Stokes Raman spectroscopy (CARS), resonant impulse stimulated Raman spectroscopy (RISRS).\cite{RN425, Dhar1994, RN345, Cho2000, RN491}
+To target vibrational and electronic coupling, methods commonly make use of Raman transitions, e.g., doubly vibrationally enhanced spectroscopy (DOVE), triple sum frequency (TSF), coherent anti-Stokes Raman spectroscopy (CARS), resonant impulse stimulated Raman spectroscopy (RISRS).\cite{RN103, Dhar1994, RN345, Cho2000, RN491}
 Here we explore the less-utilized hyper-Raman transitions in four wave mixing CMDS.
-
 
 \begin{figure*}[!htbp]
 	\centering
@@ -77,18 +76,18 @@ The other two excitation frequencies control electronic enhancement for the hype
 \autoref{fig:comparisonwmel} shows both HDFG and HSFG processes and compares them with related spectroscopies that investigate vibrational-electronic coupling.
 The three-wave mixing ($\chi^{(2)}$) techniques are often less applicable as they require non-centrosymmetry.\cite{RN227}
 Hyper-Raman scattering itself is a six-wave mixing ($\chi^{(5)}$) technique; stimulated hyper-Raman will be weak and susceptible to FWM cascades.\cite{RN515, RN243, Cho2000_Cascade}
-A coherent six-wave mixing analogue of hyper-Raman scattering, coherent anti-Stokes hyper-Raman spectroscopy (CAHRS), has been proposed and explored theoretically by several authors; however, it is also highly susceptible to FWM cascades.\cite{Berger1978, Bjarnason1980, RN243, Cho1997, Cho1998, Cho2000_Cascade}
-Of the many four-wave mixing techniques, HDFG and HSFG have strong similarity to Raman, stimulated Raman, and RISRS in that the electronic state must remove or add a $v$ quantum to the ground state (``ev'' coupling).
+A coherent six-wave mixing analogue of hyper-Raman scattering, coherent anti-Stokes hyper-Raman spectroscopy (CAHRS), has been proposed and explored theoretically by several authors; however, it is also highly susceptible to FWM cascades.\cite{Berger1978, Bjarnason1980, Cho1997, Cho1998}
+Of the many four-wave mixing techniques, HDFG and HSFG have strong similarity to Raman, stimulated Raman, and RISRS in that the electronic state must remove or add a $v$ quantum to the ground state (``ev'' coupling). %rpm: not sure what you're trying to say by this
 With the other four-wave mixing techniques (\autoref{fig:comparisonwmel}, second row), the output signal depends on more states than just a single vibrational mode and electronic state (``evx'' coupling). 
 As a result, the relationship between the output and vibrational-electronic coupling is more detailed, but also more complicated.
 HDFG, HSFG and Raman are more direct probes of electronic-vibrational coupling.
-Notably, HDFG and HSFG can be implemented as 2-color experiments (with $\omega_2=\omega_3$); vibrational sum frequency generation (vSFG) or difference frequency generation (vDFG) setups can be trivially reconfigured to perform HSFG or HDFG measurements, respectively, to investigate ev coupling in bulk systems.
+Notably, HDFG and HSFG can be implemented as 2-color experiments (with $\omega_2=\omega_3$);\cite{Cho2001} vibrational sum frequency generation (vSFG) or difference frequency generation (vDFG) setups can be trivially reconfigured to perform HSFG or HDFG measurements, respectively, to investigate ev coupling in bulk systems.
 
 When the hyper-Raman excitation is resonant or near-resonant with electronic states, the brightness of the vibrational feature depends on the nature of the electronic state.
 The electronic spectrum can inform on processes that control ultrafast electronic relaxation in molecular and biological systems in similar ways to resonance Raman.\cite{Bredenbeck2015, Arsenault2021}
 Since the selection rules of hyper-Raman scattering differ from Raman scattering, the hyper-Raman excitation spectra give a unique alternative to Raman scattering to understand vibrational spectra, electronic structure and vibronic coupling in molecular systems. \cite{Olson2018}
 
-Inspired by recent work that demonstrated the presence of HDFG in ultrafast DOVE and terahertz-IR-visible (TIRV) experiments, we investigate the parameters which result in HDFG output. \cite{Cho2000, Bonn2024, McDonnell2024}
+Inspired by recent work that demonstrated the presence of HDFG in ultrafast DOVE and terahertz-IR-visible (TIRV) experiments, we investigate the parameters which result in HDFG output. \cite{Bonn2024, McDonnell2024}
 This paper is organized as follows.
 In \autoref{steadystate}, we first identify the selection rules that drives HDFG in the absence of electronic resonance. 
 The selection rules of electronically-resonant HDFG are then identified through a Herzberg-Teller dipole expansion.
@@ -108,7 +107,7 @@ Before presenting selection rules, we note that a potential interferant in HDFG 
 While unimportant in achiral isotropic systems,\cite{Belkin2000} second order cascades may become important in media where SFG and DFG are allowed, e.g. chiral media, interfaces or noncentrosymmetric media. 
 Nevertheless, in the discussion that follows for the rest of this manuscript, we will assume negligible second order cascades. 
 
-It is useful to expose relationships between transition dipoles and hyper-Raman hyperpolarizabilities in the driven limit. \cite{Simpson2004}
+It is useful to expose relationships between nonlinear output, transition dipoles and hyper-Raman hyperpolarizabilities in the driven limit. \cite{Simpson2004}
 Under the electric dipole approximation, the I$^{th}$ component of the third order nonlinear output polarization, ${P}^{(3)}_I$, of a four wave mixing process, induced by electric fields $E_J$, $E_K$, and $E_L$ at output frequency $\omega_4=-\omega_1 + \omega_2 + \omega_3$ is written as (using Einstein summation) \cite{RN307}
 \begin{equation} \label{polarization}
 {P}^{(3)}_I (\omega_4)  = \chi^{(3)}_{IJKL} E_J(\omega_3) E_K(\omega_2) E_L(\omega_1) 
@@ -187,7 +186,7 @@ When $\omega_2 + \omega_3$ become electronically resonant, the interference chan
 Note that only pathways (c,e,f) possess identical transition moments.
 As a result, pathways (c,d) survive and can provide output when $\omega_2+\omega_3$ is resonant with an electronic state. 
 These results provide a simple rule of thumb for collecting HDFG spectra: use \autoref{fig:sivewmel2}a,b pathways to measure spectra when significantly detuned from an electronic resonance, and any pathway can measure spectra when electronically resonant.
-However, since electronic states commonly have short dephasing times and have significantly inhomogeneous broadening,\cite{Dong2015, Lewis2015} it is likely the \autoref{fig:sivewmel2}f pathway will become triply resonant and possibly contribute greater than the other pathways. 
+However, since electronic states commonly have short dephasing times and have significant inhomogeneous broadening,\cite{Dong2015, Lewis2015} it is likely the \autoref{fig:sivewmel2}f pathway will become triply resonant and possibly contribute greater than the other pathways. 
 Such instances are system dependent. 
 For consistency, discussion will be isolated to the \autoref{fig:sivewmel2}a pathway in the sections that follow.
 
@@ -302,7 +301,7 @@ $\Lambda$ contains the summation over $m$ in \autoref{ABterms} (N.B., here we us
 \autoref{ABterms_DR} shows important selection rules for the vibronic transitions.
 The $A$ term is allowed whenever an electronic transition has a one- and two- photon transition moment.
 The brightness is controlled by vibrational overlap (Franck-Condon factors).
-For centrosymmetric molecules, however, an electronic transition cannot be both one- and two- photon allowed, so the $A$ term will vanish.\cite{Milojevich2013, RN230}
+For centrosymmetric molecules, however, an electronic transition cannot be both one- and two- photon allowed, so the $A$ term will vanish.\cite{Milojevich2013}
 This makes HDFG a unique tool for studying the electronic structure of centrosymmetric species in isotropic media, as it is sensitive to non-Condon effects.\cite{Olson2018}
 In the absence of an $A$ term, the $B$ terms will dominate.
 The $B_1$ and $B_2$ terms involve different types of vibronic coupling pathways.
@@ -472,7 +471,7 @@ R.P.M. acknowledges support from the NSF Graduate Research Fellowship Program (G
 		 \end{subequations}
 
  where N$_\text{bulk}$ is the bulk number density ($\sim$ 10$^{28}$ m$^{-3}$ for H$_2$O$_{(l)}$ at room temperature), and N$_\text{surf}$ is the surface number density ($\sim$ 10$^{16}$ m$^{-2}$ for H$_2$O adsorbed at quartz).\cite{Du1994}	
- For simplicity, we assume that $\chi^{(2)}$ is a spatial constant so that $\int_{0^-}^\ell \mathrm{d}z \langle \alpha_{ij}\mu_{k} \rangle \approx \ell \langle \alpha_{ij}\mu_{k} \rangle$, where $z$ is oriented along the surface normal and $0^{-}$ is the edge of the interface where substrate begins. \cite{Su1998}
+ For simplicity, we assume that $\chi^{(2)}$ is a spatial constant so that $\int_{0^-}^\ell \mathrm{d}z \langle \alpha_{ij}\mu_{k} \rangle \approx \ell \langle \alpha_{ij}\mu_{k} \rangle$, where $z$ is oriented along the surface normal and $0^{-}$ is the edge of the interface where substrate begins. 
  We take the film thickness ($\ell$) probed by vSFG to be 1 nm, much less than the vSFG coherence length.\cite{RN133}
  A normal dispersion curve is assumed so that $F(\omega_1+\omega_2) \approx F(2\omega_2-\omega_1)$.
  To simplify analysis, orientational averaging is ignored (e.g., $\langle \beta_{ijk} \mu_{l} \rangle \approx \beta \mu$) and the input and output fields are taken to be co-polarized, so that
