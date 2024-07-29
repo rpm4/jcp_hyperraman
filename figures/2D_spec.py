@@ -12,7 +12,6 @@ from matplotlib.patches import FancyArrowPatch
 wt.artists.apply_rcparams(kind="publication")
 
 save = True
-
 fontsize = 18
 
 #define harmonic wells and coordinates
