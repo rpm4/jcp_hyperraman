@@ -302,14 +302,14 @@ The impact of vibronic coupling in the HDFG spectrum is made clear by using a si
 Using a two-well system described by 
 \begin{subequations}\label{Hamiltonian}
 	\begin{equation}
-		H_g = \frac{p^2}{2m} + \frac{1}{2} \hbar \omega q^2
+		H_g = \frac{\hbar \omega }{2} \left(p^2 + q^2 \right)
 	\end{equation}
 	and
 	\begin{equation}
-		H_e = \frac{p^2}{2m} + \frac{1}{2} \hbar \omega (q-\xi)^2 +\hbar \omega_{eg}
+		H_e = \frac{\hbar \omega }{2} \left(p^2 +  (q-\xi)^2 \right) + \hbar \omega_{eg}
 	\end{equation}
 \end{subequations}
-for the ground ($H_g$) and first excited ($H_e$) states, where $p$ is the momentum of the normal mode, the A and B contributions can be evaluated using Franck-Condon and Herzberg-Teller integrals tabulated in terms of the dimensionless normal mode $q$ and offset parameter $\xi$ (\autoref{fig:doubres_spec}a). \cite{Carlson1988thesis} 
+for the ground ($H_g$) and first excited ($H_e$) states, where $p$ is the dimensionless momentum of the normal mode, the A and B contributions can be evaluated using Franck-Condon and Herzberg-Teller integrals tabulated in terms of the dimensionless normal mode $q$ and offset parameter $\xi$ (\autoref{fig:doubres_spec}a). \cite{Carlson1988thesis} 
 Note that $q = \sqrt{\frac{m^2\omega}{\hbar}} Q$.
 The spectrum is simulated for an electronic state which is both one and two photon allowed.
 A simulated spectrum (\autoref{fig:doubres_spec}b) highlighting the contributions of these terms on potential wells with $\xi = 0.5$ dissects the $A$ and $B$ contributions to the HDFG spectrum.
@@ -333,7 +333,7 @@ This stimulated hyper-Raman type spectrum would be the expected result in a HDFG
 We stress that while the $A,B$ selection rules are based upon any hyper-Raman active mode, the $\mel{v}{\mu_l}{0}$ term in \autoref{gammaabc} imposes the constraint that the $A,B$ transitions occur for infrared active normal mode.
 The $A$ term is allowed whenever an electronic transition has a one- and two- photon transition moment.
 The brightness is controlled by vibrational overlap (Franck-Condon factors).
-Note that in the limit of complete potential energy surface overlap ($\xi \rightarrow 0$), $A$ vanishes as $\lim_{\xi \rightarrow 0} \langle 1 | 0 \rangle = 0$ for potential wells with identical curvature.
+Note that in the limit of complete potential energy surface overlap ($\xi \rightarrow 0$), $A$ vanishes as $\lim_{\xi \rightarrow 0} \langle 1 | 0 \rangle = 0$ for harmonic potential wells.\cite{Myers1982}
 This selection rule is imposed by the dipole transition in HDFG. 
 $B$ does not vanish in the same limit, as $\lim_{\xi \rightarrow 0} \mel{0}{Q}{1} = 1/\sqrt{2}$ for wells with identical curvature.
 For centrosymmetric molecules, an electronic transition cannot be both one- and two- photon allowed by parity, so the $A$ term will vanish.
