@@ -1,4 +1,4 @@
-\documentclass[aip, jcp, reprint, onecolumn]{revtex4-2}
+\documentclass[aip, jcp, reprint, onecolumn, nofootinbib]{revtex4-2}
 
 \bibliographystyle{apsrev4-2}
 
@@ -93,6 +93,17 @@ HDFG is found to be allowed in any harmonic system that has infrared active vibr
 A simple harmonic oscillator model system is used to simulate HDFG spectra and illustrate how the excited state potential energy surface affects the hyper-Raman excitation spectrum.
 After developing selection rules, some quantitative aspects of HDFG are discussed in \autoref{quant}.
 
+\section{Density Matrix Propagation}
+In the cases discussed in the introduction, the proposed HDFG spectroscopy method is used to probe vibronic coupling.
+Coherent spectroscopies are often described using the density-matrix formalism, where a density matrix $\rho$ is propagated using the Liouville-von Neumann equation as
+\begin{equation}
+	\dot{\rho} = \frac{1}{i \hbar} [H_0 + H(t), \rho] + \dot{\rho}_R,
+\end{equation}
+where $H_0$ is system Hamiltonian, $H(t)$ is the time-dependent, matter-radiation interaction Hamiltonian and $\rho_R$ is the relaxation density matrix. 
+In most treatments of coherent vibrational spectroscopy, it is sufficient to write $\dot{\rho}_R = \Gamma \rho$, i.e. exponential relaxation (Markovian dynamics), where $\Gamma$ is the system's pure dephasing rate. \cite{RN455, RN307}
+
+
+
 \section{Selection Rules for HDFG Spectroscopy}\label{steadystate}
 
 In this section, we investigate the properties of HDFG and make the connections between HDFG and hyper-Raman scattering explicit.
@@ -133,7 +144,7 @@ Another potential interferant in HDFG spectroscopy is direct and sequential casc
 While unimportant in achiral isotropic systems,\cite{Belkin2000} second-order cascades may become important in media where SFG and DFG are allowed, e.g. chiral media, interfaces or non-centrosymmetric media. 
 Nevertheless, in the discussion that follows for the rest of this manuscript, we will assume negligible second-order cascades. 
 
-It is useful to expose relationships between nonlinear output, transition dipoles and hyper-Raman hyperpolarizabilities in the driven limit. \cite{Simpson2004}
+It is useful to expose relationships between nonlinear output, transition dipoles and hyper-Raman hyperpolarizabilities in the driven limit. \cite{Simpson2004, Moad2005}
 Under the electric dipole approximation, the $I^\text{th}$ cartesian component of the third order nonlinear output polarization, ${P}^{(3)}_I$, of a four wave mixing process, induced by electric fields $E_J$, $E_K$, and $E_L$ at output frequency $\omega_4=-\omega_1 + \omega_2 + \omega_3$ is written as (using Einstein summation) \cite{RN307}
 \begin{equation} \label{polarization}
 {P}^{(3)}_I (\omega_4)  = \chi^{(3)}_{IJKL} E_J(\omega_3) E_K(\omega_2) E_L(\omega_1) 
@@ -350,7 +361,7 @@ As such, HDFG will have difficulty examining non-Condon effects ($B$ term contri
 
 \begin{table}[!htbp]
 	\caption{\label{T:contributions} Franck-Condon and/or Herzberg-Teller contributions to $A$, $B_1$, $B_2$ terms between $\ket{g,0}$, $\ket{g,1}$ and vibronic states $\ket{e,0}$, $\ket{e,1}$, $\ket{e,2}$ for \autoref{Hamiltonian} with an offset $\xi = 0.5$.
-	Closed-form expressions for the Franck-Condon and Herzberg-Teller integrals used here have been tabulated by Carlson.\cite{Carlson1988thesis}}
+	Closed-form expressions for the Franck-Condon and Herzberg-Teller integrals used here have been tabulated by Carlson.\cite{Carlson1988thesis}}\footnote{The Herzberg-Teller Integrals 
 	\begin{ruledtabular}
 		\begin{tabular}{cccc}
 			$2\omega_2$ Electronic Resonance & $\ket{e,0}$ & $\ket{e,1}$ & $\ket{e,2}$\\
