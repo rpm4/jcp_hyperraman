@@ -1,4 +1,4 @@
-\documentclass[aip, jcp, reprint, onecolumn, nofootinbib]{revtex4-2}
+\documentclass[aip, jcp, reprint, onecolumn]{revtex4-2}
 
 \bibliographystyle{apsrev4-2}
 
@@ -54,7 +54,7 @@ Here we explore the less-utilized hyper-Raman transitions in four wave mixing CM
 		The light-matter interactions are depicted using Wave Mixing Energy Level (WMEL) diagrams.\cite{RN286}
 		Solid and dashed horizontal lines indicate real and virtual states, whereas solid and dotted arrows indicate ket and bra side transitions, respectively. 
 		The red box outlines the e-v coupling techniques (HDFG, HSFG) relevant to this manuscript.
-	}
+	} %TODO: Fix vsfg
 	\label{fig:comparisonwmel}
 \end{figure*}
 
@@ -92,17 +92,6 @@ The selection rules of electronically-resonant HDFG are then identified through 
 HDFG is found to be allowed in any harmonic system that has infrared active vibrations.
 A simple harmonic oscillator model system is used to simulate HDFG spectra and illustrate how the excited state potential energy surface affects the hyper-Raman excitation spectrum.
 After developing selection rules, some quantitative aspects of HDFG are discussed in \autoref{quant}.
-
-\section{Density Matrix Propagation}
-In the cases discussed in the introduction, the proposed HDFG spectroscopy method is used to probe vibronic coupling.
-Coherent spectroscopies are often described using the density-matrix formalism, where a density matrix $\rho$ is propagated using the Liouville-von Neumann equation as
-\begin{equation}
-	\dot{\rho} = \frac{1}{i \hbar} [H_0 + H(t), \rho] + \dot{\rho}_R,
-\end{equation}
-where $H_0$ is system Hamiltonian, $H(t)$ is the time-dependent, matter-radiation interaction Hamiltonian and $\rho_R$ is the relaxation density matrix. 
-In most treatments of coherent vibrational spectroscopy, it is sufficient to write $\dot{\rho}_R = \Gamma \rho$, i.e. exponential relaxation (Markovian dynamics), where $\Gamma$ is the system's pure dephasing rate. \cite{RN455, RN307}
-
-
 
 \section{Selection Rules for HDFG Spectroscopy}\label{steadystate}
 
@@ -144,7 +133,10 @@ Another potential interferant in HDFG spectroscopy is direct and sequential casc
 While unimportant in achiral isotropic systems,\cite{Belkin2000} second-order cascades may become important in media where SFG and DFG are allowed, e.g. chiral media, interfaces or non-centrosymmetric media. 
 Nevertheless, in the discussion that follows for the rest of this manuscript, we will assume negligible second-order cascades. 
 
-It is useful to expose relationships between nonlinear output, transition dipoles and hyper-Raman hyperpolarizabilities in the driven limit. \cite{Simpson2004, Moad2005}
+\subsection{Lineshape Models for HDFG Spectroscopy}
+
+
+It is useful to expose relationships between nonlinear output, transition dipoles and hyper-Raman hyperpolarizabilities in the driven limit. \cite{Simpson2004}
 Under the electric dipole approximation, the $I^\text{th}$ cartesian component of the third order nonlinear output polarization, ${P}^{(3)}_I$, of a four wave mixing process, induced by electric fields $E_J$, $E_K$, and $E_L$ at output frequency $\omega_4=-\omega_1 + \omega_2 + \omega_3$ is written as (using Einstein summation) \cite{RN307}
 \begin{equation} \label{polarization}
 {P}^{(3)}_I (\omega_4)  = \chi^{(3)}_{IJKL} E_J(\omega_3) E_K(\omega_2) E_L(\omega_1) 
@@ -317,7 +309,7 @@ where $\Lambda^{ab}_{ij} = 1/\hbar \sum_m M_i^{am}M_j^{mb} $ is the electronic t
 \end{figure*}
 
 The signatures of vibronic coupling in the HDFG spectrum are made clear by using a simple model.
-Using a two-well system described by 
+Using a two-well system described by $H = H_g |g) \left(g| + H_e |e\right) (e|$ where
 \begin{subequations}\label{Hamiltonian}
 	\begin{equation}
 		H_g = \frac{\hbar \omega }{2} \left(p^2 + q^2 \right)
@@ -361,7 +353,7 @@ As such, HDFG will have difficulty examining non-Condon effects ($B$ term contri
 
 \begin{table}[!htbp]
 	\caption{\label{T:contributions} Franck-Condon and/or Herzberg-Teller contributions to $A$, $B_1$, $B_2$ terms between $\ket{g,0}$, $\ket{g,1}$ and vibronic states $\ket{e,0}$, $\ket{e,1}$, $\ket{e,2}$ for \autoref{Hamiltonian} with an offset $\xi = 0.5$.
-	Closed-form expressions for the Franck-Condon and Herzberg-Teller integrals used here have been tabulated by Carlson.\cite{Carlson1988thesis}}\footnote{The Herzberg-Teller Integrals 
+	Closed-form expressions for the Franck-Condon and Herzberg-Teller integrals used here have been tabulated by Carlson.\cite{Carlson1988thesis}}
 	\begin{ruledtabular}
 		\begin{tabular}{cccc}
 			$2\omega_2$ Electronic Resonance & $\ket{e,0}$ & $\ket{e,1}$ & $\ket{e,2}$\\
@@ -384,6 +376,32 @@ As such, HDFG will have difficulty examining non-Condon effects ($B$ term contri
 	\end{ruledtabular}
 \end{table}
 
+\subsection{Line Narrowing in SIVE Spectroscopies}
+An unavoidable consequence in electronic spectroscopy is broadened lineshapes due to the inhomogeneity of electronic transitions (e.g., vibronic sidebands, molecular collisions). 
+Four wave mixing methods can line-narrow transitions and remove some impact of inhomogeneous broadening.\cite{Carlson1990line}
+The line-narrowing properties of DR-SIVE are investigated so that the pathways which line-narrow correlated or anti-correlated modes (\textit{vide infra}) can be identified.
+SR-SIVE cannot linenarrow transitions as it is singly resonant. \cite{RN352}
+In the discussion that follows, we assume that a vibrational mode in the ground state, $\ket{g,v}$, is correlated to the frequency of a vibronic $\ket{e,v'}$.\cite{Carlson1990line, Dong2015}
+If the frequency of $\ket{g,v}$ is written as $\omega_{gv} + \xi$, where $\xi$ is some external strain (e.g. molecular collisions), then the frequency of $\ket{e,v}$ is $\omega_{ev} + c\xi$, where c is a shift coefficient.
+Similarly, we take the frequency of $\ket{e,0}$ as $\omega_{e0} \rightarrow \omega_{e0} + \xi$.
+The strains shift resonance denominators, e.g., for $\omega_{ij} \rightarrow \omega_{ij} + c\xi$, as
+\begin{equation}
+	\Delta_{ij}(\xi) = \omega_{ij} + c\xi -\omega_k - i\Gamma_{ij} \equiv \Delta_{ij}(0) + c\xi
+\end{equation}
+Without loss of generality, we assume c = 1 for correlated modes and c = -1 for anti-correlated modes.
+To understand the impact of inhomogeneity on spectral output, we convolute an output density matrix element $\rho_{ab}(\xi)$ with a normalized Lorentzian distribution $P(\xi)$ of half width $\sigma$ as \cite{Penner1976, Desiderio1979, Dick83_1, Carlson1990line} 
+\begin{equation}\label{contour}
+	\rho_{ab} = \int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \rho_{ab}(\xi)
+\end{equation} 
+While Gaussian distributions are commonly used to describe inhomogeneous broadening,\cite{RN307} Lorentzian distributions have successfully described inhomogeneous broadening in a variety of spectroscopies and yield easily interpreted closed-form solutions. \cite{Dick83_1, Carlson1990line}
+
+By substituting the output density matrix elements for HSFG and non-parametric HDFG into \autoref{contour}, it is clear that HSFG line-narrows anti-correlated modes, whereas non-parametric HDFG line-narrows correlated modes. 
+See the supporting information for more information.
+Although \autoref{contour} identifies that only nonparametric HDFG line-narrows correlated modes, these results are only valid in limits where the input pulses only weakly populate excited states.
+When resonant pulses are significantly longer than the dephasing time of some state, then that state can become populated.
+Excited state population effects are particularly important for understanding the spectroscopy of electronic states using input pulses with pulsewidths significantly longer than dephasing times. \cite{RN319, Yurs2012}
+Excited state populations can feed other modes, including the ground state and other vibrational/vibronic modes, inducing higher order processes.\cite{Carlson87, RN471}
+These feeding mechanisms can induce line-narrowing properties in spectroscopies that cannot line-narrow in third order perturbation theory.\cite{RN319, Carlson87, RN471, RN410}
 
 \section{Quantitative Aspects of HDFG}\label{quant}
 % Despite their increasing use for dissecting intra and intermolecular interactions, CMDS techniques are usually not feasible for most laboratories, as they usually demand the use of multiple optical parametric amplifiers and/or complex acousto-optic modulators. \cite{Chen2016}
@@ -449,9 +467,8 @@ R.P.M. acknowledges support from the National Science Foundation Graduate Resear
 
 \section{Appendix: Comparison of vSFG and two-beam HDFG output}\label{appendixA}
 To motivate the application of HDFG spectroscopy, we perform a calculation to compare two-color HDFG and vSFG output, where absorption effects are neglected for simplicity. \cite{Carlson1989}
-vSFG is a $\chi^{(2)}$ technique whose output, When only vibrationally resonant, the vSFG $\chi^{(2)}$ scales as $\chi^{(2)}_{IJK} \sim \langle \alpha_{ij} \mu_k \rangle$, where $\alpha_{ij}$ is the Raman polarizability tensor, whose phase-matching constraint is  $\vec{k}_3 = \vec{k}_1 + \vec{k}_2$.
-HDFG is phase-matchable under $\vec{k}_4 = -\vec{k}_1 + 2\vec{k}_2$ conditions for most, if not all, vibrational resonances.
-The output polarizations under the electric dipole approximation are written as
+vSFG is a $\chi^{(2)}$ technique, when only vibrationally resonant, whose output scales as $\chi^{(2)}_{IJK} \sim \langle \alpha_{ij} \mu_k \rangle$, where $\alpha_{ij}$ is the Raman polarizability tensor.
+The output polarizations for vSFG and HDFG, respectively, under the electric dipole approximation are written as
 	 	\begin{subequations}
 		 	\begin{equation}\label{PSFG}
 		 		\begin{split}
@@ -472,13 +489,81 @@ To simplify analysis, orientational averaging is ignored (e.g., $\langle \beta_{
 \begin{equation}
 	P_\text{ratio} \equiv \frac{\abs{P^{(3)}_{\text{HDFG}}}}{\abs{P^{(2)}_{\text{vSFG}}}} \approx \frac{N_\text{bulk}}{N_\text{surf}} \abs{\frac{\left(n(\omega_2)\right)^2 + 1}{3}} \frac{\beta}{\alpha} E(\omega_2) \ell \sim 10^3 \frac{\beta}{\alpha} E(\omega_2)\\
 \end{equation}
-Ziegler has noted that for a field with intensity 10 GW/cm$^{2}$, $\frac{\beta E}{\alpha} \sim 10^{-3} $ for vibrational modes when $E(\omega_2)$ is largely detuned from electronic resonances. \cite{RN515}
+Ziegler has noted that for a field with intensity 10 GW/cm$^{2}$, $\frac{\beta E}{\alpha} \sim 10^{-3} $ for vibrational modes when detuned from electronic resonances, i.e. singly resonant vSFG and HDFG. \cite{RN515}
 Such an intensity is easily obtained using modern ultrafast sources.
 In this limit, $P_\text{ratio} \sim 1$, or the HDFG output is roughly as strong as vSFG, assuming only interfacial contributions in vSFG.
 It is important to note that this calculation assumed negligible dipole and Raman polarizability dependence upon the distance from surface normal, ignored orientational averaging effects, and presumed equivalence of local field factors, all of which can significantly reduce output from either process. 
-Nevertheless, since HDFG produces a number of photons similar to that of vSFG, HDFG is a viable technique for investigating bulk systems.
+Nevertheless, since HDFG produces a similar number of photons as vSFG, HDFG is a viable technique for investigating bulk systems.
 Laboratories which use vSFG to investigate interfacial species at buried interfaces thus have the ingredients necessary to perform a HDFG experiment in a transmission geometry. \cite{Piontek2023_1}
 This method provides vSFG practitioners the ability to measure spectra and dephasing dynamics in isotropic media without many meaningful changes in their optical setup, and thus compare spectroscopy and dephasing in the bulk and at the interface.\cite{RN224}
+
+\section{Appendix: Evaluation of Pathway I-a Linenarrowing Capability}
+The output coherence  for this pathway is $\rho_{ev',gv}(\xi)$.
+Setting $\eta$ equal to the numerator of \autoref{drgamma_alpha_0} along with any constants, we see
+\begin{widetext}
+	\begin{equation}\label{ev'gv}
+		\begin{split}
+			\rho_{ev',gv}(\xi) &= \frac{\eta}{\Delta_{g0,gv}(\xi) \Delta_{ev',gv}(c\xi)}\\
+			&=  \frac{\eta}{(-\omega_{g0,gv} - \xi + \omega_1 - i\Gamma_{g0,gv})(\omega_{ev',gv} + c\xi - (2\omega_3 + \omega_1) - i\Gamma_{ev',gv})}\\ 
+			&= \frac{\eta}{(\Delta_{g0,gv}(0) - \xi)(\Delta_{ev',gv}(0) + c\xi)}\\ 
+		\end{split}
+	\end{equation}
+\end{widetext}
+For notational convenience, we map $\ket{g,0} \rightarrow \ket{g}$, $\ket{g,v} \rightarrow \ket{a}$ and $\ket{e,v'} \rightarrow \ket{b}$.
+Substituting into \autoref{contour}, we see:
+\begin{equation}\label{integraly}
+	\begin{split}
+		\rho_{ba} &= \int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \rho_{ba}(\xi)\\
+		&= \int_{-\infty}^\infty \mathrm{d}\xi \frac{\sigma}{\pi} \frac{1}{\xi^2 + \sigma^2} \eta \frac{1}{\Delta_{ga}(0) - \xi} \frac{1}{\Delta_{ba}(0) + c\xi}\\
+		&= \frac{\eta \sigma}{\pi} \int_{-\infty}^\infty \mathrm{d}\xi\frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga}(0) - \xi} \frac{1}{\Delta_{ba}(0) + c\xi}\\
+	\end{split}
+\end{equation}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=3.375in]{figures/corr_contour.png}
+	\caption{Poles (black dots) and contour (blue line) used to evaluate \autoref{integraly} for (a) anti-correlated and (b) correlated modes.} 
+	\label{fig:contours}
+\end{figure}
+\subsubsection{Anti-correlated Modes}
+For anti-correlated modes, the poles are situated in the complex plane as shown in \autoref{fig:contours}a.
+Since \autoref{integraly} is evaluated along the real axis, one can choose to evaluate the contour in the upper or lower half of the complex plane.
+Since evaluating the residues in the upper or lower half of the complex plane yields the same result for \autoref{integraly}, we choose the contour which wraps around the least number of poles.
+It is clear for c = -1 that there are four poles: $\pm i \sigma, \Delta_{ga}(0), \Delta_{ba}(0)$. 
+Following \autoref{fig:contours}, the contour that wraps the upper half of the complex plane has only one pole, $i \sigma$; as such, we choose to evaluate \autoref{integraly} in the upper half of the complex plane for the case of anti-correlated modes through the residue theorem as
+\begin{widetext}
+	\begin{equation}
+		\begin{split}
+			\rho_{ba} = \int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \rho_{ba}(\xi) &= 2\pi i \sum_k \lim_{\xi \rightarrow \xi_k} P(\xi) \rho_{ba}(\xi) (\xi - \xi_k)\\
+			&= 2\pi i \frac{\eta \sigma}{\pi} \lim_{\xi \rightarrow i\sigma} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga}(0) - \xi} \frac{1}{\Delta_{ba}(0) - \xi} (\xi - i \sigma)\\
+			&= 2 \eta \sigma i \lim_{\xi \rightarrow i\sigma} \frac{1}{\xi + i\sigma} \frac{1}{\Delta_{ga}(0) - \xi} \frac{1}{\Delta_{ba}(0) - \xi}\\
+			&= 2\eta \sigma i \frac{1}{2i\sigma} \frac{1}{\Delta_{ga}(0) - i\sigma} \frac{1}{\Delta_{ba}(0) - i\sigma}\\
+			&= \frac{\eta}{\Delta_{ga}(i\sigma)\Delta_{ba}(i \sigma)}\\
+		\end{split}
+	\end{equation}
+\end{widetext}
+In words, we see the inhomogeneous envelope width $\sigma$ is added to the linewidth of each resonance (e.g., $\Gamma_{ag} \rightarrow \Gamma_{ag} + \sigma$).
+Therefore, pathway I-a cannot linenarrow anti-correlated modes. 
+\subsubsection{Correlated Modes: c = 1}
+For correlated modes, the poles are situated in the complex plane as shown in \autoref{fig:contours}.
+It is clear that no matter which contour is chosen, there is a contribution to the final integral from either $\Delta_{ba}(0)$ or $\Delta_{ga}(0)$. 
+For the below calculation, we choose to evaluate along the contour in the bottom half of the complex plane, i.e., the poles ($\xi_k$) are $-i\sigma, \Delta_{ga}$.
+We stress that since the integral is evaluated over $\mathbb{R}$ and there are no degenerate poles, the results below can be obtained by evaluating the contour which wraps around the poles $i\sigma, \Delta_{ba}$. 
+Since the $\xi_k$ are nondegenerate, \autoref{integraly} can be evaluated using the Residue theorem as 
+\begin{widetext}
+	\begin{equation}
+		\begin{split}
+			\int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \rho_{ba}(\xi) &= 2\pi i \sum_k \lim_{\xi \rightarrow \xi_k} P(\xi) \rho_{ba}(\xi) (\xi - \xi_k)\\
+			&= 2\pi i \frac{\eta \sigma}{\pi} ( \lim_{\xi \rightarrow -i\sigma} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga}(0) - \xi} \frac{1}{\Delta_{ba}(0) - \xi} (\xi + i \sigma) \\ &+
+			\lim_{\xi \rightarrow \Delta_{ga}(0)} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga}(0) - \xi} \frac{1}{\Delta_{ba}(0) - \xi} (\xi - \Delta_{ga}))\\
+			&= 2 \eta i \sigma (\frac{1}{2 i \sigma} \frac{1}{-i \sigma - \Delta_{ga}(0)} \frac{1}{\Delta_{ba}(0) - i\sigma} ) - 2 \eta i \sigma (\frac{1}{\sigma^2 + (\Delta_{ga} (0))^2} \frac{1}{\Delta_{ga}(0) + \Delta_{ba}(0)} )\\
+			&= -\frac{\eta}{\Delta_{ga}(0) + i \sigma} (\frac{1}{\Delta_{ba}(0) - i \sigma} + \frac{2i\sigma}{(\Delta_{ga}(0) - i \sigma)(\Delta_{ga}(0) + \Delta_{ba}(0))})\\
+		\end{split}
+	\end{equation}
+\end{widetext}
+The final line of the above equation shows the presence of a new term, $\frac{2i\sigma}{\Delta_{ga}(0) + \Delta_{ba}(0)}$. 
+This term is amplified by the width of the inhomogeneous envelope ($\sigma$) and has a linewidth $\Gamma_{ba} + \Gamma_{ga}$, which linenarrows the transition. 
+Results for the other pathways follow the same technique.
+Generally, when starting from the ground state, non-parametric spectroscopies line-narrow correlated modes, and parametric spectroscopies line-narrow anti-correlated modes. \cite{Dick83_1, RN425}
 
 
 \section{References}
