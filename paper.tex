@@ -134,9 +134,19 @@ While unimportant in achiral isotropic systems,\cite{Belkin2000} second-order ca
 Nevertheless, in the discussion that follows for the rest of this manuscript, we will assume negligible second-order cascades. 
 
 \subsection{Lineshape Models for HDFG Spectroscopy}
+Coherent spectroscopies are often described using the density-matrix formalism, where a density matrix $\rho$ is propagated using the Liouville-von Neumann equation as
+\begin{equation}
+	\dot{\rho} = \frac{1}{i \hbar} [H_0 + V(t), \rho] + \dot{\rho}_R,
+\end{equation}
+where $H$ is system Hamiltonian, $V(t)$ is the field-matter interaction and $\rho_R$ is the relaxation density matrix. 
+It is often sufficient to write $\dot{\rho}_R = \Gamma \rho$, i.e. exponential relaxation (Markovian dynamics), where $\Gamma$ is the system's pure dephasing rate. \cite{RN455, RN307}
+Before assuming this limit, the system response for an HDFG will be generalized to provide a formalism which supports non-exponential dynamics. %todo: cite Silbey, Mukamel, Kelley etc
 
 
-It is useful to expose relationships between nonlinear output, transition dipoles and hyper-Raman hyperpolarizabilities in the driven limit. \cite{Simpson2004}
+
+\subsection{blah}
+
+It is useful to expose relationships between nonlinear output, transition dipoles and hyper-Raman hyperpolarizabilities in the driven limit. \cite{Simpson2004, Moad2005}
 Under the electric dipole approximation, the $I^\text{th}$ cartesian component of the third order nonlinear output polarization, ${P}^{(3)}_I$, of a four wave mixing process, induced by electric fields $E_J$, $E_K$, and $E_L$ at output frequency $\omega_4=-\omega_1 + \omega_2 + \omega_3$ is written as (using Einstein summation) \cite{RN307}
 \begin{equation} \label{polarization}
 {P}^{(3)}_I (\omega_4)  = \chi^{(3)}_{IJKL} E_J(\omega_3) E_K(\omega_2) E_L(\omega_1) 
@@ -376,7 +386,7 @@ As such, HDFG will have difficulty examining non-Condon effects ($B$ term contri
 	\end{ruledtabular}
 \end{table}
 
-\subsection{Line Narrowing in SIVE Spectroscopies}
+\subsection{Line Narrowing}
 An unavoidable consequence in electronic spectroscopy is broadened lineshapes due to the inhomogeneity of electronic transitions (e.g., vibronic sidebands, molecular collisions). 
 Four wave mixing methods can line-narrow transitions and remove some impact of inhomogeneous broadening.\cite{Carlson1990line}
 The line-narrowing properties of DR-SIVE are investigated so that the pathways which line-narrow correlated or anti-correlated modes (\textit{vide infra}) can be identified.
