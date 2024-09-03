@@ -1,4 +1,4 @@
-\documentclass[aip, jcp, reprint, onecolumn]{revtex4-2}
+\documentclass[aip, jcp, reprint, onecolumn, nofootinbib]{revtex4-2}
 
 \bibliographystyle{apsrev4-2}
 
@@ -99,6 +99,31 @@ In this section, we investigate the properties of HDFG and make the connections 
 HSFG will not be discussed, but the application of our treatment to HSFG is straightforward and the selection rules are similar.
 We note that HDFG emission can be phase-matched in media with normal dispersion, while HSFG cannot,\cite{RN278} although experimental strategies can be implemented to minimize phase-mismatch in HSFG experiments. \cite{Kaufman2024}  
 
+Coherent spectroscopies are often described using the density-matrix formalism, where a density matrix $\rho$ is propagated using the Liouville-von Neumann equation $via$
+\begin{equation}
+	\dot{\rho} = \frac{1}{i \hbar} [H + V(t), \rho] + \dot{\rho}_R,
+\end{equation}
+where $H$ is the (static) system Hamiltonian, $V(t)$ is the field-matter interaction and $\rho_R$ is the relaxation density matrix. 
+Under the electric dipole approximation, $V(t) = -\vec{\mu} \cdot \sum_{j} E_j(t)$, where $j$ indexes the input electric fields.
+It is often sufficient to write $\dot{\rho}_R = \Gamma \rho$, i.e. exponential relaxation (Markovian dynamics), where $\Gamma$ is the system's pure dephasing rate. \cite{RN455, RN307, Yurs2012}
+In the exponential relaxation limit, the solution for a density matrix element $\rho_{ab}$, assuming only one input field, is written as
+\begin{equation}
+	\begin{split}
+		\rho_{ab} &= \text{stuff} \int_0^\infty \mathrm{d}t \exp({-it}(\omega_{ab} - \omega - i\Gamma_{ab})) \\
+		&= \frac{\text{stuff}}{\omega_{ab} - \omega - i\Gamma_{ab}}\\
+	\end{split}
+\end{equation}
+This limit is often appropriate for isolated molecules at low temperatures. \cite{RN287}
+However, exponential relaxation is an inappropriate description of most physical systems when system-bath interactions are included. \cite{Sue1986, Yan1988, Li1994, RN287, Myers1997, Sung2001, RN445}
+Such systems are properly described by including Brownian bath oscillators, which changes density matrix propagation as
+\begin{equation}
+	\text{evil stuff}
+\end{equation}
+Nevertheless, in the discussion that follows, we assume the limit of an isolated molecule with no bath interaction and that pulse widths are longer than the electronic dephasing times, which has proven useful in investigating the properties of doubly resonant SFG spectroscopy, 2D-EV spectroscopy and 2D-VE spectroscopy. \cite{Raschke2002, Gaynor2017} 
+This limit is taken to emphasize the quantum mechanical selection rules of the HDFG technique. 
+We stress that in most systems, e.g., solvated chromophores, system-bath interactions must be explicitly included to properly describe lineshapes of vibronic phenomena. \cite{Li1994}
+Future work will more rigorously investigate the impact of system-bath interactions on HDFG spectral analysis.\cite{McDonnellinprep}
+
 It is useful to briefly discuss the impact of time ordering on HDFG output.
 Dependent upon the time-ordering schemes, it is possible to eliminate output through destructive interference.\cite{RN287}
 While we have only isolated one specific HDFG resonance and time-ordering scheme (\autoref{fig:comparisonwmel}), there are several other pathways which can provide HDFG output. \cite{RN352}
@@ -133,20 +158,7 @@ Another potential interferant in HDFG spectroscopy is direct and sequential casc
 While unimportant in achiral isotropic systems,\cite{Belkin2000} second-order cascades may become important in media where SFG and DFG are allowed, e.g. chiral media, interfaces or non-centrosymmetric media. 
 Nevertheless, in the discussion that follows for the rest of this manuscript, we will assume negligible second-order cascades. 
 
-\subsection{Lineshape Models for HDFG Spectroscopy}
-Coherent spectroscopies are often described using the density-matrix formalism, where a density matrix $\rho$ is propagated using the Liouville-von Neumann equation as
-\begin{equation}
-	\dot{\rho} = \frac{1}{i \hbar} [H_0 + V(t), \rho] + \dot{\rho}_R,
-\end{equation}
-where $H$ is system Hamiltonian, $V(t)$ is the field-matter interaction and $\rho_R$ is the relaxation density matrix. 
-It is often sufficient to write $\dot{\rho}_R = \Gamma \rho$, i.e. exponential relaxation (Markovian dynamics), where $\Gamma$ is the system's pure dephasing rate. \cite{RN455, RN307}
-Before assuming this limit, the system response for an HDFG will be generalized to provide a formalism which supports non-exponential dynamics. %todo: cite Silbey, Mukamel, Kelley etc
-
-
-
-\subsection{blah}
-
-It is useful to expose relationships between nonlinear output, transition dipoles and hyper-Raman hyperpolarizabilities in the driven limit. \cite{Simpson2004, Moad2005}
+It is useful to expose relationships between nonlinear output, transition dipoles and hyper-Raman hyperpolarizabilities in the driven limit ($\dot{\rho} = 0$). \cite{Simpson2004, Moad2005}
 Under the electric dipole approximation, the $I^\text{th}$ cartesian component of the third order nonlinear output polarization, ${P}^{(3)}_I$, of a four wave mixing process, induced by electric fields $E_J$, $E_K$, and $E_L$ at output frequency $\omega_4=-\omega_1 + \omega_2 + \omega_3$ is written as (using Einstein summation) \cite{RN307}
 \begin{equation} \label{polarization}
 {P}^{(3)}_I (\omega_4)  = \chi^{(3)}_{IJKL} E_J(\omega_3) E_K(\omega_2) E_L(\omega_1) 
@@ -329,7 +341,8 @@ Using a two-well system described by $H = H_g |g) \left(g| + H_e |e\right) (e|$ 
 		H_e = \frac{\hbar \omega }{2} \left(p^2 +  (q-\xi)^2 \right) + \hbar \omega_{eg}
 	\end{equation}
 \end{subequations}
-for the ground ($H_g$) and first excited ($H_e$) states, where $p$ (momentum) and $q$ (position) are the dimensionless conjugate coordinates of the normal mode, the A and B contributions can be evaluated using Franck-Condon and Herzberg-Teller integrals tabulated in terms of the dimensionless normal mode $q$ and offset parameter $\xi$ (\autoref{fig:doubres_spec}a).\cite{Carlson1988thesis} 
+for the ground ($H_g$) and first excited ($H_e$) states, where $p$ (momentum) and $q$ (position) are the dimensionless conjugate coordinates of the normal mode, the A and B contributions can be evaluated using Franck-Condon and Herzberg-Teller integrals tabulated in terms of the dimensionless normal mode $q$ and offset parameter $\xi$ (\autoref{fig:doubres_spec}a).\cite{Carlson1988thesis}
+System-bath interactions are neglected for this discussion.
 For simplicity, we restrict consideration to $v^\prime \in \{0,1,2\}$ and take $\xi = 0.5$.
 Note that $q = \sqrt{\frac{m^2\omega}{\hbar}} Q$.
 We assume the electronic state is both one and two photon allowed.
@@ -344,7 +357,7 @@ This follows from $\lim_{\xi \rightarrow 0} \langle v' | 0 \rangle = 0$, $v^\pri
 Some $B$ terms do survive in the same limit, however; for instance, $B_1$ survives for $v^\prime=1$ and $B_2$ survives for $v^\prime=0$.
 In the absence of an $A$ term, the $B$ terms will dominate.
 The $B_1$ and $B_2$ terms involve different types of vibronic coupling pathways.
-In $B_1$, the Herzberg-Teller coupling is associated with the two-photon absorption process, whereas in $B_2$, the Herzberg-Teller coupling is associated with one-photon emission.
+In $B_1$, the Herzberg-Teller coupling is associated with the two-photon absorption process, whereas in $B_2$, the Herzberg-Teller coupling is associated with one-photon emission.\footnote{Franck-Condon factors and Herzberg-Teller integrals are most easily evaluated in the position basis.}
 
 \autoref{fig:doubres_spec}b shows the simulated $\omega_2+\omega_3$ spectrum for this two-well system.  The spectrum selectively probes vibronic pathways from $\ket{g,0}$ to $\ket{g,1}$.
 In the resonant region, the $A$ and $B$ terms contain character from all three possible transitions between $\ket{g,0}$, $\ket{e,v'}$ and $\ket{g,1}$. 
@@ -386,7 +399,7 @@ As such, HDFG will have difficulty examining non-Condon effects ($B$ term contri
 	\end{ruledtabular}
 \end{table}
 
-\subsection{Line Narrowing}
+\subsection{Linenarrowing Inhomogeneous Lineshapes}
 An unavoidable consequence in electronic spectroscopy is broadened lineshapes due to the inhomogeneity of electronic transitions (e.g., vibronic sidebands, molecular collisions). 
 Four wave mixing methods can line-narrow transitions and remove some impact of inhomogeneous broadening.\cite{Carlson1990line}
 The line-narrowing properties of DR-SIVE are investigated so that the pathways which line-narrow correlated or anti-correlated modes (\textit{vide infra}) can be identified.
@@ -403,7 +416,8 @@ To understand the impact of inhomogeneity on spectral output, we convolute an ou
 \begin{equation}\label{contour}
 	\rho_{ab} = \int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \rho_{ab}(\xi)
 \end{equation} 
-While Gaussian distributions are commonly used to describe inhomogeneous broadening,\cite{RN307} Lorentzian distributions have successfully described inhomogeneous broadening in a variety of spectroscopies and yield easily interpreted closed-form solutions. \cite{Dick83_1, Carlson1990line}
+While Gaussian distributions are commonly used to describe inhomogeneous broadening,\cite{RN307} Lorentzian distributions have successfully described inhomogeneous broadening in a variety of spectroscopies and yield  closed-form solutions. \cite{Dick83_1, Carlson1990line}
+Such approaches have been suitable for investigating the inhomogeneity of excitonic resonances in CdSe quantum dots through FWM spectroscopy. \cite{Yurs2011, Yurs2012}
 
 By substituting the output density matrix elements for HSFG and non-parametric HDFG into \autoref{contour}, it is clear that HSFG line-narrows anti-correlated modes, whereas non-parametric HDFG line-narrows correlated modes. 
 See the supporting information for more information.
