@@ -394,18 +394,19 @@ In the discussion that follows, we assume that a vibrational mode in the ground 
 If the frequency of $\ket{g,v}$ is written as $\omega_{gv} + \xi$, where $\xi$ is some external strain (e.g. molecular collisions), then the frequency of $\ket{e,v}$ is $\omega_{ev} + c\xi$, where c is a shift coefficient.
 The strains shift resonance denominators, e.g., for $\omega_{ij} \rightarrow \omega_{ij} + c\xi$, as
 \begin{equation}
-	\Delta_{ij}(\xi) = \omega_{ij} + c\xi -\omega_k - i\Gamma_{ij} \equiv \Delta_{ij}(0) + c\xi
+	\Delta_{ij}(c\xi) = \omega_{ij} + c\xi -\omega_k - i\Gamma_{ij} \equiv \Delta_{ij}(0) + c\xi
 \end{equation}
 Without loss of generality, we assume c = 1 for correlated modes and c = -1 for anti-correlated modes.
 
-To understand the impact of inhomogeneity on spectral output, we consider static inhomogeneity by convolving the HDFG output hyperpolarizability $\gamma_{ijkl}(\xi)$ with a normalized Lorentzian distribution $P(\xi)$ of half width $\sigma$ as \cite{Penner1976, Desiderio1979, Dick83_1, Carlson1990line} 
+We investigate the impact of inhomogeneity on spectral output by convolving the HDFG output hyperpolarizability $\gamma_{ijkl}(\xi)$ with a normalized Lorentzian distribution $P(\xi)$ of half width $\sigma$ as \cite{Penner1976, Desiderio1979, Dick83_1, Carlson1990line} 
 \begin{equation}\label{contour}
 	\gamma_{ijkl} = \int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \gamma_{ijkl}(\xi)
+	= \frac{\sigma}{\pi}\int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \gamma_{ijkl}(\xi)
 \end{equation} 
-While Gaussian distributions are commonly used to describe inhomogeneous broadening,\cite{RN307, RN131} Lorentzian distributions have successfully described inhomogeneous broadening in a variety of spectroscopies and yield  closed-form solutions. \cite{Dick83_1, Carlson1990line}
-Such approaches have been suitable for investigating the inhomogeneity of excitonic resonances in CdSe quantum dots through FWM spectroscopy. \cite{Yurs2011, Yurs2012}
+The limit of static inhomogeneity is chosen for simplicity.
+While Gaussian distributions are commonly used to describe inhomogeneous broadening, Lorentzian distributions have successfully described inhomogeneous broadening in a variety of spectroscopies and yield easily interpretable closed-form solutions. \cite{Dick83_1, Carlson1990line, Yurs2011, Yurs2012}
 
-Evaluating \autoref{contour} for the HDFG pathway above shows \footnote{See the supporting information for more details} 
+Evaluating \autoref{contour} for the HDFG pathway above shows\footnote{See the supporting information for more details} 
 \begin{subequations}\label{linenarrow}
 	\begin{equation}\label{linenarrowa}
 		\gamma_{ijkl} = \frac{- \gamma_0}{(\Delta_{ga}(- i \sigma)} \left( \frac{1}{\Delta_{ba}(i \sigma)} + \frac{2 i \sigma}{\Delta_{ga}(i \sigma)} \frac{1}{\Delta_{ba}(0) + \Delta_{ga}(0)} \right)
@@ -415,7 +416,6 @@ Evaluating \autoref{contour} for the HDFG pathway above shows \footnote{See the 
 	\end{equation}
 \end{subequations}
 for correlated and anti-correlated modes, respectively, where $\gamma_0$ involves factors related to $A,B$ and $\mu$.
-
 The output for correlated modes shows the presence of a new term, $\frac{2i\sigma}{\Delta_{ga}(0) + \Delta_{ba}(0)}$. 
 This term is amplified by the width of the inhomogeneous envelope ($\sigma$) and has a linewidth $\Gamma_{ba} + \Gamma_{ga}$, which linenarrows the transition. 
 For anti-correlated modes, we see the inhomogeneous envelope width $\sigma$ is added to the linewidth of each resonance (e.g., $\Gamma_{ag} \rightarrow \Gamma_{ag} + \sigma$).
