@@ -333,7 +333,7 @@ Using a two-well system described by $H = H_g |g) \left(g| + H_e |e\right) (e|$ 
 for the ground ($H_g$) and first excited ($H_e$) states, where $p$ (momentum) and $q$ (position) are the dimensionless conjugate coordinates of the normal mode, the A and B contributions can be evaluated using Franck-Condon and Herzberg-Teller integrals tabulated in terms of the dimensionless normal mode $q$ and offset parameter $\xi$ (\autoref{fig:doubres_spec}a).\cite{Carlson1988thesis}
 System-bath interactions are neglected for this discussion.
 For simplicity, we restrict consideration to $v^\prime \in \{0,1,2\}$ and take $\xi = 0.5$.
-Note that $q = \sqrt{\frac{m^2\omega}{\hbar}} Q$.
+Note that $q = \sqrt{\frac{\omega}{\hbar}} Q$.
 We assume the electronic state is both one and two photon allowed.
 
 \autoref{ABterms_DR} shows important selection rules for the vibronic transitions.
@@ -392,24 +392,25 @@ As such, HDFG will have difficulty examining non-Condon effects ($B$ term contri
 An often unavoidable consequence in electronic spectroscopy is broadened lineshapes due to a high density of vibronic modes. 
 In the discussion that follows, we assume that a vibrational mode in the ground state, $\ket{g,v}$, is correlated to the frequency of a vibronic $\ket{e,v'}$.\cite{Carlson1990line, Dong2015}
 If the frequency of $\ket{g,v}$ is written as $\omega_{gv} + \xi$, where $\xi$ is some external strain (e.g. molecular collisions), then the frequency of $\ket{e,v}$ is $\omega_{ev} + c\xi$, where c is a shift coefficient.
-The strains shift resonance denominators, e.g., for $\omega_{ij} \rightarrow \omega_{ij} + c\xi$, as
+The strains shift resonance denominators, e.g., for $\omega_{ij} \rightarrow \omega_{ij} \pm c\xi$, as
 \begin{equation}
-	\Delta_{ij}(c\xi) = \omega_{ij} + c\xi -\omega_k - i\Gamma_{ij} \equiv \Delta_{ij}(0) + c\xi
+	\Delta_{ij}(c\xi) = \omega_{ij} \pm c\xi -\omega_k - i\Gamma_{ij} \equiv \Delta_{ij}(0) \pm c\xi
 \end{equation}
-Without loss of generality, we assume c = 1 for correlated modes and c = -1 for anti-correlated modes.
+where $+ (-)$ refers to correlated (anti-correlated) modes.
+For simplicity, we assume c = 1.
 
 We investigate the impact of inhomogeneity on spectral output by convolving the HDFG output hyperpolarizability $\gamma_{ijkl}(\xi)$ with a normalized Lorentzian distribution $P(\xi)$ of half width $\sigma$ as \cite{Penner1976, Desiderio1979, Dick83_1, Carlson1990line} 
 \begin{equation}\label{contour}
 	\gamma_{ijkl} = \int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \gamma_{ijkl}(\xi)
-	= \frac{\sigma}{\pi}\int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \gamma_{ijkl}(\xi)
+	= \frac{\sigma}{\pi}\int_{-\infty}^\infty \mathrm{d}\xi \frac{1}{\sigma^2 + \xi^2} \frac{\gamma_0}{\Delta_{ga}(\xi)\Delta_{ba}(\xi)}
 \end{equation} 
 The limit of static inhomogeneity is chosen for simplicity.
-While Gaussian distributions are commonly used to describe inhomogeneous broadening, Lorentzian distributions have successfully described inhomogeneous broadening in a variety of spectroscopies and yield easily interpretable closed-form solutions. \cite{Dick83_1, Carlson1990line, Yurs2011, Yurs2012}
+While Gaussian distributions are commonly used to describe inhomogeneous broadening, Lorentzian distributions have successfully described inhomogeneous broadening in a variety of spectroscopies and yield easily interpretable closed-form solutions. \cite{Dick83_1, Carlson1990line, RN410, Yurs2011, Yurs2012}
 
 Evaluating \autoref{contour} for the HDFG pathway above shows\footnote{See the supporting information for more details} 
 \begin{subequations}\label{linenarrow}
 	\begin{equation}\label{linenarrowa}
-		\gamma_{ijkl} = \frac{- \gamma_0}{(\Delta_{ga}(- i \sigma)} \left( \frac{1}{\Delta_{ba}(i \sigma)} + \frac{2 i \sigma}{\Delta_{ga}(i \sigma)} \frac{1}{\Delta_{ba}(0) + \Delta_{ga}(0)} \right)
+		\gamma_{ijkl} = \frac{- \gamma_0}{\Delta_{ga}(- i \sigma)} \left( \frac{1}{\Delta_{ba}(i \sigma)} + \frac{2 i \sigma}{\Delta_{ga}(i \sigma)} \frac{1}{\Delta_{ba}(0) + \Delta_{ga}(0)} \right)
 	\end{equation}
 	\begin{equation}
 		\gamma_{ijkl} = \frac{\gamma_0}{\Delta_{ga}(i\sigma)\Delta_{ba}(i \sigma)}
@@ -418,7 +419,7 @@ Evaluating \autoref{contour} for the HDFG pathway above shows\footnote{See the s
 for correlated and anti-correlated modes, respectively, where $\gamma_0$ involves factors related to $A,B$ and $\mu$.
 The output for correlated modes shows the presence of a new term, $\frac{2i\sigma}{\Delta_{ga}(0) + \Delta_{ba}(0)}$. 
 This term is amplified by the width of the inhomogeneous envelope ($\sigma$) and has a linewidth $\Gamma_{ba} + \Gamma_{ga}$, which linenarrows the transition. 
-For anti-correlated modes, we see the inhomogeneous envelope width $\sigma$ is added to the linewidth of each resonance (e.g., $\Gamma_{ag} \rightarrow \Gamma_{ag} + \sigma$).
+For anti-correlated modes, we see the inhomogeneous envelope width $\sigma$ is added to the linewidth of each resonance (e.g., $\Gamma_{ga} \rightarrow \Gamma_{ga} + \sigma$).
 As such, the HDFG pathway considered in this work line-narrows correlated modes. 
 These results are consistent with the idea that non-parametric, non-linear spectroscopies line-narrow correlated modes. \cite{Dick83_1, Carlson1990line}
 
@@ -426,7 +427,7 @@ Although \autoref{linenarrowa} identifies that parametric HDFG line-narrows corr
 When resonant pulses are significantly longer than the dephasing time of some state, then that state can become populated.
 Excited state population effects are particularly important for understanding the spectroscopy of electronic states using input pulses with pulsewidths significantly longer than dephasing times. \cite{RN319, Yurs2012}
 Excited state populations can feed other modes, including the ground state and other vibrational/vibronic modes, inducing higher order processes.\cite{Carlson87, RN471}
-These feeding mechanisms can induce line-narrowing properties in spectroscopies that cannot line-narrow in third order perturbation theory.\cite{RN319, Carlson87, RN471, RN410}
+These feeding mechanisms can induce line-narrowing properties in spectroscopies that cannot line-narrow in third order perturbation theory.\cite{RN319, Carlson87, RN471}
 
 \section{Quantitative Aspects of HDFG}\label{quant}
 % Despite their increasing use for dissecting intra and intermolecular interactions, CMDS techniques are usually not feasible for most laboratories, as they usually demand the use of multiple optical parametric amplifiers and/or complex acousto-optic modulators. \cite{Chen2016}
