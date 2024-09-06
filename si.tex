@@ -58,16 +58,16 @@ Franck-Condon factors and Herzberg-Teller integrals are often evaluated in posit
 where $N(m) = (m! \ 2^m \pi^{\frac{1}{2}})^{-\frac{1}{2}}$ is the normalization factor and $H_m$ is the m$^{th}$ Hermite Polynomial.
 We begin by generating an expression for $\mel{n}{q^k}{m}$, as this will resolve into Franck-Condon factors for $n = 0$ and Herzberg-Teller integrals for $n=1$.
 
-By letting $\ket{m}$ belong to the ground state surface $|g)$ and $\ket{n}$ belong to the first excited surface $|e)$, we write\footnote{Note that any instance of $\int \mathrm{d}q f(q) \equiv \int_{-\infty}^{\infty} \mathrm{d}q f(q)$.}
+By letting $\ket{m}$ belong to the ground state surface $|g)$ and $\ket{n}$ belong to the first excited surface $|e)$, we write
 \begin{equation}
 \begin{split}
-		\mel{n}{q^k}{m} &= \int \mathrm{d}q \psi^*_n(q+\Delta) q^k \psi_m(q)\\
-		&= \int \mathrm{d}q N(n) N(m) H_n(q+\Delta) \exp(-\frac{(q + \Delta)^2}{2}) q^k H_m(q) \exp(-\frac{q^2}{2})
+		\mel{n}{q^k}{m} &= \int_{-\infty}^\infty \mathrm{d}q \psi^*_n(q-\Delta) q^k \psi_m(q)\\
+		&= \int_{-\infty}^\infty \mathrm{d}q N(n) N(m) H_n(q-\Delta) \exp(-\frac{(q - \Delta)^2}{2}) q^k H_m(q) \exp(-\frac{q^2}{2})
 \end{split}
 \end{equation}
 Introducing $\tilde{N} \equiv N(n)N(m)$ and slightly rearranging, we see
 \begin{equation}\label{key}
-	\mel{n}{q^k}{m} = \tilde{N} \exp(-\frac{\Delta^2}{2}) \int \mathrm{d}q H_n(q+\Delta) q^k H_m(q) \exp(-q^2 - q\Delta)
+	\mel{n}{q^k}{m} = \tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q H_n(q+\Delta) q^k H_m(q) \exp(-q^2 + q\Delta)
 \end{equation}
 This is the key result.
 As a side note, \autoref{key} explicitly shows
@@ -85,19 +85,19 @@ i.e., as the offset vanishes, the normal harmonic oscillator selection rules are
 It is well known that the Hermite polynomials $H_v(q)$ are linear combinations of $q^w$, $w \in \mathbf{N}$. 
 Thus, evaluating \autoref{key} for arbitrary $m,n,k$ values resolves into evaluating sums of integrals of the form
 \begin{equation}\label{integral}
-	\int \mathrm{d}q \ q^w \exp(-q^2 - q\Delta)
+	\int_{-\infty}^\infty \mathrm{d}q \ q^w \exp(-q^2 + q\Delta)
 \end{equation}
 When $w=0$, the result is trivial:\footnote{$\int_{-\infty}^{\infty} \mathrm{d}x \exp(-(x-a)^2) = \sqrt{\pi}$}
 \begin{equation}
 	\begin{split}
-		\int \mathrm{d}q \exp(-q^2 - q\Delta) &= \int \mathrm{d}q \exp(-(q^2 + q\Delta +\frac{\Delta^2}{4} - \frac{\Delta^2}{4}))\\
-		&= \exp(\frac{\Delta^2}{4}) \int \mathrm{d}q \exp(-(q + \frac{\Delta}{2})^2) \\
+		\int_{-\infty}^\infty \mathrm{d}q \exp(-q^2 + q\Delta) &= \int_{-\infty}^\infty \mathrm{d}q \exp(-(q^2 + q\Delta +\frac{\Delta^2}{4} - \frac{\Delta^2}{4}))\\
+		&= \exp(\frac{\Delta^2}{4}) \int_{-\infty}^\infty \mathrm{d}q \exp(-(q - \frac{\Delta}{2})^2) \\
 		&= \sqrt{\pi} \exp(\frac{\Delta^2}{4})
 	\end{split}
 \end{equation}
  For $w \neq 0$, \autoref{integral} is evaluated through repeated use of a well-known Gaussian identity
 \begin{equation}\label{identity}
-	\int \mathrm{d}q \ q^w \exp(-q^2 - q\Delta) = -\partial_{\Delta} \int \mathrm{d}q \ q^{w-1} \exp(-q^2 - q\Delta)
+	\int_{-\infty}^\infty \mathrm{d}q \ q^w \exp(-q^2 + q\Delta) = \partial_{\Delta} \int_{-\infty}^\infty \mathrm{d}q \ q^{w-1} \exp(-q^2 + q\Delta)
 \end{equation}
 
 We now have the background needed to calculate $\mel{1}{q}{0}$ for an arbitrary offset $\Delta$.
@@ -105,29 +105,29 @@ We note that Myers et al. have developed a general expression to evaluate Franck
 Starting with \autoref{key},
 \begin{equation}
 \begin{split}
-	\mel{1}{q}{0} = \tilde{N} \exp(-\frac{\Delta^2}{2}) \int \mathrm{d}q H_1(q+\Delta) q H_0(q) \exp(-q^2 - q\Delta)
+	\mel{1}{q}{0} = \tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q H_1(q+\Delta) q H_0(q) \exp(-q^2 - q\Delta)
 \end{split}
 \end{equation}
 Using $H_0(q) = 1$ and $H_1(q) = 2q$,\cite{RN230} 
 \begin{equation}\label{HT10}
 	\begin{split}
-		\mel{1}{q}{0} &= \tilde{N} \exp(-\frac{\Delta^2}{2}) \int \mathrm{d}q \ 2(q + \Delta) q \exp(-q^2 - q\Delta)\\
-		&= 2\tilde{N} \exp(-\frac{\Delta^2}{2}) \int \mathrm{d}q \ (q^2 + q \Delta) \exp(-q^2 - q\Delta)\\
-		&=  2\tilde{N} \exp(-\frac{\Delta^2}{2}) \left(\int \mathrm{d}q \ q^2 \exp(-q^2 - q\Delta) + 2\Delta \int \mathrm{d}q \ q \exp(-q^2 - q\Delta) \right)
+		\mel{1}{q}{0} &= \tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ 2(q + \Delta) q \exp(-q^2 - q\Delta)\\
+		&= 2\tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ (q^2 + q \Delta) \exp(-q^2 - q\Delta)\\
+		&=  2\tilde{N} \exp(-\frac{\Delta^2}{2}) \left(\int_{-\infty}^\infty \mathrm{d}q \ q^2 \exp(-q^2 - q\Delta) + 2\Delta \int_{-\infty}^\infty \mathrm{d}q \ q \exp(-q^2 - q\Delta) \right)
 	\end{split}
 \end{equation}
 These integrals are now easily evaluated using \autoref{identity}:
 \begin{subequations}\label{evalGaussians}
 	\begin{equation}
 		\begin{split}
-					\int \mathrm{d}q \ q \exp(-q^2 - q\Delta) &= -\partial_{\Delta} \left(\sqrt{\pi} \exp(\frac{\Delta^2}{4})\right)\\
+					\int_{-\infty}^\infty \mathrm{d}q \ q \exp(-q^2 - q\Delta) &= -\partial_{\Delta} \left(\sqrt{\pi} \exp(\frac{\Delta^2}{4})\right)\\
 					& = -\sqrt{\pi} \frac{\Delta}{2} \exp(\frac{\Delta^2}{4})
 		\end{split}
 	\end{equation}
 giving
 \begin{equation}
 	\begin{split}
-		\int \mathrm{d}q \ q^2 \exp(-q^2 - q\Delta) &= -\partial_{\Delta} \left(-\sqrt{\pi} \left(\frac{\Delta}{2} \exp(\frac{\Delta^2}{4})\right)\right)\\
+		\int_{-\infty}^\infty \mathrm{d}q \ q^2 \exp(-q^2 - q\Delta) &= -\partial_{\Delta} \left(-\sqrt{\pi} \left(\frac{\Delta}{2} \exp(\frac{\Delta^2}{4})\right)\right)\\
 		& =\sqrt{\pi} \left(\frac{1}{2}\exp(\frac{\Delta^2}{4}) + \frac{\Delta^2}{4} \exp(\frac{\Delta^2}{4})\right)
 	\end{split}
 \end{equation}
@@ -136,8 +136,41 @@ With $\tilde{N} = N(1)*N(0) = (1! \ 2^1 \pi^{\frac{1}{2}})^{-\frac{1}{2}} * (0! 
 \begin{equation}
 	\mel{1}{q}{0} = \sqrt{\frac{1}{2}} (1 - \frac{\Delta^2}{2}) \exp(\frac{-\Delta^2}{4})
 \end{equation}
-The evaluation of other Herzberg-Teller integrals follows a similar process.
-These results have been tabulated by Carlson. \cite{Carlson1988thesis}
+The evaluation of other Herzberg-Teller integrals follows a similar process, or by using symbolic manipulation packages. 
+The relevant Franck-Condon factors and Herzberg-Teller integrals, assuming identical curvature and no Duschinsky coupling, are tabulated below.
+
+\begin{table}[!htbp]
+	\caption{\label{T:FC Integral} Franck-Condon Factors.}
+	\begin{ruledtabular}
+		\begin{tabular}{cc}
+			$\mel{n}{0}{m}$ & Expression\\
+			\hline  
+			$A$ & $\langle 1 | 0 \rangle \langle 0 | 0 \rangle = 0.31 $  \\
+			
+			$B_1$ & $\langle 1 | 0 \rangle \mel{0}{Q}{0} = -0.08$ \\
+			
+			$B_2$ & $\mel{1}{Q}{0} \langle 0 | 0 \rangle = 0.55$\\
+		\end{tabular}
+	\end{ruledtabular}
+\end{table}
+
+\begin{table}[!htbp]
+	\caption{\label{T:HT Integral} Franck-Condon Factors.}
+	\begin{ruledtabular}
+		\begin{tabular}{cc}
+			$\mel{n}{q}{m}$& Expression\\
+			\hline  
+			$\mel{0}{q}{0}$ & $\frac{\Delta}{2} \exp(-\Delta^2/4)$  \\ 
+			$\mel{1}{q}{0}$ & $\frac{1}{\sqrt{2}} \exp(-\Delta^2/4)(1 - \Delta^2/2) $ \\
+			$\mel{2}{q}{0}$ & $\frac{1}{\sqrt{2}} \exp(-\Delta^2/4)(1 - \Delta^2/2) $ \\
+			$\mel{0}{q}{1}$ & $\frac{1}{\sqrt{2}} \exp(-\Delta^2/4)(1 + \Delta^2/2) $ \\
+			$\mel{1}{q}{1}$ & $\frac{\Delta}{{2}} \exp(-\Delta^2/4)(1 - \Delta^2/2) $ \\
+			$\mel{2}{q}{1}$ & $\frac{\Delta}{{2}} \exp(-\Delta^2/4)(1 - \Delta^2/2) $ \\
+			$\mel{1}{q}{1}$ & $\frac{\Delta}{{2}} \exp(-\Delta^2/4)(1 - \Delta^2/2) $ \\
+
+		\end{tabular}
+	\end{ruledtabular}
+\end{table}
 
 \section{Impact of $\Delta$ on $A,B$ Terms in HDFG Spectra}
 In the main text, the potential well offset ($\Delta$) was taken as $\Delta = 0.5$.

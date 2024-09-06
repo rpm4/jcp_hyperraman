@@ -18,3 +18,7 @@ figures/drsive_spectrum.png
 figures/drwmel.png
 ~$verletter.docx
 *.pdf
+si.aux
+si.log
+si.synctex.gz
+si.toc
