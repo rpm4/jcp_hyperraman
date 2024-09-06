@@ -82,7 +82,7 @@ and
 \end{subequations}
 i.e., as the offset vanishes, the normal harmonic oscillator selection rules are obtained, the expected result, where $\delta$ is the Kronecher delta.
 
-It is well known that the Hermite polynomials $H_v(q)$ are linear combinations of $q^b$, $b \in \mathbf{N}$. 
+It is well known that the Hermite polynomials $H_v(q)$ are linear combinations of $q^w$, $w \in \mathbf{N}$. 
 Thus, evaluating \autoref{key} for arbitrary $m,n,k$ values resolves into evaluating sums of integrals of the form
 \begin{equation}\label{integral}
 	\int \mathrm{d}q \ q^w \exp(-q^2 - q\Delta)
@@ -95,22 +95,20 @@ When $w=0$, the result is trivial:\footnote{$\int_{-\infty}^{\infty} \mathrm{d}x
 		&= \sqrt{\pi} \exp(\frac{\Delta^2}{4})
 	\end{split}
 \end{equation}
- 
-For $w \neq 0$, \autoref{integral} is evaluated through repeated use of a well-known Gaussian identity
+ For $w \neq 0$, \autoref{integral} is evaluated through repeated use of a well-known Gaussian identity
 \begin{equation}\label{identity}
 	\int \mathrm{d}q \ q^w \exp(-q^2 - q\Delta) = -\partial_{\Delta} \int \mathrm{d}q \ q^{w-1} \exp(-q^2 - q\Delta)
 \end{equation}
 
 We now have the background needed to calculate $\mel{1}{q}{0}$ for an arbitrary offset $\Delta$.
 We note that Myers et al. have developed a general expression to evaluate Franck-Condon factors for two displaced harmonic wells of arbitrary curvature,\cite{Myers1982} so we focus our attention onto Herzberg-Teller integrals, which are not commonly tabulated.
-
 Starting with \autoref{key},
 \begin{equation}
 \begin{split}
 	\mel{1}{q}{0} = \tilde{N} \exp(-\frac{\Delta^2}{2}) \int \mathrm{d}q H_1(q+\Delta) q H_0(q) \exp(-q^2 - q\Delta)
 \end{split}
 \end{equation}
-Using the fact that $H_0(q) = 1$ and $H_1(q) = 2q$, 
+Using $H_0(q) = 1$ and $H_1(q) = 2q$,\cite{RN230} 
 \begin{equation}\label{HT10}
 	\begin{split}
 		\mel{1}{q}{0} &= \tilde{N} \exp(-\frac{\Delta^2}{2}) \int \mathrm{d}q \ 2(q + \Delta) q \exp(-q^2 - q\Delta)\\
@@ -123,7 +121,7 @@ These integrals are now easily evaluated using \autoref{identity}:
 	\begin{equation}
 		\begin{split}
 					\int \mathrm{d}q \ q \exp(-q^2 - q\Delta) &= -\partial_{\Delta} \left(\sqrt{\pi} \exp(\frac{\Delta^2}{4})\right)\\
-					& = -\sqrt{\pi} \left(\frac{\Delta}{2} \exp(\frac{\Delta^2}{4})\right)
+					& = -\sqrt{\pi} \frac{\Delta}{2} \exp(\frac{\Delta^2}{4})
 		\end{split}
 	\end{equation}
 giving
@@ -144,6 +142,8 @@ These results have been tabulated by Carlson. \cite{Carlson1988thesis}
 \section{Impact of $\Delta$ on $A,B$ Terms in HDFG Spectra}
 In the main text, the potential well offset ($\Delta$) was taken as $\Delta = 0.5$.
 Here, we vary $\Delta$ to investigate its impact on the structure of the $\abs{A+B}$ spectrum.
+First, we investigate how the Franck-Condon factors and Herzberg-Teller integrals are manipulated as a function of $\Delta$.
+%TODO - plot 
 
 \section{Evaluation of Equation 14}
 In this section, the integral
