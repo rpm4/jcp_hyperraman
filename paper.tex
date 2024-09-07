@@ -209,20 +209,20 @@ We will henceforth suppress the dependence of the electronic states on \textbf{Q
 For consistency with previous reports, we use $\vec{R}$ to denote electric transition dipole moments; $\vec{\mu}$ is reserved for transitions on the ground electronic state. \cite{Tang1970}
 Following the approach which gave \autoref{sivegamma} and using the time ordering and state labeling of \autoref{fig:sivewmel2}a, we find
 \begin{equation}\label{drgamma_notaylor}
-	\gamma_{ijkl} = -\frac{1}{\varepsilon_0} \frac{1}{4D \hbar^3} \sum_{m,n,e,v'} \frac{
-		R_{i}^{gv, ev'} 
-		R_{j}^{ev',mn} 
+	\gamma_{ijkl} = -\frac{1}{\varepsilon_0} \frac{1}{4D \hbar^3} \sum_{m,n,e,\tilde{v}'} \frac{
+		R_{i}^{gv, e\tilde{v}'} 
+		R_{j}^{e\tilde{v}',mn} 
 		R_{k}^{mn,g0} 
 		R_{l}^{g0,gv} 
-	}{	\Delta_{ev', gv}
+	}{	\Delta_{e\tilde{v}', gv}
 		\Delta_{mn, gv}
 		\Delta_{g0,gv}
 	}
 \end{equation}
 where $R_{i}^{ab,cd}$ is the i$^{th}$ element of $\mel{a,b}{\vec{R}}{c,d}$.
-It is common in the hyper-Raman literature to write $\Delta_{ev', gv} \Delta_{mn, gv} = \Delta_{ev', gv}$.
+It is common in the hyper-Raman literature to write $\Delta_{e\tilde{v}', gv} \Delta_{mn, gv} = \Delta_{e\tilde{v}', gv}$.
 Using our definition of vibronic states, we can write, for example,
-$R_{i}^{gv,ev'} = \mel{v}{M_i^{ge}}{v'}$, where $\vec{M}^{ab} = (a|\vec{R}|b)$.\cite{Ziegler1974}
+$R_{i}^{gv,e\tilde{v}'} = \mel{v}{M_i^{ge}}{\tilde{v}'}$, where $\vec{M}^{ab} = (a|\vec{R}|b)$.\cite{Ziegler1974}
 Expanding $\vec{M}^{ij}$ to $\order{Q}$ about the equilibrium point of the ground state potential surface as
 $\vec{M}^{ij} = \vec{M}^{ij}_0 + \sum_z \frac{\partial\vec{M}^{ij}}{\partial Q_z} Q_z$
 yields $A, B, C$ coefficients similar to those in the Albrecht formalism of Raman scattering, \cite{Albrecht1961, Warshel1977, Ziegler1988} so that
@@ -239,35 +239,36 @@ The $A$ and $B$ coefficients, where $B = B_1 + B_2$, following closure over $\ke
 \begin{subequations}\label{ABterms}
 \begin{equation}
 	\begin{split}
-		A_{ijk} = \frac{1}{\hbar^2}\sum_{m,e,v'} M^{ge}_{0,i} 
+		A_{ijk} = \frac{1}{\hbar^2}\sum_{m,e,\tilde{v}'} M^{ge}_{0,i} 
 		M^{em}_{0,j} 
 		M^{mg}_{0,k}
-		 \langle v | v' \rangle
-		 \langle v' | 0 \rangle 
-		 \frac{1}{\Delta_{ev', gv}}
+		 \langle v | \tilde{v}' \rangle
+		 \langle \tilde{v}' | 0 \rangle 
+		 \frac{1}{\Delta_{e\tilde{v}', gv}}
 		 \\
 	\end{split}
 \end{equation}
 	\begin{equation}
 		\begin{split}
-			B_{1_{ijk}} &= \frac{1}{\hbar^2} \sum_{m,e,v',z} M^{ge}_{0,i} \left(
+			B_{1_{ijk}} &= \frac{1}{\hbar^2} \sum_{m,e,\tilde{v}',z} M^{ge}_{0,i} \left(
 				\frac{\partial M^{em}_{j}}{\partial Q_z} M^{mg}_{0,k}  
 				+M^{em}_{0,j} \frac{\partial M^{mg}_{k}}{\partial Q_z}
 			\right)
-			\langle v | v' \rangle \mel{v'}{Q_z}{0} \frac{1}{\Delta_{ev', gv}}\\
+			\langle v | \tilde{v}' \rangle \mel{\tilde{v}'}{Q_z}{0} \frac{1}{\Delta_{e\tilde{v}', gv}}\\
 		\end{split}
 	\end{equation}
 	\begin{equation}
 	\begin{split}
-			B_{2_{ijk}} = \frac{1}{\hbar^2} \sum_{m,e,v',z} \frac{\partial M^{ge}_{i}}{\partial Q_z} M^{em}_{0,j} 
-			M^{mg}_{0,k} \mel{v}{Q_z}{v'} 
-			\langle v' | 0 \rangle 
-			\frac{1}{\Delta_{ev', gv}}
+			B_{2_{ijk}} = \frac{1}{\hbar^2} \sum_{m,e,\tilde{v}',z} \frac{\partial M^{ge}_{i}}{\partial Q_z} M^{em}_{0,j} 
+			M^{mg}_{0,k} \mel{v}{Q_z}{\tilde{v}'} 
+			\langle \tilde{v}' | 0 \rangle 
+			\frac{1}{\Delta_{e\tilde{v}', gv}}
 	\end{split}
 	\end{equation}
 \end{subequations}
 \end{widetext}
-where $\langle a | b \rangle$ and $\mel{a}{Q}{b}$ are Franck-Condon factors and Herzberg-Teller-type integrals, respectively. 
+where $\langle a | b \rangle$ and $\mel{a}{Q}{b}$ are Franck-Condon factors and Herzberg-Teller-type integrals, respectively.
+To ease readability, we use $\ket{a}$ to refer to ground state vibrational modes and $\ket{\tilde{b}}$ to refer to excited state vibrational modes. 
 Duschinsky rotation effects are ignored in this discussion. \cite{Duschinsky1937}
 At this point, the expressions are valid for both electronically resonant and non-resonant cases.
 
@@ -278,28 +279,28 @@ the $A$ and $B$ terms are rewritten as
 	\begin{subequations}\label{ABterms_DR}
 		\begin{equation}
 			\begin{split}
-				A_{ijk} = \frac{1}{\hbar}\sum_{v'} M^{ge}_{0,i} 
+				A_{ijk} = \frac{1}{\hbar}\sum_{\tilde{v}'} M^{ge}_{0,i} 
 				\Lambda^{eg}_{0,jk}
-				\langle 1 | v' \rangle
-				\langle v' | 0 \rangle 
-				\frac{1}{\Delta_{ev',gv}}
+				\langle 1 | \tilde{v}' \rangle
+				\langle \tilde{v}' | 0 \rangle 
+				\frac{1}{\Delta_{e\tilde{v}',gv}}
 				\\
 			\end{split}
 		\end{equation}
 		\begin{equation}
 			\begin{split}
-				B_{1_{ijk}} &= \frac{1}{\hbar} \sum_{v'} M^{ge}_{0,i}
-				\frac{\partial \Lambda^{eg}_{jk}}{\partial Q} \langle 1 | v' \rangle \mel{v'}{Q}{0} 
-				\frac{1}{\Delta_{ev', gv}}\\
+				B_{1_{ijk}} &= \frac{1}{\hbar} \sum_{\tilde{v}'} M^{ge}_{0,i}
+				\frac{\partial \Lambda^{eg}_{jk}}{\partial Q} \langle 1 | \tilde{v}' \rangle \mel{\tilde{v}'}{Q}{0} 
+				\frac{1}{\Delta_{e\tilde{v}', gv}}\\
 			\end{split}
 		\end{equation}
 		\begin{equation}
 			\begin{split}
-				B_{2_{ijk}} = \frac{1}{\hbar} \sum_{v'} \frac{\partial M^{ge}_{i}}{\partial Q} 
+				B_{2_{ijk}} = \frac{1}{\hbar} \sum_{\tilde{v}'} \frac{\partial M^{ge}_{i}}{\partial Q} 
 				\Lambda^{eg}_{0,jk} 
-				\mel{1}{Q}{v'} 
-				\langle v' | 0 \rangle 
-				\frac{1}{\Delta_{ev',gv}}
+				\mel{1}{Q}{\tilde{v}'} 
+				\langle \tilde{v}' | 0 \rangle 
+				\frac{1}{\Delta_{e\tilde{v}',gv}}
 			\end{split}
 		\end{equation}
 	\end{subequations}
@@ -309,11 +310,11 @@ where $\Lambda^{ab}_{ij} = 1/\hbar \sum_m M_i^{am}M_j^{mb} $ is the electronic t
 	\centering
 	\includegraphics[width=6.66in]{drsive_spectrum.png}
 	\caption{Contributions of $A, B$ (\autoref{ABterms_DR}) to HDFG spectrum for a simple two harmonic well system.
-		(a) Potential energy surfaces for a two-well system, (b) 1D HDFG spectrum for $\xi = 0.5$, $\omega_1 = \omega_{g1, g0}$. 
+		(a) Potential energy surfaces for a two-well system, (b) 1D HDFG spectrum for $\Delta = 0.5$, $\omega_1 = \omega_{g1, g0}$. 
 		It is assumed that $\omega_2 = \omega_3$.
 		Note that (b) plots magnitudes of the labeled quantities.
-		The vibrational states on the $|g)$ and $|e)$ manifolds are spaced 2200 cm$^{-1}$ apart, with the vibronic states $\ket{e,v'}$ given linewidths of 700 cm$^{-1}$ and $\hbar \omega_{eg}$ = 30000 cm$^{-1}$.
-		Dotted lines in (b) denote the $v'$ = 0, 1, 2 vibronic resonances. 
+		The vibrational states on the $|g)$ and $|e)$ manifolds are spaced 2200 cm$^{-1}$ apart, with the vibronic states $\ket{e,\tilde{v}'}$ given linewidths of 700 cm$^{-1}$ and $\hbar \omega_{eg}$ = 30000 cm$^{-1}$.
+		Dotted lines in (b) denote the $\tilde{v}'$ = 0, 1, 2 vibronic resonances. 
 		The vibronic one and two photon absorption operators are scaled such that $\abs{B}/\abs{A} \sim$ 0.1, following Chung and Ziegler. \cite{Ziegler1988}
 		The Franck-Condon and Herzberg-Teller contributions to each of these terms are found in \autoref{T:contributions}.}
 	\label{fig:doubres_spec}
@@ -327,12 +328,12 @@ Using a two-well system described by $H = H_g |g) \left(g| + H_e |e\right) (e|$ 
 	\end{equation}
 	and
 	\begin{equation}
-		H_e = \frac{\hbar \omega }{2} \left(p^2 +  (q-\xi)^2 \right) + \hbar \omega_{eg}
+		H_e = \frac{\hbar \omega }{2} \left(p^2 +  (q-\Delta)^2 \right) + \hbar \omega_{eg}
 	\end{equation}
 \end{subequations}
-for the ground ($H_g$) and first excited ($H_e$) states, where $p$ (momentum) and $q$ (position) are the dimensionless conjugate coordinates of the normal mode, the A and B contributions can be evaluated using Franck-Condon and Herzberg-Teller integrals tabulated in terms of the dimensionless normal mode $q$ and offset parameter $\xi$ (\autoref{fig:doubres_spec}a).
+for the ground ($H_g$) and first excited ($H_e$) states, where $p$ (momentum) and $q$ (position) are the dimensionless conjugate coordinates of the normal mode, the A and B contributions can be evaluated using Franck-Condon and Herzberg-Teller integrals tabulated in terms of the dimensionless normal mode $q$ and offset parameter $\Delta$ (\autoref{fig:doubres_spec}a).
 System-bath interactions are neglected for this discussion.
-For simplicity, we restrict consideration to $v^\prime \in \{0,1,2\}$ and take $\xi = 0.5$.
+For simplicity, we restrict consideration to $v^\prime \in \{0,1,2\}$ and take $\Delta = 0.5$.
 Note that $q = \sqrt{\frac{\omega}{\hbar}} Q$.
 We assume the electronic state is both one and two photon allowed.
 
@@ -341,56 +342,55 @@ The $A$ term is allowed whenever an electronic transition has a one- and two- ph
 For centrosymmetric molecules, an electronic transition cannot be both one- and two- photon allowed by parity, so the $A$ term will vanish.
 This makes HDFG a unique tool for studying the electronic structure of centrosymmetric species in isotropic media, as it is sensitive to non-Condon effects.\cite{Olson2018}
 For an allowed electronic transition, the brightness of a vibronic resonance is controlled by overlap of ground and excited state vibrational wavefunctions (Franck-Condon factors).
-The $A$ term relies on excited state perturbations to the vibrational wavefunctions; if the excited electronic state minimally changes potential energy surface, so that ground and excited state vibrational eigenfunctions are identical, $\langle 1 | v^\prime \rangle \langle v^\prime | 0 \rangle = 0$ and $A$ vanishes.
-This follows from $\lim_{\xi \rightarrow 0} \langle v' | 0 \rangle = 0$, $v^\prime \neq 0$, for wells with identical curvature.
-Some $B$ terms do survive in the same limit, however; for instance, $B_1$ survives for $v^\prime=1$ and $B_2$ survives for $v^\prime=0$.
+The $A$ term relies on excited state perturbations to the vibrational wavefunctions; if the excited electronic state minimally changes potential energy surface, so that ground and excited state vibrational eigenfunctions are identical, $\langle 1 | \tilde{v}' \rangle \langle \tilde{v}' | 0 \rangle = 0$ and $A$ vanishes, as discussed in the supporting information.
+Some $B$ terms do survive in the same limit, however; for instance, $B_1$ survives for $\tilde{v}'=1$ and $B_2$ survives for $\tilde{v}'=0$.
 In the absence of an $A$ term, the $B$ terms will dominate.
 The $B_1$ and $B_2$ terms involve different types of vibronic coupling pathways.
 In $B_1$, the Herzberg-Teller coupling is associated with the two-photon absorption process, whereas in $B_2$, the Herzberg-Teller coupling is associated with one-photon emission.\footnote{Franck-Condon factors and Herzberg-Teller integrals are most easily evaluated in the position basis. A sample calculation is provided in the supporting information.}
 
 \autoref{fig:doubres_spec}b shows the simulated $\omega_2+\omega_3$ spectrum for this two-well system.  The spectrum selectively probes vibronic pathways from $\ket{g,0}$ to $\ket{g,1}$.
-In the resonant region, the $A$ and $B$ terms contain character from all three possible transitions between $\ket{g,0}$, $\ket{e,v'}$ and $\ket{g,1}$. 
+In the resonant region, the $A$ and $B$ terms contain character from all three possible transitions between $\ket{g,0}$, $\ket{e,\tilde{v}'}$ and $\ket{g,1}$. 
 Significant contributions from $\ket{e,0}$ and $\ket{e,1}$ in the $A$ term spectrum correspond well with expectations given the relative wavefunction overlap in \autoref{fig:doubres_spec}a, tabulated in \autoref{T:contributions}. 
 Similarly, the $B_1$ term is dominated by coupling with the $\ket{e,1}$ state and $B_2$ is dominated by coupling with the $\ket{e,0}$ state (\autoref{T:contributions}). 
 Note that contributions involving $\ket{e,2}$ are suppressed relative to the $\ket{e,0}$ and $\ket{e,1}$ contributions in the $A$ and $B$ terms.
 This is expected, considering the large change in quantum number when involving $\ket{e,2}$ and the offset of the potential wells in \autoref{Hamiltonian}.
 
-In the pre-resonance region, both $A$ and $B$ terms die off as $\sim \Delta_{e0,gv}^{-1}$.
+In the pre-resonance region, both $A$ and $B$ terms die off as $\sim \Delta_{e\tilde{v}',gv}^{-1}$.
 We point this out because a persistent belief in Raman analysis is that $A$ terms disappear and $B$ terms dominate when significantly detuned from electronic resonance.
-The belief arises from the approximation $\abs{\omega_{ev',gv} - 2\omega_2} \gg 2\Gamma_{ev',gv}$, which then removes $A$ through a closure relationship.\cite{Neddersen1989}
+The belief arises from the approximation $\abs{\omega_{e\tilde{v}',gv} - 2\omega_2} \gg 2\Gamma_{e\tilde{v}',gv}$, which then removes $A$ through a closure relationship.\cite{Neddersen1989}
 As has been discussed elsewhere, however, this approximation is in many cases invalid, especially when vibrational energies are large, like those explored here.\cite{Warshel1977, Myers1982, Li1990, Gong2015}
 This means that it is difficult to isolate $B$ terms when $A$ terms are present.
 As such, HDFG will have difficulty examining non-Condon effects ($B$ term contributions) in noncentrosymmetric systems.
 
 \begin{table}[!htbp]
-	\caption{\label{T:contributions} Franck-Condon and/or Herzberg-Teller contributions to $A$, $B_1$, $B_2$ terms between $\ket{g,0}$, $\ket{g,1}$ and vibronic states $\ket{e,0}$, $\ket{e,1}$, $\ket{e,2}$ for \autoref{Hamiltonian} with an offset $\xi = 0.5$.
+	\caption{\label{T:contributions} Franck-Condon and/or Herzberg-Teller contributions to $A$, $B_1$, $B_2$ terms between $\ket{g,0}$, $\ket{g,1}$ and vibronic states $\ket{e,\tilde{0}}$, $\ket{e,\tilde{1}}$, $\ket{e,\tilde{2}}$ for \autoref{Hamiltonian} with an offset $\Delta = 0.5$.
 	The bra and ket labels are written according to their order in $A$, $B_1$, $B_2$ as written in \autoref{ABterms_DR}.
 	Closed-form expressions for the Franck-Condon and Herzberg-Teller integrals used here are tabulated in the Supporting Information.}
 	\begin{ruledtabular}
 		\begin{tabular}{cccc}
-			$2\omega_2$ Electronic Resonance & $\ket{e,0}$ & $\ket{e,1}$ & $\ket{e,2}$\\
+			$2\omega_2$ Electronic Resonance & $\ket{e,\tilde{0}}$ & $\ket{e,\tilde{1}}$ & $\ket{e,\tilde{2}}$\\
 			\hline  
 			$A$ 
-			& $\langle 1 | 0 \rangle \langle 0 | 0 \rangle = 0.31 $  
-			& $\langle 1 | 1 \rangle \langle 1 | 0 \rangle = 0.27 $ 
-			& $\langle 1 | 2 \rangle \langle 2 | 0 \rangle = -0.04$\\
+			& $\langle 1 | \tilde{0} \rangle \langle \tilde{0} | 0 \rangle = 0.31 $  
+			& $\langle 1 | \tilde{1} \rangle \langle \tilde{1} | 0 \rangle = 0.27 $ 
+			& $\langle 1 | \tilde{2} \rangle \langle \tilde{2} | 0 \rangle = -0.04$\\
 					
 			$B_1$ 
-			& $\langle 1 | 0 \rangle \mel{0}{Q}{0} = -0.08$ 
-			& $\langle 1 | 1 \rangle \mel{1}{Q}{0} = 0.48$ 
-			&$\langle 1 | 2 \rangle \mel{2}{Q}{0} = 0.14$\\
+			& $\langle 1 | \tilde{0} \rangle \mel{\tilde{0}}{Q}{0} = -0.08$ 
+			& $\langle 1 | \tilde{1} \rangle \mel{\tilde{1}}{Q}{0} = 0.48$ 
+			&$\langle 1 | \tilde{2} \rangle \mel{\tilde{2}}{Q}{0} = 0.14$\\
 						
 			$B_2$ 
-			& $\mel{1}{Q}{0} \langle 0 | 0 \rangle = 0.55$  
-			& $\mel{1}{Q}{1} \langle 1 | 0 \rangle = -0.07$ 
-			& $\mel{1}{Q}{2} \langle 2 | 0 \rangle = 0.08$\\
+			& $\mel{1}{Q}{\tilde{0}} \langle \tilde{0} | 0 \rangle = 0.55$  
+			& $\mel{1}{Q}{\tilde{1}} \langle \tilde{1} | 0 \rangle = -0.07$ 
+			& $\mel{1}{Q}{\tilde{2}} \langle \tilde{2} | 0 \rangle = 0.08$\\
 		\end{tabular}
 	\end{ruledtabular}
 \end{table}
 
 \subsection{Inhomogeneity in HDFG}
 An often unavoidable consequence in electronic spectroscopy is broadened lineshapes due to a high density of vibronic modes. 
-In the discussion that follows, we assume that a vibrational mode in the ground state, $\ket{g,v}$, is correlated to the frequency of a vibronic $\ket{e,v'}$.\cite{Carlson1990line, Dong2015}
+In the discussion that follows, we assume that a vibrational mode in the ground state, $\ket{g,v}$, is correlated to the frequency of a vibronic $\ket{e,\tilde{v}'}$.\cite{Carlson1990line, Dong2015}
 If the frequency of $\ket{g,v}$ is written as $\omega_{gv} + \xi$, where $\xi$ is some external strain (e.g. molecular collisions), then the frequency of $\ket{e,v}$ is $\omega_{ev} + c\xi$, where c is a shift coefficient.
 The strains shift resonance denominators, e.g., for $\omega_{ij} \rightarrow \omega_{ij} \pm c\xi$, as
 \begin{equation}

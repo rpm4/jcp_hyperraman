@@ -56,28 +56,29 @@ Franck-Condon factors and Herzberg-Teller integrals are often evaluated in posit
 	\psi_m(q) = \langle q | m \rangle = N(m) H_m(q) \exp(-q^2/2)
 \end{equation}
 where $N(m) = (m! \ 2^m \pi^{\frac{1}{2}})^{-\frac{1}{2}}$ is the normalization factor and $H_m$ is the m$^{th}$ Hermite Polynomial.
-We begin by generating an expression for $\mel{n}{q^k}{m}$, as this will resolve into Franck-Condon factors for $n = 0$ and Herzberg-Teller integrals for $n=1$.
+We begin by generating an expression for $\mel{\tilde{n}}{q^k}{m}$, as this will resolve into Franck-Condon factors for $n = 0$ and Herzberg-Teller integrals for $n=1$.
+As in the main text, $\{\ket{\tilde{a}}\}$ are vibrational states on the first excited state $|e)$ and $\{\ket{b}\}$ are vibrational states on the ground state $|g)$.
 
-By letting $\ket{m}$ belong to the ground state surface $|g)$ and $\ket{n}$ belong to the first excited surface $|e)$, we write
+By letting $\ket{m}$ belong to the ground state surface $|g)$ and $\ket{\tilde{n}}$ belong to the first excited surface $|e)$, we write
 \begin{equation}
 \begin{split}
-		\mel{n}{q^k}{m} &= \int_{-\infty}^\infty \mathrm{d}q \psi^*_n(q-\Delta) q^k \psi_m(q)\\
+		\mel{\tilde{n}}{q^k}{m} &= \int_{-\infty}^\infty \mathrm{d}q \psi^*_n(q-\Delta) q^k \psi_m(q)\\
 		&= \int_{-\infty}^\infty \mathrm{d}q N(n) N(m) H_n(q-\Delta) \exp(-\frac{(q - \Delta)^2}{2}) q^k H_m(q) \exp(-\frac{q^2}{2})
 \end{split}
 \end{equation}
 Introducing $\tilde{N} \equiv N(n)N(m)$ and slightly rearranging, we see
 \begin{equation}\label{key}
-	\mel{n}{q^k}{m} = \tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q H_n(q+\Delta) q^k H_m(q) \exp(-q^2 + q\Delta)
+	\mel{\tilde{n}}{q^k}{m} = \tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q H_n(q+\Delta) q^k H_m(q) \exp(-q^2 + q\Delta)
 \end{equation}
 This is the key result.
 As a side note, \autoref{key} explicitly shows
 \begin{subequations}
 	\begin{equation}
-		\lim_{\Delta \rightarrow 0} \langle n | m \rangle = \delta_{n,m}
+		\lim_{\Delta \rightarrow 0} \langle \tilde{n} | m \rangle = \langle n | m \rangle = \delta_{n,m}
 	\end{equation}
 and
 	\begin{equation}
-	\lim_{\Delta \rightarrow 0} \mel{n}{q}{m} = \sqrt{\frac{1}{2}} \left(\sqrt{m}\delta_{n,m-1} + \sqrt{m+1} \delta_{n,m+1}\right)
+	\lim_{\Delta \rightarrow 0} \mel{\tilde{n}}{q}{m} = \mel{{n}}{q}{m} = \sqrt{\frac{1}{2}} \left(\sqrt{m}\delta_{n,m-1} + \sqrt{m+1} \delta_{n,m+1}\right)
 	\end{equation}
 \end{subequations}
 i.e., as the offset vanishes, the normal harmonic oscillator selection rules are obtained, the expected result, where $\delta$ is the Kronecher delta.
@@ -100,18 +101,18 @@ When $w=0$, the result is trivial:\footnote{$\int_{-\infty}^{\infty} \mathrm{d}x
 	\int_{-\infty}^\infty \mathrm{d}q \ q^w \exp(-q^2 + q\Delta) = \partial_{\Delta} \int_{-\infty}^\infty \mathrm{d}q \ q^{w-1} \exp(-q^2 + q\Delta)
 \end{equation}
 
-We now have the background needed to calculate $\mel{1}{q}{0}$ for an arbitrary offset $\Delta$.
+We now have the background needed to calculate $\mel{\tilde{1}}{q}{0}$ for an arbitrary offset $\Delta$.
 We note that Myers et al. have developed a general expression to evaluate Franck-Condon factors for two displaced harmonic wells of arbitrary curvature,\cite{Myers1982} so we focus our attention onto Herzberg-Teller integrals, which are not commonly tabulated.
 Starting with \autoref{key},
 \begin{equation}
 \begin{split}
-	\mel{1}{q}{0} = \tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q H_1(q+\Delta) q H_0(q) \exp(-q^2 - q\Delta)
+	\mel{\tilde{1}}{q}{0} = \tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q H_1(q+\Delta) q H_0(q) \exp(-q^2 - q\Delta)
 \end{split}
 \end{equation}
 Using $H_0(q) = 1$ and $H_1(q) = 2q$,\cite{RN230} 
 \begin{equation}\label{HT10}
 	\begin{split}
-		\mel{1}{q}{0} &= \tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ 2(q + \Delta) q \exp(-q^2 - q\Delta)\\
+		\mel{\tilde{1}}{q}{0} &= \tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ 2(q + \Delta) q \exp(-q^2 - q\Delta)\\
 		&= 2\tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ (q^2 + q \Delta) \exp(-q^2 - q\Delta)\\
 		&=  2\tilde{N} \exp(-\frac{\Delta^2}{2}) \left(\int_{-\infty}^\infty \mathrm{d}q \ q^2 \exp(-q^2 - q\Delta) + 2\Delta \int_{-\infty}^\infty \mathrm{d}q \ q \exp(-q^2 - q\Delta) \right)
 	\end{split}
@@ -134,9 +135,9 @@ giving
 \end{subequations}
 With $\tilde{N} = N(1)*N(0) = (1! \ 2^1 \pi^{\frac{1}{2}})^{-\frac{1}{2}} * (0! \ 2^0 \pi^{\frac{1}{2}})^{-\frac{1}{2}} = \sqrt{1/2\pi}$ and substituting the results of \autoref{evalGaussians} into \autoref{HT10}, 
 \begin{equation}
-	\mel{1}{q}{0} = \sqrt{\frac{1}{2}} (1 - \frac{\Delta^2}{2}) \exp(\frac{-\Delta^2}{4})
+	\mel{\tilde{1}}{q}{0} = \sqrt{\frac{1}{2}} (1 - \frac{\Delta^2}{2}) \exp(\frac{-\Delta^2}{4})
 \end{equation}
-The evaluation of other Herzberg-Teller integrals follows a similar process, or by using symbolic manipulation packages. 
+The evaluation of other Herzberg-Teller integrals follows a similar process. 
 The relevant Franck-Condon factors and Herzberg-Teller integrals, assuming identical curvature and no Duschinsky coupling, are tabulated below.
 
 \begin{table}[!htbp]
