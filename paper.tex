@@ -44,7 +44,7 @@ Coherent multidimensional spectroscopy (CMDS) is a family of nonlinear spectrosc
 Multiresonant, four wave mixing CMDS experiments, first proposed by Oudar and Shen in 1980,\cite{RN307} directly probe coupling and correlations between different vibrational, electronic, and vibronic states. \cite{RN281, RN103, Cho2008} 
 Four wave mixing CMDS has resolved anharmonicities, ultrafast dynamics, and other inter- and intra-molecular couplings in numerous systems. \cite{Cho2008, Gaynor2017, Ziegler2018, Ogilvie2019, Bonn2021, RN325, Chen2024}
 To target vibrational and electronic coupling, methods commonly make use of Raman transitions, e.g., doubly vibrationally enhanced spectroscopy (DOVE), triple sum frequency (TSF), coherent anti-Stokes Raman spectroscopy (CARS), resonant impulse stimulated Raman spectroscopy (RISRS).\cite{RN103, Dhar1994, RN345, Cho2000, RN491}
-Here we explore the less-utilized hyper-Raman transitions in four wave mixing CMDS.
+Here we explore the less-utilized hyper-Raman transition in four wave mixing CMDS.
 
 \begin{figure*}[!htbp]
 	\centering
@@ -73,7 +73,7 @@ The infrared excitation frequency selects the vibrational modes to be stimulated
 The other two excitation frequencies control electronic enhancement for the hyper-Raman scattering event.
 
 \autoref{fig:comparisonwmel} shows both HDFG and HSFG processes and compares them with related spectroscopies that investigate vibrational-electronic coupling.
-The three-wave mixing ($\chi^{(2)}$) techniques are often less applicable as they require macroscopic non-centrosymmetry under the electric dipole approximation.\cite{Shen94}
+The three-wave mixing ($\chi^{(2)}$) techniques are often less applicable as they require macroscopic non-centrosymmetry under the electric dipole approximation.\cite{RN480}
 Hyper-Raman scattering itself is a six-wave mixing ($\chi^{(5)}$) technique; stimulated hyper-Raman will be weak and susceptible to four-wave mixing (FWM) cascades.\cite{RN515, RN243, Cho2000_Cascade}
 A coherent six-wave mixing analogue of hyper-Raman scattering, coherent anti-Stokes hyper-Raman spectroscopy (CAHRS), has been proposed and explored theoretically by several authors; however, it is also weak and highly susceptible to FWM cascades.\cite{Berger1978, Bjarnason1980, Cho1997, Cho1998}
 Of the many four-wave mixing techniques, HDFG and HSFG have strong similarity to Raman, stimulated Raman, and RISRS in that the electronic state must remove or add a $v$ quantum to the ground state (``ev'' coupling).
@@ -83,7 +83,7 @@ HDFG, HSFG and Raman are more direct probes of electronic-vibrational coupling.
 Notably, HDFG and HSFG can be implemented as two-color experiments (with $\omega_2=\omega_3$);\cite{Cho2001} vibrational sum frequency generation (vSFG) or difference frequency generation (vDFG) setups can be trivially reconfigured to perform HSFG or HDFG measurements, respectively, to investigate ev coupling in bulk systems.
 
 Nonlinear spectroscopic probes of electronic-vibrational coupling are not limited to the Raman and hyper-Raman based techniques diagrammed in \autoref{fig:comparisonwmel}.
-Independently developed by the Fleming and Khalil groups, respectively, 2D Electronic-Vibrational (2D-EV) and 2D Vibrational-Electronic spectroscopy are based upon pump-probe and absorption type pathways which also investigate e-v coupling.\cite{Oliver2014, Courtney2015}
+Independently developed by the Fleming and Khalil groups, respectively, 2D Electronic-Vibrational (2D-EV) and 2D Vibrational-Electronic (2D-VE) spectroscopy are based upon pump-probe and absorption type pathways which also investigate e-v coupling.\cite{Oliver2014, Courtney2015}
 \textbf{add some more words, compare and contrast just a hair}
 
 When the hyper-Raman excitation in HDFG or HSFG is resonant or near-resonant with electronic states, the brightness of the vibrational feature depends on the vibronic structure of the electronic state.
@@ -102,19 +102,17 @@ After developing selection rules, some quantitative aspects of HDFG are discusse
 \section{Selection Rules for HDFG Spectroscopy}\label{steadystate}
 
 In this section, we investigate the properties of HDFG and make the connections between HDFG and hyper-Raman scattering explicit.
-Coherent spectroscopies are often described using the density matrix formalism, where a density matrix $\rho$ is propagated using the Liouville-von Neumann equation $via$
+Coherent spectroscopies are often described in the perturbative limit using the density matrix formalism, where a density matrix $\rho$ is propagated using the Liouville-von Neumann equation $via$
 \begin{equation}\label{LVNE}
 	\dot{\rho} = \frac{1}{i \hbar} [H + V(t), \rho] + \dot{\rho}_R,
 \end{equation}
-where $H$ is the (static) system Hamiltonian, $V(t)$ is the field-matter interaction and $\rho_R$ is the relaxation density matrix. 
-Under the electric dipole approximation, $V(t) = -\vec{\mu} \cdot \sum_{j} E_j(t)$, where $j$ indexes the input electric fields.
+where $H$ is the (static) system Hamiltonian, $V(t)$ is the field-matter interaction and $\rho_R$ is the relaxation density matrix. \cite{RN455}
+We describe the input electric fields as $\vec{E}(\vec{x},t) = \frac{1}{2} \vec{E}_j\exp(-i(\omega_j t - \vec{k}_j \cdot \vec{x})) + \mathrm{c.c.}$.
 In systems where interactions with surroundings are relevant, $\dot{\rho}_R$ is a complex function which can be modified to include system-bath interactions, solvent-solute coupling, etc. \cite{Sung2001}
-In the limit where input field pulsewidths are much longer than electronic dephasing times and the individual molecule limit is approached, it becomes acceptable to write $\dot{\rho}_R = \Gamma \rho$, i.e. exponential relaxation, where $\Gamma$ is the system's pure dephasing rate. \cite{RN455, RN307, Sung2001}
-While exponential relaxation is usually an inappropriate description of most physical systems involving solvent-solute interactions,\cite{Sue1986, Yan1988, Li1994, Myers1997} our goal is to introduce simple, quantitative models to understand HDFG response.
+In the limit where input field pulsewidths are much longer than electronic dephasing times and the individual molecule limit is approached, it becomes acceptable to write $\dot{\rho}_R = \Gamma \rho$, i.e. exponential relaxation, where $\Gamma$ is the system's dephasing rate. \cite{RN455, RN307, Sung2001}
+While exponential relaxation is usually an inappropriate description of most physical systems involving solvent-solute interactions,\cite{Yan1988, Li1994, Myers1997} our goal is to introduce simple, quantitative models to understand HDFG response.
 Thus, we write $\dot{\rho}_R = \Gamma \rho$.
-This limit which has proven useful in investigating the properties of 2D-EV and 2D-VE spectroscopy. \cite{Gaynor2017} 
-Experimentally, it has been shown to be valid when investigating doubly resonant SFG response using pulses much longer than electronic dephasing times. \cite{Raschke2002}
-This limit is taken to emphasize the quantum mechanical selection rules of the HDFG technique. 
+The exponential relaxation limit has proven useful in investigating the properties of 2D-EV and 2D-VE spectroscopy and doubly resonant SFG response using pulses much longer than electronic dephasing times. \cite{Raschke2002, Gaynor2017}
 
 It is useful to briefly discuss the impact of time ordering on HDFG output.
 Dependent upon the time-ordering schemes, it is possible to eliminate output through destructive interference.\cite{RN287}
@@ -151,7 +149,7 @@ While unimportant in achiral isotropic systems,\cite{Belkin2000} second-order ca
 Nevertheless, in the discussion that follows for the rest of this manuscript, we will assume negligible second-order cascades. 
 
 It is useful to expose relationships between nonlinear output, transition dipoles and hyper-Raman hyperpolarizabilities in the driven limit ($\dot{\rho} = 0$). \cite{Simpson2004, Moad2005}
-Under the electric dipole approximation, the $I^\text{th}$ cartesian component of the third order nonlinear output polarization, ${P}^{(3)}_I$, of a four wave mixing process, induced by electric fields $E_J$, $E_K$, and $E_L$ at output frequency $\omega_4=-\omega_1 + \omega_2 + \omega_3$ is written as (using Einstein summation) \cite{RN307}
+Under the electric dipole approximation, the $I^\text{th}$ Cartesian component of the third order nonlinear output polarization, ${P}^{(3)}_I$, of a four wave mixing process, induced by electric fields $E_J$, $E_K$, and $E_L$ at output frequency $\omega_4=-\omega_1 + \omega_2 + \omega_3$ is written as (using Einstein summation) \cite{RN307}
 \begin{equation} \label{polarization}
 {P}^{(3)}_I (\omega_4)  = \chi^{(3)}_{IJKL} E_J(\omega_3) E_K(\omega_2) E_L(\omega_1) 
 \end{equation}
@@ -164,7 +162,7 @@ The brackets indicate an orientational average.\cite{Andrews1977}
 Uppercase letters refer to laboratory frame coordinates and lower case letters refer to corresponding molecular frame coordinates.
 $F=\prod_j  \frac{1}{3} \left({\left(n(\omega_j)\right)^2 + 1} \right)$ is the Lorentz local field factor, where $n$ is the (frequency dependent) refractive index. \cite{Bedeaux1973}
 
-By propagating \autoref{LVNE} in the steady state limit ($\dot{\rho} = 0$), the HDFG hyperpolarizability is \cite{RN442, RN133}
+By propagating \autoref{LVNE} in the steady state limit ($\dot{\rho} = 0$), the HDFG hyperpolarizability is \cite{Prior1984, McDonnell2024}
 \begin{equation}\label{sivegamma}
 		\gamma_{ijkl}^{vg} =	- \sum_{e,m} \frac{1}{\varepsilon_0} \frac{1}{4D} \frac{1}{\hbar^3} \frac{\mu^{ve}_{i} \mu^{em}_{j} \mu^{mg}_{k} \mu^{gv}_{l} }{\Delta_{ev}^{3+2-1} \Delta_{mv}^{2-1}\Delta_{gv}^{-1}}  \rho_{gg}
 \end{equation}
@@ -178,7 +176,7 @@ For a HDFG experiment using two (three) distinct, non-degenerate input fields, $
 
 It is useful to investigate the selection rules without vibronic resonance to understand how HDFG can be used as an upconverted infrared spectroscopy.
 We first investigate the HDFG selection rules through a Placzek type formalism.
-When $\omega_2+\omega_3$ is significantly detuned from resonance and the vibronic nature of the virtual states is ignored, the Placzek approximation can be used to study selection rules in terms of the hyper-Raman hyperpolarizability, $\beta$. \cite{Placzek1934, Long1970, Altmann1982}
+When $\omega_2+\omega_3$ is significantly detuned from resonance and the vibronic nature of the virtual states is ignored, the Placzek approximation can be used to study selection rules in terms of the hyper-Raman hyperpolarizability, $\beta$. \cite{Placzek1934, Long1970}
 Summing over the virtual states $\ket{e}$ and $\ket{m}$ forms the hyper-Raman hyperpolarizability so that\cite{Long1970} 
 \begin{equation}\label{sivebeta}
 	\gamma_{ijkl} =	-\frac{1}{\varepsilon_0} \frac{1}{4D \hbar}\frac{\beta^{vg}_{ijk} \mu^{gv}_{l}}{\Delta_{gv}} \rho_{gg}.
@@ -197,10 +195,11 @@ We Taylor expand the dipole and first hyperpolarizability operators to first ord
 		\beta_{ijk} = \beta_{ijk,0} + \left(\frac{\partial \beta_{ijk}}{\partial Q_v}\right)_0 Q_v
 	\end{equation}
 \end{subequations}
-Substituting into \autoref{sivebeta} gives the HDFG hyperpolarizability to $\order{Q_n}$ as \begin{equation}\label{SIVEselection}
+Taking $\ket{g} = \ket{0}, \ket{v} = \ket{1}$, substituting into \autoref{sivebeta} and using typical Harmonic Oscillator selection rules, gives the HDFG hyperpolarizability to $\order{Q_n}$ as \begin{equation}\label{SIVEselection}
 	\gamma_{ijkl} =	-\frac{1}{\varepsilon_0} \frac{1}{8D \omega_{vg}}  \frac{1}{{\Delta_{gv}}} \ \left(\frac{\partial \beta^{vg}_{ijk}}{\partial Q_v}\right)_0 \left({\frac{\partial \mu^{gv}_{l}}{\partial Q_v}}\right)_0  \rho_{gg}
 \end{equation}
-where we have used $\mel{1}{\mu_{l,0}}{0} = 0 = \mel{1}{\beta_{ijk,0}}{0}$, and $\mel{v}{Q_v}{g} \equiv \mel{1}{Q_v}{0} = \sqrt{\frac{\hbar}{2\omega_{vg}}}$. Here, $\omega_{vg}$ is the characteristic $\ket{0} \rightarrow \ket{1}$ frequency.\cite{RN459}
+where we have used $\mel{v}{\mu_{l,0}}{g} = 0 = \mel{1}{\beta_{ijk,0}}{0}$, and $\mel{1}{Q_v}{0} = \sqrt{\frac{\hbar}{2\omega_{vg}}}$.
+Here, $\omega_{vg}$ is the characteristic $\ket{0} \rightarrow \ket{1}$ frequency.\cite{RN459}
 Since \autoref{SIVEselection} is non-zero in the harmonic oscillator limit, HDFG output is allowed for infrared active normal modes in the harmonic limit. 
 
 \subsection{Vibronic Selection Rules}\label{Albrecht}
@@ -402,7 +401,7 @@ The strains shift resonance denominators, e.g., for $\omega_{ij} \rightarrow \om
 where $+ (-)$ refers to correlated (anti-correlated) modes.
 For simplicity, we assume c = 1.
 
-We investigate the impact of inhomogeneity on spectral output by convolving the HDFG output hyperpolarizability $\gamma_{ijkl}(\xi)$ with a normalized Lorentzian distribution $P(\xi)$ of half width $\sigma$ as \cite{Penner1976, Desiderio1979, Dick83_1, Carlson1990line} 
+We investigate the impact of inhomogeneity on spectral output by convolving the HDFG output hyperpolarizability $\gamma_{ijkl}(\xi)$ with a normalized Lorentzian distribution $P(\xi)$ of half width $\sigma$ as \cite{Desiderio1979, Dick83_1, Carlson1990line} 
 \begin{equation}\label{contour}
 	\gamma_{ijkl} = \int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \gamma_{ijkl}(\xi)
 	= \frac{\sigma}{\pi}\int_{-\infty}^\infty \mathrm{d}\xi \frac{1}{\sigma^2 + \xi^2} \frac{\gamma_0}{\Delta_{ga}(\xi)\Delta_{ba}(\xi)}
@@ -428,18 +427,13 @@ These results are consistent with the idea that non-parametric, non-linear spect
 
 Although \autoref{linenarrowa} identifies that parametric HDFG line-narrows correlated modes, these results are only valid in limits where the input pulses only weakly populate excited states.
 When resonant pulses are significantly longer than the dephasing time of some state, then that state can become populated.
-Excited state population effects are particularly important for understanding the spectroscopy of electronic states using input pulses with pulsewidths significantly longer than dephasing times. \cite{RN319, Yurs2012}
-Excited state populations can feed other modes, including the ground state and other vibrational/vibronic modes, inducing higher order processes.\cite{Carlson87, RN471}
-These feeding mechanisms can induce line-narrowing properties in spectroscopies that cannot line-narrow in third order perturbation theory.\cite{RN319, Carlson87, RN471}
+Excited state population effects are particularly important for understanding the spectroscopy of electronic states using input pulses with pulsewidths significantly longer than dephasing times. \cite{RN471, Yurs2012}
+Excited state populations can feed other modes, including the ground state and other vibrational/vibronic modes, inducing higher order processes.\cite{RN471}
+These feeding mechanisms can induce line-narrowing properties in spectroscopies that cannot line-narrow in third order perturbation theory.\cite{RN471, RN410}
 
 \section{Quantitative Aspects of HDFG}\label{quant}
-% Despite their increasing use for dissecting intra and intermolecular interactions, CMDS techniques are usually not feasible for most laboratories, as they usually demand the use of multiple optical parametric amplifiers and/or complex acousto-optic modulators. \cite{Chen2016}
-% Unlike most four wave mixing techniques, HDFG can be performed using only two input beams (i.e., two color HDFG).
-% 
-
 
 \subsection{vSFG detection levels are adequate for HDFG}
-
 Can vSFG experimental setups detect HDFG signals?
 SFG setups typically leverage the surface selectivity of $\chi^{(2)}$ polarizations,\cite{RN132, RN133} which results in extremely small emission volumes, so SFG setups are typically quite sensitive.
 However, HDFG is a weak $\chi^{(3)}$ process because it depends upon hyper-Raman cross-sections, which are commonly several orders of magnitude weaker than corresponding Raman transitions.\cite{RN515}
@@ -478,6 +472,8 @@ Additionally, by using non-degenerate input frequencies to stimulate the hyper-R
 These quantitative aspects of HDFG could prove useful for examining how well computational methods calculate $\beta_{ijk}$ values.
 
 \section{Conclusions}\label{conclusion}
+\textbf{NEED TO READ THIS SECTION!}
+
 Coherent vibrational, hyper-Raman coherent four wave mixing spectroscopies are identified and discussed.
 Hyper difference frequency generation (HDFG) possesses infrared absorption and vibronic hyper-Raman scattering selection rules.
 As a result, HDFG output is sensitive to the relative overlap of potential energy surfaces.
@@ -495,7 +491,7 @@ This work received support from the National Science Foundation (Grant no. CHE-2
 R.P.M. acknowledges support from the National Science Foundation Graduate Research Fellowship Program (Grant no. DGE-2137424). 
 
 \section{Appendix: Comparison of vSFG and two-beam HDFG output}\label{appendixA}
-To motivate the application of HDFG spectroscopy, we perform a calculation to compare two-color HDFG and vSFG output, where absorption effects are neglected for simplicity. \cite{Carlson1989}
+To motivate the application of HDFG spectroscopy, we perform a calculation to compare two-color HDFG and vSFG output, where absorption effects are neglected for simplicity.
 vSFG is a $\chi^{(2)}$ technique, when only vibrationally resonant, whose output scales as $\chi^{(2)}_{IJK} \sim \langle \alpha_{ij} \mu_k \rangle$, where $\alpha_{ij}$ is the Raman polarizability tensor.
 The output polarizations for vSFG and HDFG, respectively, under the electric dipole approximation are written as
 	 	\begin{subequations}

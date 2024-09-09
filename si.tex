@@ -63,12 +63,13 @@ By letting $\ket{m}$ belong to the ground state surface $|g)$ and $\ket{\tilde{n
 \begin{equation}
 \begin{split}
 		\mel{\tilde{n}}{q^k}{m} &= \int_{-\infty}^\infty \mathrm{d}q \psi^*_n(q-\Delta) q^k \psi_m(q)\\
-		&= \int_{-\infty}^\infty \mathrm{d}q N(n) N(m) H_n(q-\Delta) \exp(-\frac{(q - \Delta)^2}{2}) q^k H_m(q) \exp(-\frac{q^2}{2})
+		&= \int_{-\infty}^\infty \mathrm{d}q N(n) N(m) H_n(q-\Delta) \exp(-\frac{(q - \Delta)^2}{2}) q^k H_m(q) \exp(-\frac{q^2}{2}),
 \end{split}
 \end{equation}
+where $k=0$ corresponds to a Franck-Condon factor and $k=1$ refers to a Herzberg-Teller integral.
 Introducing $\tilde{N} \equiv N(n)N(m)$ and slightly rearranging, we see
 \begin{equation}\label{key}
-	\mel{\tilde{n}}{q^k}{m} = \tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q H_n(q+\Delta) q^k H_m(q) \exp(-q^2 + q\Delta)
+	\mel{\tilde{n}}{q^k}{m} = \tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q H_n(q-\Delta) q^k H_m(q) \exp(-q^2 + q\Delta)
 \end{equation}
 This is the key result.
 While integrals of form \autoref{key} can be computed straightforwardly using mathematical packages such as \texttt{Mathematica} or \texttt{sympy}, it is a useful exercise in Gaussian integral manipulation to evaluate Herzberg-Teller or Franck-Condon integrals.
@@ -92,7 +93,7 @@ Thus, evaluating \autoref{key} for arbitrary $m,n,k$ values resolves into evalua
 When $w=0$, the result follows by completing the square:\footnote{$\int_{-\infty}^{\infty} \mathrm{d}x \exp(-(x-a)^2) = \sqrt{\pi}$}
 \begin{equation}
 	\begin{split}
-		\int_{-\infty}^\infty \mathrm{d}q \exp(-q^2 + q\Delta) &= \int_{-\infty}^\infty \mathrm{d}q \exp(-(q^2 + q\Delta +\frac{\Delta^2}{4} - \frac{\Delta^2}{4}))\\
+		\int_{-\infty}^\infty \mathrm{d}q \exp(-q^2 + q\Delta) &= \int_{-\infty}^\infty \mathrm{d}q \exp(-(q^2 - q\Delta +\frac{\Delta^2}{4} - \frac{\Delta^2}{4}))\\
 		&= \exp(\frac{\Delta^2}{4}) \int_{-\infty}^\infty \mathrm{d}q \exp(-(q - \frac{\Delta}{2})^2) \\
 		&= \sqrt{\pi} \exp(\frac{\Delta^2}{4})
 	\end{split}
@@ -107,29 +108,29 @@ We note that Myers et al. have developed a general expression to evaluate Franck
 Starting with \autoref{key},
 \begin{equation}
 \begin{split}
-	\mel{\tilde{1}}{q}{0} = \tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q H_1(q+\Delta) q H_0(q) \exp(-q^2 - q\Delta)
+	\mel{\tilde{1}}{q}{0} = \tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q H_1(q-\Delta) q H_0(q) \exp(-q^2 + q\Delta)
 \end{split}
 \end{equation}
 Using $H_0(q) = 1$ and $H_1(q) = 2q$,\cite{RN230} 
 \begin{equation}\label{HT10}
 	\begin{split}
-		\mel{\tilde{1}}{q}{0} &= \tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ 2(q + \Delta) q \exp(-q^2 - q\Delta)\\
-		&= 2\tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ (q^2 + q \Delta) \exp(-q^2 - q\Delta)\\
-		&=  2\tilde{N} \exp(-\frac{\Delta^2}{2}) \left(\int_{-\infty}^\infty \mathrm{d}q \ q^2 \exp(-q^2 - q\Delta) + 2\Delta \int_{-\infty}^\infty \mathrm{d}q \ q \exp(-q^2 - q\Delta) \right)
+		\mel{\tilde{1}}{q}{0} &= \tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ 2(q - \Delta) q \exp(-q^2 + q\Delta)\\
+		&= 2\tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ (q^2 - q \Delta) \exp(-q^2 + q\Delta)\\
+		&=  2\tilde{N} \exp(-\frac{\Delta^2}{2}) \left(\int_{-\infty}^\infty \mathrm{d}q \ q^2 \exp(-q^2 + q\Delta) - \Delta \int_{-\infty}^\infty \mathrm{d}q \ q \exp(-q^2 + q\Delta) \right)
 	\end{split}
 \end{equation}
 These integrals are now easily evaluated using \autoref{identity}:
 \begin{subequations}\label{evalGaussians}
 	\begin{equation}
 		\begin{split}
-					\int_{-\infty}^\infty \mathrm{d}q \ q \exp(-q^2 - q\Delta) &= -\partial_{\Delta} \left(\sqrt{\pi} \exp(\frac{\Delta^2}{4})\right)\\
-					& = -\sqrt{\pi} \frac{\Delta}{2} \exp(\frac{\Delta^2}{4})
+					\int_{-\infty}^\infty \mathrm{d}q \ q \exp(-q^2 + q\Delta) &= \partial_{\Delta} \left(\sqrt{\pi} \exp(\frac{\Delta^2}{4})\right)\\
+					& = \sqrt{\pi} \frac{\Delta}{2} \exp(\frac{\Delta^2}{4})
 		\end{split}
 	\end{equation}
 giving
 \begin{equation}
 	\begin{split}
-		\int_{-\infty}^\infty \mathrm{d}q \ q^2 \exp(-q^2 - q\Delta) &= -\partial_{\Delta} \left(-\sqrt{\pi} \left(\frac{\Delta}{2} \exp(\frac{\Delta^2}{4})\right)\right)\\
+		\int_{-\infty}^\infty \mathrm{d}q \ q^2 \exp(-q^2 + q\Delta) &= \partial_{\Delta} \left(\sqrt{\pi} \left(\frac{\Delta}{2} \exp(\frac{\Delta^2}{4})\right)\right)\\
 		& =\sqrt{\pi} \left(\frac{1}{2}\exp(\frac{\Delta^2}{4}) + \frac{\Delta^2}{4} \exp(\frac{\Delta^2}{4})\right)
 	\end{split}
 \end{equation}
