@@ -169,17 +169,17 @@ B2 = B20 + B21 + B22
 
 #Real parts
 totRe = A.real + B1.real + B2.real
-ARe = A.real / totRe.max()
-BRe = (B1+B2).real / totRe.max()
-B1Re = B1.real / totRe.max()
-B2Re = B2.real / totRe.max()
+ARe = A.real
+BRe = (B1+B2).real 
+B1Re = B1.real 
+B2Re = B2.real 
 
 #Im parts
 totIm = A.imag + B1.imag + B2.imag
-AIm = A.imag / totIm.max()
-BIm = (B1+B2).imag / totIm.max()
-B1Im = B1.imag / totIm.max()
-B2Im = B2.imag / totIm.max()
+AIm = A.imag 
+BIm = (B1+B2).imag 
+B1Im = B1.imag
+B2Im = B2.imag 
 
 
 # absolute value
@@ -188,32 +188,33 @@ abs_max = tot.max()
 
 #plot the A and B
 ax1 = plt.subplot(gs[0,1])
-ax1.plot(y, tot / tot.max(), linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
-ax1.plot(y, np.abs(A) / abs_max, linewidth = '2', label = r'$\mathsf{|A|}$', color = 'cyan', zorder = 3)
-ax1.plot(y, np.abs(B1+B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B|}$', color = 'red', zorder = 3)
-ax1.plot(y, np.abs(B1) / abs_max, linewidth = '2', label = r'$\mathsf{|B_1|}$', color = 'orange', zorder = 2)
-ax1.plot(y, np.abs(B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B_2|}$', color = 'green', zorder = 1)
+ax1.plot(y, tot, linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
+ax1.plot(y, np.abs(A), linewidth = '2', label = r'$\mathsf{|A|}$', color = 'cyan', zorder = 3)
+ax1.plot(y, np.abs(B1+B2), linewidth = '2', label = r'$\mathsf{|B|}$', color = 'red', zorder = 3)
+ax1.plot(y, np.abs(B1), linewidth = '2', label = r'$\mathsf{|B_1|}$', color = 'orange', zorder = 2)
+ax1.plot(y, np.abs(B2), linewidth = '2', label = r'$\mathsf{|B_2|}$', color = 'green', zorder = 1)
 
 ax1.set_ylabel(r'$\mathsf{Amplitude \ (norm.)}$', fontsize = fontsize)
 ax1.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
 
 ax1.set_yscale('log')
-ax1.set_xlim(15000, 45000)
-xticks = np.linspace(15000, 45000, 7)
-ax1.set_xticks(xticks)
-ax1.set_ylim(0.0007, 3)
+ax1.set_xlim(15000, 25000)
+# xticks = np.linspace(15000, 45000, 7)
+# ax1.set_xticks(xticks)
+# ax1.set_ylim(0.0007, 3)
 ax1.legend(loc = 1)
 
 
 #put lines at the vibronic resonances
-for i in [0,1,2]:
-    ax1.vlines(x = 30000+1600*i, ymin = 0.0005, ymax = 4, color = 'gray', linestyle = '--', linewidth = 1)
+if False:
+    for i in [0,1,2]:
+        ax1.vlines(x = 30000+1600*i, ymin = 0.0005, ymax = 4, color = 'gray', linestyle = '--', linewidth = 1)
 
 others = True #debating if to include the Re and Im parts of gamma
 if others:
     #plot Re A and B
     ax2 = plt.subplot(gs[1,0])
-    ax2.plot(y, totRe / totRe.max(), linewidth = '2', label = '$\mathsf{A + B}$', color = 'black', zorder = 4)
+    ax2.plot(y, totRe, linewidth = '2', label = '$\mathsf{A + B}$', color = 'black', zorder = 4)
     ax2.plot(y, ARe, linewidth = '2', label = r'$\mathsf{A}$', color = 'cyan', zorder = 3)
     ax2.plot(y, BRe, linewidth = '2', label = r'$\mathsf{B}$', color = 'red', zorder = 3)
     ax2.plot(y, B1Re, linewidth = '2', label = r'$\mathsf{B_1}$', color = 'orange', zorder = 2)
@@ -222,13 +223,13 @@ if others:
     ax2.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
     
     #ax2.set_yscale('log')
-    ax2.set_xlim(15000, 45000)
+    # ax2.set_xlim(15000, 45000)
     # ax2.set_ylim(0.001, 2.2)
     ax2.legend(loc = 1)
     
     #plot Im A and B
     ax3 = plt.subplot(gs[1,1])
-    ax3.plot(y, totIm / totIm.max(), linewidth = '2', label = '$\mathsf{A + B}$', color = 'black', zorder = 4)
+    ax3.plot(y, totIm, linewidth = '2', label = '$\mathsf{A + B}$', color = 'black', zorder = 4)
     ax3.plot(y, AIm, linewidth = '2', label = r'$\mathsf{A}$', color = 'cyan', zorder = 3)
     ax3.plot(y, BIm, linewidth = '2', label = r'$\mathsf{B}$', color = 'red', zorder = 3)
     ax3.plot(y, B1Im, linewidth = '2', label = r'$\mathsf{B_1}$', color = 'orange', zorder = 2)
@@ -237,14 +238,15 @@ if others:
     ax3.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
     
     # ax3.set_yscale('log')
-    ax3.set_xlim(15000, 45000)
+    # ax3.set_xlim(15000, 45000)
     # ax2.set_ylim(0.001, 2.2)
     ax3.legend(loc = 1)
     
 for ax in [ax2, ax3]:
-    ax.set_xlim(15000, 45000)
-    xticks = np.linspace(15000, 45000, 7)
-    ax.set_xticks(xticks)
+    ax.set_xlim(15000, 25000)
+    ax.set_ylim(-2*10**(-8), 2*10**(-8))
+    # xticks = np.linspace(15000, 45000, 7)
+    # ax.set_xticks(xticks)
     ax.legend(loc = 1)
     ax.hlines(xmin=10000, xmax =50000, y = 0, color = 'gray', linestyle = '--', linewidth = 1)
 
