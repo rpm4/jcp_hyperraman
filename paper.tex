@@ -30,11 +30,12 @@
 \begin{abstract}
 Nonlinear, four wave mixing vibrational spectroscopies are commonly used to probe electron-vibration coupling in isotropic media.
 Most of these methods rely on infrared and/or Raman transitions, but methods involving hyper-Raman transitions are also possible. 
-Hyper Difference Frequency Generation (HDFG) spectroscopy is an underdeveloped four wave mixing vibrational spectroscopy based on the hyper-Raman transition and IR absorption. 
-HDFG is experimentally similar to vibrational sum frequency generation (vSFG) spectroscopy share similar output, making HDFG feasible for vSFG practitioners. 
+Hyper Difference Frequency Generation (HDFG) spectroscopy is an underdeveloped four wave mixing vibrational spectroscopy based both infrared absorption and hyper-Raman scattering transitions. 
 Despite several experimental reports on HDFG, its spectroscopic properties have not been fully explored. 
 To this end, we investigate the selection rules and behavior of HDFG spectroscopy as an upconverted infrared spectroscopy and as a probe of vibronic coupling in molecular systems.
-HDFG is shown to a sensitive probe of vibronic coupling in bulk systems.
+We discuss the similarities between HDFG, a four wave mixing technique, and vibrational sum frequency generation (vSFG) spectroscopy, a three wave mixing technique. 
+vSFG and HDFG appear to provide similar output intensities, making HDFG feasible for vSFG practitioners.
+HDFG is shown to a sensitive probe of vibronic coupling in bulk systems and provides an alternative method to investigate electronic-nuclear coordinate correlations.
 \end{abstract}
 
 \maketitle
@@ -84,17 +85,17 @@ Notably, HDFG and HSFG can be implemented as two-color experiments (with $\omega
 
 Nonlinear spectroscopic probes of electronic-vibrational coupling are not limited to the Raman and hyper-Raman based techniques diagrammed in \autoref{fig:comparisonwmel}.
 Independently developed by the Fleming and Khalil groups, respectively, 2D Electronic-Vibrational (2D-EV) and 2D Vibrational-Electronic (2D-VE) spectroscopy are based upon pump-probe and absorption type pathways which also investigate e-v coupling.\cite{Oliver2014, Courtney2015}
-\textbf{add some more words, compare and contrast just a hair}
+They have been used to investigate vibronic coupling in a variety of complex molecular systems, and serve as 2D pump-probe type analogues to the hyper-Raman-based spectroscopies discussed here.
 
 When the hyper-Raman excitation in HDFG or HSFG is resonant or near-resonant with electronic states, the brightness of the vibrational feature depends on the vibronic structure of the electronic state.
-The electronic spectrum probed in HDFG or HSFG can inform on processes that control ultrafast electronic relaxation in molecular and biological systems in similar ways to resonance Raman.\cite{Cho2001, Bredenbeck2015, Arsenault2021}
+The electronic spectrum probed in HDFG or HSFG can inform on processes that control ultrafast electronic relaxation in molecular and biological systems in ways similar to resonance Raman.\cite{Cho2001, Bredenbeck2015, Arsenault2021}
 Since the selection rules of hyper-Raman scattering differ from Raman scattering, the hyper-Raman excitation spectra give a unique alternative to Raman scattering to understand vibrational spectra, electronic structure and vibronic coupling in molecular systems. \cite{Olson2018}
 
 This paper investigates the microscopic parameters that control HDFG output. \cite{RN352, Bonn2024, McDonnell2024}
 HSFG will not be discussed, but the application of our treatment to HSFG is straightforward and the results are similar.
-We note that HDFG emission can be phase-matched in media with normal dispersion, while HSFG cannot,\cite{RN278} although experimental strategies can be implemented to minimize phase-mismatch in HSFG experiments. \cite{Kaufman2024}  
+We note that HDFG emission can be phase-matched in media with normal dispersion while HSFG cannot,\cite{RN279, RN278} although experimental strategies can be implemented to minimize phase-mismatch in HSFG experiments. \cite{Kaufman2024}  
 In \autoref{steadystate}, we first identify the vibrational selection rules. 
-The selection rules of electronically-resonant HDFG are then identified through a Herzberg-Teller dipole expansion.
+The selection rules of electronically-resonant HDFG are then identified through an expansion of electronic dipole moments following Chung and Ziegler.\cite{Ziegler1988}
 HDFG is found to be allowed in any harmonic system that has infrared active vibrations.
 A simple harmonic oscillator model system is used to simulate HDFG spectra and illustrate how the excited state potential energy surface affects the hyper-Raman excitation spectrum.
 After developing selection rules, some quantitative aspects of HDFG are discussed in \autoref{quant}.
@@ -102,17 +103,17 @@ After developing selection rules, some quantitative aspects of HDFG are discusse
 \section{Selection Rules for HDFG Spectroscopy}\label{steadystate}
 
 In this section, we investigate the properties of HDFG and make the connections between HDFG and hyper-Raman scattering explicit.
-Coherent spectroscopies are often described in the perturbative limit using the density matrix formalism, where a density matrix $\rho$ is propagated using the Liouville-von Neumann equation $via$
+Coherent spectroscopies are often described using the density matrix formalism, where a density matrix $\rho$ is propagated using the Liouville-von Neumann equation $via$
 \begin{equation}\label{LVNE}
 	\dot{\rho} = \frac{1}{i \hbar} [H + V(t), \rho] + \dot{\rho}_R,
 \end{equation}
 where $H$ is the (static) system Hamiltonian, $V(t)$ is the field-matter interaction and $\rho_R$ is the relaxation density matrix. \cite{RN455}
-We describe the input electric fields as $\vec{E}(\vec{x},t) = \frac{1}{2} \vec{E}_j\exp(-i(\omega_j t - \vec{k}_j \cdot \vec{x})) + \mathrm{c.c.}$.
-In systems where interactions with surroundings are relevant, $\dot{\rho}_R$ is a complex function which can be modified to include system-bath interactions, solvent-solute coupling, etc. \cite{Sung2001}
-In the limit where input field pulsewidths are much longer than electronic dephasing times and the individual molecule limit is approached, it becomes acceptable to write $\dot{\rho}_R = \Gamma \rho$, i.e. exponential relaxation, where $\Gamma$ is the system's dephasing rate. \cite{RN455, RN307, Sung2001}
+For simplicity, as dynamics is not a major focus of this article, we write electric fields as plane waves, such that $\vec{E}(\vec{x},t) = \frac{1}{2} \vec{E}_0\exp(-i(\vec{k} \cdot \vec{x} - \omega t)) + \mathrm{c.c.}$.
+In systems where interactions with surroundings are relevant, $\dot{\rho}_R$ becomes a complex function that can be modified to include phenomena such as system-bath interactions, solvent-solute coupling, among others. \cite{Sung2001}
+In the limit where input field pulsewidths are much longer than electronic dephasing times and the individual molecule limit is approached, it becomes acceptable to write $\dot{\rho}_R \approx \Gamma \rho$, i.e. exponential relaxation, where $\Gamma$ is the system's dephasing rate. \cite{RN455, Sung2001}
 While exponential relaxation is usually an inappropriate description of most physical systems involving solvent-solute interactions,\cite{Yan1988, Li1994, Myers1997} our goal is to introduce simple, quantitative models to understand HDFG response.
 Thus, we write $\dot{\rho}_R = \Gamma \rho$.
-The exponential relaxation limit has proven useful in investigating the properties of 2D-EV and 2D-VE spectroscopy and doubly resonant SFG response using pulses much longer than electronic dephasing times. \cite{Raschke2002, Gaynor2017}
+The exponential relaxation limit has proven useful in investigating the properties of 2D-EV, 2D-VE, and doubly resonant SFG using pulses much longer than electronic dephasing times. \cite{Raschke2002, Gaynor2017}
 
 It is useful to briefly discuss the impact of time ordering on HDFG output.
 Dependent upon the time-ordering schemes, it is possible to eliminate output through destructive interference.\cite{RN287}
@@ -125,6 +126,7 @@ While the methods in \autoref{fig:sivewmel2} possess identical selection rules t
 	\caption{WMEL diagrams of HDFG pathways for when (a,b) $\omega_1$ (black arrow) interacts first and (c-f) $\omega_2$ (orange arrow) interacts first. 
 		The states are labeled as $\ket{a,b}$, where $a$ refers to an electronic state and $b$ refers to quanta in a vibration on $a$, described in \autoref{Albrecht}.
 		In all cases, $\omega_2 > \omega_1$.
+		The virtual states are arbitrarily placed and fluctuate in energy dependent upon the energy of the input fields.
 	}
 	\label{fig:sivewmel2}
 \end{figure*}
@@ -157,18 +159,19 @@ where $\chi^{(3)}_{IJKL}$ is the $IJKL$ element of the third order electrical su
 \begin{equation}\label{eq:nfgamma}
 	\chi^{(3)}_{IJKL} = NF \langle \gamma_{ijkl} \rangle_{IJKL}.
 \end{equation}
-Here $N$ is a number density and $\gamma_{ijkl}$ is the third-order polarizability (i.e., second hyperpolarizability).
+Here $N$ is a number density, $F=\prod_j  \frac{1}{3} \left({\left(n(\omega_j)\right)^2 + 1} \right)$ is the Lorentz local field factor, where $n$ is the (frequency dependent) refractive index and $\gamma_{ijkl}$ is the third-order polarizability (i.e., second hyperpolarizability). \cite{Bedeaux1973}
 The brackets indicate an orientational average.\cite{Andrews1977}
 Uppercase letters refer to laboratory frame coordinates and lower case letters refer to corresponding molecular frame coordinates.
-$F=\prod_j  \frac{1}{3} \left({\left(n(\omega_j)\right)^2 + 1} \right)$ is the Lorentz local field factor, where $n$ is the (frequency dependent) refractive index. \cite{Bedeaux1973}
+The steps behind orientational averaging of $\gamma_{ijkl}$, a rank four tensor in the molecular frame, are detailed elsewhere.\cite{Andrews1977, McDonnell2024}
+Briefly, a tensor in the molecular frame, $A_{ijkl}$, is transformed into an element of the same tensor in the laboratory frame, $\langle A_{ijkl} \rangle_{IJKL}$, through $\langle A_{ijkl} \rangle_{IJKL}$ = $\theta^{ijkl}_{IJKL} A_{ijkl}$, where summation over repeated indices is implied and $\theta$ is the transformation operator. \cite{McDonnell2024, Andrews1977}
 
-By propagating \autoref{LVNE} in the steady state limit ($\dot{\rho} = 0$), the HDFG hyperpolarizability is \cite{Prior1984, McDonnell2024}
+By propagating \autoref{LVNE} in the steady state limit ($\dot{\rho} = 0$), the HDFG hyperpolarizability is \cite{Prior1984}
 \begin{equation}\label{sivegamma}
 		\gamma_{ijkl}^{vg} =	- \sum_{e,m} \frac{1}{\varepsilon_0} \frac{1}{4D} \frac{1}{\hbar^3} \frac{\mu^{ve}_{i} \mu^{em}_{j} \mu^{mg}_{k} \mu^{gv}_{l} }{\Delta_{ev}^{3+2-1} \Delta_{mv}^{2-1}\Delta_{gv}^{-1}}  \rho_{gg}
 \end{equation}
 where: $\mu^{ab}_{j}$ is the $j^{th}$ element of $\mel{a}{\vec{\mu}}{b}$, $\Delta_{kl}^{-x+y+z} = \omega_{kl} - (-\omega_{x}+\omega_{y} + \omega_{z}) - i\Gamma_{kl}$, $\omega_j$ is the frequency of the j$^{th}$ input field, $\Gamma_{kl}$ is the dephasing of $\rho_{kl}$ and $\rho_{gg}$ is the ground state population.
 Here, $\ket{e}$ and $\ket{m}$ are virtual states, and thus necessarily summed over in \autoref{sivegamma}.
-The pulse identifiers on the $\Delta_{kl}$ terms will be suppressed henceforth for simplicity.
+The pulse identifiers on the $\Delta_{kl}$ terms will be suppressed henceforth for legibility.
 $D$, the Maker-Terhune degeneracy factor, accounts for permutation symmetry of the excitation fields.\cite{RN134} 
 For a HDFG experiment using two (three) distinct, non-degenerate input fields, $D = 3 (6)$.
 
@@ -195,7 +198,7 @@ We Taylor expand the dipole and first hyperpolarizability operators to first ord
 		\beta_{ijk} = \beta_{ijk,0} + \left(\frac{\partial \beta_{ijk}}{\partial Q_v}\right)_0 Q_v
 	\end{equation}
 \end{subequations}
-Taking $\ket{g} = \ket{0}, \ket{v} = \ket{1}$, substituting into \autoref{sivebeta} and using typical Harmonic Oscillator selection rules, gives the HDFG hyperpolarizability to $\order{Q_n}$ as \begin{equation}\label{SIVEselection}
+Taking $\ket{g} = \ket{0}, \ket{v} = \ket{1}$, substituting into \autoref{sivebeta} and using typical Harmonic Oscillator selection rules, gives the HDFG hyperpolarizability to $\order{Q_v}$ as \begin{equation}\label{SIVEselection}
 	\gamma_{ijkl} =	-\frac{1}{\varepsilon_0} \frac{1}{8D \omega_{vg}}  \frac{1}{{\Delta_{gv}}} \ \left(\frac{\partial \beta^{vg}_{ijk}}{\partial Q_v}\right)_0 \left({\frac{\partial \mu^{gv}_{l}}{\partial Q_v}}\right)_0  \rho_{gg}
 \end{equation}
 where we have used $\mel{v}{\mu_{l,0}}{g} = 0 = \mel{1}{\beta_{ijk,0}}{0}$, and $\mel{1}{Q_v}{0} = \sqrt{\frac{\hbar}{2\omega_{vg}}}$.
@@ -205,8 +208,10 @@ Since \autoref{SIVEselection} is non-zero in the harmonic oscillator limit, HDFG
 \subsection{Vibronic Selection Rules}\label{Albrecht}
 While the Placzek treatment provides the general source of HDFG output, it does not predict the behavior of $\beta_{ijk}$ as $\omega_2 + \omega_3$ is changed.
 We now explicitly consider electronic resonances through the $A,B,C$ decomposition of $\beta$ introduced by Chung and Ziegler, analogous to those found in Albrecht's treatment of Raman spectroscopy (i.e., sum-over-states formalism).\cite{Albrecht1961, Ziegler1988} 
-To employ this formalism, we write the states in a Born-Oppenheimer basis $\ket{a,b}$, where $\ket{a,b} = |a(Q)) \otimes \ket{b}$ for electronic states $\{|a(\textbf{Q}))\}$ and vibrational states $\{\ket{b}\}$ (i.e., adiabatic approximation), where \textbf{Q}, the system normal modes, is the adiabatic parameter. \cite{BornOppenheimer, Tang1970}
+To employ this formalism, we write the states in a Born-Oppenheimer basis $\ket{a,b}$, where $\ket{a,b} = |a(\textbf{Q})) \otimes \ket{b}$ for electronic states $\{|a(\textbf{Q}))\}$ and vibrational states $\{\ket{b}\}$ (i.e., adiabatic approximation), where \textbf{Q}, the system normal modes, is the adiabatic parameter. \cite{BornOppenheimer, Tang1970}
 We will henceforth suppress the dependence of the electronic states on \textbf{Q} for simplicity.
+It is worthwhile to note that the time-dependent Raman formalism developed by Heller \textit{et al.} can be applied to hyper-Raman scattering. \cite{Myers1982, Shoute2005}
+However, since our goal is to expose the Quantum Mechanical aspects of HDFG spectroscopy, we choose to employ the typical sum-over-states formalism.
 
 For consistency with previous reports, we use $\vec{R}$ to denote electric transition dipole moments; $\vec{\mu}$ is reserved for transitions on the ground electronic state. \cite{Tang1970}
 Following the approach which gave \autoref{sivegamma} and using the time ordering and state labeling of \autoref{fig:sivewmel2}a, we find
@@ -222,7 +227,7 @@ Following the approach which gave \autoref{sivegamma} and using the time orderin
 	}
 \end{equation}
 where $R_{i}^{ab,cd}$ is the i$^{th}$ element of $\mel{a,b}{\vec{R}}{c,d}$.
-It is common in the hyper-Raman literature to write $\Delta_{e\tilde{v}', gv} \Delta_{mn, gv} = \Delta_{e\tilde{v}', gv}$.
+To ease readability, we use $\ket{a}$ to refer to ground state vibrational modes and $\ket{\tilde{b}}$ to refer to excited state vibrational modes.
 Using our definition of vibronic states, we can write, for example,
 $R_{i}^{gv,e\tilde{v}'} = \mel{v}{M_i^{ge}}{\tilde{v}'}$, where $\vec{M}^{ab} = (a|\vec{R}|b)$.\cite{Ziegler1974}
 Expanding $\vec{M}^{ij}$ to $\order{Q}$ about the equilibrium point of the ground state potential surface as
@@ -269,13 +274,13 @@ The $A$ and $B$ coefficients, where $B = B_1 + B_2$, following closure over $\ke
 	\end{equation}
 \end{subequations}
 \end{widetext}
-where $\langle a | b \rangle$ and $\mel{a}{Q}{b}$ are Franck-Condon factors and Herzberg-Teller-type integrals, respectively.
-To ease readability, we use $\ket{a}$ to refer to ground state vibrational modes and $\ket{\tilde{b}}$ to refer to excited state vibrational modes. 
+Note that it is common in the hyper-Raman literature to write $\Delta_{e\tilde{v}', gv} \Delta_{mn, gv} = \Delta_{e\tilde{v}', gv}$.
+Here, $\langle \tilde{a} | b \rangle$ and $\mel{\tilde{a}}{Q}{b}$ are Franck-Condon factors and Herzberg-Teller-type integrals, respectively.
 Duschinsky rotation effects are ignored in this discussion. \cite{Duschinsky1937}
 At this point, the expressions are valid for both electronically resonant and non-resonant cases.
 
 To understand the vibronic structure of electronic resonance, we restrict consideration to electronic transitions between $|g)$ and $|e)$.  
-Note that HDFG experiments selectively excite ground state vibrational modes through $\omega_1$; we will assume the IR beam has excited the fundamental of an IR-active mode so that hyper-Raman scattering is between this mode and the ground state. 
+Note that HDFG experiments selectively excite ground state vibrational modes through $\omega_1$; we will assume the IR beam has excited the fundamental of an IR-active mode, $\ket{g,1}$, so that hyper-Raman scattering is between ground state and $\ket{g,1}$. 
 By working only in terms of this single normal mode (i.e., removing the sum over $z$ and taking $v=1$), 
 the $A$ and $B$ terms are rewritten as 
 	\begin{subequations}\label{ABterms_DR}
@@ -312,7 +317,8 @@ where $\Lambda^{ab}_{ij} = 1/\hbar \sum_m M_i^{am}M_j^{mb} $ is the electronic t
 	\centering
 	\includegraphics[width=6.66in]{drsive_spectrum.png}
 	\caption{Contributions of $A, B$ (\autoref{ABterms_DR}) to HDFG spectrum for a simple two harmonic well system.
-		(a) Potential energy surfaces for a two-well system, (b) 1D HDFG spectrum for $\Delta = 0.5$, $\omega_1 = \omega_{g1, g0}$. 
+		(a) Potential energy surfaces for a two-well system, (b) 1D HDFG spectrum for $\Delta = 0.5$, $\omega_1 = \omega_{g1, g0}$, (c,d) Real and imaginary parts of terms plotted in (b), respectively.
+		All spectra are referenced to $\max{(A+B)}$. 
 		It is assumed that $\omega_2 = \omega_3$.
 		Note that (b) plots magnitudes of the labeled quantities.
 		The vibrational states on the $|g)$ and $|e)$ manifolds are spaced 1600 cm$^{-1}$ apart, with the vibronic states $\ket{e,\tilde{v}'}$ given linewidths of 800 cm$^{-1}$ and $\hbar \omega_{eg}$ = 30000 cm$^{-1}$.
@@ -344,7 +350,7 @@ The $A$ term is allowed whenever an electronic transition has a one- and two- ph
 For centrosymmetric molecules, an electronic transition cannot be both one- and two- photon allowed by parity, so the $A$ term will vanish.
 This makes HDFG a unique tool for studying the electronic structure of centrosymmetric species in isotropic media, as it is sensitive to non-Condon effects.\cite{Olson2018}
 For an allowed electronic transition, the brightness of a vibronic resonance is controlled by overlap of ground and excited state vibrational wavefunctions (Franck-Condon factors).
-The $A$ term relies on excited state perturbations to the vibrational wavefunctions; if the excited electronic state minimally changes potential energy surface, so that ground and excited state vibrational eigenfunctions are identical, $\langle 1 | \tilde{v}' \rangle \langle \tilde{v}' | 0 \rangle = 0$ and $A$ vanishes, as discussed in the supporting information.
+The $A$ term relies on excited state perturbations to the vibrational wavefunctions; if the excited electronic state is minimally offset ($\Delta \rightarrow 0$), $\langle 1 | \tilde{v}' \rangle \langle \tilde{v}' | 0 \rangle = 0$ and $A$ vanishes, as discussed in the supporting information.
 Some $B$ terms do survive in the same limit, however; for instance, $B_1$ survives for $\tilde{v}'=1$ and $B_2$ survives for $\tilde{v}'=0$.
 In the absence of an $A$ term, the $B$ terms will dominate.
 The $B_1$ and $B_2$ terms involve different types of vibronic coupling pathways.
@@ -369,45 +375,50 @@ As such, HDFG will have difficulty examining non-Condon effects ($B$ term contri
 	The bra and ket labels are written according to their order in $A$, $B_1$, $B_2$ as written in \autoref{ABterms_DR}.
 	Closed-form expressions for the Franck-Condon and Herzberg-Teller integrals used here are tabulated in the Supporting Information.}
 	\begin{ruledtabular}
-		\begin{tabular}{cccc}
+		\begin{tabular}{cccc}\label{fcht}
 			$2\omega_2$ Electronic Resonance & $\ket{e,\tilde{0}}$ & $\ket{e,\tilde{1}}$ & $\ket{e,\tilde{2}}$\\
 			\hline  
 			$A$ 
-			& $\langle 1 | \tilde{0} \rangle \langle \tilde{0} | 0 \rangle = -0.31 $  
-			& $\langle 1 | \tilde{1} \rangle \langle \tilde{1} | 0 \rangle = 0.27 $ 
-			& $\langle 1 | \tilde{2} \rangle \langle \tilde{2} | 0 \rangle = 0.04$\\
+			& $\langle 1 | \tilde{0} \rangle \langle \tilde{0} | 0 \rangle = 0.31 $  
+			& $\langle 1 | \tilde{1} \rangle \langle \tilde{1} | 0 \rangle = -0.27 $ 
+			& $\langle 1 | \tilde{2} \rangle \langle \tilde{2} | 0 \rangle = -0.04$\\
 					
 			$B_1$ 
-			& $\langle 1 | \tilde{0} \rangle \mel{\tilde{0}}{Q}{0} = -0.08$ 
+			& $\langle 1 | \tilde{0} \rangle \mel{\tilde{0}}{Q}{0} = 0.08$ 
 			& $\langle 1 | \tilde{1} \rangle \mel{\tilde{1}}{Q}{0} = 0.48$ 
-			&$\langle 1 | \tilde{2} \rangle \mel{\tilde{2}}{Q}{0} = -0.14$\\
+			&$\langle 1 | \tilde{2} \rangle \mel{\tilde{2}}{Q}{0} = 0.14$\\
 						
 			$B_2$ 
 			& $\mel{1}{Q}{\tilde{0}} \langle \tilde{0} | 0 \rangle = 0.70$  
-			& $\mel{1}{Q}{\tilde{1}} \langle \tilde{1} | 0 \rangle = 0.07$ 
-			& $\mel{1}{Q}{\tilde{2}} \langle \tilde{2} | 0 \rangle = 0.08$\\
+			& $\mel{1}{Q}{\tilde{1}} \langle \tilde{1} | 0 \rangle = -0.07$ 
+			& $\mel{1}{Q}{\tilde{2}} \langle \tilde{2} | 0 \rangle = 0.06$\\
 		\end{tabular}
 	\end{ruledtabular}
 \end{table}
 
+In the post-resonance region, the amplitude takes on an unexpected lineshape.
+This arises due to interference between the real and imaginary parts of $\gamma$ (\autoref{fig:doubres_spec}c, d).
+The abnormal lineshapes in both terms arises due to the sign of the Franck-Condon and Herzberg-Teller integrals that drive the output of the vibronic transitions for $\Delta = 0.5$ (\autoref{fcht}).
+Such effects have been seen elsewhere in spontaneous, surface enhanced hyper-Raman studies. \cite{Milojevich2011}
+Since $\Delta$ can take on a variety of values given a specific system, in the supporting information we demonstrate the impact of $\Delta$ on the HDFG response using previously reported values for Raman active vibrations in isoprene. \cite{Myers1982}
+Clearly, specific $\Delta$ values have a significant impact on the 
+
+
 \subsection{Inhomogeneity in HDFG}
-An often unavoidable consequence in electronic spectroscopy is broadened lineshapes due to a high density of vibronic modes. 
+An often unavoidable consequence in electronic spectroscopy is broadened lineshapes due to a high density of vibronic modes, i.e., inhomogeneous broadening.
+It is worthwhile to investigate the impact of inhomogeneity on HDFG response and the resultant lineshapes. 
 In the discussion that follows, we assume that a vibrational mode in the ground state, $\ket{g,v}$, is correlated to the frequency of a vibronic $\ket{e,\tilde{v}'}$.\cite{Carlson1990line, Dong2015}
 If the frequency of $\ket{g,v}$ is written as $\omega_{gv} + \xi$, where $\xi$ is some external strain (e.g. molecular collisions), then the frequency of $\ket{e,v}$ is $\omega_{ev} + c\xi$, where c is a shift coefficient.
-The strains shift resonance denominators, e.g., for $\omega_{ij} \rightarrow \omega_{ij} \pm c\xi$, as
-\begin{equation}
-	\Delta_{ij}(c\xi) = \omega_{ij} \pm c\xi -\omega_k - i\Gamma_{ij} \equiv \Delta_{ij}(0) \pm c\xi
-\end{equation}
-where $+ (-)$ refers to correlated (anti-correlated) modes.
-For simplicity, we assume c = 1.
+When two modes are positively correlated, $c > 0$; similarly, modes are negatively correlated when $c < 0$.
+For simplicity, we assume c = $\pm$1.
 
 We investigate the impact of inhomogeneity on spectral output by convolving the HDFG output hyperpolarizability $\gamma_{ijkl}(\xi)$ with a normalized Lorentzian distribution $P(\xi)$ of half width $\sigma$ as \cite{Desiderio1979, Dick83_1, Carlson1990line} 
 \begin{equation}\label{contour}
 	\gamma_{ijkl} = \int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \gamma_{ijkl}(\xi)
-	= \frac{\sigma}{\pi}\int_{-\infty}^\infty \mathrm{d}\xi \frac{1}{\sigma^2 + \xi^2} \frac{\gamma_0}{\Delta_{ga}(\xi)\Delta_{ba}(\xi)}
+	= \frac{\sigma}{\pi}\int_{-\infty}^\infty \mathrm{d}\xi \frac{1}{\sigma^2 + \xi^2} \frac{\gamma_0}{\left(\Delta_{ga} - \xi\right)\left(\Delta_{ba}+\xi\right)}
 \end{equation} 
 The limit of static inhomogeneity is chosen for simplicity.
-While Gaussian distributions are commonly used to describe inhomogeneous broadening, Lorentzian distributions have successfully described inhomogeneous broadening in a variety of spectroscopies and yield easily interpretable closed-form solutions. \cite{Dick83_1, Carlson1990line, RN410, Yurs2011, Yurs2012}
+While Gaussian distributions are commonly used to describe inhomogeneous broadening, Lorentzian distributions have successfully described inhomogeneous broadening in a variety of spectroscopies and yield easily interpretable closed-form solutions. \cite{Dick83_1, Carlson1990line, RN410}
 
 Evaluating \autoref{contour} for the HDFG pathway above shows\footnote{See the supporting information for more details} 
 \begin{subequations}\label{linenarrow}
@@ -435,7 +446,7 @@ These feeding mechanisms can induce line-narrowing properties in spectroscopies 
 
 \subsection{vSFG detection levels are adequate for HDFG}
 Can vSFG experimental setups detect HDFG signals?
-SFG setups typically leverage the surface selectivity of $\chi^{(2)}$ polarizations,\cite{RN132, RN133} which results in extremely small emission volumes, so SFG setups are typically quite sensitive.
+SFG setups typically leverage the surface selectivity of $\chi^{(2)}$ polarizations, which results in extremely small emission volumes, so SFG setups are typically quite sensitive.
 However, HDFG is a weak $\chi^{(3)}$ process because it depends upon hyper-Raman cross-sections, which are commonly several orders of magnitude weaker than corresponding Raman transitions.\cite{RN515}
 Since HDFG can be performed as a two-beam experiment, it is useful to identify whether vSFG and HDFG responses are similar to quantify hyper-Raman-based FWM response from bulk, isotropic systems.
 To evaluate the feasibility of HDFG for vSFG practitioners, we have compared the relative output of each process using nominal parameters. 
@@ -456,19 +467,17 @@ It is thus useful to investigate how a treatment of orientational averaging can 
 
 Using \autoref{eq:nfgamma} and \autoref{sivebeta}, we can write
 \begin{equation}\label{chi3}
-		\chi^{(3)}_{IJKL} = -\frac{NF}{4D \hbar \varepsilon_0 \Delta_{gv}} \langle \beta_{ijk} \mu_l \rangle \rho_{gg}\\
+		\chi^{(3)}_{IJKL} = -\frac{NF}{4D \hbar \varepsilon_0 \Delta_{gv}} \langle \beta_{ijk} \mu_l \rangle_{IJKL} \rho_{gg}\\
 \end{equation}
 For simplicity, we take $\rho_{gg} = 1$.
-The steps behind orientational averaging of $\gamma_{ijkl}$, a rank four tensor in the molecular frame, are detailed elsewhere.\cite{Andrews1977, McDonnell2024}
-Briefly, a tensor in the molecular frame, $A_{ijkl}$, is transformed into an element of the same tensor in the laboratory frame, $\langle A \rangle_{IJKL}$, through $\langle A \rangle_{IJKL}$ = $\theta^{ijkl}_{IJKL} A_{ijkl}$, where summation over repeated indices is implied and $\theta$ is the transformation operator. \cite{McDonnell2024, Andrews1977}
 Orientational averaging shows specific polarization schemes isolate linear combinations of different $\beta_{ijk}$ terms. \cite{Bersohn1966, Willetts1992, Kauranen1996}
 Substituting in \autoref{SIVEselection}, we see
 \begin{equation}\label{betasive}
-	\left\langle \frac{\partial \beta}{\partial Q_v} {\frac{\partial \mu}{\partial Q_v}} \right\rangle _{IJKL} = -\frac{8D \varepsilon_0}{NF}  {\Gamma_{gv} \omega_{vg}} \chi^{(3)}_{IJKL}
+	\left\langle \frac{\partial \beta_{ijk}}{\partial Q_v} {\frac{\partial \mu_l}{\partial Q_v}} \right\rangle_{IJKL} = -\frac{8D \varepsilon_0}{NF}  {\Gamma_{gv} \omega_{vg}} \chi^{(3)}_{IJKL}
 \end{equation}
-$\chi^{(3)}$ itself can be extracted with use of an internal standard.\cite{Levenson1974_1, Levenson1974_2}
-Since $\abs{\partial \mu / \partial Q}$ values can be extracted from FT-IR spectra,\cite{RN459} HDFG can give quantitative information on the magnitude of $\beta_{ijk}$ for infrared active vibrations.
-Additionally, by using non-degenerate input frequencies to stimulate the hyper-Raman transition, the asymmetric properties of $\beta_{ijk}$ can be examined and quantified. \cite{Christie1971, Denisov1986, Kozich2007}
+
+Since $\abs{\partial \mu_l / \partial Q}$ values can be extracted from FT-IR spectra and $\chi^{(3)}$ can be extracted through the Bloembergen interferometry experiment,\cite{Levenson1974_1, Levenson1974_2, RN459} HDFG can give quantitative information on the magnitude of $\beta_{ijk}$ for infrared active vibrations.
+Additionally, by using non-degenerate input frequencies to stimulate the hyper-Raman transition, the asymmetric properties of $\beta_{ijk}$ can be examined and quantified. \cite{Denisov1986, Kozich2007}
 These quantitative aspects of HDFG could prove useful for examining how well computational methods calculate $\beta_{ijk}$ values.
 
 \section{Conclusions}\label{conclusion}

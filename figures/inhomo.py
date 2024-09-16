@@ -86,12 +86,12 @@ plt.yticks(ticks = [])
 plt.xticks(ticks = [])
 
 
+#todo: make an array so I can just call specific matrix element of the fc and ht factors, then do a for loop over that array, should work out well.
+
 
 #define Franck-Condon factors following page 164 of Roger Carlson's thesis in terms of 'q', the offset
-#<a|b> == |a> is on the ES and |b> is on the GS.
-
 def f00(q): #<0|0>
-    return np.exp(-q**2/4)
+    return np.e**(-q**2/4)
 
 def f01(q): #<0|1>
     return q/(np.sqrt(2)) * f00(q)
@@ -125,19 +125,19 @@ def h11(q): #<1|Q|1>
     return -q/2 * (-1 + q**2 / 2) * f00(q)
 
 def h12(q): #<1|Q|2>
-    return (-1/8) * (q**4 - 2*q**2 - 8) * f00(q)
+    return (1 + q**2/4 - q**4/8) * f00(q)
 
 def h21(q): #<2|Q|1>
-    return (1/8)*(8 - 6*q**2 + q**4) * f00(q)
+    return (1 + q**2/4 - q**4/8) * f00(q)
 
 def h20(q): #<2|Q|0>
     return -q/np.sqrt(2) * (1 - q**2 /4) * f00(q)
 
 #define resonance denominator
-def Deltaevgo(v,x,l):
+def Deltaba(x):
     weg = 30000
-    G = [400, 400, 400] #linewidths
-    return 1/(weg + 1600*v - x - 1j*G[l]) #assuming the |0> -> |n> transiton is 1600*n  cm^-1
+    G = 400 #linewidths
+    return (weg + 1600 - x - 1j*G) #assuming the |0> -> |n> transiton is 1600*n  cm^-1
 
 
 #define numbers for AB terms
@@ -148,51 +148,68 @@ dMgedQ = 0.007 #dM^eg / dQ
 
 
 #define terms
-y = np.linspace(10000, 50000, 3000000)
+y = np.linspace(10000, 50000, 1000000)
 
-
-A = Mge * Lge * (f01(d)*f00(d)*Deltaevgo(0,y,0) + f11(d)*f10(d)*Deltaevgo(1,y,1) + f21(d)*f20(d)*Deltaevgo(2,y,2)) #there must be a simpler way to do this but idk
+#goal is just to look at a single resonance for now, add more in later.
+A = Mge * Lge * (f01(d)*f00(d)) #+ f11(d)*f10(d)*Deltaevgo(1,y,1) + f21(d)*f20(d)*Deltaevgo(2,y,2)) #there must be a simpler way to do this but idk
 
 #B1 terms
-B10 = Mge*f01(d) * (dLeg * h00(d)) * Deltaevgo(0, y, 0) #the v' = 0 term
-B11 = Mge*f11(d) * (dLeg* h10(d)) * Deltaevgo(1, y, 1) #the v' = 1 term
-B12 = Mge*f21(d) * (dLeg * h20(d)) * Deltaevgo(2, y, 2) #the v' = 2 term
+B10 = Mge*f01(d) * (dLeg * h00(d))  #the v' = 0 term
+# B11 = Mge*f11(d) * (dLeg* h10(d)) * Deltaevgo(1, y, 1) #the v' = 1 term
+# B12 = Mge*f21(d) * (dLeg * h20(d)) * Deltaevgo(2, y, 2) #the v' = 2 term
 
-B1 = B10 + B11 + B12
+B1 = B10 #+ B11 + B12
 
 #B2 terms
-B20 = dMgedQ * Lge *(h01(d) * f00(d)) * Deltaevgo(0, y, 0) #the v' = 0 term
-B21 = dMgedQ * Lge *(h11(d) * f10(d)) * Deltaevgo(1, y, 1) #the v' = 1 term
-B22 = dMgedQ * Lge *(h21(d) * f20(d)) * Deltaevgo(2, y, 2) #the v' = 2 term
+B20 = dMgedQ * Lge *(h01(d) * f00(d))  #the v' = 0 term
+# B21 = dMgedQ * Lge *(h11(d) * f10(d)) * Deltaevgo(1, y, 1) #the v' = 1 term
+# B22 = dMgedQ * Lge *(h21(d) * f20(d)) * Deltaevgo(2, y, 2) #the v' = 2 term
 
-B2 = B20 + B21 + B22
-
-#Real parts
-totRe = A.real + B1.real + B2.real
-ARe = A.real / totRe.max()
-BRe = (B1+B2).real / totRe.max()
-B1Re = B1.real / totRe.max()
-B2Re = B2.real / totRe.max()
-
-#Im parts
-totIm = A.imag + B1.imag + B2.imag
-AIm = A.imag / totIm.max()
-BIm = (B1+B2).imag / totIm.max()
-B1Im = B1.imag / totIm.max()
-B2Im = B2.imag / totIm.max()
+B2 = B20 #+ B21 + B22
 
 
-# absolute value
-tot = np.abs(A+B1+B2)
-abs_max = tot.max()
+gamma0 = A + B1 + B2 ##this is gamma0 in our expression
+
+def Deltaga(x):
+    return (x - 1600 - 1j*50) ##linewidth of 50 wavenumbers and resonance at 1600 wn
+
+sigma = 1200 #inhomogeneous lineshape
+
+vib = 1600 #to force on resonance
+
+tot1 = -gamma0/(Deltaga(vib) + 1j*sigma)
+tot2 = 2*1j*sigma/(Deltaga(vib) - 1j*sigma) * 1/(Deltaba(y) + Deltaga(vib))
+tot3 = 1/(Deltaba(y)-1j*sigma)
+
+tot = tot1*tot2*tot3
+
+
+# #Real parts
+# totRe = A.real + B1.real + B2.real
+# ARe = A.real / totRe.max()
+# BRe = (B1+B2).real / totRe.max()
+# B1Re = B1.real / totRe.max()
+# B2Re = B2.real / totRe.max()
+
+# #Im parts
+# totIm = A.imag + B1.imag + B2.imag
+# AIm = A.imag / totIm.max()
+# BIm = (B1+B2).imag / totIm.max()
+# B1Im = B1.imag / totIm.max()
+# B2Im = B2.imag / totIm.max()
+
+
+# # absolute value
+# tot = np.abs(A+B1+B2)
+# abs_max = tot.max()
 
 #plot the A and B
 ax1 = plt.subplot(gs[0,1])
 ax1.plot(y, tot / tot.max(), linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
-ax1.plot(y, np.abs(A) / abs_max, linewidth = '2', label = r'$\mathsf{|A|}$', color = 'cyan', zorder = 3)
-ax1.plot(y, np.abs(B1+B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B|}$', color = 'red', zorder = 3)
-ax1.plot(y, np.abs(B1) / abs_max, linewidth = '2', label = r'$\mathsf{|B_1|}$', color = 'orange', zorder = 2)
-ax1.plot(y, np.abs(B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B_2|}$', color = 'green', zorder = 1)
+# ax1.plot(y, np.abs(A) / abs_max, linewidth = '2', label = r'$\mathsf{|A|}$', color = 'cyan', zorder = 3)
+# ax1.plot(y, np.abs(B1+B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B|}$', color = 'red', zorder = 3)
+# ax1.plot(y, np.abs(B1) / abs_max, linewidth = '2', label = r'$\mathsf{|B_1|}$', color = 'orange', zorder = 2)
+# ax1.plot(y, np.abs(B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B_2|}$', color = 'green', zorder = 1)
 
 ax1.set_ylabel(r'$\mathsf{Amplitude \ (norm.)}$', fontsize = fontsize)
 ax1.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
@@ -201,7 +218,7 @@ ax1.set_yscale('log')
 ax1.set_xlim(15000, 45000)
 xticks = np.linspace(15000, 45000, 7)
 ax1.set_xticks(xticks)
-ax1.set_ylim(0.0007, 3)
+ax1.set_ylim(0.000001, 3)
 ax1.legend(loc = 1)
 
 
@@ -209,7 +226,7 @@ ax1.legend(loc = 1)
 for i in [0,1,2]:
     ax1.vlines(x = 30000+1600*i, ymin = 0.0005, ymax = 4, color = 'gray', linestyle = '--', linewidth = 1)
 
-others = True #debating if to include the Re and Im parts of gamma
+others = False #debating if to include the Re and Im parts of gamma
 if others:
     #plot Re A and B
     ax2 = plt.subplot(gs[1,0])
@@ -241,12 +258,12 @@ if others:
     # ax2.set_ylim(0.001, 2.2)
     ax3.legend(loc = 1)
     
-for ax in [ax2, ax3]:
-    ax.set_xlim(15000, 45000)
-    xticks = np.linspace(15000, 45000, 7)
-    ax.set_xticks(xticks)
-    ax.legend(loc = 1)
-    ax.hlines(xmin=10000, xmax =50000, y = 0, color = 'gray', linestyle = '--', linewidth = 1)
+    for ax in [ax2, ax3]:
+        ax.set_xlim(15000, 45000)
+        xticks = np.linspace(15000, 45000, 7)
+        ax.set_xticks(xticks)
+        ax.legend(loc = 1)
+        ax.hlines(xmin=10000, xmax =50000, y = 0, color = 'gray', linestyle = '--', linewidth = 1)
 
 for i, ax in enumerate(fig.axes):
     # ax.grid(visible=True, color="k", lw=0.5, linestyle=":")

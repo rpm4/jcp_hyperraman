@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{6}%
+\begin{thebibliography}{8}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -73,6 +73,52 @@
   {Napolitano}},\ }\href@noop {} {\emph {\bibinfo {title} {Modern Quantum
   Mechanics}}}\ (\bibinfo  {publisher} {Cambridge University Press},\ \bibinfo
   {year} {2020})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Inc.}()}]{Mathematica}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.~R.}\ \bibnamefont
+  {Inc.}},\ }\href {https://www.wolfram.com/mathematica} {\bibinfo {title}
+  {Mathematica, {V}ersion 14.1}},\ \bibinfo {note} {champaign, IL,
+  2024}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Meurer}\ \emph {et~al.}(2017)\citenamefont {Meurer},
+  \citenamefont {Smith}, \citenamefont {Paprocki}, \citenamefont
+  {\v{C}ert\'{i}k}, \citenamefont {Kirpichev}, \citenamefont {Rocklin},
+  \citenamefont {Kumar}, \citenamefont {Ivanov}, \citenamefont {Moore},
+  \citenamefont {Singh}, \citenamefont {Rathnayake}, \citenamefont {Vig},
+  \citenamefont {Granger}, \citenamefont {Muller}, \citenamefont {Bonazzi},
+  \citenamefont {Gupta}, \citenamefont {Vats}, \citenamefont {Johansson},
+  \citenamefont {Pedregosa}, \citenamefont {Curry}, \citenamefont {Terrel},
+  \citenamefont {Rou\v{c}ka}, \citenamefont {Saboo}, \citenamefont {Fernando},
+  \citenamefont {Kulal}, \citenamefont {Cimrman},\ and\ \citenamefont
+  {Scopatz}}]{sympy}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Meurer}}, \bibinfo {author} {\bibfnamefont {C.~P.}\ \bibnamefont {Smith}},
+  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Paprocki}}, \bibinfo
+  {author} {\bibfnamefont {O.}~\bibnamefont {\v{C}ert\'{i}k}}, \bibinfo
+  {author} {\bibfnamefont {S.~B.}\ \bibnamefont {Kirpichev}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Rocklin}}, \bibinfo {author} {\bibfnamefont
+  {A.}~\bibnamefont {Kumar}}, \bibinfo {author} {\bibfnamefont
+  {S.}~\bibnamefont {Ivanov}}, \bibinfo {author} {\bibfnamefont {J.~K.}\
+  \bibnamefont {Moore}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Singh}}, \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Rathnayake}},
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Vig}}, \bibinfo {author}
+  {\bibfnamefont {B.~E.}\ \bibnamefont {Granger}}, \bibinfo {author}
+  {\bibfnamefont {R.~P.}\ \bibnamefont {Muller}}, \bibinfo {author}
+  {\bibfnamefont {F.}~\bibnamefont {Bonazzi}}, \bibinfo {author} {\bibfnamefont
+  {H.}~\bibnamefont {Gupta}}, \bibinfo {author} {\bibfnamefont
+  {S.}~\bibnamefont {Vats}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Johansson}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Pedregosa}}, \bibinfo {author} {\bibfnamefont {M.~J.}\ \bibnamefont
+  {Curry}}, \bibinfo {author} {\bibfnamefont {A.~R.}\ \bibnamefont {Terrel}},
+  \bibinfo {author} {\bibfnamefont {v.}~\bibnamefont {Rou\v{c}ka}}, \bibinfo
+  {author} {\bibfnamefont {A.}~\bibnamefont {Saboo}}, \bibinfo {author}
+  {\bibfnamefont {I.}~\bibnamefont {Fernando}}, \bibinfo {author}
+  {\bibfnamefont {S.}~\bibnamefont {Kulal}}, \bibinfo {author} {\bibfnamefont
+  {R.}~\bibnamefont {Cimrman}},\ and\ \bibinfo {author} {\bibfnamefont
+  {A.}~\bibnamefont {Scopatz}},\ }\href {https://doi.org/10.7717/peerj-cs.103}
+  {\bibfield  {journal} {\bibinfo  {journal} {PeerJ Computer Science}\ }\textbf
+  {\bibinfo {volume} {3}},\ \bibinfo {pages} {e103} (\bibinfo {year}
+  {2017})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Myers}\ \emph {et~al.}(1982)\citenamefont {Myers},
   \citenamefont {Mathies}, \citenamefont {Tannor},\ and\ \citenamefont
   {Heller}}]{Myers1982}%
