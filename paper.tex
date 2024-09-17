@@ -84,8 +84,9 @@ HDFG, HSFG and Raman are more direct probes of electronic-vibrational coupling.
 Notably, HDFG and HSFG can be implemented as two-color experiments (with $\omega_2=\omega_3$);\cite{Cho2001} vibrational sum frequency generation (vSFG) or difference frequency generation (vDFG) setups can be trivially reconfigured to perform HSFG or HDFG measurements, respectively, to investigate ev coupling in bulk systems.
 
 Nonlinear spectroscopic probes of electronic-vibrational coupling are not limited to the Raman and hyper-Raman based techniques diagrammed in \autoref{fig:comparisonwmel}.
-Independently developed by the Fleming and Khalil groups, respectively, 2D Electronic-Vibrational (2D-EV) and 2D Vibrational-Electronic (2D-VE) spectroscopy are based upon pump-probe and absorption type pathways which also investigate e-v coupling.\cite{Oliver2014, Courtney2015}
-They have been used to investigate vibronic coupling in a variety of complex molecular systems, and serve as 2D pump-probe type analogues to the hyper-Raman-based spectroscopies discussed here.
+Independently developed by the Fleming and Khalil groups, respectively, 2D Electronic-Vibrational (2D-EV) and 2D Vibrational-Electronic (2D-VE) spectroscopy are based upon pump-probe and absorption type pathways which also investigate e-v coupling.\cite{Oliver2014, Courtney2015, Courtney2015_1}
+The Rao group has also developed a $\chi^{(4)}$ analogue of 2D-EV, 2D-EV sum frequency generation (2D-EVSFG), to investigate interfacial e-v coupling. \cite{Deng2021}  
+These methods have been used to investigate vibronic coupling in a variety of molecular systems and serve as 2D pump-probe type analogues to the hyper-Raman-based spectroscopies discussed here.\cite{Courtney2015, Gaynor2018, Arsenault2020, HuangFu2023}
 
 When the hyper-Raman excitation in HDFG or HSFG is resonant or near-resonant with electronic states, the brightness of the vibrational feature depends on the vibronic structure of the electronic state.
 The electronic spectrum probed in HDFG or HSFG can inform on processes that control ultrafast electronic relaxation in molecular and biological systems in ways similar to resonance Raman.\cite{Cho2001, Bredenbeck2015, Arsenault2021}
@@ -108,7 +109,6 @@ Coherent spectroscopies are often described using the density matrix formalism, 
 	\dot{\rho} = \frac{1}{i \hbar} [H + V(t), \rho] + \dot{\rho}_R,
 \end{equation}
 where $H$ is the (static) system Hamiltonian, $V(t)$ is the field-matter interaction and $\rho_R$ is the relaxation density matrix. \cite{RN455}
-For simplicity, as dynamics is not a major focus of this article, we write electric fields as plane waves, such that $\vec{E}(\vec{x},t) = \frac{1}{2} \vec{E}_0\exp(-i(\vec{k} \cdot \vec{x} - \omega t)) + \mathrm{c.c.}$.
 In systems where interactions with surroundings are relevant, $\dot{\rho}_R$ becomes a complex function that can be modified to include phenomena such as system-bath interactions, solvent-solute coupling, among others. \cite{Sung2001}
 In the limit where input field pulsewidths are much longer than electronic dephasing times and the individual molecule limit is approached, it becomes acceptable to write $\dot{\rho}_R \approx \Gamma \rho$, i.e. exponential relaxation, where $\Gamma$ is the system's dephasing rate. \cite{RN455, Sung2001}
 While exponential relaxation is usually an inappropriate description of most physical systems involving solvent-solute interactions,\cite{Yan1988, Li1994, Myers1997} our goal is to introduce simple, quantitative models to understand HDFG response.
@@ -415,22 +415,23 @@ For simplicity, we assume c = $\pm$1.
 We investigate the impact of inhomogeneity on spectral output by convolving the HDFG output hyperpolarizability $\gamma_{ijkl}(\xi)$ with a normalized Lorentzian distribution $P(\xi)$ of half width $\sigma$ as \cite{Desiderio1979, Dick83_1, Carlson1990line} 
 \begin{equation}\label{contour}
 	\gamma_{ijkl} = \int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \gamma_{ijkl}(\xi)
-	= \frac{\sigma}{\pi}\int_{-\infty}^\infty \mathrm{d}\xi \frac{1}{\sigma^2 + \xi^2} \frac{\gamma_0}{\left(\Delta_{ga} - \xi\right)\left(\Delta_{ba}+\xi\right)}
+	= \frac{\sigma}{\pi}\int_{-\infty}^\infty \mathrm{d}\xi \frac{1}{\sigma^2 + \xi^2} \frac{\gamma_0}{\left(\Delta_{ga} \mp c\xi\right)\left(\Delta_{ba}\pm c\xi\right)}
 \end{equation} 
+where $\gamma_0$ contains all values in \autoref{drgamma_notaylor} not dependent upon $\xi$.
 The limit of static inhomogeneity is chosen for simplicity.
-While Gaussian distributions are commonly used to describe inhomogeneous broadening, Lorentzian distributions have successfully described inhomogeneous broadening in a variety of spectroscopies and yield easily interpretable closed-form solutions. \cite{Dick83_1, Carlson1990line, RN410}
+While Gaussian distributions are commonly used as a phenomenological description of inhomogeneous broadening, Lorentzian distributions have successfully described inhomogeneous broadening in a variety of spectroscopies and yield easily interpretable closed-form solutions. \cite{Desiderio1979, Dick83_1, Carlson1990line, RN410}
 
 Evaluating \autoref{contour} for the HDFG pathway above shows\footnote{See the supporting information for more details} 
 \begin{subequations}\label{linenarrow}
 	\begin{equation}\label{linenarrowa}
-		\gamma_{ijkl} = \frac{- \gamma_0}{\Delta_{ga}(- i \sigma)} \left( \frac{1}{\Delta_{ba}(i \sigma)} + \frac{2 i \sigma}{\Delta_{ga}(i \sigma)} \frac{1}{\Delta_{ba}(0) + \Delta_{ga}(0)} \right)
+		\gamma_{ijkl} = \frac{- \gamma_0}{\Delta_{ga}+ i \sigma} \left( \frac{1}{\Delta_{ba}-i \sigma} + \frac{2 i \sigma}{\Delta_{ga}-i \sigma} \frac{1}{\Delta_{ba}(0) + \Delta_{ga}(0)} \right)
 	\end{equation}
 	\begin{equation}
-		\gamma_{ijkl} = \frac{\gamma_0}{\Delta_{ga}(i\sigma)\Delta_{ba}(i \sigma)}
+		\gamma_{ijkl} = \frac{\gamma_0}{\left(\Delta_{ga}-i\sigma \right) \left(\Delta_{ba}-i \sigma\right)}
 	\end{equation}
 \end{subequations}
-for correlated and anti-correlated modes, respectively, where $\gamma_0$ involves factors related to $A,B$ and $\mu$.
-The output for correlated modes shows the presence of a new term, $\frac{2i\sigma}{\Delta_{ga}(0) + \Delta_{ba}(0)}$. 
+for correlated and anti-correlated modes, respectively.
+The output for correlated modes shows the presence of a new term, $\frac{2i\sigma}{\Delta_{ga} + \Delta_{ba}}$. 
 This term is amplified by the width of the inhomogeneous envelope ($\sigma$) and has a linewidth $\Gamma_{ba} + \Gamma_{ga}$, which linenarrows the transition. 
 For anti-correlated modes, we see the inhomogeneous envelope width $\sigma$ is added to the linewidth of each resonance (e.g., $\Gamma_{ga} \rightarrow \Gamma_{ga} + \sigma$).
 As such, the HDFG pathway considered in this work line-narrows correlated modes. 
@@ -486,8 +487,10 @@ These quantitative aspects of HDFG could prove useful for examining how well com
 Coherent vibrational, hyper-Raman coherent four wave mixing spectroscopies are identified and discussed.
 Hyper difference frequency generation (HDFG) possesses infrared absorption and vibronic hyper-Raman scattering selection rules.
 As a result, HDFG output is sensitive to the relative overlap of potential energy surfaces.
-In HDFG, using the Chung-Ziegler approach to vibronic hyper-Raman scattering, output is dependent upon changes in different potential energy surfaces along the coordinate of the vibrational mode selected by the infrared input. 
-If the potential energy surface is not significantly modulated along the vibrational coordinate of interest, then output is dominated by $B$ term resonances, i.e. Herzberg-Teller coupling.
+Using the Chung-Ziegler approach to vibronic hyper-Raman scattering, HDFG output is found to be dependent upon changes in potential energy surfaces along the coordinate of the vibrational mode selected by the infrared input. 
+If the potential energy surface is not significantly modulated along the vibrational coordinate of interest, then output is dominated by $A$ term resonances, i.e. Herzberg-Teller coupling.
+However, $B$ term resonances dominate in centrosymmetric media, as $A$ term resonances vanish through parity constraints.
+For positively correlated vibrational and vibronic resonances, HDFG linenarrows the spectral output, eliminating inhomogeneous broadening. 
 As a result, HDFG possesses types of site-selective properties analogous to those of coherent Raman experiments, which can allow for a thorough analysis of vibronic coupling schemes in isotropic systems.
 We show that HDFG provides alternative methods to extract the hyper-Raman hyperpolarizability of infrared active vibrations. 
 Since HDFG is approachable as a two-beam experiment, analogous to vibrational sum-frequency generation, and phase-matchable in media with normal dispersion, HDFG should be applicable towards understanding vibrational spectroscopy and dynamics, e.g. single quantum coherence free induction decay dynamics, in a variety of relevant molecular and materials systems.  
