@@ -173,12 +173,7 @@ In this section, the integral
 	\end{split}
 \end{equation}
 is evaluated using Contour integration.
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=6.675in]{figures/corr_contour.png}
-	\caption{Poles (blue dots) and contours (black line) used to evaluate \autoref{generalcontour} for (a) anti-correlated and (b) correlated modes.} 
-	\label{fig:contours}
-\end{figure}
+
 \subsection{Anti-correlated Modes}
 For anti-correlated modes ($c = -1$), the poles ($\xi_k$) are situated in the complex plane as shown in \autoref{fig:contours}a.
 Since \autoref{generalcontour} is evaluated along the real axis, one can choose to evaluate the contour in the upper or lower half of the complex plane.
@@ -203,7 +198,7 @@ Using the residue theorem, we see
 For correlated modes, the poles are situated in the complex plane as shown in \autoref{fig:contours}b.
 It is clear that no matter which contour is chosen, there is a contribution from either $\Delta_{ba}$ or $\Delta_{ga}$. 
 For the below calculation, we choose to evaluate along the contour in the bottom half of the complex plane, i.e., the poles are $\{-i\sigma, \Delta_{ga}\}$.
-We stress that since the integral is evaluated over $\mathbb{R}$ and there are no degenerate poles, the results below can \textit{also} be obtained by evaluating the contour which wraps around the poles $\{i\sigma, -\Delta_{ba}\}$. 
+We stress that since the integral is evaluated over $\mathbb{R}$ and there are no degenerate poles, the results below can \textit{also} be obtained by the contour that wraps around the poles $\{i\sigma, -\Delta_{ba}\}$. 
 Nevertheless, we choose the contour as drawn in \autoref{fig:contours}b.
 Since the $\xi_k$ are nondegenerate, we see
 \begin{widetext}
@@ -219,7 +214,12 @@ Since the $\xi_k$ are nondegenerate, we see
 \end{widetext}
 Generally, when starting from the ground state, non-parametric spectroscopies line-narrow correlated modes, and parametric spectroscopies line-narrow anti-correlated modes. \cite{Dick83_1, RN425}
 
-
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=6.675in]{figures/corr_contour.png}
+	\caption{Poles (blue dots) and contours (black line) used to evaluate \autoref{generalcontour} for (a) anti-correlated and (b) correlated modes.} 
+	\label{fig:contours}
+\end{figure}
 
 
 \section{References}

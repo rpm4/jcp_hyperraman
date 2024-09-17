@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.7.26)  17 SEP 2024 14:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.7.26)  17 SEP 2024 15:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -531,13 +531,13 @@ File: figures/changedelta.png Graphic file (type png)
 <use figures/changedelta.png>
 Package pdftex.def Info: figures/changedelta.png  used on input line 162.
 (pdftex.def)             Requested size: 482.40247pt x 228.85477pt.
- [4 <./figures/fcht.png> <./figures/changedelta.png>]
-<figures/corr_contour.png, id=133, 831.28568pt x 409.0482pt>
+ [4 <./figures/fcht.png> <./figures/changedelta.png>] [5]
+<figures/corr_contour.png, id=150, 831.28568pt x 409.0482pt>
 File: figures/corr_contour.png Graphic file (type png)
 <use figures/corr_contour.png>
-Package pdftex.def Info: figures/corr_contour.png  used on input line 178.
+Package pdftex.def Info: figures/corr_contour.png  used on input line 219.
 (pdftex.def)             Requested size: 482.40247pt x 237.37294pt.
- [5 <./figures/corr_contour.png>] (si.bbl) [6] (si.aux)
+ (si.bbl) [6 <./figures/corr_contour.png>] (si.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-06-30>
@@ -548,11 +548,11 @@ Package rerunfilecheck Info: File `si.out' has not changed.
 Here is how much of TeX's memory you used:
  13123 strings out of 475550
  196973 string characters out of 5763477
- 1950238 words of memory out of 5000000
+ 1951238 words of memory out of 5000000
  34120 multiletter control sequences out of 15000+600000
  569284 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,20n,93p,508b,516s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,20n,93p,508b,504s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/rpm/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 bx10.pfb><C:/Users/rpm/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
 s/cm/cmbx8.pfb><C:/Users/rpm/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
@@ -582,7 +582,7 @@ ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users
 /Users/rpm/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.
 pfb><C:/Users/rpm/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/sym
 bols/msbm10.pfb>
-Output written on si.pdf (6 pages, 1205507 bytes).
+Output written on si.pdf (6 pages, 1205070 bytes).
 PDF statistics:
  288 PDF objects out of 1000 (max. 8388607)
  49 named destinations out of 1000 (max. 500000)
