@@ -163,54 +163,57 @@ To this end, we first investigate the impact of $\Delta$ on a vibrational mode w
 	\caption{Plots of select (a) Franck-Condon factors and (b) Herzberg-Teller integrals relevant to this manuscript as a function of offset, $\Delta$.} 
 	\label{fig:chgdelta}
 \end{figure}
-\section{Evaluation of Equation 14}
+\section{Evaluating impact of inhomogeneity on HDFG output}
 In this section, the integral
-\begin{equation}
+\begin{equation}\label{generalcontour}
 	\begin{split}
 		\gamma_{ijkl} &= \int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \gamma_{ijkl}(\xi)\\
-		&=\frac{\sigma}{\pi}\int_{-\infty}^\infty \mathrm{d}\xi \frac{1}{\sigma^2 + \xi^2} \frac{\gamma_0}{\Delta_{ga}(\xi)\Delta_{ba}(\xi)} \\
-		&= \frac{\gamma_0 \sigma}{\pi} \int_{-\infty}^\infty \mathrm{d}\xi\frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga}(0) - \xi} \frac{1}{\Delta_{ba}(0) + c\xi}\\
+		&= \frac{\sigma}{\pi}\int_{-\infty}^\infty \mathrm{d}\xi \frac{1}{\sigma^2 + \xi^2} \frac{\eta_{ijkl}}{\left(\Delta_{ga} - \xi\right)\left(\Delta_{ba}+ c\xi\right)} \\
+		&= \frac{\eta_{ijkl} \sigma}{\pi} \int_{-\infty}^\infty \mathrm{d}\xi\frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga} - \xi} \frac{1}{\Delta_{ba} + c\xi}\\
 	\end{split}
 \end{equation}
 is evaluated using Contour integration.
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=3.375in]{figures/corr_contour.png}
-	\caption{Poles (black dots) and contour (blue line) used to evaluate \autoref{integraly} for (a) anti-correlated and (b) correlated modes.} 
+	\includegraphics[width=6.675in]{figures/corr_contour.png}
+	\caption{Poles (blue dots) and contours (black line) used to evaluate \autoref{generalcontour} for (a) anti-correlated and (b) correlated modes.} 
 	\label{fig:contours}
 \end{figure}
 \subsection{Anti-correlated Modes}
-For anti-correlated modes, the poles are situated in the complex plane as shown in \autoref{fig:contours}a.
-Since \autoref{integraly} is evaluated along the real axis, one can choose to evaluate the contour in the upper or lower half of the complex plane.
-Since evaluating the residues in the upper or lower half of the complex plane yields the same result for \autoref{integraly}, we choose the contour which wraps around the least number of poles.
-It is clear for c = -1 that there are four poles: $\pm i \sigma, \Delta_{ga}(0), \Delta_{ba}(0)$. 
-Following \autoref{fig:contours}, the contour that wraps the upper half of the complex plane has only one pole, $i \sigma$; as such, we choose to evaluate \autoref{integraly} in the upper half of the complex plane for the case of anti-correlated modes through the residue theorem as
+For anti-correlated modes ($c = -1$), the poles ($\xi_k$) are situated in the complex plane as shown in \autoref{fig:contours}a.
+Since \autoref{generalcontour} is evaluated along the real axis, one can choose to evaluate the contour in the upper or lower half of the complex plane.
+In other words, we can choose the contour which wraps around the least number of poles.
+For c = -1, there are four poles: $\pm i \sigma, \Delta_{ga}, \Delta_{ba}$. 
+The contour that wraps the upper half of the complex plane has only one pole, $i \sigma$; as such, we choose to evaluate \autoref{generalcontour} in the upper half of the complex plane for the case of anti-correlated modes, as it contains the least number of poles.
+Using the residue theorem, we see
 \begin{widetext}
 	\begin{equation}
 		\begin{split}
 			\int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \gamma_{ijkl}(\xi) &= 2\pi i \sum_k \lim_{\xi \rightarrow \xi_k} P(\xi) \gamma_{ijkl}(\xi) (\xi - \xi_k)\\
-			&= 2\pi i \frac{\gamma_0 \sigma}{\pi} \lim_{\xi \rightarrow i\sigma} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga}(0) - \xi} \frac{1}{\Delta_{ba}(0) - \xi} (\xi - i \sigma)\\
-			&= 2 \gamma_0 \sigma i \lim_{\xi \rightarrow i\sigma} \frac{1}{\xi + i\sigma} \frac{1}{\Delta_{ga}(0) - \xi} \frac{1}{\Delta_{ba}(0) - \xi}\\
-			&= 2\gamma_0 \sigma i \frac{1}{2i\sigma} \frac{1}{\Delta_{ga}(0) - i\sigma} \frac{1}{\Delta_{ba}(0) - i\sigma}\\
-			&= \frac{\gamma_0}{\Delta_{ga}(i\sigma)\Delta_{ba}(i \sigma)}\\
+			&= 2\pi i \frac{\eta_{ijkl} \sigma}{\pi} \lim_{\xi \rightarrow i\sigma} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga} - \xi} \frac{1}{\Delta_{ba} - \xi} (\xi - i \sigma)\\
+			&= 2 \eta_{ijkl} \sigma i \lim_{\xi \rightarrow i\sigma} \frac{1}{\xi + i\sigma} \frac{1}{\Delta_{ga} - \xi} \frac{1}{\Delta_{ba} - \xi}\\
+			&= 2\eta_{ijkl} \sigma i \frac{1}{2i\sigma} \frac{1}{\Delta_{ga} - i\sigma} \frac{1}{\Delta_{ba} - i\sigma}\\
+			&= \frac{\eta_{ijkl}}{\left(\Delta_{ga}-i\sigma\right)\left(\Delta_{ba}-i \sigma\right)}\\
 		\end{split}
 	\end{equation}
 \end{widetext}
 
+
 \subsection{Correlated Modes}
-For correlated modes, the poles are situated in the complex plane as shown in \autoref{fig:contours}.
-It is clear that no matter which contour is chosen, there is a contribution to the final integral from either $\Delta_{ba}(0)$ or $\Delta_{ga}(0)$. 
-For the below calculation, we choose to evaluate along the contour in the bottom half of the complex plane, i.e., the poles ($\xi_k$) are $-i\sigma, \Delta_{ga}$.
-We stress that since the integral is evaluated over $\mathbb{R}$ and there are no degenerate poles, the results below can be obtained by evaluating the contour which wraps around the poles $i\sigma, \Delta_{ba}$. 
-Since the $\xi_k$ are nondegenerate,
+For correlated modes, the poles are situated in the complex plane as shown in \autoref{fig:contours}b.
+It is clear that no matter which contour is chosen, there is a contribution from either $\Delta_{ba}$ or $\Delta_{ga}$. 
+For the below calculation, we choose to evaluate along the contour in the bottom half of the complex plane, i.e., the poles are $\{-i\sigma, \Delta_{ga}\}$.
+We stress that since the integral is evaluated over $\mathbb{R}$ and there are no degenerate poles, the results below can \textit{also} be obtained by evaluating the contour which wraps around the poles $\{i\sigma, -\Delta_{ba}\}$. 
+Nevertheless, we choose the contour as drawn in \autoref{fig:contours}b.
+Since the $\xi_k$ are nondegenerate, we see
 \begin{widetext}
 	\begin{equation}
 		\begin{split}
 			\int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \gamma_{ijkl}(\xi) &= 2\pi i \sum_k \lim_{\xi \rightarrow \xi_k} P(\xi) \gamma_{ijkl}(\xi) (\xi - \xi_k)\\
-			&= 2\pi i \frac{\gamma_0 \sigma}{\pi}  \lim_{\xi \rightarrow -i\sigma} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga}(0) + \xi} \frac{1}{\Delta_{ba} - \xi} \left(\xi + i \sigma\right) \\ 
-			&+ 2\pi i \frac{\gamma_0 \sigma}{\pi} \lim_{\xi \rightarrow \Delta_{ga}(0)} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga}(0) - \xi} \frac{1}{\Delta_{ba}(0) - \xi} \left(\xi - \Delta_{ga}\right)\\
-			&= 2 \gamma_0 i \sigma \left(\frac{1}{2 i \sigma} \frac{1}{-i \sigma - \Delta_{ga}(0)} \frac{1}{\Delta_{ba}(0) - i\sigma} \right) - 2 \gamma_0 i \sigma \left(\frac{1}{\sigma^2 + (\Delta_{ga} (0))^2} \frac{1}{\Delta_{ga}(0) + \Delta_{ba}(0)} \right)\\
-			&= -\frac{\gamma_0}{\Delta_{ga}(0) + i \sigma} \left(\frac{1}{\Delta_{ba}(0) - i \sigma} + \frac{2i\sigma}{(\Delta_{ga}(0) - i \sigma)(\Delta_{ga}(0) + \Delta_{ba}(0))}\right)\\
+			&= 2\pi i \frac{\eta_{ijkl} \sigma}{\pi}  \lim_{\xi \rightarrow -i\sigma} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga} + \xi} \frac{1}{\Delta_{ba} - \xi} \left(\xi + i \sigma\right) \\ 
+			&+ 2\pi i \frac{\eta_{ijkl} \sigma}{\pi} \lim_{\xi \rightarrow \Delta_{ga}} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga} - \xi} \frac{1}{\Delta_{ba} - \xi} \left(\xi - \Delta_{ga}\right)\\
+			&= 2 \eta_{ijkl} i \sigma \left(\frac{1}{2 i \sigma} \frac{1}{-i \sigma - \Delta_{ga}} \frac{1}{\Delta_{ba} - i\sigma} \right) - 2\eta_{ijkl} i \sigma \left(\frac{1}{\sigma^2 + \Delta_{ga} ^2} \frac{1}{\Delta_{ga} + \Delta_{ba}} \right)\\
+			&= -\frac{\eta_{ijkl}}{\Delta_{ga} + i \sigma} \left(\frac{1}{\Delta_{ba} - i \sigma} + \frac{2i\sigma}{(\Delta_{ga} - i \sigma)(\Delta_{ga} + \Delta_{ba})}\right)\\
 		\end{split}
 	\end{equation}
 \end{widetext}

@@ -4,7 +4,7 @@
 \tocdepth@restore 
 \contentsline {section}{\numberline {I}Evaluating Herzberg-Teller Integrals for Harmonic Wells of Identical Curvature}{S2}{section*.3}%
 \contentsline {section}{\numberline {II}Impact of $\Delta $ on $A,B$ Terms in HDFG Spectra}{S4}{section*.4}%
-\contentsline {section}{\numberline {III}Evaluation of Equation 14}{S5}{section*.5}%
+\contentsline {section}{\numberline {III}Evaluating impact of inhomogeneity on HDFG output}{S5}{section*.5}%
 \contentsline {subsection}{\numberline {A}Anti-correlated Modes}{S5}{section*.6}%
 \contentsline {subsection}{\numberline {B}Correlated Modes}{S6}{section*.7}%
 \contentsline {section}{\numberline {IV}References}{S6}{section*.8}%

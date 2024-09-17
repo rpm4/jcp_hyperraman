@@ -64,10 +64,11 @@ jgs = [0.6, 1.0, 1.29965]
 jes = [1.3, 1.7, 1.9965]
 
 for i in [0,1,2]:
+    kets = [r'$\mathsf{|0\rangle}$', r'$\mathsf{|1\rangle}$', r'$\mathsf{|2\rangle}$']
     ax0.hlines(y = grs(jgs[i]), xmin = -jgs[i], xmax = jgs[i], color = 'black', linestyle = '-', linewidth = 2) #gs states
     ax0.hlines(y = es(jes[i]), xmin = -jes[i]+2*d, xmax = jes[i], color = 'black', linestyle = '-', linewidth = 2) #es states
-    ax0.text(jgs[i] + 0.25, grs(jgs[i])-0.03, str(i), fontsize = 16) #labeling gs
-    ax0.text(jes[i] + 0.25, es(jes[i])-0.03, str(i), fontsize = 16) #labeling es
+    ax0.text(jgs[i] + 0.25, grs(jgs[i])-0.03, kets[i], fontsize = 16) #labeling gs
+    ax0.text(jes[i] + 0.25, es(jes[i])-0.03, kets[i], fontsize = 16) #labeling es
 # for i in [0,1,2]:
 
     
@@ -194,6 +195,12 @@ ax1.plot(y, np.abs(B1+B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B|}$',
 ax1.plot(y, np.abs(B1) / abs_max, linewidth = '2', label = r'$\mathsf{|B_1|}$', color = 'orange', zorder = 2)
 ax1.plot(y, np.abs(B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B_2|}$', color = 'green', zorder = 1)
 
+# ax1.plot(y, tot / tot.max(), linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
+# ax1.plot(y, np.abs(A) / abs_max, linewidth = '2', label = r'$\mathsf{|A|}$', zorder = 3)
+# ax1.plot(y, np.abs(B1+B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B|}$', zorder = 3)
+# ax1.plot(y, np.abs(B1) / abs_max, linewidth = '2', label = r'$\mathsf{|B_1|}$', zorder = 2)
+# ax1.plot(y, np.abs(B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B_2|}$', zorder = 1)
+
 ax1.set_ylabel(r'$\mathsf{Amplitude \ (norm.)}$', fontsize = fontsize)
 ax1.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
 
@@ -250,7 +257,7 @@ for ax in [ax2, ax3]:
 
 for i, ax in enumerate(fig.axes):
     # ax.grid(visible=True, color="k", lw=0.5, linestyle=":")
-    wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.35, bbox = True, fontsize = fontsize, background_alpha=0.75)
+    wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.2, bbox = True, fontsize = fontsize, background_alpha=0.75)
 
 if save:
     wt.artists.savefig("drsive_spectrum.png", transparent = True, bbox_inches='tight')

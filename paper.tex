@@ -16,7 +16,7 @@
 \title{Coherent IR-Hyper-Raman Four Wave Mixing Spectroscopy}
 
 
-\author{Ryan P. McDonnell} 
+\author{Ryan P. McDonnell} \email{rpmcdonnell@wisc.edu}
 \author{Daniel D. Kohler}
 \author{John C. Wright} \email{wright@chem.wisc.edu}
 
@@ -317,11 +317,11 @@ where $\Lambda^{ab}_{ij} = 1/\hbar \sum_m M_i^{am}M_j^{mb} $ is the electronic t
 	\centering
 	\includegraphics[width=6.66in]{drsive_spectrum.png}
 	\caption{Contributions of $A, B$ (\autoref{ABterms_DR}) to HDFG spectrum for a simple two harmonic well system.
-		(a) Potential energy surfaces for a two-well system, (b) 1D HDFG spectrum for $\Delta = 0.5$, $\omega_1 = \omega_{g1, g0}$, (c,d) Real and imaginary parts of terms plotted in (b), respectively.
+		(a) Potential energy surfaces for a two-well system, (b) 1D HDFG spectrum for $\Delta = 0.5$, $\omega_1 = \omega_{g1, g0}$, (c,d) real and imaginary parts of terms plotted in (b), respectively.
 		All spectra are referenced to $\max{(A+B)}$. 
 		It is assumed that $\omega_2 = \omega_3$.
 		Note that (b) plots magnitudes of the labeled quantities.
-		The vibrational states on the $|g)$ and $|e)$ manifolds are spaced 1600 cm$^{-1}$ apart, with the vibronic states $\ket{e,\tilde{v}'}$ given linewidths of 800 cm$^{-1}$ and $\hbar \omega_{eg}$ = 30000 cm$^{-1}$.
+		The vibrational states on the $|g)$ and $|e)$ manifolds are spaced 1600 cm$^{-1}$ apart, with the vibronic states $\ket{e,\tilde{v}'}$ given linewidths of 400 cm$^{-1}$ and $\hbar \omega_{eg}$ = 30000 cm$^{-1}$.
 		Dotted lines in (b) denote the $\tilde{v}'$ = 0, 1, 2 vibronic resonances. 
 		The vibronic one and two photon absorption operators are scaled such that $\abs{B}/\abs{A} \sim$ 0.1, following Chung and Ziegler. \cite{Ziegler1988}
 		The Franck-Condon and Herzberg-Teller contributions to each of these terms are found in \autoref{T:contributions}.}
@@ -340,15 +340,15 @@ Using a two-well system described by $H = H_g |g) \left(g| + H_e |e\right) (e|$ 
 	\end{equation}
 \end{subequations}
 for the ground ($H_g$) and first excited ($H_e$) states, where $p$ (momentum) and $q$ (position) are the dimensionless conjugate coordinates of the normal mode, the A and B contributions can be evaluated using Franck-Condon and Herzberg-Teller integrals tabulated in terms of the dimensionless normal mode $q$ and offset parameter $\Delta$ (\autoref{fig:doubres_spec}a).
-System-bath interactions are neglected for this discussion.
+System-bath interactions are neglected in this discussion.
 For simplicity, we restrict consideration to $v^\prime \in \{0,1,2\}$ and take $\Delta = 0.5$.
 Note that $q = \sqrt{\frac{\omega}{\hbar}} Q$.
 We assume the electronic state is both one and two photon allowed.
 
-\autoref{ABterms_DR} shows important selection rules for the vibronic transitions.
+\autoref{ABterms_DR} shows important selection rules for vibronic transitions in HDFG.
 The $A$ term is allowed whenever an electronic transition has a one- and two- photon transition moment.
 For centrosymmetric molecules, an electronic transition cannot be both one- and two- photon allowed by parity, so the $A$ term will vanish.
-This makes HDFG a unique tool for studying the electronic structure of centrosymmetric species in isotropic media, as it is sensitive to non-Condon effects.\cite{Olson2018}
+This makes HDFG a unique tool for studying the electronic structure of centrosymmetric species in isotropic media, as it is sensitive to non-Condon effects.\cite{Milojevich2011, Olson2018}
 For an allowed electronic transition, the brightness of a vibronic resonance is controlled by overlap of ground and excited state vibrational wavefunctions (Franck-Condon factors).
 The $A$ term relies on excited state perturbations to the vibrational wavefunctions; if the excited electronic state is minimally offset ($\Delta \rightarrow 0$), $\langle 1 | \tilde{v}' \rangle \langle \tilde{v}' | 0 \rangle = 0$ and $A$ vanishes, as discussed in the supporting information.
 Some $B$ terms do survive in the same limit, however; for instance, $B_1$ survives for $\tilde{v}'=1$ and $B_2$ survives for $\tilde{v}'=0$.
@@ -367,7 +367,7 @@ In the pre-resonance region, both $A$ and $B$ terms die off as $\sim \Delta_{e\t
 We point this out because a persistent belief in Raman analysis is that $A$ terms disappear and $B$ terms dominate when significantly detuned from electronic resonance.
 The belief arises from the approximation that when $\abs{\omega_{e\tilde{v}',gv} - 2\omega_2} \gg 2\Gamma_{e\tilde{v}',gv}$, $A$ vanishes through a closure relationship.\cite{Neddersen1989}
 As has been discussed elsewhere, however, this approximation is in many cases invalid, especially when vibrational energies are large, like those explored here.\cite{Warshel1977, Myers1982, Li1990, Gong2015}
-This means that it is difficult to isolate $B$ terms when $A$ terms are present.
+This means that it could prove difficult to isolate $B$ terms when $A$ terms are present.
 As such, HDFG will have difficulty examining non-Condon effects ($B$ term contributions) in noncentrosymmetric systems.
 
 \begin{table}[!htbp]
@@ -408,29 +408,29 @@ Clearly, specific $\Delta$ values have a significant impact on the
 An often unavoidable consequence in electronic spectroscopy is broadened lineshapes due to a high density of vibronic modes, i.e., inhomogeneous broadening.
 It is worthwhile to investigate the impact of inhomogeneity on HDFG response and the resultant lineshapes. 
 In the discussion that follows, we assume that a vibrational mode in the ground state, $\ket{g,v}$, is correlated to the frequency of a vibronic $\ket{e,\tilde{v}'}$.\cite{Carlson1990line, Dong2015}
-If the frequency of $\ket{g,v}$ is written as $\omega_{gv} + \xi$, where $\xi$ is some external strain (e.g. molecular collisions), then the frequency of $\ket{e,v}$ is $\omega_{ev} + c\xi$, where c is a shift coefficient.
+If the frequency of $\ket{g,v}$ is written as $\omega_{gv} + \xi$, where $\xi$ is some external strain (e.g. molecular collisions), then the frequency of $\ket{e,\tilde{v}'}$ is $\omega_{e\tilde{v}'} + c\xi$, where c is a shift coefficient.
 When two modes are positively correlated, $c > 0$; similarly, modes are negatively correlated when $c < 0$.
 For simplicity, we assume c = $\pm$1.
 
 We investigate the impact of inhomogeneity on spectral output by convolving the HDFG output hyperpolarizability $\gamma_{ijkl}(\xi)$ with a normalized Lorentzian distribution $P(\xi)$ of half width $\sigma$ as \cite{Desiderio1979, Dick83_1, Carlson1990line} 
 \begin{equation}\label{contour}
 	\gamma_{ijkl} = \int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \gamma_{ijkl}(\xi)
-	= \frac{\sigma}{\pi}\int_{-\infty}^\infty \mathrm{d}\xi \frac{1}{\sigma^2 + \xi^2} \frac{\gamma_0}{\left(\Delta_{ga} \mp c\xi\right)\left(\Delta_{ba}\pm c\xi\right)}
+	= \frac{\sigma}{\pi}\int_{-\infty}^\infty \mathrm{d}\xi \frac{1}{\sigma^2 + \xi^2} \frac{\eta_{ijkl}}{\left(\Delta_{ga} - \xi\right)\left(\Delta_{ba}+ c\xi\right)}
 \end{equation} 
-where $\gamma_0$ contains all values in \autoref{drgamma_notaylor} not dependent upon $\xi$.
+where $\eta_{ijkl}$ contains all values in \autoref{drgamma_notaylor} not dependent upon $\xi$.
 The limit of static inhomogeneity is chosen for simplicity.
 While Gaussian distributions are commonly used as a phenomenological description of inhomogeneous broadening, Lorentzian distributions have successfully described inhomogeneous broadening in a variety of spectroscopies and yield easily interpretable closed-form solutions. \cite{Desiderio1979, Dick83_1, Carlson1990line, RN410}
 
 Evaluating \autoref{contour} for the HDFG pathway above shows\footnote{See the supporting information for more details} 
 \begin{subequations}\label{linenarrow}
 	\begin{equation}\label{linenarrowa}
-		\gamma_{ijkl} = \frac{- \gamma_0}{\Delta_{ga}+ i \sigma} \left( \frac{1}{\Delta_{ba}-i \sigma} + \frac{2 i \sigma}{\Delta_{ga}-i \sigma} \frac{1}{\Delta_{ba}(0) + \Delta_{ga}(0)} \right)
+		\gamma_{ijkl} = \frac{- \eta_{ijkl}}{\Delta_{ga}+ i \sigma} \left( \frac{1}{\Delta_{ba}-i \sigma} + \frac{2 i \sigma}{\Delta_{ga}-i \sigma} \frac{1}{\Delta_{ba} + \Delta_{ga}} \right)
 	\end{equation}
 	\begin{equation}
-		\gamma_{ijkl} = \frac{\gamma_0}{\left(\Delta_{ga}-i\sigma \right) \left(\Delta_{ba}-i \sigma\right)}
+		\gamma_{ijkl} = \frac{\eta_{ijkl}}{\left(\Delta_{ga}-i\sigma \right) \left(\Delta_{ba}-i \sigma\right)}
 	\end{equation}
 \end{subequations}
-for correlated and anti-correlated modes, respectively.
+for correlated ($c = 1$) and anti-correlated ($c = -1$) modes, respectively.
 The output for correlated modes shows the presence of a new term, $\frac{2i\sigma}{\Delta_{ga} + \Delta_{ba}}$. 
 This term is amplified by the width of the inhomogeneous envelope ($\sigma$) and has a linewidth $\Gamma_{ba} + \Gamma_{ga}$, which linenarrows the transition. 
 For anti-correlated modes, we see the inhomogeneous envelope width $\sigma$ is added to the linewidth of each resonance (e.g., $\Gamma_{ga} \rightarrow \Gamma_{ga} + \sigma$).
@@ -487,11 +487,10 @@ These quantitative aspects of HDFG could prove useful for examining how well com
 Coherent vibrational, hyper-Raman coherent four wave mixing spectroscopies are identified and discussed.
 Hyper difference frequency generation (HDFG) possesses infrared absorption and vibronic hyper-Raman scattering selection rules.
 As a result, HDFG output is sensitive to the relative overlap of potential energy surfaces.
-Using the Chung-Ziegler approach to vibronic hyper-Raman scattering, HDFG output is found to be dependent upon changes in potential energy surfaces along the coordinate of the vibrational mode selected by the infrared input. 
-If the potential energy surface is not significantly modulated along the vibrational coordinate of interest, then output is dominated by $A$ term resonances, i.e. Herzberg-Teller coupling.
-However, $B$ term resonances dominate in centrosymmetric media, as $A$ term resonances vanish through parity constraints.
-For positively correlated vibrational and vibronic resonances, HDFG linenarrows the spectral output, eliminating inhomogeneous broadening. 
-As a result, HDFG possesses types of site-selective properties analogous to those of coherent Raman experiments, which can allow for a thorough analysis of vibronic coupling schemes in isotropic systems.
+If the potential energy surface is not significantly modulated along the vibrational coordinate of interest, then output is dominated by $A$ term resonances, or Franck-Condon contributions.
+However, $B$ term resonances, or Herzberg-Teller contributions, dominate in centrosymmetric media, as $A$ term resonances vanish in centrosymmetric media through parity constraints.
+A treatment of inhomogeneous broadening shows that for positively correlated vibrational and vibronic resonances, HDFG linenarrows the spectral output, eliminating inhomogeneous broadening. 
+As a result, HDFG possesses site-selective properties analogous to those of coherent Raman spectroscopies, which can allow for a thorough analysis of vibronic coupling schemes in isotropic systems.
 We show that HDFG provides alternative methods to extract the hyper-Raman hyperpolarizability of infrared active vibrations. 
 Since HDFG is approachable as a two-beam experiment, analogous to vibrational sum-frequency generation, and phase-matchable in media with normal dispersion, HDFG should be applicable towards understanding vibrational spectroscopy and dynamics, e.g. single quantum coherence free induction decay dynamics, in a variety of relevant molecular and materials systems.  
 

@@ -29,9 +29,9 @@ Control: production of eprint (0) enabled
 Warning--empty year in Mathematica
 You've used 8 entries,
             6079 wiz_defined-function locations,
-            1702 strings with 17007 characters,
-and the built_in function-call counts, 9940 in all, are:
-= -- 588
+            1702 strings with 17009 characters,
+and the built_in function-call counts, 9935 in all, are:
+= -- 586
 > -- 338
 < -- 65
 + -- 106
@@ -40,13 +40,13 @@ and the built_in function-call counts, 9940 in all, are:
 := -- 894
 add.period$ -- 8
 call.type$ -- 8
-change.case$ -- 34
+change.case$ -- 33
 chr.to.int$ -- 8
 cite$ -- 9
 duplicate$ -- 877
 empty$ -- 675
 format.name$ -- 198
-if$ -- 1997
+if$ -- 1995
 int.to.chr$ -- 1
 int.to.str$ -- 16
 missing$ -- 126
