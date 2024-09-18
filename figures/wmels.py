@@ -99,7 +99,7 @@ if timeorderedwmel:
 
     fig.label_columns(['$(\mathsf{a})$','$(\mathsf{b})$', '$(\mathsf{c})$', '$(\mathsf{d})$'], font_size = 9)
     
-    plt.savefig("timeorderedwmel.png", bbox_inches='tight')
+    plt.savefig("timeorderedwmel1.png", bbox_inches='tight')
     
 if drwmel:
     fig = WMEL.Artist([2,2], [0, 0.2, 0.5, 0.8, 1], state_names=("$\mathsf{|g, 0\\rangle}$",
