@@ -79,7 +79,6 @@ ax0.plot(d, f11(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{1}|1\rangl
 # ax0.plot(d, f02(d), linewidth = '2', label = r'$\mathsf{02}$', color = 'green', zorder = 1)
 ax0.plot(d, f20(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{2}|0\rangle}$', color = 'orange', zorder = 1)
 ax0.plot(d, f21(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{2}|1\rangle}$', color = 'green', zorder = 1)
-ax0.set_ylabel(r'$\mathsf{Integral \ Value \ (arb.)}$', fontsize = fontsize)
 
 # ax0.text(20000, 2, r'$\mathsf{\Delta = 1/\sqrt{2}}$', fontsize = 16)
 
@@ -97,6 +96,7 @@ ax1.plot(d, h21(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{2}|q|1\ran
 
 for ax in [ax0, ax1]:
     # ax.set_yscale('log')
+    ax.set_ylabel(r'$\mathsf{Integral \ Value \ (arb.)}$', fontsize = fontsize)
     ax.set_xlim(-2,2)
     ax.set_xlabel(r'$\mathsf{\Delta}$', fontsize = fontsize)
     # xticks = np.linspace(15000, 45000, 7)

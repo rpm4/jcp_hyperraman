@@ -55,7 +55,7 @@ Here we explore the less-utilized hyper-Raman transition in four wave mixing CMD
 		The light-matter interactions are depicted using Wave Mixing Energy Level (WMEL) diagrams.\cite{RN286}
 		Solid and dashed horizontal lines indicate real and virtual states, whereas solid and dotted arrows indicate ket and bra side transitions, respectively. 
 		The red box outlines the e-v coupling techniques (HDFG, HSFG) relevant to this manuscript.
-	} %TODO: Fix vsfg
+	} 
 	\label{fig:comparisonwmel}
 \end{figure*}
 
@@ -317,11 +317,10 @@ where $\Lambda^{ab}_{ij} = 1/\hbar \sum_m M_i^{am}M_j^{mb} $ is the electronic t
 	\centering
 	\includegraphics[width=6.66in]{drsive_spectrum.png}
 	\caption{Contributions of $A, B$ (\autoref{ABterms_DR}) to HDFG spectrum for a simple two harmonic well system.
-		(a) Potential energy surfaces for a two-well system, (b) 1D HDFG spectrum for $\Delta = 0.5$, $\omega_1 = \omega_{g1, g0}$, (c,d) real and imaginary parts of terms plotted in (b), respectively.
-		All spectra are referenced to $\max{(A+B)}$. 
+		(a) Potential energy surfaces for a two-well system, (b) 1D HDFG spectrum for $\Delta = 0.5$, $\omega_1 = \omega_{g1, g0}$, (c, d) real and imaginary parts of terms plotted in (b), respectively.
+		The spectra are referenced to $\max{(A+B)}$. 
 		It is assumed that $\omega_2 = \omega_3$.
-		Note that (b) plots magnitudes of the labeled quantities.
-		The vibrational states on the $|g)$ and $|e)$ manifolds are spaced 1600 cm$^{-1}$ apart, with the vibronic states $\ket{e,\tilde{v}'}$ given linewidths of 400 cm$^{-1}$ and $\hbar \omega_{eg}$ = 30000 cm$^{-1}$.
+		The vibrational states on the $|g)$ and $|e)$ manifolds are spaced 1600 cm$^{-1}$ apart, with the vibronic states $\ket{e,\tilde{v}'}$ given linewidths of 300 cm$^{-1}$ and $\omega_{eg}$ = 30000 cm$^{-1}$.
 		Dotted lines in (b) denote the $\tilde{v}'$ = 0, 1, 2 vibronic resonances. 
 		The vibronic one and two photon absorption operators are scaled such that $\abs{B}/\abs{A} \sim$ 0.1, following Chung and Ziegler. \cite{Ziegler1988}
 		The Franck-Condon and Herzberg-Teller contributions to each of these terms are found in \autoref{T:contributions}.}
@@ -396,12 +395,14 @@ As such, HDFG will have difficulty examining non-Condon effects ($B$ term contri
 	\end{ruledtabular}
 \end{table}
 
+Since $\Delta$ can take on a variety of values given a specific system, in the supporting information we demonstrate the impact of $\Delta$ on the HDFG response using previously reported values for some Raman active vibrations in \textit{trans}-hexatriene and UiO-68 metal organic frameworks (Figure S2). \cite{Myers1982, Brennan2024}
+Clearly, specific $\Delta$ and $\omega_{g1, g0}$ values have a significant impact on the HDFG spectral profile.
+Indeed, for some values of $\Delta$, it appears that $B$ term resonances dominate over $A$ term resonances, which can allow for significant non-Condon behavior in pre-resonant HDFG response.
+
 In the post-resonance region, the amplitude takes on an unexpected lineshape.
 This arises due to interference between the real and imaginary parts of $\gamma$ (\autoref{fig:doubres_spec}c, d).
-The abnormal lineshapes in both terms arises due to the sign of the Franck-Condon and Herzberg-Teller integrals that drive the output of the vibronic transitions for $\Delta = 0.5$ (\autoref{fcht}).
+The abnormal lineshapes in both terms arises due to the sign of the Franck-Condon and Herzberg-Teller integrals that drive the output of the vibronic transitions for $\Delta = 0.5$ (\autoref{fcht}), in turn driving significant interference in the overall $\abs{A+B}$ output.
 Such effects have been seen elsewhere in spontaneous, surface enhanced hyper-Raman studies. \cite{Milojevich2011}
-Since $\Delta$ can take on a variety of values given a specific system, in the supporting information we demonstrate the impact of $\Delta$ on the HDFG response using previously reported values for Raman active vibrations in isoprene. \cite{Myers1982}
-Clearly, specific $\Delta$ values have a significant impact on the 
 
 
 \subsection{Inhomogeneity in HDFG}
@@ -482,8 +483,6 @@ Additionally, by using non-degenerate input frequencies to stimulate the hyper-R
 These quantitative aspects of HDFG could prove useful for examining how well computational methods calculate $\beta_{ijk}$ values.
 
 \section{Conclusions}\label{conclusion}
-\textbf{NEED TO READ THIS SECTION!}
-
 Coherent vibrational, hyper-Raman coherent four wave mixing spectroscopies are identified and discussed.
 Hyper difference frequency generation (HDFG) possesses infrared absorption and vibronic hyper-Raman scattering selection rules.
 As a result, HDFG output is sensitive to the relative overlap of potential energy surfaces.
@@ -502,7 +501,7 @@ This work received support from the National Science Foundation (Grant no. CHE-2
 R.P.M. acknowledges support from the National Science Foundation Graduate Research Fellowship Program (Grant no. DGE-2137424). 
 
 \section{Supplemental Information}
-See the supporting information for details on deriving closed-form solutions to Herzberg-Teller integrals, dependence of the HDFG spectrum on $\Delta$, and integration of \autoref{contour}.
+See the supporting information for details on deriving closed-form solutions to Herzberg-Teller integrals, HDFG spectrum dependence on $\Delta$, and evaluation of \autoref{contour}.
 
 \section{Appendix: Comparison of vSFG and two-beam HDFG output}\label{appendixA}
 To motivate the application of HDFG spectroscopy, we perform a calculation to compare two-color HDFG and vSFG output, where absorption effects are neglected for simplicity.

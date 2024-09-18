@@ -205,10 +205,10 @@ ax1.set_ylabel(r'$\mathsf{Amplitude \ (norm.)}$', fontsize = fontsize)
 ax1.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
 
 ax1.set_yscale('log')
-ax1.set_xlim(15000, 45000)
-xticks = np.linspace(15000, 45000, 7)
+ax1.set_xlim(20000, 45000)
+xticks = np.linspace(20000, 45000, 6)
 ax1.set_xticks(xticks)
-ax1.set_ylim(0.0007, 3)
+ax1.set_ylim(0.001, 2)
 ax1.legend(loc = 1)
 
 
@@ -225,11 +225,11 @@ if others:
     ax2.plot(y, BRe, linewidth = '2', label = r'$\mathsf{B}$', color = 'red', zorder = 3)
     ax2.plot(y, B1Re, linewidth = '2', label = r'$\mathsf{B_1}$', color = 'orange', zorder = 2)
     ax2.plot(y, B2Re, linewidth = '2', label = r'$\mathsf{B_2}$', color = 'green', zorder = 1)
-    ax2.set_ylabel(r'$\mathsf{Re(\gamma) \ (norm.)}$', fontsize = fontsize)
+    ax2.set_ylabel(r'$\mathsf{Re(\gamma)}$', fontsize = fontsize)
     ax2.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
     
     #ax2.set_yscale('log')
-    ax2.set_xlim(15000, 45000)
+    ax2.set_xlim(20000, 45000)
     # ax2.set_ylim(0.001, 2.2)
     ax2.legend(loc = 1)
     
@@ -240,24 +240,24 @@ if others:
     ax3.plot(y, BIm, linewidth = '2', label = r'$\mathsf{B}$', color = 'red', zorder = 3)
     ax3.plot(y, B1Im, linewidth = '2', label = r'$\mathsf{B_1}$', color = 'orange', zorder = 2)
     ax3.plot(y, B2Im, linewidth = '2', label = r'$\mathsf{B_2}$', color = 'green', zorder = 1)
-    ax3.set_ylabel(r'$\mathsf{Im(\gamma) \ (norm.)}$', fontsize = fontsize)
+    ax3.set_ylabel(r'$\mathsf{Im(\gamma)}$', fontsize = fontsize)
     ax3.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
     
     # ax3.set_yscale('log')
-    ax3.set_xlim(15000, 45000)
+    ax3.set_xlim(20000, 45000)
     # ax2.set_ylim(0.001, 2.2)
     ax3.legend(loc = 1)
     
 for ax in [ax2, ax3]:
-    ax.set_xlim(15000, 45000)
-    xticks = np.linspace(15000, 45000, 7)
+    ax.set_xlim(20000, 45000)
+    xticks = np.linspace(20000, 45000, 6)
     ax.set_xticks(xticks)
     ax.legend(loc = 1)
     ax.hlines(xmin=10000, xmax =50000, y = 0, color = 'gray', linestyle = '--', linewidth = 1)
 
 for i, ax in enumerate(fig.axes):
     # ax.grid(visible=True, color="k", lw=0.5, linestyle=":")
-    wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.2, bbox = True, fontsize = fontsize, background_alpha=0.75)
+    wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.25, bbox = True, fontsize = fontsize, background_alpha=0.75)
 
 if save:
     wt.artists.savefig("drsive_spectrum.png", transparent = True, bbox_inches='tight')

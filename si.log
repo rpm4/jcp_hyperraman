@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.7.26)  17 SEP 2024 15:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.10.27)  17 SEP 2024 22:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **./si.tex
 (si.tex
 LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-06-30>
+L3 programming layer <2023-10-23>
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/revtex\revtex4-2.cls
 Document Class: revtex4-2 2022/06/05 4.2f (https://journals.aps.org/revtex/ for
  documentation)
@@ -25,18 +25,18 @@ Class revtex4-2 Info: Repairing broken LaTeX eqnarray on input line 417.
 Class revtex4-2 Info: Repairing hyperref-unfriendly LaTeX definition of \mpfoot
 note on input line 492.
 Class revtex4-2 Info: Repairing broken LateX \@sect on input line 814.
-\intertabularlinepenalty=\count185
-\@tbpen=\count186
+\intertabularlinepenalty=\count186
+\@tbpen=\count187
 \@arstrutbox@hline=\box51
 Class revtex4-2 Info: Repairing broken LaTeX \@xbitor on input line 1845.
 Class revtex4-2 Info: Making \typeout \long on input line 2110.
 ltxfront[2022/06/05 4.2f frontmatter package (AO,DPC,MD)]
-\c@affil=\count187
-\c@collab=\count188
+\c@affil=\count188
+\c@collab=\count189
 \absbox=\box52
 ltxgrid[2022/06/05 4.2f page grid package (portions licensed from W. E. Baxter 
 web at superscript.com)]
-\c@linecount=\count189
+\c@linecount=\count190
 \output@latex=\toks17
 \box@size@1=\box53
 \box@size@2=\box54
@@ -47,22 +47,22 @@ web at superscript.com)]
 \column@recovered=\box58
 \pagesofar=\box59
 \footsofar=\box60
-\pagegrid@col=\count190
+\pagegrid@col=\count191
 Class revtex4-2 Info: Overriding \@vspace, \@vspacer, \@no@pgbk, \@newline, and
  \\  on input line 5676.
-\c@part=\count191
-\c@section=\count192
-\c@subsection=\count193
-\c@subsubsection=\count194
-\c@paragraph=\count195
-\c@subparagraph=\count196
+\c@part=\count192
+\c@section=\count193
+\c@subsection=\count194
+\c@subsubsection=\count195
+\c@paragraph=\count196
+\c@subparagraph=\count197
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
-\c@figure=\count197
+\c@figure=\count198
 \fbox@1=\box61
-\c@table=\count198
+\c@table=\count199
 \fbox@2=\box62
-\c@video=\count199
+\c@video=\count266
 \fbox@4=\box63
 \@bibdataout=\write3
 \widetext@top=\box64
@@ -84,7 +84,7 @@ Class revtex4-2 Info: RevTeX pointsize 10pt selected on input line 39.
 Class revtex4-2 Info: Overriding 10pt on input line 7674.
 
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/textcase\textcase.sty
-Package: textcase 2022/07/10 v1.03 Text only upper/lower case changing (DPC)
+Package: textcase 2023/07/27 v1.04 Text only upper/lower case changing (DPC)
 Package textcase Info: Defining Legacy names on input line 20.
 )
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
@@ -96,7 +96,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip51
 \bibsep=\skip52
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count266
+\c@NAT@ctr=\count267
 )
 Class revtex4-2 Info: Repairing natbib's \BibitemShut on input line 7676.
 
@@ -110,15 +110,15 @@ Package: physics
 
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.
 sty (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2023-06-30 L3 programming layer (loader) 
+Package: expl3 2023-10-23 L3 programming layer (loader) 
 
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdfte
 x.def
-File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count267
+File: l3backend-pdftex.def 2023-10-23 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count268
 \l__pdf_internal_box=\box66
 ))
-Package: xparse 2023-02-02 L3 Experimental document command parser
+Package: xparse 2023-10-10 L3 Experimental document command parser
 )
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2023/05/13 v2.17o AMS math features
@@ -142,14 +142,14 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count268
+\inf@bad=\count269
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count269
-\leftroot@=\count270
+\uproot@=\count270
+\leftroot@=\count271
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count271
-\DOTSCASE@=\count272
+\classnum@=\count272
+\DOTSCASE@=\count273
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -162,20 +162,20 @@ LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen142
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count273
+\macc@depth=\count274
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count274
+\c@MaxMatrixCols=\count275
 \dotsspace@=\muskip17
-\c@parentequation=\count275
-\dspbrk@lvl=\count276
+\c@parentequation=\count276
+\dspbrk@lvl=\count277
 \tag@help=\toks20
-\row@=\count277
-\column@=\count278
-\maxfields@=\count279
+\row@=\count278
+\column@=\count279
+\maxfields@=\count280
 \andhelp@=\toks21
 \eqnshift@=\dimen143
 \alignsep@=\dimen144
@@ -212,21 +212,21 @@ Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 )
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count280
-\calc@Bcount=\count281
+\calc@Acount=\count281
+\calc@Bcount=\count282
 \calc@Adimen=\dimen149
 \calc@Bdimen=\dimen150
 \calc@Askip=\skip56
 \calc@Bskip=\skip57
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count282
+\calc@Ccount=\count283
 \calc@Cskip=\skip58
 )
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count283
+\g_MT_multlinerow_int=\count284
 \l_MT_multwidth_dim=\dimen151
 \origjot=\skip59
 \l_MT_shortvdotswithinadjustabove_dim=\dimen152
@@ -270,7 +270,7 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \ar@cellbox=\box71
 ))
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
-Package: hyperref 2023-07-08 v7.01b Hypertext links for LaTeX
+Package: hyperref 2023-10-21 v7.01c Hypertext links for LaTeX
 
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
@@ -309,7 +309,7 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
-Package: nameref 2023-08-07 v2.53 Cross-referencing by name of section
+Package: nameref 2023-10-05 v2.54 Cross-referencing by name of section
 
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
@@ -327,41 +327,41 @@ Package nameref Warning: The definition of \label has changed!
 (nameref)                Replacing it with the kernel definition on input line 
 145.
 
-\c@section@level=\count284
+\c@section@level=\count285
 ) (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count285
+\etb@tempcnta=\count286
 )
 \@linkdim=\dimen163
-\Hy@linkcounter=\count286
-\Hy@pagecounter=\count287
+\Hy@linkcounter=\count287
+\Hy@pagecounter=\count288
 
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
-File: pd1enc.def 2023-07-08 v7.01b Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2023-10-21 v7.01c Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count288
+\Hy@SavedSpaceFactor=\count289
 
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
-File: puenc.def 2023-07-08 v7.01b Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2023-10-21 v7.01c Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 4050.
-Package hyperref Info: Hyper figures OFF on input line 4167.
-Package hyperref Info: Link nesting OFF on input line 4172.
-Package hyperref Info: Hyper index ON on input line 4175.
-Package hyperref Info: Plain pages OFF on input line 4182.
-Package hyperref Info: Backreferencing OFF on input line 4187.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4051.
+Package hyperref Info: Hyper figures OFF on input line 4168.
+Package hyperref Info: Link nesting OFF on input line 4173.
+Package hyperref Info: Hyper index ON on input line 4176.
+Package hyperref Info: Plain pages OFF on input line 4183.
+Package hyperref Info: Backreferencing OFF on input line 4188.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4434.
-LaTeX Info: Redefining \href on input line 4683.
-\c@Hy@tempcnt=\count289
-LaTeX Info: Redefining \url on input line 4772.
+Package hyperref Info: Bookmarks ON on input line 4435.
+LaTeX Info: Redefining \href on input line 4684.
+\c@Hy@tempcnt=\count290
+LaTeX Info: Redefining \url on input line 4773.
 \XeTeXLinkMargin=\dimen164
 
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
@@ -372,37 +372,37 @@ ty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count290
+\Fld@menulength=\count291
 \Field@Width=\dimen165
 \Fld@charsize=\dimen166
-Package hyperref Info: Hyper figures OFF on input line 6051.
-Package hyperref Info: Link nesting OFF on input line 6056.
-Package hyperref Info: Hyper index ON on input line 6059.
-Package hyperref Info: backreferencing OFF on input line 6066.
-Package hyperref Info: Link coloring ON on input line 6069.
-Package hyperref Info: Link coloring with OCG OFF on input line 6076.
-Package hyperref Info: PDF/A mode OFF on input line 6081.
+Package hyperref Info: Hyper figures OFF on input line 6052.
+Package hyperref Info: Link nesting OFF on input line 6057.
+Package hyperref Info: Hyper index ON on input line 6060.
+Package hyperref Info: backreferencing OFF on input line 6067.
+Package hyperref Info: Link coloring ON on input line 6070.
+Package hyperref Info: Link coloring with OCG OFF on input line 6077.
+Package hyperref Info: PDF/A mode OFF on input line 6082.
 
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count291
-\c@Item=\count292
-\c@Hfootnote=\count293
+\Hy@abspage=\count292
+\c@Item=\count293
+\c@Hfootnote=\count294
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
-File: hpdftex.def 2023-07-08 v7.01b Hyperref driver for pdfTeX
+File: hpdftex.def 2023-10-21 v7.01c Hyperref driver for pdfTeX
 
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count294
-\c@bookmark@seq@number=\count295
+\Fld@listcount=\count295
+\c@bookmark@seq@number=\count296
 
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilec
 heck.sty
@@ -446,16 +446,16 @@ LaTeX Font Info:    ... okay on input line 20.
 
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count296
+\scratchcounter=\count297
 \scratchdimen=\dimen167
 \scratchbox=\box72
-\nofMPsegments=\count297
-\nofMParguments=\count298
+\nofMPsegments=\count298
+\nofMParguments=\count299
 \everyMPshowfont=\toks26
-\MPscratchCnt=\count299
+\MPscratchCnt=\count300
 \MPscratchDim=\dimen168
-\MPnumerator=\count300
-\makeMPintoPDFobject=\count301
+\MPnumerator=\count301
+\makeMPintoPDFobject=\count302
 \everyMPtoPDFconversion=\toks27
 )
 (C:\Users\rpm\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-bas
@@ -499,60 +499,62 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write5
 \openout5 = `si.toc'.
 
- [1{C:/Users/rpm/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 145.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Delta' on input line 145.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 145.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 145.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 145.
-
-<figures/fcht.png, id=101, 875.55106pt x 415.19115pt>
+ [1{C:/Users/rpm/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+<figures/fcht.png, id=63, 875.55106pt x 415.19115pt>
 File: figures/fcht.png Graphic file (type png)
 <use figures/fcht.png>
-Package pdftex.def Info: figures/fcht.png  used on input line 152.
+Package pdftex.def Info: figures/fcht.png  used on input line 65.
 (pdftex.def)             Requested size: 482.40247pt x 228.76129pt.
-[3]
-<figures/changedelta.png, id=123, 882.05534pt x 418.4433pt>
+ [2 <./figures/fcht.png>] [3]
+<figures/changedelta.png, id=121, 882.05534pt x 815.9283pt>
 File: figures/changedelta.png Graphic file (type png)
 <use figures/changedelta.png>
-Package pdftex.def Info: figures/changedelta.png  used on input line 162.
-(pdftex.def)             Requested size: 482.40247pt x 228.85477pt.
- [4 <./figures/fcht.png> <./figures/changedelta.png>] [5]
-<figures/corr_contour.png, id=150, 831.28568pt x 409.0482pt>
+Package pdftex.def Info: figures/changedelta.png  used on input line 154.
+(pdftex.def)             Requested size: 482.40247pt x 446.24704pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 159.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Delta' on input line 159.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 159.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 159.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 159.
+
+[4 <./figures/changedelta.png>] [5]
+<figures/corr_contour.png, id=156, 834.83894pt x 412.6617pt>
 File: figures/corr_contour.png Graphic file (type png)
 <use figures/corr_contour.png>
-Package pdftex.def Info: figures/corr_contour.png  used on input line 219.
-(pdftex.def)             Requested size: 482.40247pt x 237.37294pt.
- (si.bbl) [6 <./figures/corr_contour.png>] (si.aux)
+Package pdftex.def Info: figures/corr_contour.png  used on input line 222.
+(pdftex.def)             Requested size: 482.40247pt x 238.4561pt.
+ (si.bbl) [6 <./figures/corr_contour.png>]
+(si.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-06-30>
+L3 programming layer <2023-10-23>
  ***********
 Package rerunfilecheck Info: File `si.out' has not changed.
 (rerunfilecheck)             Checksum: 99F2EA216012E8C0B8AFA7D80CCD33E0;2023.
  ) 
 Here is how much of TeX's memory you used:
- 13123 strings out of 475550
- 196973 string characters out of 5763477
- 1951238 words of memory out of 5000000
- 34120 multiletter control sequences out of 15000+600000
+ 13140 strings out of 474717
+ 197324 string characters out of 5749379
+ 1954052 words of memory out of 5000000
+ 34969 multiletter control sequences out of 15000+600000
  569284 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,20n,93p,508b,504s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,20n,93p,508b,520s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/rpm/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 bx10.pfb><C:/Users/rpm/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
 s/cm/cmbx8.pfb><C:/Users/rpm/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
@@ -582,9 +584,9 @@ ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users
 /Users/rpm/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.
 pfb><C:/Users/rpm/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/sym
 bols/msbm10.pfb>
-Output written on si.pdf (6 pages, 1205070 bytes).
+Output written on si.pdf (6 pages, 2316354 bytes).
 PDF statistics:
- 288 PDF objects out of 1000 (max. 8388607)
- 49 named destinations out of 1000 (max. 500000)
+ 296 PDF objects out of 1000 (max. 8388607)
+ 50 named destinations out of 1000 (max. 500000)
  80 words of extra memory for PDF output out of 10000 (max. 10000000)
 

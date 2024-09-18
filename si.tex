@@ -57,7 +57,15 @@ Franck-Condon factors and Herzberg-Teller integrals are often evaluated in posit
 \end{equation}
 where $N(m) = (m! \ 2^m \pi^{\frac{1}{2}})^{-\frac{1}{2}}$ is the normalization factor and $H_m$ is the m$^{th}$ Hermite Polynomial.\cite{RN230}
 We begin by generating an expression for $\mel{\tilde{n}}{q^k}{m}$, as this will resolve into Franck-Condon factors for $k = 0$ and Herzberg-Teller integrals for $k=1$.
+The relevant Franck-Condon factors and Herzberg-Teller integrals, assuming identical curvature and no Duschinsky coupling, are plotted in \autoref{fig:fcht} as a function of offset, $\Delta$.
 As in the main text, $\{\ket{\tilde{a}}\}$ are vibrational states on the first excited state $|e)$ and $\{\ket{b}\}$ are vibrational states on the ground state $|g)$.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=6.675in]{figures/fcht.png}
+	\caption{Plots of select (a) Franck-Condon factors and (b) Herzberg-Teller integrals relevant to this manuscript as a function of offset, $\Delta$.} 
+	\label{fig:fcht}
+\end{figure}
 
 By letting $\ket{m}$ belong to the ground state surface $|g)$ and $\ket{\tilde{n}}$ belong to the first excited surface $|e)$, we write
 \begin{equation}
@@ -141,28 +149,23 @@ With $\tilde{N} = N(1)*N(0) = (1! \ 2^1 \pi^{\frac{1}{2}})^{-\frac{1}{2}} * (0! 
 \end{equation}
 The evaluation of other Herzberg-Teller integrals follows a similar process. 
 
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=6.675in]{figures/changedelta.png}
+	\caption{The impact of offset, vibrational resonance, and linewidth on HDFG spectra. Parameters for (a,b) follow from Myers et al., whereas parameters for (c,d) follow from Brennan et al.\cite{Myers1982, Brennan2024}} 
+	\label{fig:chgdelta}
+\end{figure}
 
 \section{Impact of $\Delta$ on $A,B$ Terms in HDFG Spectra}
 In the main text, the potential well offset ($\Delta$) was taken as $\Delta = 0.5$.
 Here, we vary $\Delta$ to investigate its impact on the structure of the $\abs{A+B}$ spectrum.
-The relevant Franck-Condon factors and Herzberg-Teller integrals, assuming identical curvature and no Duschinsky coupling, are plotted in \autoref{fig:fcht} as a function of offset, $\Delta$.
-
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=6.675in]{figures/fcht.png}
-	\caption{Plots of select (a) Franck-Condon factors and (b) Herzberg-Teller integrals relevant to this manuscript as a function of offset, $\Delta$.} 
-	\label{fig:fcht}
-\end{figure}
 
 It is clear from \autoref{fig:fcht} that the HDFG spectrum will have a significant dependence upon $\Delta$, even for small deviations from complete overlap. 
-To this end, we first investigate the impact of $\Delta$ on a vibrational mode with a fundamental frequency 1600 cm$^{-1}$ and linewidth of 400 cm$^{-1}$ (\autoref{fig:chgdelta}). 
+To this end, we plot the impact of resonance frequency and offset on the HDFG spectrum \autoref{fig:chgdelta}, using values reported by Myers et al. and Brennan et al. \cite{Myers1982, Brennan2024}
+In this section, we take $\omega_{eg}$ = $37340$ cm$^{-1}$ and vary the offset ($\Delta$), vibrational frequency ($\omega_{g1,g0}$), and linewidth ($\Gamma$) as noted in the figure.
 
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=6.675in]{figures/changedelta.png}
-	\caption{Plots of select (a) Franck-Condon factors and (b) Herzberg-Teller integrals relevant to this manuscript as a function of offset, $\Delta$.} 
-	\label{fig:chgdelta}
-\end{figure}
+
+
 \section{Evaluating impact of inhomogeneity on HDFG output}
 In this section, the integral
 \begin{equation}\label{generalcontour}

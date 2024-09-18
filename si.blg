@@ -27,45 +27,45 @@ Control: page (0) single
 Control: year (1) truncated
 Control: production of eprint (0) enabled
 Warning--empty year in Mathematica
-You've used 8 entries,
+You've used 9 entries,
             6079 wiz_defined-function locations,
-            1702 strings with 17009 characters,
-and the built_in function-call counts, 9935 in all, are:
-= -- 586
-> -- 338
-< -- 65
-+ -- 106
-- -- 86
-* -- 1645
-:= -- 894
-add.period$ -- 8
-call.type$ -- 8
-change.case$ -- 33
-chr.to.int$ -- 8
-cite$ -- 9
-duplicate$ -- 877
-empty$ -- 675
-format.name$ -- 198
-if$ -- 1995
+            1711 strings with 17254 characters,
+and the built_in function-call counts, 11275 in all, are:
+= -- 670
+> -- 385
+< -- 73
++ -- 120
+- -- 98
+* -- 1866
+:= -- 1011
+add.period$ -- 9
+call.type$ -- 9
+change.case$ -- 37
+chr.to.int$ -- 9
+cite$ -- 10
+duplicate$ -- 992
+empty$ -- 767
+format.name$ -- 225
+if$ -- 2274
 int.to.chr$ -- 1
-int.to.str$ -- 16
-missing$ -- 126
-newline$ -- 76
-num.names$ -- 24
-pop$ -- 347
+int.to.str$ -- 17
+missing$ -- 144
+newline$ -- 79
+num.names$ -- 27
+pop$ -- 391
 preamble$ -- 1
-purify$ -- 39
+purify$ -- 44
 quote$ -- 0
-skip$ -- 386
+skip$ -- 442
 stack$ -- 0
-substring$ -- 176
-swap$ -- 894
-text.length$ -- 43
+substring$ -- 208
+swap$ -- 1014
+text.length$ -- 49
 text.prefix$ -- 0
 top$ -- 8
-type$ -- 130
+type$ -- 147
 warning$ -- 1
-while$ -- 22
+while$ -- 25
 width$ -- 0
-write$ -- 114
+write$ -- 122
 (There was 1 warning)

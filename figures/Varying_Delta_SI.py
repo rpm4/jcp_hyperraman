@@ -14,9 +14,6 @@ wt.artists.apply_rcparams(kind="publication")
 save = False
 fontsize = 18
 
-#define harmonic wells and coordinates
-d = [0.1, 0.2, 0.6] #offset for es
-
 #make figure
 cols = [1, 1] 
 aspects = [[[0, 0], 1], [[1, 0], 1]] 
@@ -70,11 +67,11 @@ def h21(q): #<2|Q|1>
 def h20(q): #<2|Q|0>
     return -q/np.sqrt(2) * (1 - q**2 /4) * f00(q)
 
+
 #define resonance denominator
-def Deltaevgo(v,x,l):
-    weg = 30000
-    G = [400, 400, 400] #linewidths
-    return 1/(weg + 1600*v - x - 1j*G[l]) #assuming the |0> -> |n> transiton is 2200*n  cm^-1
+def Deltaevgo(n,x,l,G):
+    weg = 37430
+    return 1/(weg + l*n - x - 1j*G) #assuming the |0> -> |n> transiton is l*n  cm^-1
 
 
 #define numbers for AB terms
@@ -85,139 +82,99 @@ dMgedQ = 0.007 #dM^eg / dQ
 
 
 #define terms
-y = np.linspace(10000, 50000, 3000000)
-# y = 31000
-
-# d = np.linspace(0, 1, 1000)
+y = np.linspace(17000, 57000, 3000000)
 
 
 
-def A(d):
-    return Mge * Lge * (f01(d)*f00(d)*Deltaevgo(0,y,0) + f11(d)*f10(d)*Deltaevgo(1,y,1) + f21(d)*f20(d)*Deltaevgo(2,y,2)) #there must be a simpler way to do this but idk
+def A(d, w, G):
+    return Mge * Lge * (f01(d)*f00(d)*Deltaevgo(0,y,w,G) + f11(d)*f10(d)*Deltaevgo(1,y,w,G) + f21(d)*f20(d)*Deltaevgo(2,y,w,G)) #there must be a simpler way to do this but idk
 
 #B1 terms
-def B1(d):
-    # B10 = Mge*f10(d) * (dLeg * h00(d)) * Deltaevgo(0, y, 0) #the v' = 0 term
-    # B11 = Mge*f11(d) * (dLeg* h10(d)) * Deltaevgo(1, y, 1) #the v' = 1 term
-    # B12 = Mge*f12(d) * (dLeg * h20(d)) * Deltaevgo(2, y, 2) #the v' = 2 term
-    # return B10 + B11 + B12
-    return Mge*f01(d) * (dLeg * h00(d)) * Deltaevgo(0, y, 0) + Mge*f11(d) * (dLeg* h10(d)) * Deltaevgo(1, y, 1) + Mge*f21(d) * (dLeg * h20(d)) * Deltaevgo(2, y, 2)
+def B1(d,w, G):
+    return Mge*f01(d) * (dLeg * h00(d)) * Deltaevgo(0, y, w, G) + Mge*f11(d) * (dLeg* h10(d)) * Deltaevgo(1, y, w, G) + Mge*f21(d) * (dLeg * h20(d)) * Deltaevgo(2, y, w, G)
 
 #B2 terms
-def B2(d):
-    # B20 = dMgedQ * Lge *(h10(d) * f00(d)) * Deltaevgo(0, y, 0) #the v' = 0 term
-    # B21 = dMgedQ * Lge *(h11(d) * f10(d)) * Deltaevgo(1, y, 1) #the v' = 1 term
-    # B22 = dMgedQ * Lge *(h12(d) * f20(d)) * Deltaevgo(2, y, 2) #the v' = 2 term
-    # return B20 + B21 + B22
-    return dMgedQ * Lge *(h01(d) * f00(d)) * Deltaevgo(0, y, 0) + dMgedQ * Lge *(h11(d) * f10(d)) * Deltaevgo(1, y, 1) + dMgedQ * Lge *(h21(d) * f20(d)) * Deltaevgo(2, y, 2) 
+def B2(d,w, G):
+    return dMgedQ * Lge *(h01(d) * f00(d)) * Deltaevgo(0, y, w, G) + dMgedQ * Lge *(h11(d) * f10(d)) * Deltaevgo(1, y, w, G) + dMgedQ * Lge *(h21(d) * f20(d)) * Deltaevgo(2, y, w, G) 
 
-def tot(d):
-    tot = np.abs(A(d)+B1(d)+B2(d))
+def tot(d,w,G):
+    tot = np.abs(A(d,w, G)+B1(d,w,G)+B2(d,w,G))
     return tot
-
-    # def B1B2(d):
-    #     return np.abs(B1(d) + B2(d)) / abs_max
-        
-    # def A1(d):
-    #     return np.abs(A(d))/abs_max
-
-# #Real parts
-# totRe = A.real + B1.real + B2.real
-# ARe = A.real / totRe.max()
-# B1Re = B1.real / totRe.max()
-# B2Re = B2.real / totRe.max()
-
-# #Im parts
-# totIm = A.imag + B1.imag + B2.imag
-# AIm = A.imag / totIm.max()
-# B1Im = B1.imag / totIm.max()
-# B2Im = B1.imag / totIm.max()
-
-#try a data object
-# d = wt.Data(name = 'test')
-# d.create_variable('energy', values = y, units = 'wn')
-# d.create_variable('delta', values = [0.1, 0.2, 0.6])
-
-
-
-# absolute value
-
-
-# tot = np.abs(A+B1+B2)
-# abs_max = tot.max()
-
 
 
 #plot
-fig, gs = wt.artists.create_figure(width="dissertation", nrows=2, cols=cols, aspects=aspects, wspace=1) 
-d1 = 0.5
-abs_max = tot(d1).max()
+fig, gs = wt.artists.create_figure(width="dissertation", nrows=2, cols=cols, aspects=aspects, hspace=0.7, wspace=1.2) 
+d1 = 0.87 #offset
+wvib = 1190 #vib frequency
+width = 175 #linewidth
+abs_max = tot(d1, wvib, width).max()
 ax0 = plt.subplot(gs[0,0])#\Delta = 0.1
-ax0.plot(y, tot(d1)/abs_max, linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
-ax0.plot(y, np.abs(A(d1)) / abs_max, linewidth = '2', label = r'$\mathsf{|A|}$', color = 'cyan', zorder = 3)
-ax0.plot(y, np.abs(B1(d1)+B2(d1)) / abs_max, linewidth = '2', label = r'$\mathsf{|B|}$', color = 'red', zorder = 3)
-# ax0.plot(y, np.abs(B1(d1)) / abs_max, linewidth = '2', label = r'$\mathsf{|B_1|}$', color = 'orange', zorder = 2)
-# ax0.plot(y, np.abs(B2(d1)) / abs_max, linewidth = '2', label = r'$\mathsf{|B_2|}$', color = 'green', zorder = 1)
+ax0.plot(y, tot(d1, wvib, width)/abs_max, linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
+ax0.plot(y, np.abs(A(d1, wvib, width)) / abs_max, linewidth = '2', label = r'$\mathsf{|A|}$', color = 'cyan', zorder = 3)
+ax0.plot(y, np.abs(B1(d1, wvib, width)+B2(d1, wvib, width)) / abs_max, linewidth = '2', label = r'$\mathsf{|B|}$', color = 'red', zorder = 3)
+
 ax0.set_ylabel(r'$\mathsf{Amplitude \ (norm.)}$', fontsize = fontsize)
 ax0.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
-ax0.text(20000, 2, r'$\mathsf{\Delta = 1/\sqrt{2}}$', fontsize = 16)
+ax0.text(25000, 0.8, r'$\mathsf{\Delta = 0.87}$', fontsize = 16)
+ax0.text(25000, 0.4, r'$\mathsf{\omega_{g1,g0} = 1190 \ cm^{-1}}$', fontsize = 16)
+ax0.text(25000, 0.2, r'$\mathsf{\Gamma = 175 \ cm^{-1}}$', fontsize = 16)
 
-
-#plot the A and B
 
 ax1 = plt.subplot(gs[0,1])
-d2 = 0.09
-abs_max1 = tot(d2).max()
-ax1.plot(y, tot(d2) / abs_max1, linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
-ax1.plot(y, np.abs(A(d2)) / abs_max1, linewidth = '2', label = r'$\mathsf{|A|}$', color = 'cyan', zorder = 3)
-ax1.plot(y, np.abs(B1(d2)+B2(d2)) / abs_max1, linewidth = '2', label = r'$\mathsf{|B|}$', color = 'red', zorder = 3)
-# ax1.plot(y, np.abs(B1(d2)) / abs_max1, linewidth = '2', label = r'$\mathsf{|B_1|}$', color = 'orange', zorder = 2)
-# ax1.plot(y, np.abs(B2(d2)) / abs_max1, linewidth = '2', label = r'$\mathsf{|B_2|}$', color = 'green', zorder = 1)
-ax1.set_ylabel(r'$\mathsf{Amplitude \ (norm.)}$', fontsize = fontsize)
-ax1.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
+d2 = 0.26 #offset
+wvib_2 = 932 #vib frequency
+width1 = 175 #linewidth
+abs_max1 = tot(d2, wvib_2, width1).max()
 
-for ax in [ax0, ax1]:
+ax1.plot(y, tot(d2, wvib_2, width1)/abs_max1, linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
+ax1.plot(y, np.abs(A(d2, wvib_2, width1)) / abs_max1, linewidth = '2', label = r'$\mathsf{|A|}$', color = 'cyan', zorder = 3)
+ax1.plot(y, np.abs(B1(d2, wvib_2, width1)+B2(d2, wvib_2, width1)) / (3*abs_max1), linewidth = '2', label = r'$\mathsf{|B|}$', color = 'red', zorder = 3)
+ax1.text(25000, 0.8, r'$\mathsf{\Delta = 0.26}$', fontsize = 16)
+ax1.text(25000, 0.4, r'$\mathsf{\omega_{g1,g0} = 932 \ cm^{-1}}$', fontsize = 16)
+ax1.text(25000, 0.2, r'$\mathsf{\Gamma = 175 \ cm^{-1}}$', fontsize = 16)
+
+
+#mof
+
+ax2 = plt.subplot(gs[1,0])
+d2 = 0.0275 #offset
+wvib_2 = 1200 #vib frequency
+width2 = 300 #linewidth
+abs_max1 = tot(d2, wvib_2, width2).max()
+
+ax2.plot(y, tot(d2, wvib_2, width2)/abs_max1, linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
+ax2.plot(y, np.abs(A(d2, wvib_2, width2)) / abs_max1, linewidth = '2', label = r'$\mathsf{|A|}$', color = 'cyan', zorder = 3)
+ax2.plot(y, np.abs(B1(d2, wvib_2, width2)+B2(d2, wvib_2, width2)) / (10*abs_max1), linewidth = '2', label = r'$\mathsf{|B|}$', color = 'red', zorder = 3)
+ax2.text(25000, 0.8, r'$\mathsf{\Delta = 0.0275}$', fontsize = 16)
+ax2.text(25000, 0.4, r'$\mathsf{\omega_{g1,g0} = 1200 \ cm^{-1}}$', fontsize = 16)
+ax2.text(25000, 0.2, r'$\mathsf{\Gamma = 300 \ cm^{-1}}$', fontsize = 16)
+
+ax3 = plt.subplot(gs[1,1])
+d3 = 0.1350 #offset
+wvib_3 = 1610 #vib frequency
+width3 = 300
+abs_max1 = tot(d3, wvib_3, width3).max()
+
+ax3.plot(y, tot(d3, wvib_3, width3)/abs_max1, linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
+ax3.plot(y, np.abs(A(d3, wvib_3, width3)) / abs_max1, linewidth = '2', label = r'$\mathsf{|A|}$', color = 'cyan', zorder = 3)
+ax3.plot(y, np.abs(B1(d3, wvib_3, width3)+B2(d3, wvib_3, width3)) / (4*abs_max1), linewidth = '2', label = r'$\mathsf{|B|}$', color = 'red', zorder = 3)
+ax3.text(25000, 0.8, r'$\mathsf{\Delta = 0.135}$', fontsize = 16)
+ax3.text(25000, 0.4, r'$\mathsf{\omega_{g1,g0} = 1610 \ cm^{-1}}$', fontsize = 16)
+ax3.text(25000, 0.2, r'$\mathsf{\Gamma = 300 \ cm^{-1}}$', fontsize = 16)
+
+
+
+
+
+for ax in [ax0, ax1, ax2, ax3]:
     ax.set_yscale('log')
-    ax.set_xlim(15000, 45000)
-    xticks = np.linspace(15000, 45000, 7)
+    ax.set_xlim(20000, 50000)
+    xticks = np.linspace(20000, 50000, 7)
     ax.set_xticks(xticks)
-    ax.set_ylim(0.0001, 3.4)
+    ax.set_ylim(0.0001, 1.6)
     ax.legend(loc = 1)
-    for i in [0,1,2]:
-        ax.vlines(x = 30000+2200*i, ymin = 0.00005, ymax = 4, color = 'gray', linestyle = '--', linewidth = 1)
-
-#put lines at the vibronic resonances
-
-
-# others = False #debating if to include the Re and Im parts of gamma
-# if others:
-#     #plot Re A and B
-#     ax2 = plt.subplot(gs[1,0])
-#     # ax2.plot(y, totRe , linewidth = '2', label = '$\mathsf{A + B}$', color = 'black', zorder = 4)
-#     ax2.plot(y, ARe, linewidth = '2', label = r'$\mathsf{A}$', color = 'cyan', zorder = 3)
-#     ax2.plot(y, B1Re, linewidth = '2', label = r'$\mathsf{B_1}$', color = 'orange', zorder = 2)
-#     ax2.plot(y, B2Re, linewidth = '2', label = r'$\mathsf{B_2}$', color = 'green', zorder = 1)
-#     ax2.set_ylabel(r'$\mathsf{Re(\gamma) \ (norm.)}$', fontsize = fontsize)
-#     ax2.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
-    
-#     #ax2.set_yscale('log')
-#     ax2.set_xlim(20000, 40000)
-#     # ax2.set_ylim(0.001, 2.2)
-#     ax2.legend(loc = 1)
-    
-#     #plot Im A and B
-#     ax3 = plt.subplot(gs[1,1])
-#     # ax3.plot(y, totIm , linewidth = '2', label = '$\mathsf{A + B}$', color = 'black', zorder = 4)
-#     ax3.plot(y, AIm, linewidth = '2', label = r'$\mathsf{A}$', color = 'cyan', zorder = 3)
-#     ax3.plot(y, B1Im, linewidth = '2', label = r'$\mathsf{B_1}$', color = 'orange', zorder = 2)
-#     ax3.plot(y, B2Im, linewidth = '2', label = r'$\mathsf{B_2}$', color = 'green', zorder = 1)
-#     ax3.set_ylabel(r'$\mathsf{Im(\gamma) \ (norm.)}$', fontsize = fontsize)
-#     ax3.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
-    
-#     # ax3.set_yscale('log')
-#     ax3.set_xlim(20000, 40000)
-#     # ax2.set_ylim(0.001, 2.2)
-#     ax3.legend(loc = 1)
+    ax.set_ylabel(r'$\mathsf{Amplitude \ (norm.)}$', fontsize = fontsize)
+    ax.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
 
 for i, ax in enumerate(fig.axes):
     # ax.grid(visible=True, color="k", lw=0.5, linestyle=":")

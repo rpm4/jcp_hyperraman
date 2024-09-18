@@ -50,7 +50,7 @@ ax1 = plt.subplot(gs[0,1])
 
 #insert the poles
 poles = [2, -2, -2.6, 3.5]
-points = [0, 0, 2, 3]
+points = [0, 0, 2, -3]
 
 
 #plot it
