@@ -8,11 +8,13 @@ import numpy as np
 import WrightTools as wt
 import matplotlib.pyplot as plt 
 from matplotlib.patches import FancyArrowPatch
+import pathlib
 
 wt.artists.apply_rcparams(kind="publication")
 
-save = False
+save = True
 fontsize = 18
+here = pathlib.Path(__file__).resolve().parent
 
 #make figure
 cols = [1, 1] 
@@ -162,10 +164,6 @@ ax3.text(25000, 0.8, r'$\mathsf{\Delta = 0.135}$', fontsize = 16)
 ax3.text(25000, 0.4, r'$\mathsf{\omega_{g1,g0} = 1610 \ cm^{-1}}$', fontsize = 16)
 ax3.text(25000, 0.2, r'$\mathsf{\Gamma = 300 \ cm^{-1}}$', fontsize = 16)
 
-
-
-
-
 for ax in [ax0, ax1, ax2, ax3]:
     ax.set_yscale('log')
     ax.set_xlim(20000, 50000)
@@ -181,4 +179,4 @@ for i, ax in enumerate(fig.axes):
     wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.35, bbox = True, fontsize = fontsize, background_alpha=0.75)
 
 if save:
-    wt.artists.savefig("changedelta.png", transparent = True, bbox_inches='tight')
+    wt.artists.savefig(here / "changedelta.png", transparent = True, bbox_inches='tight')
