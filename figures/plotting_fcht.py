@@ -6,12 +6,14 @@ Created on Tue Jan 17 09:28:39 2023
 """
 import numpy as np
 import WrightTools as wt
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
+import pathlib
 
 wt.artists.apply_rcparams(kind="publication")
 
-save = False
+save = True
 fontsize =18
+here = pathlib.Path(__file__).resolve().parent
 
 #define harmonic wells and coordinates
 d = np.linspace(-5, 5, 5000)
@@ -113,4 +115,4 @@ for i, ax in enumerate(fig.axes):
     wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.25, bbox = True, fontsize = fontsize, background_alpha=0.75)
 
 if save:
-    wt.artists.savefig("fcht.png", transparent = True, bbox_inches='tight')
+    wt.artists.savefig(here / "fcht.png", transparent = True, bbox_inches='tight')

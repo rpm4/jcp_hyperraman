@@ -8,11 +8,13 @@ import numpy as np
 import WrightTools as wt
 import matplotlib.pyplot as plt 
 from matplotlib.patches import FancyArrowPatch
+import pathlib
 
 wt.artists.apply_rcparams(kind="publication")
 
-save = False
+save = True
 fontsize = 18
+here = pathlib.Path(__file__).resolve().parent
 
 #define harmonic wells and coordinates
 d = 0.5 #offset for es
@@ -260,4 +262,4 @@ for i, ax in enumerate(fig.axes):
     wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.25, bbox = True, fontsize = fontsize, background_alpha=0.75)
 
 if save:
-    wt.artists.savefig("drsive_spectrum.png", transparent = True, bbox_inches='tight')
+    wt.artists.savefig(here / "drsive_spectrum.png", transparent = True, bbox_inches='tight')

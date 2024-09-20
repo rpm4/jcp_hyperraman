@@ -406,32 +406,33 @@ Such effects have been seen elsewhere in spontaneous, surface enhanced hyper-Ram
 
 
 \subsection{Inhomogeneity in HDFG}
-An often unavoidable consequence in electronic spectroscopy is broadened lineshapes due to a high density of vibronic modes, i.e., inhomogeneous broadening.
+
+An often unavoidable consequence in electronic spectroscopy is broadened line shapes due to a high density of vibronic modes, i.e., inhomogeneous broadening.
 It is worthwhile to investigate the impact of inhomogeneity on HDFG response and the resultant lineshapes. 
-In the discussion that follows, we assume that a vibrational mode in the ground state, $\ket{g,v}$, is correlated to the frequency of a vibronic $\ket{e,\tilde{v}'}$.\cite{Carlson1990line, Dong2015}
+In the discussion that follows, we assume that a ground state vibrational frequency, $\ket{g,v}$, experiences variations that are correlated to the frequency of a vibronic $\ket{e,\tilde{v}'}$.
 If the frequency of $\ket{g,v}$ is written as $\omega_{gv} + \xi$, where $\xi$ is some external strain (e.g. molecular collisions), then the frequency of $\ket{e,\tilde{v}'}$ is $\omega_{e\tilde{v}'} + c\xi$, where c is a shift coefficient.
-When two modes are positively correlated, $c > 0$; similarly, modes are negatively correlated when $c < 0$.
-For simplicity, we assume c = $\pm$1.
+We assume the fluctuations controlling the frequency variations are slow (the static limit), so that homogeneous lineshapes are unaffected by this fluctuation. 
+When both states positively correlated, $c > 0$; similarly, modes are negatively correlated when $c < 0$.
+For simplicity, we consider only c = $\pm$1.
 
 We investigate the impact of inhomogeneity on spectral output by convolving the HDFG output hyperpolarizability $\gamma_{ijkl}(\xi)$ with a normalized Lorentzian distribution $P(\xi)$ of half width $\sigma$ as \cite{Desiderio1979, Dick83_1, Carlson1990line} 
 \begin{equation}\label{contour}
-	\gamma_{ijkl} = \int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \gamma_{ijkl}(\xi)
+	\gamma_{ijkl} = \int_{-\infty}^\infty \mathrm{d}\xi \ P(\xi) \gamma_{ijkl}(\xi)
 	= \frac{\sigma}{\pi}\int_{-\infty}^\infty \mathrm{d}\xi \frac{1}{\sigma^2 + \xi^2} \frac{\eta_{ijkl}}{\left(\Delta_{ga} - \xi\right)\left(\Delta_{ba}+ c\xi\right)}
 \end{equation} 
 where $\eta_{ijkl}$ contains all values in \autoref{drgamma_notaylor} not dependent upon $\xi$.
-The limit of static inhomogeneity is chosen for simplicity.
 While Gaussian distributions are commonly used as a phenomenological description of inhomogeneous broadening, Lorentzian distributions have successfully described inhomogeneous broadening in a variety of spectroscopies and yield easily interpretable closed-form solutions. \cite{Desiderio1979, Dick83_1, Carlson1990line, RN410}
 
 Evaluating \autoref{contour} for the HDFG pathway above shows\footnote{See the supporting information for more details} 
-\begin{subequations}\label{linenarrow}
-	\begin{equation}\label{linenarrowa}
-		\gamma_{ijkl} = \frac{- \eta_{ijkl}}{\Delta_{ga}+ i \sigma} \left( \frac{1}{\Delta_{ba}-i \sigma} + \frac{2 i \sigma}{\Delta_{ga}-i \sigma} \frac{1}{\Delta_{ba} + \Delta_{ga}} \right)
-	\end{equation}
-	\begin{equation}
-		\gamma_{ijkl} = \frac{\eta_{ijkl}}{\left(\Delta_{ga}-i\sigma \right) \left(\Delta_{ba}-i \sigma\right)}
-	\end{equation}
-\end{subequations}
-for correlated ($c = 1$) and anti-correlated ($c = -1$) modes, respectively.
+
+\begin{equation}\label{linenarrowa}
+	\gamma_{ijkl} = \frac{- \eta_{ijkl}}{\Delta_{ga}+ i \sigma} \left( \frac{1}{\Delta_{ba}-i \sigma} + \frac{2 i \sigma}{\Delta_{ga}-i \sigma} \frac{1}{\Delta_{ba} + \Delta_{ga}} \right)
+\end{equation}
+	for correlated ($c = 1$) states and
+\begin{equation}
+	\gamma_{ijkl} = \frac{\eta_{ijkl}}{\left(\Delta_{ga}-i\sigma \right) \left(\Delta_{ba}-i \sigma\right)}
+\end{equation}
+for anti-correlated ($c = -1$) states.
 The output for correlated modes shows the presence of a new term, $\frac{2i\sigma}{\Delta_{ga} + \Delta_{ba}}$. 
 This term is amplified by the width of the inhomogeneous envelope ($\sigma$) and has a linewidth $\Gamma_{ba} + \Gamma_{ga}$, which linenarrows the transition. 
 For anti-correlated modes, we see the inhomogeneous envelope width $\sigma$ is added to the linewidth of each resonance (e.g., $\Gamma_{ga} \rightarrow \Gamma_{ga} + \sigma$).
