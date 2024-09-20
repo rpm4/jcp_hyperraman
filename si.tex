@@ -39,7 +39,8 @@
 
 
 \section{Evaluating Herzberg-Teller Integrals for Harmonic Wells of Identical Curvature}
-In this section, we discuss the evaluation of Herzberg-Teller integrals, in the limit of no Duschinsky coupling, when the ground and first excited state are harmonic wells of identical curvature.\cite{HerzbergTeller1933, Duschinsky1937}
+In this section, we discuss the evaluation of Herzberg-Teller integrals when the ground and first excited state are harmonic wells of identical curvature.\cite{HerzbergTeller1933}
+% We note that Myers et al. have developed a general expression to evaluate Franck-Condon factors for two displaced harmonic wells of differing curvature,\cite{Myers1982} 
 We investigate the one dimensional case using the Hamiltonian described in the main text, $H = H_g |g) \left(g| + H_e |e\right) (e|$, where
 \begin{subequations}\label{Hamiltonian}
 	\begin{equation}
@@ -51,50 +52,24 @@ We investigate the one dimensional case using the Hamiltonian described in the m
 	\end{equation} 
 \end{subequations}
 Here, $p,q$ are the dimensionless conjugate normal mode coordinates, $\hbar\omega_{eg}$ is the energy difference between $H_e$ and $H_g$, and $\Delta$ is the dimensionless offset of the excited state surface relative to the ground state.
-Franck-Condon factors and Herzberg-Teller integrals are often evaluated in position space using known solutions to the Harmonic Oscillator Hamiltonian, 
+The Hamiltonians are the well-known quantum harmonic oscillator, and their solutions are
 \begin{equation}
-	\psi_m(q) = \langle q | m \rangle = N(m) H_m(q) \exp(-q^2/2),
+	\psi_m(q) = \langle q | m \rangle = N_m H_m(q) \exp(-q^2/2),
 \end{equation}
-where $N(m) = (m! \ 2^m \pi^{\frac{1}{2}})^{-\frac{1}{2}}$ is the normalization factor and $H_m$ is the m$^{th}$ Hermite Polynomial.\cite{RN230}
-We begin by generating an expression for $\mel{\tilde{n}}{q^k}{m}$, as this will resolve into Franck-Condon factors for $k = 0$ and Herzberg-Teller integrals for $k=1$.
-The relevant Franck-Condon factors and Herzberg-Teller integrals, assuming identical curvature and no Duschinsky coupling, are plotted in \autoref{fig:fcht} as a function of offset, $\Delta$.
-As in the main text, $\{\ket{\tilde{a}}\}$ are vibrational states on the first excited state $|e)$ and $\{\ket{b}\}$ are vibrational states on the ground state $|g)$.
+where $N_m = (m! \ 2^m \pi^{\frac{1}{2}})^{-\frac{1}{2}}$ is the normalization factor and $H_m$ is the $m^{th}$ Hermite Polynomial.\cite{RN230}
 
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=6.675in]{figures/fcht.png}
-	\caption{Plots of select (a) Franck-Condon factors and (b) Herzberg-Teller integrals relevant to this manuscript as a function of offset, $\Delta$.} 
-	\label{fig:fcht}
-\end{figure}
-
-By letting $\ket{m}$ belong to the ground state surface $|g)$ and $\ket{\tilde{n}}$ belong to the first excited surface $|e)$, we write
+For an $n$-quantum excited state vibration $| \tilde{n} \rangle$, and a $m$-quantum ground state vibration $| \tilde{m} \rangle$, the $k^{th}$-order vibrational coupling term is
 \begin{equation}
-\begin{split}
-		\mel{\tilde{n}}{q^k}{m} &= \int_{-\infty}^\infty \mathrm{d}q \psi^*_n(q-\Delta) q^k \psi_m(q)\\
-		&= \int_{-\infty}^\infty \mathrm{d}q N(n) N(m) H_n(q-\Delta) \exp(-\frac{(q - \Delta)^2}{2}) q^k H_m(q) \exp(-\frac{q^2}{2}),
-\end{split}
+	\begin{split}
+			\mel{\tilde{n}}{q^k}{m} &= \int_{-\infty}^\infty \mathrm{d}q \ \psi^*_n(q-\Delta) q^k \psi_m(q)\\
+			&= \int_{-\infty}^\infty \mathrm{d}q \ N_n H_n(q-\Delta) \exp(-\frac{(q - \Delta)^2}{2}) q^k N_m H_m(q) \exp(-\frac{q^2}{2}). \\
+			&= N_n N_m \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ H_n(q-\Delta) q^k H_m(q) \exp(-q^2 + q\Delta)
+		\end{split}\label{key}
 \end{equation}
-where $k=0$ corresponds to a Franck-Condon factor and $k=1$ refers to a Herzberg-Teller integral.
-Introducing $\tilde{N} \equiv N(n)N(m)$ and slightly rearranging, we see
-\begin{equation}\label{key}
-	\mel{\tilde{n}}{q^k}{m} = \tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q H_n(q-\Delta) q^k H_m(q) \exp(-q^2 + q\Delta)
-\end{equation}
-This is the key result.
-While integrals of form \autoref{key} can be computed straightforwardly using mathematical packages such as \texttt{Mathematica} or \texttt{SymPy}, \cite{Mathematica, sympy} it is a useful exercise in Gaussian integral manipulation to evaluate Herzberg-Teller or Franck-Condon integrals.
-As a side note, \autoref{key} explicitly shows
-\begin{subequations}
-	\begin{equation}
-		\lim_{\Delta \rightarrow 0} \langle \tilde{n} | m \rangle = \langle n | m \rangle = \delta_{n,m}
-	\end{equation}
-and
-	\begin{equation}
-	\lim_{\Delta \rightarrow 0} \mel{\tilde{n}}{q}{m} = \mel{{n}}{q}{m} = \sqrt{\frac{1}{2}} \left(\sqrt{m}\delta_{n,m-1} + \sqrt{m+1} \delta_{n,m+1}\right)
-	\end{equation}
-\end{subequations}
-i.e., as the offset vanishes, the normal harmonic oscillator selection rules are obtained, the expected result, where $\delta$ is the Kronecher delta.
+The integral corresponds to Franck-Condon matrix elements for $k=0$ and Herzberg-Teller matrix elements for $k=1$.
 
-It is well known that the Hermite polynomials $H_v(q)$ are linear combinations of $q^w$, $w \in \mathbf{N}$. 
-Thus, evaluating \autoref{key} for arbitrary $m,n,k$ values resolves into evaluating sums of integrals of the form
+The matrix elements of \autoref{key} can be computed numerically, but analytic forms of the integral also exist. 
+Due to the polynomial nature of $H_v(q)$, evaluation of \autoref{key} reduces into evaluating sums of integrals of the form
 \begin{equation}\label{integral}
 	\int_{-\infty}^\infty \mathrm{d}q \ q^w \exp(-q^2 + q\Delta)
 \end{equation}
@@ -102,8 +77,8 @@ When $w=0$, the result follows by completing the square:\footnote{$\int_{-\infty
 \begin{equation}
 	\begin{split}
 		\int_{-\infty}^\infty \mathrm{d}q \exp(-q^2 + q\Delta) &= \int_{-\infty}^\infty \mathrm{d}q \exp(-(q^2 - q\Delta +\frac{\Delta^2}{4} - \frac{\Delta^2}{4}))\\
-		&= \exp(\frac{\Delta^2}{4}) \int_{-\infty}^\infty \mathrm{d}q \exp(-(q - \frac{\Delta}{2})^2) \\
-		&= \sqrt{\pi} \exp(\frac{\Delta^2}{4})
+		&= \exp(-\frac{\Delta^2}{4}) \int_{-\infty}^\infty \mathrm{d}q \exp(-(q - \frac{\Delta}{2})^2) \\
+		&= \sqrt{\pi} \exp(-\frac{\Delta^2}{4})
 	\end{split}
 \end{equation}
  For $w \neq 0$, \autoref{integral} is evaluated through repeated use of a well-known Gaussian identity
@@ -112,22 +87,14 @@ When $w=0$, the result follows by completing the square:\footnote{$\int_{-\infty
 \end{equation}
 
 We now have the background needed to calculate $\mel{\tilde{1}}{q}{0}$ for an arbitrary offset $\Delta$.
-We note that Myers et al. have developed a general expression to evaluate Franck-Condon factors for two displaced harmonic wells of arbitrary curvature,\cite{Myers1982} so we focus our attention onto Herzberg-Teller integrals, which are not commonly tabulated.
-Starting with \autoref{key},
-\begin{equation}
-\begin{split}
-	\mel{\tilde{1}}{q}{0} = \tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q H_1(q-\Delta) q H_0(q) \exp(-q^2 + q\Delta)
-\end{split}
-\end{equation}
 Using $H_0(q) = 1$ and $H_1(q) = 2q$,
 \begin{equation}\label{HT10}
 	\begin{split}
-		\mel{\tilde{1}}{q}{0} &= \tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ 2(q - \Delta) q \exp(-q^2 + q\Delta)\\
-		&= 2\tilde{N} \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ (q^2 - q \Delta) \exp(-q^2 + q\Delta)\\
-		&=  2\tilde{N} \exp(-\frac{\Delta^2}{2}) \left(\int_{-\infty}^\infty \mathrm{d}q \ q^2 \exp(-q^2 + q\Delta) - \Delta \int_{-\infty}^\infty \mathrm{d}q \ q \exp(-q^2 + q\Delta) \right)
+		\mel{\tilde{1}}{q}{0} &= N_1 N_0 \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ 2(q - \Delta) q \exp(-q^2 + q\Delta)\\
+		&= 2N_1 N_0 \exp(-\frac{\Delta^2}{2}) \left( \int_{-\infty}^\infty \mathrm{d}q \ q^2 \exp(-q^2 + q\Delta) + \Delta \int_{-\infty}^\infty \mathrm{d}q \ q \exp(-q^2 + q\Delta) \right)
 	\end{split}
 \end{equation}
-These integrals are now easily evaluated using \autoref{identity}:
+Both integrals can be evaluated using \autoref{identity}:
 \begin{subequations}\label{evalGaussians}
 	\begin{equation}
 		\begin{split}
@@ -135,19 +102,28 @@ These integrals are now easily evaluated using \autoref{identity}:
 					& = \sqrt{\pi} \frac{\Delta}{2} \exp(\frac{\Delta^2}{4})
 		\end{split}
 	\end{equation}
-giving
-\begin{equation}
+	\begin{equation}
 	\begin{split}
 		\int_{-\infty}^\infty \mathrm{d}q \ q^2 \exp(-q^2 + q\Delta) &= \partial_{\Delta} \left(\sqrt{\pi} \left(\frac{\Delta}{2} \exp(\frac{\Delta^2}{4})\right)\right)\\
 		& =\sqrt{\pi} \left(\frac{1}{2}\exp(\frac{\Delta^2}{4}) + \frac{\Delta^2}{4} \exp(\frac{\Delta^2}{4})\right)
 	\end{split}
 \end{equation}
 \end{subequations}
-With $\tilde{N} = N(1)*N(0) = (1! \ 2^1 \pi^{\frac{1}{2}})^{-\frac{1}{2}} * (0! \ 2^0 \pi^{\frac{1}{2}})^{-\frac{1}{2}} = \sqrt{1/2\pi}$ and substituting the results of \autoref{evalGaussians} into \autoref{HT10}, 
+Substituting the results of \autoref{evalGaussians} into \autoref{HT10}, 
 \begin{equation}
 	\mel{\tilde{1}}{q}{0} = \sqrt{\frac{1}{2}} (1 - \frac{\Delta^2}{2}) \exp(\frac{-\Delta^2}{4})
 \end{equation}
-The evaluation of other Herzberg-Teller integrals follows a similar process. 
+The evaluation of other Herzberg-Teller integrals is analogous. 
+
+
+\pagebreak
+\section{Impact of displacement, resonance frequencies, and vibronic linewidth and on HDFG Spectra}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=6.675in]{figures/fcht.png}
+	\caption{Plots of select (a) Franck-Condon factors and (b) Herzberg-Teller integrals relevant to this manuscript as a function of offset, $\Delta$.} 
+	\label{fig:fcht}
+\end{figure}
 
 \begin{figure}[!htbp]
 	\centering
@@ -156,15 +132,18 @@ The evaluation of other Herzberg-Teller integrals follows a similar process.
 	\label{fig:chgdelta}
 \end{figure}
 
-\section{Impact of $\Delta$ on $A,B$ Terms in HDFG Spectra}
+\pagebreak
+
 In the main text, the potential well offset ($\Delta$) was taken as $\Delta = 0.5$.
 Here, we vary $\Delta$ to investigate its impact on the structure of the $\abs{A+B}$ spectrum.
+The dependence of relevant Franck-Condon factors and Herzberg-Teller factors on displacement are plotted in \autoref{fig:fcht} as a function of offset, $\Delta$.
+\autoref{fig:fcht} shows how different displacements, vibrational frequencies, and vibronic linewidths will alter the vibronic spectrum.
 
 It is clear from \autoref{fig:fcht} that the HDFG spectrum will have a significant dependence upon $\Delta$, even for small deviations from complete overlap. 
 To this end, we plot the impact of resonance frequency and offset on the HDFG spectrum \autoref{fig:chgdelta}, using values reported by Myers et al. and Brennan et al. \cite{Myers1982, Brennan2024}
 In this section, we take $\omega_{eg}$ = $37340$ cm$^{-1}$ and vary the offset ($\Delta$), vibrational frequency ($\omega_{g1,g0}$), and linewidth ($\Gamma$) as noted in the figure.
 
-
+\pagebreak
 
 \section{Evaluating impact of inhomogeneity on HDFG output}
 In this section, the integral
@@ -175,7 +154,7 @@ In this section, the integral
 		&= \frac{\eta_{ijkl} \sigma}{\pi} \int_{-\infty}^\infty \mathrm{d}\xi\frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga} - \xi} \frac{1}{\Delta_{ba} + c\xi}\\
 	\end{split}
 \end{equation}
-is evaluated using Contour integration.
+is evaluated for $c=-1$ (electronic state and vibrational state energy fluctuations are anti-correlated) $c=1$ (electronic state and vibrational state energy fluctuations are correlated).
 
 \subsection{Anti-correlated Modes}
 For anti-correlated modes ($c = -1$), the poles ($\xi_k$) are situated in the complex plane as shown in \autoref{fig:contours}a.
@@ -199,10 +178,8 @@ Using the residue theorem, we see
 
 \subsection{Correlated Modes}
 For correlated modes, the poles are situated in the complex plane as shown in \autoref{fig:contours}b.
-It is clear that no matter which contour is chosen, there is a contribution from either $\Delta_{ba}$ or $\Delta_{ga}$. 
-For the below calculation, we choose to evaluate along the contour in the bottom half of the complex plane, i.e., the poles are $\{-i\sigma, \Delta_{ga}\}$.
-We stress that since the integral is evaluated over $\mathbb{R}$ and there are no degenerate poles, the results below can \textit{also} be obtained by the contour that wraps around the poles $\{i\sigma, -\Delta_{ba}\}$. 
-Nevertheless, we choose the contour as drawn in \autoref{fig:contours}b.
+It is clear that no matter which contour is chosen, the contour will envelop two poles.
+We choose to evaluate along the contour in the bottom half of the complex plane (see \autoref{fig:contours}b), where the poles are $\{-i\sigma, \Delta_{ga}\}$.
 Since the $\xi_k$ are nondegenerate, we see
 \begin{widetext}
 	\begin{equation}
@@ -215,7 +192,7 @@ Since the $\xi_k$ are nondegenerate, we see
 		\end{split}
 	\end{equation}
 \end{widetext}
-Generally, when starting from the ground state, non-parametric spectroscopies line-narrow correlated modes, and parametric spectroscopies line-narrow anti-correlated modes. \cite{Dick83_1, RN425}
+
 
 \begin{figure}[!htbp]
 	\centering
