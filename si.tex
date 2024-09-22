@@ -128,27 +128,34 @@ Multiplying these terms together give us explicit polynomial coefficients:
 \begin{split}
 	P_{nmk}(q) %&= \sum_{x=0}^{\left\lfloor{m/2}\right\rfloor} a_m^{(m-2x)} \sum_{y=0}^{\left\lfloor{n/2}\right\rfloor} a_n^{(n-2y)} \sum_{l=0}^{n-2y} \Delta^{n-2y-l} \binom{n-2y}{l} q^{l+m-2x+k} \\
 	&= \sum_{x=0}^{\left\lfloor{m/2}\right\rfloor} \sum_{y=0}^{\left\lfloor{n/2}\right\rfloor} \sum_{l=0}^{n-2y} c_{xyl} \ q^{l+m-2x+k}, \\
-	c_xyl &= a_m^{(m-2x)} a_n^{(n-2y)} \Delta^{n-2y-l} \binom{n-2y}{l}.
+	c_{xyl} &= a_m^{(m-2x)} a_n^{(n-2y)} \Delta^{n-2y-l} \binom{n-2y}{l}.
 \end{split}
 \end{equation}
 \autoref{eq:poly_solved} is not in standard polynomial form, because our summation is not singular and coefficients in our summation may have the same power. 
 Further simplifications can be made to sum to reduce recounting indices, but we do not find these simplifications essential.
 Regardless, substituting \autoref{eq:F_solved} and \autoref{eq:poly_solved} into \autoref{eq:analytic_form}, we can now evaluate the solution as:
 \begin{equation}\label{eq:general_solution}
-	\mel{\tilde{n}}{q^k}{m} = \sqrt{\pi} N_n N_m \exp(-\frac{\Delta^2}{4}) \sum_{x=0}^{\left\lfloor{m/2}\right\rfloor} \sum_{y=0}^{\left\lfloor{n/2}\right\rfloor} \sum_{l=0}^{n-2y} \left( -\frac{i}{2} \right)^{l+m-2x+k} c_{xyl} H_{l+m-2x+k}\left(i\frac{\Delta}{2}\right).
+	\mel{\tilde{n}}{q^k}{m} = \sqrt{\pi} N_n N_m 
+	\exp(-\frac{\Delta^2}{4}) \sum_{x=0}^{\left\lfloor{m/2}\right\rfloor} \sum_{y=0}^{\left\lfloor{n/2}\right\rfloor} \sum_{l=0}^{n-2y} \left( -\frac{i}{2} \right)^{l+m-2x+k} c_{xyl} H_{l+m-2x+k}\left(i\frac{\Delta}{2}\right).
 \end{equation}
 
 \subsection{Evaluating Herzberg Teller terms for HDFG}
 
 \begin{equation}
 \begin{split}
-	\langle n |q| 0 \rangle &= \cdots \\
+	\langle \tilde{n} |q| 0 \rangle &= 
+	\sqrt{\pi} N_n N_0 \exp(-\frac{\Delta^2}{4}) \sum_{y=0}^{\left\lfloor{n/2}\right\rfloor} \sum_{l=0}^{n-2y} \left( -\frac{i}{2} \right)^{l+1} c_{0yl} H_{l+1}\left(i\frac{\Delta}{2}\right) \\
+	&= \exp(-\frac{\Delta^2}{4}) \sum_{y=0}^{\left\lfloor{n/2}\right\rfloor} \sum_{l=0}^{n-2y} \left( -\frac{i}{2} \right)^{l+1} 
+	\frac{(-1)^y 2^{-2y}}{y!l!(n-2y-l)!}
+	\Delta^{n-2y-l} 
+	H_{l+1}\left(i\frac{\Delta}{2}\right)
 \end{split}
 \end{equation}
 
 \begin{equation}
 	\begin{split}
-		\langle n |q| 1 \rangle &= \cdots \\
+		\langle \tilde{n} |q| 1 \rangle &= \sqrt{\pi} N_n N_1 \exp(-\frac{\Delta^2}{4}) \sum_{y=0}^{\left\lfloor{n/2}\right\rfloor} \sum_{l=0}^{n-2y} \left( -\frac{i}{2} \right)^{l+2} c_{1yl} H_{l+2}\left(i\frac{\Delta}{2}\right) \\
+		&= \cdots
 	\end{split}
 \end{equation}
 	
