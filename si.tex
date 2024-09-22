@@ -39,6 +39,7 @@
 
 
 \section{Evaluating Herzberg-Teller Integrals for Harmonic Wells of Identical Curvature}
+
 In this section, we discuss the evaluation of Herzberg-Teller integrals when the ground and first excited state are harmonic wells of identical curvature.\cite{HerzbergTeller1933}
 % We note that Myers et al. have developed a general expression to evaluate Franck-Condon factors for two displaced harmonic wells of differing curvature,\cite{Myers1982} 
 We investigate the one dimensional case using the Hamiltonian described in the main text, $H = H_g |g) \left(g| + H_e |e\right) (e|$, where
@@ -61,62 +62,129 @@ where $N_m = (m! \ 2^m \pi^{\frac{1}{2}})^{-\frac{1}{2}}$ is the normalization f
 For an $n$-quantum excited state vibration $| \tilde{n} \rangle$, and a $m$-quantum ground state vibration $| \tilde{m} \rangle$, the $k^{th}$-order vibrational coupling term is
 \begin{equation}
 	\begin{split}
-			\mel{\tilde{n}}{q^k}{m} &= \int_{-\infty}^\infty \mathrm{d}q \ \psi^*_n(q-\Delta) q^k \psi_m(q)\\
-			&= \int_{-\infty}^\infty \mathrm{d}q \ N_n H_n(q-\Delta) \exp(-\frac{(q - \Delta)^2}{2}) q^k N_m H_m(q) \exp(-\frac{q^2}{2}). \\
-			&= N_n N_m \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ H_n(q-\Delta) q^k H_m(q) \exp(-q^2 + q\Delta)
-		\end{split}\label{key}
+		\mel{\tilde{n}}{q^k}{m} &= \int_{-\infty}^\infty \mathrm{d}q \ \psi^*_n(q-\Delta) q^k \psi_m(q)\\
+		&= \int_{-\infty}^\infty \mathrm{d}q \ N_n H_n(q-\Delta) \exp(-\frac{(q - \Delta)^2}{2}) q^k N_m H_m(q) \exp(-\frac{q^2}{2}). \\
+		&= N_n N_m \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ H_n(q-\Delta) q^k H_m(q) \exp(-q^2 + q\Delta)
+	\end{split}\label{key}
 \end{equation}
 The integral corresponds to Franck-Condon matrix elements for $k=0$ and Herzberg-Teller matrix elements for $k=1$.
 
+\subsection{General Solution to $\langle \tilde{n} | q^k | m \rangle$}
 The matrix elements of \autoref{key} can be computed numerically, but analytic forms of the integral also exist. 
-Due to the polynomial nature of $H_v(q)$, evaluation of \autoref{key} reduces into evaluating sums of integrals of the form
+Due to the polynomial nature of $H_v(q)$, the product $H_n(q-\Delta) q^k H_m(q)$ will also be a polynomial, so that the integral of equation \autoref{key} will be of the form
+\begin{eqnarray}
+	\int dq \ P_{nmk}(q) \exp(-q^2 + q\Delta), \\
+	P_{nmk}(q) \equiv \sum_\lambda^{n+m+k} a_\lambda q^\lambda
+\end{eqnarray}
+for some set coefficients $a_\lambda$, to be specified later. We can recast the integral into the linear combination of integrals,
+\begin{equation}\label{eq:analytic_form}
+	\mel{\tilde{n}}{q^k}{m} = N_n N_m \exp(-\frac{\Delta^2}{2}) \sum_\lambda a_\lambda F_\lambda(\Delta),
+\end{equation}
+where
 \begin{equation}\label{integral}
-	\int_{-\infty}^\infty \mathrm{d}q \ q^w \exp(-q^2 + q\Delta)
+	F_w(\Delta) \equiv \int_{-\infty}^\infty \mathrm{d}q \ q^w \exp(-q^2 + q\Delta).
 \end{equation}
-When $w=0$, the result follows by completing the square:\footnote{$\int_{-\infty}^{\infty} \mathrm{d}x \exp(-(x-a)^2) = \sqrt{\pi}$}
+\autoref{integral} can be readily evaluated, as we now show.  When $w=0$, the integral is evaluated by completing the square:\footnote{$\int_{-\infty}^{\infty} \mathrm{d}x \exp(-(x-a)^2) = \sqrt{\pi}$}
 \begin{equation}
 	\begin{split}
-		\int_{-\infty}^\infty \mathrm{d}q \exp(-q^2 + q\Delta) &= \int_{-\infty}^\infty \mathrm{d}q \exp(-(q^2 - q\Delta +\frac{\Delta^2}{4} - \frac{\Delta^2}{4}))\\
-		&= \exp(-\frac{\Delta^2}{4}) \int_{-\infty}^\infty \mathrm{d}q \exp(-(q - \frac{\Delta}{2})^2) \\
-		&= \sqrt{\pi} \exp(-\frac{\Delta^2}{4})
+		F_0(\Delta) &= \int_{-\infty}^\infty \mathrm{d}q \exp(-(q^2 - q\Delta +\frac{\Delta^2}{4} - \frac{\Delta^2}{4}))\\
+		&= \exp(\frac{\Delta^2}{4}) \int_{-\infty}^\infty \mathrm{d}q \exp(-(q - \frac{\Delta}{2})^2) \\
+		&= \sqrt{\pi} \exp(\frac{\Delta^2}{4})
 	\end{split}
 \end{equation}
- For $w \neq 0$, \autoref{integral} is evaluated through repeated use of a well-known Gaussian identity
+For the general solution, \autoref{integral} is evaluated via repeated use of a well-known Gaussian identity
 \begin{equation}\label{identity}
-	\int_{-\infty}^\infty \mathrm{d}q \ q^w \exp(-q^2 + q\Delta) = \partial_{\Delta} \int_{-\infty}^\infty \mathrm{d}q \ q^{w-1} \exp(-q^2 + q\Delta)
+	\begin{split}
+		F_w(\Delta) &= \int_{-\infty}^\infty \mathrm{d}q \ q^w \exp(-q^2 + q\Delta) = \partial_{\Delta} \int_{-\infty}^\infty \mathrm{d}q \ q^{w-1} \exp(-q^2 + q\Delta) \\
+		&= \partial_\Delta F_{w-1}(\Delta)
+	\end{split}
 \end{equation}
+so we can write
+\begin{equation}\label{eq:F_solved}
+	\begin{split}
+		F_w(\Delta) &= \left(\partial_\Delta \right)^w F_0(\Delta) \\
+		&= \sqrt{\pi} \frac{\mathrm{d}^w}{\mathrm{d}\Delta^w} \exp(\frac{\Delta^2}{4}) \\
+		&= \sqrt{\pi} \left( -\frac{i}{2} \right)^w \exp(\frac{\Delta^2}{4}) H_w\left(i\frac{\Delta}{2}\right).
+	\end{split}
+\end{equation}
+In the last line we have used the generator definition of Hermite polynomials:  $H_n(x) \equiv (-1)^n e^{x^2} \frac{\mathrm{d}^n}{\mathrm{d}x^n} e^{-x^2}$.
 
-We now have the background needed to calculate $\mel{\tilde{1}}{q}{0}$ for an arbitrary offset $\Delta$.
-Using $H_0(q) = 1$ and $H_1(q) = 2q$,
-\begin{equation}\label{HT10}
-	\begin{split}
-		\mel{\tilde{1}}{q}{0} &= N_1 N_0 \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ 2(q - \Delta) q \exp(-q^2 + q\Delta)\\
-		&= 2N_1 N_0 \exp(-\frac{\Delta^2}{2}) \left( \int_{-\infty}^\infty \mathrm{d}q \ q^2 \exp(-q^2 + q\Delta) + \Delta \int_{-\infty}^\infty \mathrm{d}q \ q \exp(-q^2 + q\Delta) \right)
-	\end{split}
-\end{equation}
-Both integrals can be evaluated using \autoref{identity}:
-\begin{subequations}\label{evalGaussians}
-	\begin{equation}
-		\begin{split}
-					\int_{-\infty}^\infty \mathrm{d}q \ q \exp(-q^2 + q\Delta) &= \partial_{\Delta} \left(\sqrt{\pi} \exp(\frac{\Delta^2}{4})\right)\\
-					& = \sqrt{\pi} \frac{\Delta}{2} \exp(\frac{\Delta^2}{4})
-		\end{split}
-	\end{equation}
-	\begin{equation}
-	\begin{split}
-		\int_{-\infty}^\infty \mathrm{d}q \ q^2 \exp(-q^2 + q\Delta) &= \partial_{\Delta} \left(\sqrt{\pi} \left(\frac{\Delta}{2} \exp(\frac{\Delta^2}{4})\right)\right)\\
-		& =\sqrt{\pi} \left(\frac{1}{2}\exp(\frac{\Delta^2}{4}) + \frac{\Delta^2}{4} \exp(\frac{\Delta^2}{4})\right)
-	\end{split}
-\end{equation}
-\end{subequations}
-Substituting the results of \autoref{evalGaussians} into \autoref{HT10}, 
+We now will evaluate the polynomial coefficients $P(q)$.
+The Hermite polynomials of \autoref{key} can be explicitly written as 
 \begin{equation}
-	\mel{\tilde{1}}{q}{0} = \sqrt{\frac{1}{2}} (1 - \frac{\Delta^2}{2}) \exp(\frac{-\Delta^2}{4})
+\begin{split}
+	H_m(q) &= \sum_{x=0}^{\left\lfloor{m/2}\right\rfloor} a_m^{(m-2x)} q^{m-2x} \\
+	H_n(q-\Delta) &= \sum_{x=0}^{\left\lfloor{n/2}\right\rfloor}
+	a_n^{(n-2x)} (q-\Delta)^{n-2x} \\
+		&= \sum_{x=0}^{\left\lfloor{n/2}\right\rfloor} a_n^{(n-2x)} \sum_{l=0}^{n-2x} \Delta^{n-2x-l} \binom{n-2x}{l} q^l
+\end{split}
 \end{equation}
-The evaluation of other Herzberg-Teller integrals is analogous. 
+where $\left\lfloor n \right\rfloor$ denotes the \textit{floor} of $n$, $\binom{a}{b} = a! / (b!(a-b)!)$, and the Hermite coefficients are
+\begin{equation}
+	a_n^{(n-2x)} = n! \frac{(-1)^x 2^{n-2x}}{x!(n-2x)!}.
+\end{equation}
+Multiplying these terms together give us explicit polynomial coefficients:
+\begin{equation}\label{eq:poly_solved}
+\begin{split}
+	P_{nmk}(q) %&= \sum_{x=0}^{\left\lfloor{m/2}\right\rfloor} a_m^{(m-2x)} \sum_{y=0}^{\left\lfloor{n/2}\right\rfloor} a_n^{(n-2y)} \sum_{l=0}^{n-2y} \Delta^{n-2y-l} \binom{n-2y}{l} q^{l+m-2x+k} \\
+	&= \sum_{x=0}^{\left\lfloor{m/2}\right\rfloor} \sum_{y=0}^{\left\lfloor{n/2}\right\rfloor} \sum_{l=0}^{n-2y} c_{xyl} \ q^{l+m-2x+k}, \\
+	c_xyl &= a_m^{(m-2x)} a_n^{(n-2y)} \Delta^{n-2y-l} \binom{n-2y}{l}.
+\end{split}
+\end{equation}
+\autoref{eq:poly_solved} is not in standard polynomial form, because our summation is not singular and coefficients in our summation may have the same power. 
+Further simplifications can be made to sum to reduce recounting indices, but we do not find these simplifications essential.
+Regardless, substituting \autoref{eq:F_solved} and \autoref{eq:poly_solved} into \autoref{eq:analytic_form}, we can now evaluate the solution as:
+\begin{equation}\label{eq:general_solution}
+	\mel{\tilde{n}}{q^k}{m} = \sqrt{\pi} N_n N_m \exp(-\frac{\Delta^2}{4}) \sum_{x=0}^{\left\lfloor{m/2}\right\rfloor} \sum_{y=0}^{\left\lfloor{n/2}\right\rfloor} \sum_{l=0}^{n-2y} \left( -\frac{i}{2} \right)^{l+m-2x+k} c_{xyl} H_{l+m-2x+k}\left(i\frac{\Delta}{2}\right).
+\end{equation}
+
+\subsection{Evaluating Herzberg Teller terms for HDFG}
+
+\begin{equation}
+\begin{split}
+	\langle n |q| 0 \rangle &= \cdots \\
+\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		\langle n |q| 1 \rangle &= \cdots \\
+	\end{split}
+\end{equation}
+	
+
+% We now have the background needed to calculate $\langle \tilde{n} |q| m \rangle$.
+% % $\mel{\tilde{1}}{q}{0}$ for an arbitrary offset $\Delta$.
+% Using $H_0(q) = 1$ and $H_1(q) = 2q$,
+% \begin{equation}\label{HT10}
+% 	\begin{split}
+% 		\mel{\tilde{1}}{q}{0} &= N_1 N_0 \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ 2(q - \Delta) q \exp(-q^2 + q\Delta)\\
+% 		&= 2N_1 N_0 \exp(-\frac{\Delta^2}{2}) \left( \int_{-\infty}^\infty \mathrm{d}q \ q^2 \exp(-q^2 + q\Delta) + \Delta \int_{-\infty}^\infty \mathrm{d}q \ q \exp(-q^2 + q\Delta) \right)
+% 	\end{split}
+% \end{equation}
+% Both integrals can be evaluated using \autoref{identity}:
+% \begin{subequations}\label{evalGaussians}
+% 	\begin{equation}
+% 		\begin{split}
+% 					\int_{-\infty}^\infty \mathrm{d}q \ q \exp(-q^2 + q\Delta) &= \partial_{\Delta} \left(\sqrt{\pi} \exp(\frac{\Delta^2}{4})\right)\\
+% 					& = \sqrt{\pi} \frac{\Delta}{2} \exp(\frac{\Delta^2}{4})
+% 		\end{split}
+% 	\end{equation}
+% 	\begin{equation}
+% 	\begin{split}
+% 		\int_{-\infty}^\infty \mathrm{d}q \ q^2 \exp(-q^2 + q\Delta) &= \partial_{\Delta} \left(\sqrt{\pi} \left(\frac{\Delta}{2} \exp(\frac{\Delta^2}{4})\right)\right)\\
+% 		& =\sqrt{\pi} \left(\frac{1}{2}\exp(\frac{\Delta^2}{4}) + \frac{\Delta^2}{4} \exp(\frac{\Delta^2}{4})\right)
+% 	\end{split}
+% \end{equation}
+% \end{subequations}
+% Substituting the results of \autoref{evalGaussians} into \autoref{HT10}, 
+% \begin{equation}
+% 	\mel{\tilde{1}}{q}{0} = \sqrt{\frac{1}{2}} (1 - \frac{\Delta^2}{2}) \exp(\frac{-\Delta^2}{4})
+% \end{equation}
+% The evaluation of other Herzberg-Teller integrals is analogous. 
 
 
-\pagebreak
+\newpage
 \section{Impact of displacement, resonance frequencies, and vibronic linewidth and on HDFG Spectra}
 \begin{figure}[!htbp]
 	\centering
