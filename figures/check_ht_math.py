@@ -21,11 +21,11 @@ def term_n0(x, n, y, l):
 
 for n, expression in enumerate([
     # <0|q|0>
-    sympy.simplify(term_n0(x, 0, 0, 0)),
+    sympy.simplify(term_n0(x, 0, 0, 0), rational=True),
     # <1|q|0>
-    sympy.simplify(term_n0(x, 1, 0, 0) + term_n0(x, 1, 0, 1)),
+    sympy.simplify(term_n0(x, 1, 0, 0) + term_n0(x, 1, 0, 1), rational=True),
     # <2|q|0>
-    sympy.simplify(term_n0(x, 2, 0, 0) + term_n0(x, 2, 0, 1) + term_n0(x, 2, 0, 2) + term_n0(x, 2, 1, 0)),]
+    sympy.simplify(term_n0(x, 2, 0, 0) + term_n0(x, 2, 0, 1) + term_n0(x, 2, 0, 2) + term_n0(x, 2, 1, 0), rational=True),]
 ):
     print(f"<{n}|q|0>: {expression}")
 
@@ -38,11 +38,11 @@ def term_n1(x, n, y, l):
 
 for n, expression in enumerate([
     # <0|q|0>
-    sympy.simplify(term_n1(x, 0, 0, 0)),
+    sympy.simplify(term_n1(x, 0, 0, 0), rational=True),
     # <1|q|0>
-    sympy.simplify(term_n1(x, 1, 0, 0) + term_n1(x, 1, 0, 1)),
+    sympy.simplify(term_n1(x, 1, 0, 0) + term_n1(x, 1, 0, 1), rational=True),
     # <2|q|0>
-    sympy.simplify(term_n1(x, 2, 0, 0) + term_n1(x, 2, 0, 1) + term_n1(x, 2, 0, 2) + term_n1(x, 2, 1, 0)),]
+    sympy.simplify(term_n1(x, 2, 0, 0) + term_n1(x, 2, 0, 1) + term_n1(x, 2, 0, 2) + term_n1(x, 2, 1, 0), rational=True),]
 ):
     print(f"<{n}|q|1>: {expression}")
 
