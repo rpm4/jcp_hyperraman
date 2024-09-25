@@ -53,13 +53,13 @@ We investigate the one dimensional case using the Hamiltonian described in the m
 	\end{equation} 
 \end{subequations}
 Here, $p,q$ are the dimensionless conjugate normal mode coordinates, $\hbar\omega_{eg}$ is the energy difference between $H_e$ and $H_g$, and $\Delta$ is the dimensionless offset of the excited state surface relative to the ground state.
-The Hamiltonians are the well-known quantum harmonic oscillator, and their solutions are
+The Hamiltonians are the well-known quantum harmonic oscillator, and their position space wavefunctions are
 \begin{equation}
 	\psi_m(q) = \langle q | m \rangle = N_m H_m(q) \exp(-q^2/2),
 \end{equation}
-where $N_m = (m! \ 2^m \pi^{\frac{1}{2}})^{-\frac{1}{2}}$ is the normalization factor and $H_m$ is the $m^{th}$ Hermite Polynomial.\cite{RN230}
+where $N_m = (m! \ 2^m \pi^{\frac{1}{2}})^{-\frac{1}{2}}$ is the normalization factor and $H_m$ is the $m^{th}$ Hermite Polynomial.\cite{RN230, MorseFeshbach}
 
-For an $n$-quantum excited state vibration $| \tilde{n} \rangle$, and a $m$-quantum ground state vibration $| \tilde{m} \rangle$, the $k^{th}$-order vibrational coupling term is
+For an $n$-quantum excited state vibration $| \tilde{n} \rangle$, and a $m$-quantum ground state vibration $\ket{m}$, the $k^{th}$-order vibrational coupling term is
 \begin{equation}
 	\begin{split}
 		\mel{\tilde{n}}{q^k}{m} &= \int_{-\infty}^\infty \mathrm{d}q \ \psi^*_n(q-\Delta) q^k \psi_m(q)\\
@@ -67,13 +67,13 @@ For an $n$-quantum excited state vibration $| \tilde{n} \rangle$, and a $m$-quan
 		&= N_n N_m \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ H_n(q-\Delta) q^k H_m(q) \exp(-q^2 + q\Delta)
 	\end{split}\label{key}
 \end{equation}
-The integral corresponds to Franck-Condon matrix elements for $k=0$ and Herzberg-Teller matrix elements for $k=1$.
+The integral corresponds to Franck-Condon factors for $k=0$ and Herzberg-Teller matrix elements for $k=1$.
 
 \subsection{General Solution to $\langle \tilde{n} | q^k | m \rangle$}
 The matrix elements of \autoref{key} can be computed numerically, but analytic forms of the integral also exist. 
 Due to the polynomial nature of $H_v(q)$, the product $H_n(q-\Delta) q^k H_m(q)$ will also be a polynomial, so that the integral of equation \autoref{key} will be of the form
 \begin{eqnarray}
-	\int dq \ P_{nmk}(q) \exp(-q^2 + q\Delta), \\
+	\int_{-\infty}^\infty \mathrm{d}q \ P_{nmk}(q) \exp(-q^2 + q\Delta), \\
 	P_{nmk}(q) \equiv \sum_\lambda^{n+m+k} a_\lambda q^\lambda
 \end{eqnarray}
 for some set coefficients $a_\lambda$, to be specified later. We can recast the integral into the linear combination of integrals,
@@ -99,7 +99,7 @@ For the general solution, \autoref{integral} is evaluated via repeated use of a 
 		&= \partial_\Delta F_{w-1}(\Delta)
 	\end{split}
 \end{equation}
-so we can write
+so we can write\footnote{Setting $-x^2 \ = \ \Delta^2/4$ (so that $x \ = \ i \Delta /2$) and using the chain rule ($\mathrm{d}/\mathrm{d}x = \mathrm{d}/\mathrm{d}\Delta \ \mathrm{d}\Delta / \mathrm{d}x$) provides the final result in \autoref{eq:F_solved}}
 \begin{equation}\label{eq:F_solved}
 	\begin{split}
 		F_w(\Delta) &= \left(\partial_\Delta \right)^w F_0(\Delta) \\
@@ -113,15 +113,15 @@ We now will evaluate the polynomial coefficients $P(q)$.
 The Hermite polynomials of \autoref{key} can be explicitly written as 
 \begin{equation}
 \begin{split}
-	H_m(q) &= \sum_{x=0}^{\left\lfloor{m/2}\right\rfloor} a_m^{(m-2x)} q^{m-2x} \\
-	H_n(q-\Delta) &= \sum_{x=0}^{\left\lfloor{n/2}\right\rfloor}
-	a_n^{(n-2x)} (q-\Delta)^{n-2x} \\
-		&= \sum_{x=0}^{\left\lfloor{n/2}\right\rfloor} a_n^{(n-2x)} \sum_{l=0}^{n-2x} \left(-\Delta\right)^{n-2x-l} \binom{n-2x}{l} q^l
+	H_m(q) &= \sum_{s=0}^{\left\lfloor{m/2}\right\rfloor} a_m^{(m-2s)} q^{m-2s} \\
+	H_n(q-\Delta) &= \sum_{s=0}^{\left\lfloor{n/2}\right\rfloor}
+	a_n^{(n-2s)} (q-\Delta)^{n-2s} \\
+		&= \sum_{s=0}^{\left\lfloor{n/2}\right\rfloor} a_n^{(n-2s)} \sum_{l=0}^{n-2s} \left(-\Delta\right)^{n-2s-l} \binom{n-2s}{l} q^l
 \end{split}
 \end{equation}
-where $\left\lfloor n \right\rfloor$ denotes the \textit{floor} of $n$, $\binom{a}{b} = a! / (b!(a-b)!)$, and the Hermite coefficients are
+where $\left\lfloor n \right\rfloor$ denotes the \textit{floor} of $n$, $\binom{a}{b} = a! / (b!(a-b)!)$, and the Hermite coefficients are\cite{MorseFeshbach}
 \begin{equation}
-	a_n^{(n-2x)} = n! \frac{(-1)^x 2^{n-2x}}{x!(n-2x)!}.
+	a_n^{(n-2s)} = n! \frac{(-1)^x 2^{n-2s}}{s!(n-2s)!}.
 \end{equation}
 Multiplying these terms together give us explicit polynomial coefficients:
 \begin{equation}\label{eq:poly_solved}
@@ -140,7 +140,7 @@ Regardless, substituting \autoref{eq:F_solved} and \autoref{eq:poly_solved} into
 \end{equation}
 
 \subsection{Evaluating Herzberg Teller terms for HDFG}
-
+When starting from $\ket{0}$,
 \begin{equation}
 \begin{split}
 	\langle \tilde{n} |q| 0 \rangle &= 
@@ -153,7 +153,7 @@ Regardless, substituting \autoref{eq:F_solved} and \autoref{eq:poly_solved} into
 	H_{l+1}\left(i\frac{\Delta}{2}\right)
 \end{split}
 \end{equation}
-
+giving the first few relevant integrals as
 \begin{equation}
 	\langle \tilde{0} |q| 0 \rangle = \frac{\Delta}{2} \exp(-\frac{\Delta^2}{4})
 \end{equation}
@@ -166,10 +166,11 @@ Regardless, substituting \autoref{eq:F_solved} and \autoref{eq:poly_solved} into
 
 \begin{equation}
 	\langle \tilde{2} |q| 0 \rangle = 
-	\frac{\sqrt{2}}{16} \left( \Delta^3 - 4 \Delta \right)
+	\frac{\sqrt{2}}{8} \left( \Delta^3 - 4 \Delta \right)
 	\exp(-\frac{\Delta^2}{4})
 \end{equation}
 
+Similarly, when starting from $\ket{1}$, 
 \begin{equation}
 	\begin{split}
 		\langle \tilde{n} |q| 1 \rangle &= \sqrt{\pi} N_n N_1 \exp(-\frac{\Delta^2}{4}) \sum_{y=0}^{\left\lfloor{n/2}\right\rfloor} \sum_{l=0}^{n-2y} \left( -\frac{i}{2} \right)^{l+2} c_{1yl} H_{l+2}\left(i\frac{\Delta}{2}\right) \\
@@ -182,7 +183,7 @@ Regardless, substituting \autoref{eq:F_solved} and \autoref{eq:poly_solved} into
 		H_{l+2}\left(i\frac{\Delta}{2}\right)
 	\end{split}
 \end{equation}
-
+giving
 \begin{equation}
 	\langle \tilde{0} |q| 1 \rangle = \frac{\sqrt{2}}{4}\left( \Delta^2 + 2 \right)
 	\exp(-\frac{\Delta^2}{4})
@@ -197,7 +198,7 @@ Regardless, substituting \autoref{eq:F_solved} and \autoref{eq:poly_solved} into
 \end{equation}
 
 \newpage
-\section{Impact of displacement, resonance frequencies, and vibronic linewidth and on HDFG Spectra}
+\section{Impact of displacement, resonance frequencies, vibronic linewidth and molecular parameters on HDFG Spectra}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=6.675in]{figures/fcht.png}

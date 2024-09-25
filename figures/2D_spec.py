@@ -12,7 +12,7 @@ import pathlib
 
 wt.artists.apply_rcparams(kind="publication")
 
-save = True
+save = False
 fontsize = 18
 here = pathlib.Path(__file__).resolve().parent
 
@@ -151,7 +151,7 @@ dMgedQ = 0.007 #dM^eg / dQ
 
 
 #define terms
-y = np.linspace(10000, 50000, 3000000)
+y = np.linspace(5000, 60000, 2750000)
 
 
 A = Mge * Lge * (f01(d)*f00(d)*Deltaevgo(0,y,0) + f11(d)*f10(d)*Deltaevgo(1,y,1) + f21(d)*f20(d)*Deltaevgo(2,y,2)) #there must be a simpler way to do this but idk
@@ -191,17 +191,17 @@ abs_max = tot.max()
 
 #plot the A and B
 ax1 = plt.subplot(gs[0,1])
-ax1.plot(y, tot / tot.max(), linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
-ax1.plot(y, np.abs(A) / abs_max, linewidth = '2', label = r'$\mathsf{|A|}$', color = 'cyan', zorder = 3)
-ax1.plot(y, np.abs(B1+B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B|}$', color = 'red', zorder = 3)
-ax1.plot(y, np.abs(B1) / abs_max, linewidth = '2', label = r'$\mathsf{|B_1|}$', color = 'orange', zorder = 2)
-ax1.plot(y, np.abs(B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B_2|}$', color = 'green', zorder = 1)
-
 # ax1.plot(y, tot / tot.max(), linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
-# ax1.plot(y, np.abs(A) / abs_max, linewidth = '2', label = r'$\mathsf{|A|}$', zorder = 3)
-# ax1.plot(y, np.abs(B1+B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B|}$', zorder = 3)
-# ax1.plot(y, np.abs(B1) / abs_max, linewidth = '2', label = r'$\mathsf{|B_1|}$', zorder = 2)
-# ax1.plot(y, np.abs(B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B_2|}$', zorder = 1)
+# ax1.plot(y, np.abs(A) / abs_max, linewidth = '2', label = r'$\mathsf{|A|}$', color = 'cyan', zorder = 3)
+# ax1.plot(y, np.abs(B1+B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B|}$', color = 'red', zorder = 3)
+# ax1.plot(y, np.abs(B1) / abs_max, linewidth = '2', label = r'$\mathsf{|B_1|}$', color = 'orange', zorder = 2)
+# ax1.plot(y, np.abs(B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B_2|}$', color = 'green', zorder = 1)
+
+ax1.plot(y, tot / tot.max(), linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
+ax1.plot(y, np.abs(A) / abs_max, linewidth = '2', label = r'$\mathsf{|A|}$', zorder = 3)
+ax1.plot(y, np.abs(B1+B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B|}$', zorder = 3)
+ax1.plot(y, np.abs(B1) / abs_max, linewidth = '2', label = r'$\mathsf{|B_1|}$', zorder = 2)
+ax1.plot(y, np.abs(B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B_2|}$', zorder = 1)
 
 ax1.set_ylabel(r'$\mathsf{Amplitude \ (norm.)}$', fontsize = fontsize)
 ax1.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
@@ -223,10 +223,10 @@ if others:
     #plot Re A and B
     ax2 = plt.subplot(gs[1,0])
     ax2.plot(y, totRe / totRe.max(), linewidth = '2', label = '$\mathsf{A + B}$', color = 'black', zorder = 4)
-    ax2.plot(y, ARe, linewidth = '2', label = r'$\mathsf{A}$', color = 'cyan', zorder = 3)
-    ax2.plot(y, BRe, linewidth = '2', label = r'$\mathsf{B}$', color = 'red', zorder = 3)
-    ax2.plot(y, B1Re, linewidth = '2', label = r'$\mathsf{B_1}$', color = 'orange', zorder = 2)
-    ax2.plot(y, B2Re, linewidth = '2', label = r'$\mathsf{B_2}$', color = 'green', zorder = 1)
+    ax2.plot(y, ARe, linewidth = '2', label = r'$\mathsf{A}$', zorder = 3)
+    ax2.plot(y, BRe, linewidth = '2', label = r'$\mathsf{B}$', zorder = 3)
+    ax2.plot(y, B1Re, linewidth = '2', label = r'$\mathsf{B_1}$', zorder = 2)
+    ax2.plot(y, B2Re, linewidth = '2', label = r'$\mathsf{B_2}$', zorder = 1)
     ax2.set_ylabel(r'$\mathsf{Re(\gamma)}$', fontsize = fontsize)
     ax2.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
     
@@ -238,10 +238,10 @@ if others:
     #plot Im A and B
     ax3 = plt.subplot(gs[1,1])
     ax3.plot(y, totIm / totIm.max(), linewidth = '2', label = '$\mathsf{A + B}$', color = 'black', zorder = 4)
-    ax3.plot(y, AIm, linewidth = '2', label = r'$\mathsf{A}$', color = 'cyan', zorder = 3)
-    ax3.plot(y, BIm, linewidth = '2', label = r'$\mathsf{B}$', color = 'red', zorder = 3)
-    ax3.plot(y, B1Im, linewidth = '2', label = r'$\mathsf{B_1}$', color = 'orange', zorder = 2)
-    ax3.plot(y, B2Im, linewidth = '2', label = r'$\mathsf{B_2}$', color = 'green', zorder = 1)
+    ax3.plot(y, AIm, linewidth = '2', label = r'$\mathsf{A}$', zorder = 3)
+    ax3.plot(y, BIm, linewidth = '2', label = r'$\mathsf{B}$', zorder = 3)
+    ax3.plot(y, B1Im, linewidth = '2', label = r'$\mathsf{B_1}$', zorder = 2)
+    ax3.plot(y, B2Im, linewidth = '2', label = r'$\mathsf{B_2}$', zorder = 1)
     ax3.set_ylabel(r'$\mathsf{Im(\gamma)}$', fontsize = fontsize)
     ax3.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
     
