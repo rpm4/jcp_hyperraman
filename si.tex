@@ -138,6 +138,7 @@ Regardless, substituting \autoref{eq:F_solved} and \autoref{eq:poly_solved} into
 	\mel{\tilde{n}}{q^k}{m} = \sqrt{\pi} N_n N_m 
 	\exp(-\frac{\Delta^2}{4}) \sum_{x=0}^{\left\lfloor{m/2}\right\rfloor} \sum_{y=0}^{\left\lfloor{n/2}\right\rfloor} \sum_{l=0}^{n-2y} \left( -\frac{i}{2} \right)^{l+m-2x+k} c_{xyl} H_{l+m-2x+k}\left(i\frac{\Delta}{2}\right).
 \end{equation}
+An alternative approach has been introduced by Kundu \textit{et al}, which yields effectively identical results. \cite{Kundu2022}
 
 \subsection{Evaluating Herzberg Teller terms for HDFG}
 When starting from $\ket{0}$,
@@ -197,8 +198,8 @@ giving
 	\exp(-\frac{\Delta^2}{4})
 \end{equation}
 
-\newpage
-\section{Impact of displacement, resonance frequencies, vibronic linewidth and molecular parameters on HDFG Spectra}
+These integrals, along with some relevant Franck-Condon factors, are plotted below as a function of offset. 
+
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=6.675in]{figures/fcht.png}
@@ -206,10 +207,27 @@ giving
 	\label{fig:fcht}
 \end{figure}
 
+
+\newpage
+\section{Impact of displacement, resonance frequencies, vibronic linewidth and molecular parameters on HDFG Spectra}
+Inspection of the $A,B$ terms in the main text show that the HDFG output is dependent upon the relative size of products of Franck-Condon and Herzberg-Teller integrals.
+For clarity, we plot the relevant product factors to assist in understanding the impact of offset on the HDFG spectra.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=6.675in]{figures/fcht_product.png}
+	\caption{Products of Franck-Condon and Herzberg-Teller integrals relevant to the $A, B_1, B_2$ terms in this manuscript as a function of offset, $\Delta$.} 
+	\label{fig:fcht_product}
+\end{figure}
+
+These plots highlight the important distinction that $B$ term contributions to HDFG can dominate in the limit of small offset.
+This is expected, as when $\Delta \rightarrow 0$, the overlap integral \autoref{key} resolves into the typical harmonic oscillator selection rules.
+
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=6.675in]{figures/changedelta.png}
-	\caption{The impact of offset, vibrational resonance, and linewidth on HDFG spectra. Parameters for (a,b) follow from Myers et al., whereas parameters for (c,d) follow from Brennan et al.\cite{Myers1982, Brennan2024}} 
+	\caption{The impact of offset, vibrational resonance, and linewidth on HDFG spectra. Parameters for (a,b) follow from Myers et al., whereas parameters for (c,d) follow from Brennan et al.\cite{Myers1982, Brennan2024}
+	Note that in these plots, the ratio $\abs{A/B} = 0.1$ is enforced} 
 	\label{fig:chgdelta}
 \end{figure}
 
@@ -226,7 +244,7 @@ In this section, we take $\omega_{eg}$ = $37340$ cm$^{-1}$ and vary the offset (
 
 \pagebreak
 
-\section{Evaluating impact of inhomogeneity on HDFG output}
+\section{Evaluating impact of static inhomogeneity on HDFG output}
 In this section, the integral
 \begin{equation}\label{generalcontour}
 	\begin{split}
@@ -235,7 +253,7 @@ In this section, the integral
 		&= \frac{\eta_{ijkl} \sigma}{\pi} \int_{-\infty}^\infty \mathrm{d}\xi\frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga} - \xi} \frac{1}{\Delta_{ba} + c\xi}\\
 	\end{split}
 \end{equation}
-is evaluated for $c=-1$ (electronic state and vibrational state energy fluctuations are anti-correlated) $c=1$ (electronic state and vibrational state energy fluctuations are correlated).
+is evaluated for $c=-1$ (electronic state and vibrational state energy fluctuations are anti-correlated) and $c=1$ (electronic state and vibrational state energy fluctuations are correlated).
 
 \subsection{Anti-correlated Modes}
 For anti-correlated modes ($c = -1$), the poles ($\xi_k$) are situated in the complex plane as shown in \autoref{fig:contours}a.

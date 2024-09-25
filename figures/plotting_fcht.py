@@ -112,7 +112,7 @@ for ax in [ax0, ax1]:
 
 for i, ax in enumerate(fig.axes):
     # ax.grid(visible=True, color="k", lw=0.5, linestyle=":")
-    wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.25, bbox = True, fontsize = fontsize, background_alpha=0.75)
+    wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.35, bbox = True, fontsize = fontsize, background_alpha=0.75)
 
 if save:
     wt.artists.savefig(here / "fcht.png", transparent = True, bbox_inches='tight')
@@ -169,7 +169,7 @@ for ax in [ax01, ax11, ax21]:
 
 
 for i, ax in enumerate(fig1.axes):
-    wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.25, bbox = True, fontsize = fontsize, background_alpha=0.75)
+    wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.35, bbox = True, fontsize = fontsize, background_alpha=0.75)
 
 if save:
     wt.artists.savefig("fchtproduct.png", transparent = True, bbox_inches='tight')

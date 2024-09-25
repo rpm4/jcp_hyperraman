@@ -110,9 +110,9 @@ Coherent spectroscopies are often described using the density matrix formalism, 
 \end{equation}
 where $H$ is the (static) system Hamiltonian, $V(t)$ is the field-matter interaction and $\rho_R$ is the relaxation density matrix. \cite{RN455}
 In systems where interactions with surroundings are relevant, $\dot{\rho}_R$ becomes a complex function that can be modified to include phenomena such as system-bath interactions, solvent-solute coupling, among others. \cite{Sung2001}
-In the limit where input field pulsewidths are much longer than electronic dephasing times and the individual molecule limit is approached, it becomes acceptable to write $\dot{\rho}_R \approx \Gamma \rho$, i.e. exponential relaxation, where $\Gamma$ is the system's dephasing rate. \cite{RN455, Sue1986, Sung2001}
+In the limit where input field pulsewidths are much longer than electronic dephasing times and the individual molecule limit is approached, it becomes acceptable to write $\dot{\rho}^{(n)}_R= \Gamma \rho^{(n)}$, i.e. exponential relaxation, where $\Gamma$ is the system's dephasing rate. \cite{RN455, Sue1986, Sung2001}
 While exponential relaxation is usually an inappropriate description of most physical systems involving solvent-solute interactions,\cite{Sue1986, Yan1988, Li1994, Myers1997} our goal is to introduce simple, quantitative models to understand HDFG response.
-Thus, we write $\dot{\rho}_R = \Gamma \rho$.
+Thus, we write $\dot{\rho}^{(n)}_R= \Gamma \rho^{(n)}$.
 The exponential relaxation limit has proven useful in investigating the properties of 2D-EV, 2D-VE, and doubly resonant SFG using pulses much longer than electronic dephasing times. \cite{Raschke2002, Gaynor2017}
 
 It is useful to briefly discuss the impact of time ordering on HDFG output.
@@ -236,7 +236,7 @@ yields $A, B, C$ coefficients similar to those in the Albrecht formalism of Rama
 \begin{equation}\label{gammaabc}
 		\gamma_{ijkl} \sim \left(A_{ijk} + B_{ijk} + C_{ijk}\right) \frac{\mel{v}{\mu_{l}}{0}} {\Delta_{g0,gv}}
 \end{equation}
-The $A$ term contains the static ($\order{Q^0}$) transitions (i.e., Condon approximation), the $B$ term depends upon $\order{Q}$ transitions (Herzberg-Teller contributions), and the $C$ term depends on $\order{Q_i Q_j}$ transitions. 
+The $A$ term contains the static ($\order{Q^0}$) transitions (i.e., Condon approximation),\cite{Condon1928} the $B$ term depends upon $\order{Q}$ transitions (Herzberg-Teller contributions),\cite{HerzbergTeller1933} and the $C$ term depends on $\order{Q_i Q_j}$ transitions. 
 The $C$ term is suppressed in the following discussion as it depends on one and two photon forbidden transitions, making its contribution to $\gamma_{ijkl}$ roughly two orders of magnitude less than $A_{ijk}$. \cite{Ziegler1988, Neddersen1989, Bonang1992}
 Note that some reports obtain $A, B$ coefficients through a Herzberg-Teller expansion of the electronic states to expose vibronic couplings via $\partial H / \partial Q$.\cite{HerzbergTeller1933, Petrov1985, Neddersen1989, Baranov1990}
 This approach is not used here as the expansion of $\vec{M}^{ij}$ in normal mode coordinates provides sufficient physical insight into HDFG selection rules. 
@@ -319,7 +319,7 @@ where $\Lambda^{ab}_{ij} = 1/\hbar \sum_m M_i^{am}M_j^{mb} $ is the electronic t
 	\caption{Contributions of $A, B$ (\autoref{ABterms_DR}) to HDFG spectrum for a simple two harmonic well system.
 		(a) Potential energy surfaces for a two-well system, (b) 1D HDFG spectrum for $\Delta = 0.5$, $\omega_1 = \omega_{g1, g0}$, (c, d) real and imaginary parts of terms plotted in (b), respectively.
 		The spectra are referenced to $\max{(A+B)}$. 
-		It is assumed that $\omega_2 = \omega_3$.
+		It is assumed that $\omega_2 = \omega_3$, and that all molecular parameters used to simulate the spectra are positive.
 		The vibrational states on the $|g)$ and $|e)$ manifolds are spaced 1600 cm$^{-1}$ apart, with the vibronic states $\ket{e,\tilde{v}'}$ given linewidths of 300 cm$^{-1}$ and $\omega_{eg}$ = 30000 cm$^{-1}$.
 		Dotted lines in (b) denote the $\tilde{v}'$ = 0, 1, 2 vibronic resonances. 
 		The vibronic one and two photon absorption operators are scaled such that $\abs{B}/\abs{A} \sim$ 0.1, following Chung and Ziegler. \cite{Ziegler1988}
@@ -372,7 +372,7 @@ As such, HDFG will have difficulty examining non-Condon effects ($B$ term contri
 \begin{table}[!htbp]
 	\caption{\label{T:contributions} Franck-Condon and/or Herzberg-Teller contributions to $A$, $B_1$, $B_2$ terms between $\ket{g,0}$, $\ket{g,1}$ and vibronic states $\ket{e,\tilde{0}}$, $\ket{e,\tilde{1}}$, $\ket{e,\tilde{2}}$ for \autoref{Hamiltonian} with an offset $\Delta = 0.5$.
 	The bra and ket labels are written according to their order in $A$, $B_1$, $B_2$ as written in \autoref{ABterms_DR}.
-	Closed-form expressions for the Franck-Condon and Herzberg-Teller integrals used here are tabulated in the Supporting Information.}
+	The Franck-Condon and Herzberg-Teller integral products tabulated here are plotted in the Supporting Information (Figure S2) as a function of $\Delta$.}
 	\begin{ruledtabular}
 		\begin{tabular}{cccc}\label{fcht}
 			$2\omega_2$ Electronic Resonance & $\ket{e,\tilde{0}}$ & $\ket{e,\tilde{1}}$ & $\ket{e,\tilde{2}}$\\
@@ -401,8 +401,21 @@ Indeed, for some values of $\Delta$, it appears that $B$ term resonances dominat
 
 In the post-resonance region, the amplitude takes on an unexpected lineshape.
 This arises due to interference between the real and imaginary parts of $\gamma$ (\autoref{fig:doubres_spec}c, d).
-The abnormal lineshapes in both terms arises due to the sign of the Franck-Condon and Herzberg-Teller integrals that drive the output of the vibronic transitions for $\Delta = 0.5$ (\autoref{fcht}), in turn driving significant interference in the overall $\abs{A+B}$ output.
+The abnormal lineshape arises due to the sign of the Franck-Condon and Herzberg-Teller integrals, as well as the molecular parameters that drive the output of the vibronic transitions.
 Such effects have been seen elsewhere in spontaneous, surface enhanced hyper-Raman studies. \cite{Milojevich2011}
+
+The Franck-Condon and Herzberg-Teller integrals can manipulate interference in the total output spectrum as a function of offset (Figure S2).
+When the offset is inverted about the origin ($\Delta \rightarrow -\Delta$), 
+
+However, the main source of interference in the HDFG spectra arises from the sign of the molecular parameters. 
+In the HDFG spectrum presented in \autoref{fig:doubres_spec}, the signs of all molecular parameters are taken to be positive. 
+Inverting the sign of one parameter eliminates the interference and restores the expected, purely Lorentzian lineshape.
+
+
+*orientational averaging
+*changing one trivially fixes interference (cf plot above)
+*in SI, put examples
+
 
 
 \subsection{Inhomogeneity in HDFG}
@@ -423,7 +436,7 @@ We investigate the impact of inhomogeneity on spectral output by convolving the 
 where $\eta_{ijkl}$ contains all values in \autoref{drgamma_notaylor} not dependent upon $\xi$.
 While Gaussian distributions are commonly used as a phenomenological description of inhomogeneous broadening, Lorentzian distributions have successfully described inhomogeneous broadening in a variety of spectroscopies and yield easily interpretable closed-form solutions. \cite{Desiderio1979, Dick83_1, Carlson1990line, RN410}
 
-Evaluating \autoref{contour} for the HDFG pathway above shows\footnote{See the supporting information for more details} 
+Evaluating \autoref{contour} for the HDFG pathway above shows\footnote{See the supporting information for more details.} 
 
 \begin{equation}\label{linenarrowa}
 	\gamma_{ijkl} = \frac{- \eta_{ijkl}}{\Delta_{ga}+ i \sigma} \left( \frac{1}{\Delta_{ba}-i \sigma} + \frac{2 i \sigma}{\Delta_{ga}-i \sigma} \frac{1}{\Delta_{ba} + \Delta_{ga}} \right)
