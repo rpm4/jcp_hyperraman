@@ -68,6 +68,7 @@ For an $n$-quantum excited state vibration $| \tilde{n} \rangle$, and a $m$-quan
 	\end{split}\label{key}
 \end{equation}
 The integral corresponds to Franck-Condon factors for $k=0$ and Herzberg-Teller matrix elements for $k=1$.
+The vibrational coupling integrals are written assuming the expansion of the dipole moment is taken about the equilibirum point of the ground state geometry ($q=0$), as is done in the main text.
 
 \subsection{General Solution to $\langle \tilde{n} | q^k | m \rangle$}
 The matrix elements of \autoref{key} can be computed numerically, but analytic forms of the integral also exist. 
@@ -96,18 +97,18 @@ For the general solution, \autoref{integral} is evaluated via repeated use of a 
 \begin{equation}\label{identity}
 	\begin{split}
 		F_w(\Delta) &= \int_{-\infty}^\infty \mathrm{d}q \ q^w \exp(-q^2 + q\Delta) = \partial_{\Delta} \int_{-\infty}^\infty \mathrm{d}q \ q^{w-1} \exp(-q^2 + q\Delta) \\
-		&= \partial_\Delta F_{w-1}(\Delta)
+		&= \frac{\mathrm{d}}{\mathrm{d}\Delta} F_{w-1}(\Delta)
 	\end{split}
 \end{equation}
-so we can write\footnote{Setting $-x^2 \ = \ \Delta^2/4$ (so that $x \ = \ i \Delta /2$) and using the chain rule ($\mathrm{d}/\mathrm{d}x = \mathrm{d}/\mathrm{d}\Delta \ \mathrm{d}\Delta / \mathrm{d}x$) provides the final result in \autoref{eq:F_solved}}
+so we can write\footnote{Setting $-x^2 \ = \ \Delta^2/4$ (so that $x \ = \ i \Delta /2$) and using the chain rule ($\frac{\mathrm{d}}{\mathrm{d}x} =  \frac{\mathrm{d}}{\mathrm{d}\Delta}  \frac{\mathrm{d\Delta}}{\mathrm{d}x}$) provides the final result in \autoref{eq:F_solved}.}
 \begin{equation}\label{eq:F_solved}
 	\begin{split}
-		F_w(\Delta) &= \left(\partial_\Delta \right)^w F_0(\Delta) \\
+		F_w(\Delta) &= \frac{\mathrm{d}^w}{\mathrm{d}\Delta^w} F_0(\Delta) \\
 		&= \sqrt{\pi} \frac{\mathrm{d}^w}{\mathrm{d}\Delta^w} \exp(\frac{\Delta^2}{4}) \\
 		&= \sqrt{\pi} \left( -\frac{i}{2} \right)^w \exp(\frac{\Delta^2}{4}) H_w\left(i\frac{\Delta}{2}\right).
 	\end{split}
 \end{equation}
-In the last line we have used the generator definition of Hermite polynomials:  $H_n(x) \equiv (-1)^n e^{x^2} \frac{\mathrm{d}^n}{\mathrm{d}x^n} e^{-x^2}$.
+In the last line we have used the generator definition of Hermite polynomials:  $H_n(x) \equiv (-1)^n e^{x^2} \frac{\mathrm{d}^n}{\mathrm{d}x^n} e^{-x^2}$.\cite{MorseFeshbach}
 
 We now will evaluate the polynomial coefficients $P(q)$.
 The Hermite polynomials of \autoref{key} can be explicitly written as 
@@ -131,17 +132,16 @@ Multiplying these terms together give us explicit polynomial coefficients:
 	c_{xyl} &= a_m^{(m-2x)} a_n^{(n-2y)} \left(-\Delta\right)^{n-2y-l} \binom{n-2y}{l}.
 \end{split}
 \end{equation}
-\autoref{eq:poly_solved} is not in standard polynomial form, because our summation is not singular and coefficients in our summation may have the same power. 
-Further simplifications can be made to sum to reduce recounting indices, but we do not find these simplifications essential.
+\autoref{eq:poly_solved} is not in standard polynomial form, because the summation is not singular and coefficients in the summation may have the same power. 
+Further simplifications can be made to reduce recounting indices, but we do not find these simplifications essential.
 Regardless, substituting \autoref{eq:F_solved} and \autoref{eq:poly_solved} into \autoref{eq:analytic_form}, we can now evaluate the solution as:
 \begin{equation}\label{eq:general_solution}
 	\mel{\tilde{n}}{q^k}{m} = \sqrt{\pi} N_n N_m 
 	\exp(-\frac{\Delta^2}{4}) \sum_{x=0}^{\left\lfloor{m/2}\right\rfloor} \sum_{y=0}^{\left\lfloor{n/2}\right\rfloor} \sum_{l=0}^{n-2y} \left( -\frac{i}{2} \right)^{l+m-2x+k} c_{xyl} H_{l+m-2x+k}\left(i\frac{\Delta}{2}\right).
 \end{equation}
-An alternative approach has been introduced by Kundu \textit{et al}, which yields effectively identical results. \cite{Kundu2022}
 
 \subsection{Evaluating Herzberg Teller terms for HDFG}
-When starting from $\ket{0}$,
+When evaluating Herzberg-Teller integrals involving $\ket{0}$,
 \begin{equation}
 \begin{split}
 	\langle \tilde{n} |q| 0 \rangle &= 
@@ -171,7 +171,7 @@ giving the first few relevant integrals as
 	\exp(-\frac{\Delta^2}{4})
 \end{equation}
 
-Similarly, when starting from $\ket{1}$, 
+Similarly, when evaluating Herzberg-Teller integrals involving $\ket{1}$, 
 \begin{equation}
 	\begin{split}
 		\langle \tilde{n} |q| 1 \rangle &= \sqrt{\pi} N_n N_1 \exp(-\frac{\Delta^2}{4}) \sum_{y=0}^{\left\lfloor{n/2}\right\rfloor} \sum_{l=0}^{n-2y} \left( -\frac{i}{2} \right)^{l+2} c_{1yl} H_{l+2}\left(i\frac{\Delta}{2}\right) \\
@@ -198,7 +198,7 @@ giving
 	\exp(-\frac{\Delta^2}{4})
 \end{equation}
 
-These integrals, along with some relevant Franck-Condon factors, are plotted below as a function of offset. 
+These integrals, along with some relevant Franck-Condon factors, are plotted in \autoref{fig:fcht} as a function of offset. 
 
 \begin{figure}[!htbp]
 	\centering
@@ -211,17 +211,28 @@ These integrals, along with some relevant Franck-Condon factors, are plotted bel
 \newpage
 \section{Impact of displacement, resonance frequencies, vibronic linewidth and molecular parameters on HDFG Spectra}
 Inspection of the $A,B$ terms in the main text show that the HDFG output is dependent upon the relative size of products of Franck-Condon and Herzberg-Teller integrals.
-For clarity, we plot the relevant product factors to assist in understanding the impact of offset on the HDFG spectra.
+For clarity, we plot the relevant product factors to assist in understanding the impact of offset on the HDFG spectra (\autoref{fig:fcht_product}).
+These plots highlight the important distinction that $B$ term contributions to HDFG can dominate in the limit of small offset.
+This is expected, as when $\Delta \rightarrow 0$, the overlap integral, \autoref{key}, returns typical harmonic oscillator selection rules.
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=6.675in]{figures/fcht_product.png}
+	\includegraphics[width=6.675in]{figures/fchtproduct.png}
 	\caption{Products of Franck-Condon and Herzberg-Teller integrals relevant to the $A, B_1, B_2$ terms in this manuscript as a function of offset, $\Delta$.} 
 	\label{fig:fcht_product}
 \end{figure}
 
-These plots highlight the important distinction that $B$ term contributions to HDFG can dominate in the limit of small offset.
-This is expected, as when $\Delta \rightarrow 0$, the overlap integral \autoref{key} resolves into the typical harmonic oscillator selection rules.
+In the main text, the potential well offset ($\Delta$) was taken as $\Delta = 0.5$.
+Here, we vary $\Delta$ to investigate its impact on the structure of the $\abs{A+B}$ spectrum.
+The dependence of relevant Franck-Condon factors and Herzberg-Teller factors on displacement are plotted in \autoref{fig:fcht} as a function of offset, $\Delta$.
+\autoref{fig:fcht} shows how different displacements, vibrational frequencies, and vibronic linewidths will alter the vibronic spectrum.
+The products of Franck-Condon and Herzberg-Teller integrals relevant to the $A,B$ coefficents discussed in the main text are plotted in \autoref{fig:fcht_product}.
+
+\pagebreak
+
+It is clear from \autoref{fig:fcht_product} that the HDFG spectrum will have a significant dependence upon $\Delta$, even for small deviations from complete overlap. 
+To this end, we plot the impact of resonance frequency and offset on the HDFG spectrum \autoref{fig:chgdelta}, using values reported by Myers et al. and Brennan et al. \cite{Myers1982, Brennan2024}
+In this section, we take $\omega_{eg}$ = $37340$ cm$^{-1}$ and vary the offset ($\Delta$), vibrational frequency ($\omega_{g1,g0}$), and linewidth ($\Gamma$) as noted in the figure.
 
 \begin{figure}[!htbp]
 	\centering
@@ -231,18 +242,7 @@ This is expected, as when $\Delta \rightarrow 0$, the overlap integral \autoref{
 	\label{fig:chgdelta}
 \end{figure}
 
-\pagebreak
-
-In the main text, the potential well offset ($\Delta$) was taken as $\Delta = 0.5$.
-Here, we vary $\Delta$ to investigate its impact on the structure of the $\abs{A+B}$ spectrum.
-The dependence of relevant Franck-Condon factors and Herzberg-Teller factors on displacement are plotted in \autoref{fig:fcht} as a function of offset, $\Delta$.
-\autoref{fig:fcht} shows how different displacements, vibrational frequencies, and vibronic linewidths will alter the vibronic spectrum.
-
-It is clear from \autoref{fig:fcht} that the HDFG spectrum will have a significant dependence upon $\Delta$, even for small deviations from complete overlap. 
-To this end, we plot the impact of resonance frequency and offset on the HDFG spectrum \autoref{fig:chgdelta}, using values reported by Myers et al. and Brennan et al. \cite{Myers1982, Brennan2024}
-In this section, we take $\omega_{eg}$ = $37340$ cm$^{-1}$ and vary the offset ($\Delta$), vibrational frequency ($\omega_{g1,g0}$), and linewidth ($\Gamma$) as noted in the figure.
-
-\pagebreak
+%todo: plot impact of different A,B on output.
 
 \section{Evaluating impact of static inhomogeneity on HDFG output}
 In this section, the integral

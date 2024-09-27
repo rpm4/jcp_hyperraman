@@ -69,8 +69,8 @@ CMDS methods partially mitigate this issue because emission is spatially coheren
 In fact, hyper-Raman transitions have been observed in several CMDS studies (sometimes under the moniker of SIVE).\cite{Zilian1994, RN350, RN416, RN351, RN352, RN353, Chen1998, RN362, RN418, Wang2021, Bonn2024, McDonnell2024}
 
 Hyper difference frequency generation (HDFG) spectroscopy and hyper sum frequency generation (HSFG) spectroscopy are four wave mixing CMDS methods based on direct excitation of a vibrational mode through IR absorption and subsequent scattering to or from the vibrational mode through a hyper-Raman transition.
-In HDFG/HSFG, an infrared pulse is resonant with a vibrational mode, while two other excitations stimulate the hyper-Raman scattering process.
-The infrared excitation frequency selects the vibrational modes to be stimulated through the hyper-Raman transition.
+In HDFG/HSFG, an infrared pulse is resonant with a vibrational mode, while two other excitations stimulate the hyper-Raman process.
+The infrared excitation frequency selects the vibrational mode stimulated through the hyper-Raman transition.
 The other two excitation frequencies control electronic enhancement for the hyper-Raman scattering event.
 
 \autoref{fig:comparisonwmel} shows both HDFG and HSFG processes and compares them with related spectroscopies that investigate vibrational-electronic coupling.
@@ -85,8 +85,8 @@ Notably, HDFG and HSFG can be implemented as two-color experiments (with $\omega
 
 Nonlinear spectroscopic probes of electronic-vibrational coupling are not limited to the Raman and hyper-Raman based techniques diagrammed in \autoref{fig:comparisonwmel}.
 Independently developed by the Fleming and Khalil groups, respectively, 2D Electronic-Vibrational (2D-EV) and 2D Vibrational-Electronic (2D-VE) spectroscopy are based upon pump-probe and absorption type pathways which also investigate e-v coupling.\cite{Oliver2014, Courtney2015, Courtney2015_1}
-The Rao group has also developed a $\chi^{(4)}$ analogue of 2D-EV, 2D-EV sum frequency generation (2D-EVSFG), to investigate interfacial e-v coupling. \cite{Deng2021}  
-These methods have been used to investigate vibronic coupling in a variety of molecular systems and serve as 2D pump-probe type analogues to the hyper-Raman-based spectroscopies discussed here.\cite{Courtney2015, Gaynor2018, Arsenault2020, HuangFu2023}
+The Rao group has also developed a $\chi^{(4)}$ analogue of 2D-EV, 2D-EV sum frequency generation (2D-EVSFG), to probe interfacial e-v coupling. \cite{Deng2021}  
+These methods have been used to understand vibronic coupling in a variety of molecular systems and, albeit different selection rules, serve as 2D pump-probe type analogues to the hyper-Raman-based spectroscopies discussed here.\cite{Courtney2015, Gaynor2018, Arsenault2020, HuangFu2023}
 
 When the hyper-Raman excitation in HDFG or HSFG is resonant or near-resonant with electronic states, the brightness of the vibrational feature depends on the vibronic structure of the electronic state.
 The electronic spectrum probed in HDFG or HSFG can inform on processes that control ultrafast electronic relaxation in molecular and biological systems in ways similar to resonance Raman.\cite{Cho2001, Bredenbeck2015, Arsenault2021}
@@ -150,7 +150,7 @@ Another potential interferant in HDFG spectroscopy is direct and sequential casc
 While unimportant in achiral isotropic systems,\cite{Belkin2000} second-order cascades may become important in media where SFG and DFG are allowed, e.g. chiral media, interfaces or non-centrosymmetric media. 
 Nevertheless, in the discussion that follows for the rest of this manuscript, we will assume negligible second-order cascades. 
 
-It is useful to expose relationships between nonlinear output, transition dipoles and hyper-Raman hyperpolarizabilities in the driven limit ($\dot{\rho} = 0$). \cite{Simpson2004, Moad2005}
+It is useful to expose relationships between nonlinear output, transition dipoles and hyper-Raman hyperpolarizabilities in the driven limit ($\dot{\rho}^{(n)} = 0 \ \forall n$). \cite{Moad2005}
 Under the electric dipole approximation, the $I^\text{th}$ Cartesian component of the third order nonlinear output polarization, ${P}^{(3)}_I$, of a four wave mixing process, induced by electric fields $E_J$, $E_K$, and $E_L$ at output frequency $\omega_4=-\omega_1 + \omega_2 + \omega_3$ is written as (using Einstein summation) \cite{RN307}
 \begin{equation} \label{polarization}
 {P}^{(3)}_I (\omega_4)  = \chi^{(3)}_{IJKL} E_J(\omega_3) E_K(\omega_2) E_L(\omega_1) 
@@ -159,17 +159,20 @@ where $\chi^{(3)}_{IJKL}$ is the $IJKL$ element of the third order electrical su
 \begin{equation}\label{eq:nfgamma}
 	\chi^{(3)}_{IJKL} = NF \langle \gamma_{ijkl} \rangle_{IJKL}.
 \end{equation}
-Here $N$ is a number density, $F=\prod_j  \frac{1}{3} \left({\left(n(\omega_j)\right)^2 + 1} \right)$ is the Lorentz local field factor, where $n$ is the (frequency dependent) refractive index and $\gamma_{ijkl}$ is the third-order polarizability (i.e., second hyperpolarizability). \cite{Bedeaux1973}
+For clarity, we define the input electric fields as
+\begin{equation}
+	\vec{E}\left(\vec{x},t\right) = \frac{1}{2} \vec{E}_0 \exp(i\left(\vec{k}\cdot\vec{x} -\omega t\right)) +\text{c.c.}.
+\end{equation}
+In \autoref{eq:nfgamma}, $N$ is a number density, $F=\prod_j  \frac{1}{3} \left({\left(n(\omega_j)\right)^2 + 1} \right)$ is the Lorentz local field factor, where $n$ is the (frequency dependent) refractive index and $\gamma_{ijkl}$ is the third-order polarizability (i.e., second hyperpolarizability). \cite{Bedeaux1973}
 The brackets indicate an orientational average.\cite{Andrews1977}
 Uppercase letters refer to laboratory frame coordinates and lower case letters refer to corresponding molecular frame coordinates.
 The steps behind orientational averaging of $\gamma_{ijkl}$, a rank four tensor in the molecular frame, are detailed elsewhere.\cite{Andrews1977, McDonnell2024}
-Briefly, a tensor in the molecular frame, $A_{ijkl}$, is transformed into an element of the same tensor in the laboratory frame, $\langle A_{ijkl} \rangle_{IJKL}$, through $\langle A_{ijkl} \rangle_{IJKL}$ = $\theta^{ijkl}_{IJKL} A_{ijkl}$, where summation over repeated indices is implied and $\theta$ is the transformation operator. \cite{McDonnell2024, Andrews1977}
 
-By propagating \autoref{LVNE} in the steady state limit ($\dot{\rho} = 0$), the HDFG hyperpolarizability is \cite{Prior1984}
+By propagating \autoref{LVNE} in the steady state limit, the HDFG hyperpolarizability is \cite{Prior1984}
 \begin{equation}\label{sivegamma}
 		\gamma_{ijkl}^{vg} =	- \sum_{e,m} \frac{1}{\varepsilon_0} \frac{1}{4D} \frac{1}{\hbar^3} \frac{\mu^{ve}_{i} \mu^{em}_{j} \mu^{mg}_{k} \mu^{gv}_{l} }{\Delta_{ev}^{3+2-1} \Delta_{mv}^{2-1}\Delta_{gv}^{-1}}  \rho_{gg}
 \end{equation}
-where: $\mu^{ab}_{j}$ is the $j^{th}$ element of $\mel{a}{\vec{\mu}}{b}$, $\Delta_{kl}^{-x+y+z} = \omega_{kl} - (-\omega_{x}+\omega_{y} + \omega_{z}) - i\Gamma_{kl}$, $\omega_j$ is the frequency of the j$^{th}$ input field, $\Gamma_{kl}$ is the dephasing of $\rho_{kl}$ and $\rho_{gg}$ is the ground state population.
+where: $\mu^{ab}_{j}$ is the $j^{th}$ element of $\mel{a}{\vec{\mu}}{b}$, $\Delta_{kl}^{-x+y+z} = \omega_{kl} - (-\omega_{x}+\omega_{y} + \omega_{z}) - i\Gamma_{kl}$, $\omega_j$ is the frequency of the j$^{th}$ input field, $\Gamma_{kl}$ is the $\rho_{kl}$ dephasing, and $\rho_{gg}$ is the ground state population.
 Here, $\ket{e}$ and $\ket{m}$ are virtual states, and thus necessarily summed over in \autoref{sivegamma}.
 The pulse identifiers on the $\Delta_{kl}$ terms will be suppressed henceforth for legibility.
 $D$, the Maker-Terhune degeneracy factor, accounts for permutation symmetry of the excitation fields.\cite{RN134} 
@@ -179,7 +182,7 @@ For a HDFG experiment using two (three) distinct, non-degenerate input fields, $
 
 It is useful to investigate the selection rules without vibronic resonance to understand how HDFG can be used as an upconverted infrared spectroscopy.
 We first investigate the HDFG selection rules through a Placzek type formalism.
-When $\omega_2+\omega_3$ is significantly detuned from resonance and the vibronic nature of the virtual states is ignored, the Placzek approximation can be used to study selection rules in terms of the hyper-Raman hyperpolarizability, $\beta$. \cite{Placzek1934, Long1970}
+When $\omega_2+\omega_3$ is significantly detuned from resonance and the vibronic nature of the virtual states is ignored, the Placzek approximation can be invoked to study selection rules in terms of the hyper-Raman hyperpolarizability, $\beta$. \cite{Placzek1934, Long1970}
 Summing over the virtual states $\ket{e}$ and $\ket{m}$ forms the hyper-Raman hyperpolarizability so that\cite{Long1970} 
 \begin{equation}\label{sivebeta}
 	\gamma_{ijkl} =	-\frac{1}{\varepsilon_0} \frac{1}{4D \hbar}\frac{\beta^{vg}_{ijk} \mu^{gv}_{l}}{\Delta_{gv}} \rho_{gg}.
@@ -187,9 +190,9 @@ Summing over the virtual states $\ket{e}$ and $\ket{m}$ forms the hyper-Raman hy
 Since all infrared active transitions are hyper-Raman active, HDFG is allowed for any infrared active transition. \cite{Andrews1978}
 This selection rule is generally valid for any HDFG or HSFG process when $\omega_2$ and $\omega_3$ are sufficiently detuned from any resonance.
 
-The general selection rule can be simplified by considering excitation of an infrared active normal mode.  
-Assume state $v$ is the $v^{\text{th}}$ normal mode.
-We Taylor expand the dipole and first hyperpolarizability operators to first order in the normal mode coordinate $Q_v$ about equilibrium:\cite{Long1970, Shen90}
+The general selection rule can be simplified by considering the excitation of an infrared active normal mode.  
+Assume $\ket{v}$ is the $v^{\text{th}}$ normal mode.
+We Taylor expand the dipole and first hyperpolarizability operators to first order in the normal mode coordinate $Q_v$ about equilibrium:
 \begin{subequations}
 	\begin{equation}
 		\mu_l = \mu_{l,0} + \left(\frac{\partial \mu_l}{\partial Q_v}\right)_0 Q_v 
@@ -207,10 +210,10 @@ Since \autoref{SIVEselection} is non-zero in the harmonic oscillator limit, HDFG
 
 \subsection{Vibronic Selection Rules}\label{Albrecht}
 While the Placzek treatment provides the general source of HDFG output, it does not predict the behavior of $\beta_{ijk}$ as $\omega_2 + \omega_3$ is changed.
-We now explicitly consider electronic resonances through the $A,B,C$ decomposition of $\beta$ introduced by Chung and Ziegler, analogous to those found in Albrecht's treatment of Raman spectroscopy (i.e., sum-over-states formalism).\cite{Albrecht1961, Ziegler1988} 
+We now explicitly consider electronic resonances through the $A,B,C$ decomposition of $\beta$ introduced by Chung and Ziegler, analogous to Albrecht's treatment of Raman spectroscopy (i.e., sum-over-states formalism).\cite{Albrecht1961, Ziegler1988} 
 To employ this formalism, we write the states in a Born-Oppenheimer basis $\ket{a,b}$, where $\ket{a,b} = |a(\textbf{Q})) \otimes \ket{b}$ for electronic states $\{|a(\textbf{Q}))\}$ and vibrational states $\{\ket{b}\}$ (i.e., adiabatic approximation), where \textbf{Q}, the system normal modes, is the adiabatic parameter. \cite{BornOppenheimer, Tang1970}
 We will henceforth suppress the dependence of the electronic states on \textbf{Q} for simplicity.
-It is worthwhile to note that the time-dependent Raman formalism developed by Heller \textit{et al.} can be applied to hyper-Raman scattering. \cite{Myers1982, Shoute2005}
+It is worthwhile to note that the time-dependent Raman formalism developed by Heller \textit{et al.} can be applied to hyper-Raman scattering. \cite{Lee1979, Silverstein2012}
 However, since our goal is to expose the Quantum Mechanical aspects of HDFG spectroscopy, we choose to employ the typical sum-over-states formalism.
 
 For consistency with previous reports, we use $\vec{R}$ to denote electric transition dipole moments; $\vec{\mu}$ is reserved for transitions on the ground electronic state. \cite{Tang1970}
@@ -311,7 +314,7 @@ the $A$ and $B$ terms are rewritten as
 			\end{split}
 		\end{equation}
 	\end{subequations}
-where $\Lambda^{ab}_{ij} = 1/\hbar \sum_m M_i^{am}M_j^{mb} $ is the electronic two photon transition moment between $a$ and $b$.\cite{McClain1977}
+where $\Lambda^{ab}_{ij} = 1/\hbar \sum_m M_i^{am}M_j^{mb} $ is the electronic two photon transition moment between $|a)$ and $|b)$.\cite{McClain1977}
 
 \begin{figure*}[!htbp]
 	\centering
