@@ -68,9 +68,9 @@ For an $n$-quantum excited state vibration $| \tilde{n} \rangle$, and a $m$-quan
 		&= N_n N_m \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ H_n(q-\Delta) q^k H_m(q) \exp(-q^2 + q\Delta)
 	\end{split}\label{key}
 \end{equation}
-The integral corresponds to Franck-Condon factors for $k=0$ and Herzberg-Teller matrix elements for $k=1$.
+The integral corresponds to Franck-Condon factors for $k=0$ and Herzberg-Teller integrals for $k=1$.
 The vibrational coupling integrals are written assuming the expansion of the dipole moment is taken about the equilibirum point of the ground state geometry ($q=0$), as is done in the main text.
-Note that in the limit $\Delta \rightarrow 0$, typical harmonic oscillator selection rules are restored, as the two wells have the same vibrational Hamiltonian and thus share an identical subspace of orthonormal eigenstates.
+Note that in the limit $\Delta \rightarrow 0$, typical harmonic oscillator selection rules are restored, as the two wells have the same vibrational Hamiltonian and thus share a subspace of orthonormal eigenstates.
 
 \subsection{General Solution to $\langle \tilde{n} | q^k | m \rangle$}
 The matrix elements of \autoref{key} can be computed numerically, but analytic forms of the integral also exist. 
@@ -212,7 +212,7 @@ These integrals, along with some relevant Franck-Condon factors, are plotted in 
 
 \newpage
 \section{Impact of displacement, resonance frequencies, vibronic linewidth and molecular parameters on HDFG Spectra}
-Inspection of the $A,B$ terms in the main text show that the HDFG output is dependent upon the relative size of products of Franck-Condon and Herzberg-Teller integrals.
+Inspection of the $A,B$ terms in the main text show that the HDFG output is dependent upon the relative size of products of Franck-Condon factors and Herzberg-Teller integrals.
 For clarity, we plot the relevant product factors to assist in understanding the impact of offset on the HDFG spectra (\autoref{fig:fcht_product}).
 These plots highlight the important distinction that $B$ term contributions to HDFG can dominate in the limit of small offset.
 This is expected, as when $\Delta \rightarrow 0$, the overlap integral, \autoref{key}, returns typical harmonic oscillator selection rules.
@@ -220,15 +220,15 @@ This is expected, as when $\Delta \rightarrow 0$, the overlap integral, \autoref
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=6.675in]{figures/fchtproduct.png}
-	\caption{Products of Franck-Condon and Herzberg-Teller integrals relevant to the $A, B_1, B_2$ terms in this manuscript as a function of offset, $\Delta$.} 
+	\caption{Products of Franck-Condon factors and Herzberg-Teller integrals relevant to the $A, B_1, B_2$ terms in this manuscript as a function of offset, $\Delta$.} 
 	\label{fig:fcht_product}
 \end{figure}
 
 In the main text, the potential well offset ($\Delta$) was taken as $\Delta = 0.5$.
 Here, we vary $\Delta$ to investigate its impact on the structure of the $\abs{A+B}$ spectrum.
-The dependence of relevant Franck-Condon factors and Herzberg-Teller factors on displacement are plotted in \autoref{fig:fcht} as a function of offset, $\Delta$.
+The dependence of relevant Franck-Condon factors and Herzberg-Teller integrals on displacement are plotted in \autoref{fig:fcht} as a function of offset, $\Delta$.
 \autoref{fig:fcht} shows how different displacements, vibrational frequencies, and vibronic linewidths will alter the vibronic spectrum.
-The products of Franck-Condon and Herzberg-Teller integrals relevant to the $A,B$ coefficents discussed in the main text are plotted in \autoref{fig:fcht_product}.
+The products of Franck-Condon factors and Herzberg-Teller integrals relevant to the $A,B$ coefficents discussed in the main text are plotted in \autoref{fig:fcht_product}.
 
 \pagebreak
 
@@ -273,7 +273,7 @@ In this section, the integral
 \end{equation}
 is evaluated for $c=-1$ (electronic state and vibrational state energy fluctuations are anti-correlated) and $c=1$ (electronic state and vibrational state energy fluctuations are correlated).
 Integrals such as those found in \autoref{generalcontour} can be evaluated by using the Residue theorem. %@dan i had too much white space, needed something to fill in... delete if you want.
-If a complex valued function $f(z)$ is integrated along a positively oriented closed contour,%guessing on this one
+Recall that if a complex valued function $f(z)$ is integrated along a positively oriented closed contour,%guessing on this one
 \begin{subequations}\label{eq:generalcontour}
 	\begin{equation}
 		\oint \mathrm{d}z f(z) = 2\pi i \sum_k \Res[f(z_k)]

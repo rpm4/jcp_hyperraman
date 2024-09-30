@@ -327,7 +327,7 @@ where $\Lambda^{ab}_{ij} = 1/\hbar \sum_m M_i^{am}M_j^{mb} $ is the electronic t
 		The vibrational states on the $|g)$ and $|e)$ manifolds are spaced 1600 cm$^{-1}$ apart, with the vibronic states $\ket{e,\tilde{v}'}$ given linewidths of 300 cm$^{-1}$ and $\omega_{eg}$ = 30000 cm$^{-1}$.
 		Dotted lines in (b) denote the $\tilde{v}'$ = 0, 1, 2 vibronic resonances. 
 		The vibronic one and two photon absorption operators are scaled such that $\abs{B}/\abs{A} \sim$ 0.1, following Chung and Ziegler. \cite{Ziegler1988}
-		The Franck-Condon and Herzberg-Teller contributions to each of these terms are found in \autoref{T:contributions}.}
+		The Franck-Condon factor and Herzberg-Teller integral contributions to each of these terms are found in \autoref{T:contributions}.}
 	\label{fig:doubres_spec}
 \end{figure*}
 
@@ -382,10 +382,10 @@ As has been discussed elsewhere, however, this approximation is in many cases in
 This means that it could prove difficult to isolate $B$ terms when $A$ terms are present.
 As such, HDFG will have difficulty examining non-Condon effects ($B$ term contributions) in noncentrosymmetric systems.
 
-\begin{table}[!htbp]
+\begin{table*}[!htbp]
 	\caption{\label{T:contributions} Franck-Condon and/or Herzberg-Teller contributions to $A$, $B_1$, $B_2$ terms between $\ket{g,0}$, $\ket{g,1}$ and vibronic states $\ket{e,\tilde{0}}$, $\ket{e,\tilde{1}}$, $\ket{e,\tilde{2}}$ for \autoref{Hamiltonian} with an offset $\Delta = 0.5$.
 	The bra and ket labels are written according to their order in $A$, $B_1$, $B_2$ as written in \autoref{ABterms_DR}.
-	The Franck-Condon and Herzberg-Teller integral products tabulated here are plotted in the Supporting Information (Figure S2) as a function of $\Delta$.}
+	The Franck-Condon factor and Herzberg-Teller integral products tabulated here are plotted in the Supporting Information (Figure S2) as a function of $\Delta$.}
 	\begin{ruledtabular}
 		\begin{tabular}{cccc}\label{fcht}
 			$2\omega_2$ Electronic Resonance & $\ket{e,\tilde{0}}$ & $\ket{e,\tilde{1}}$ & $\ket{e,\tilde{2}}$\\
@@ -406,7 +406,7 @@ As such, HDFG will have difficulty examining non-Condon effects ($B$ term contri
 			& $\mel{1}{Q}{\tilde{2}} \langle \tilde{2} | 0 \rangle = 0.06$\\
 		\end{tabular}
 	\end{ruledtabular}
-\end{table}
+\end{table*}
 
 Since $\Delta$ can take on a variety of values given a specific system, in the supporting information we demonstrate the impact of $\Delta$ on the HDFG response using previously reported values (Figure S3). \cite{Myers1982, Brennan2024}
 Clearly, $\Delta$, $\omega_{g1, g0}$ and $\Gamma$ have a significant impact on the HDFG spectral profile.
@@ -414,7 +414,7 @@ Indeed, for some values of $\Delta$, it appears that $B$ term resonances dominat
 
 In the post-resonance region, the amplitude takes on an unexpected lineshape.
 This arises due to interference between the real and imaginary parts of $\gamma$ (\autoref{fig:doubres_spec}c, d).
-The abnormal lineshape arises due to the sign of the Franck-Condon and Herzberg-Teller integrals, as well as the molecular parameters that drive the output of the vibronic transitions.
+The abnormal lineshape arises due to the sign of the Franck-Condon factor and Herzberg-Teller integrals, as well as the molecular parameters that drive the output of the vibronic transitions.
 Such effects have been seen elsewhere in spontaneous, surface enhanced hyper-Raman studies. \cite{Milojevich2011}
 The main source of interference in the HDFG spectra arises from the sign of the molecular parameters. 
 In the HDFG spectrum presented in \autoref{fig:doubres_spec}, the signs of all molecular parameters are taken to be positive. 
@@ -435,10 +435,12 @@ When both states positively correlated, $c > 0$; similarly, modes are negatively
 For simplicity, we consider only c = $\pm$1.
 
 We investigate the impact of inhomogeneity on spectral output by convolving the HDFG output hyperpolarizability $\gamma_{ijkl}(\xi)$ with a normalized Lorentzian distribution $P(\xi)$ of half width $\sigma$ as \cite{Desiderio1979} 
+\begin{widetext}
 \begin{equation}\label{contour}
 	\gamma_{ijkl} = \int_{-\infty}^\infty \mathrm{d}\xi \ P(\xi) \gamma_{ijkl}(\xi)
 	= \frac{\sigma}{\pi}\int_{-\infty}^\infty \mathrm{d}\xi \frac{1}{\sigma^2 + \xi^2} \frac{\eta_{ijkl}}{\left(\Delta_{ga} - \xi\right)\left(\Delta_{ba}+ c\xi\right)}
 \end{equation} 
+\end{widetext}
 where $\eta_{ijkl}$ contains all values in \autoref{drgamma_notaylor} not dependent upon $\xi$.
 While Gaussian distributions are commonly used as a phenomenological description of inhomogeneous broadening, Lorentzian distributions have successfully described inhomogeneous broadening in many coherent spectroscopies and yield easily interpretable closed-form solutions. \cite{Dick83_1, Carlson1990line, RN410, Yurs2012}
 
