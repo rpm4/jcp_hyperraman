@@ -228,7 +228,7 @@ In the main text, the potential well offset ($\Delta$) was taken as $\Delta = 0.
 Here, we vary $\Delta$ to investigate its impact on the structure of the $\abs{A+B}$ spectrum.
 The dependence of relevant Franck-Condon factors and Herzberg-Teller integrals on displacement are plotted in \autoref{fig:fcht} as a function of offset, $\Delta$.
 \autoref{fig:fcht} shows how different displacements, vibrational frequencies, and vibronic linewidths will alter the vibronic spectrum.
-The products of Franck-Condon factors and Herzberg-Teller integrals relevant to the $A,B$ coefficents discussed in the main text are plotted in \autoref{fig:fcht_product}.
+The products of Franck-Condon factors and Herzberg-Teller integrals relevant to the $A,B$ coefficients discussed in the main text are plotted in \autoref{fig:fcht_product}.
 
 \pagebreak
 
@@ -273,7 +273,7 @@ In this section, the integral
 \end{equation}
 is evaluated for $c=-1$ (electronic state and vibrational state energy fluctuations are anti-correlated) and $c=1$ (electronic state and vibrational state energy fluctuations are correlated).
 Integrals such as those found in \autoref{generalcontour} can be evaluated by using the Residue theorem. %@dan i had too much white space, needed something to fill in... delete if you want.
-Recall that if a complex valued function $f(z)$ is integrated along a positively oriented closed contour,%guessing on this one
+Recall that if an analytic, complex valued function $f(z)$ is integrated along a positively oriented closed contour,%guessing on this one
 \begin{subequations}\label{eq:generalcontour}
 	\begin{equation}
 		\oint \mathrm{d}z f(z) = 2\pi i \sum_k \Res[f(z_k)]
@@ -288,13 +288,12 @@ For first order poles (the cases considered below), $n=1$, so that
 	\end{equation}
 \end{subequations}
 Note that in \autoref{eq:generalcontour}, the integrals are closed along a contour which wraps all the poles. 
+In the case where the integration is only needed along the real axis, the contour can be drawn as a semicircle in the positive half of the complex plane. \cite{MorseFeshbach}
 
 \subsection{Anti-correlated Modes}
 For anti-correlated modes ($c = -1$), the poles ($\xi_k$) are situated in the complex plane as shown in \autoref{fig:contours}a.
-Since \autoref{generalcontour} is evaluated along the real axis, one can choose to evaluate the contour in the upper or lower half of the complex plane.
-In other words, we can choose the contour which wraps around the least number of poles.
 For c = -1, there are four poles: $\pm i \sigma, \Delta_{ga}, \Delta_{ba}$. 
-The contour that wraps the upper half of the complex plane has only one pole, $i \sigma$; as such, we choose to evaluate \autoref{generalcontour} in the upper half of the complex plane for the case of anti-correlated modes, as it contains the least number of poles.
+The contour that wraps the upper half of the complex plane has only one pole, $i \sigma$
 Using the residue theorem for a first order pole,\cite{Carlson1990line} we see
 \begin{widetext}
 	\begin{equation}
@@ -311,17 +310,16 @@ Using the residue theorem for a first order pole,\cite{Carlson1990line} we see
 
 \subsection{Correlated Modes}
 For correlated modes, the poles are situated in the complex plane as shown in \autoref{fig:contours}b.
-It is clear that no matter which contour is chosen, the contour will envelop two poles.
-We choose to evaluate along the contour in the bottom half of the complex plane (see \autoref{fig:contours}b), where the poles are $\{-i\sigma, \Delta_{ga}\}$.
+We evaluate along the contour where the poles are $\{i\sigma, -\Delta_{ba}\}$.
 Since the $\xi_k$ are nondegenerate,
 \begin{widetext}
 	\begin{equation}
 		\begin{split}
 			\int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \gamma_{ijkl}(\xi) &= 2\pi i \sum_k \lim_{\xi \rightarrow \xi_k} P(\xi) \gamma_{ijkl}(\xi) (\xi - \xi_k)\\
-			&= 2\pi i \frac{\eta_{ijkl} \sigma}{\pi}  \lim_{\xi \rightarrow -i\sigma} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga} + \xi} \frac{1}{\Delta_{ba} - \xi} \left(\xi + i \sigma\right) \\ 
-			&+ 2\pi i \frac{\eta_{ijkl} \sigma}{\pi} \lim_{\xi \rightarrow \Delta_{ga}} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga} - \xi} \frac{1}{\Delta_{ba} - \xi} \left(\xi - \Delta_{ga}\right)\\
-			&= 2 \eta_{ijkl} i \sigma \left(\frac{1}{2 i \sigma} \frac{1}{-i \sigma - \Delta_{ga}} \frac{1}{\Delta_{ba} - i\sigma} \right) - 2\eta_{ijkl} i \sigma \left(\frac{1}{\sigma^2 + \Delta_{ga} ^2} \frac{1}{\Delta_{ga} + \Delta_{ba}} \right)\\
-			&= -\frac{\eta_{ijkl}}{\Delta_{ga} + i \sigma} \left(\frac{1}{\Delta_{ba} - i \sigma} + \frac{2i\sigma}{(\Delta_{ga} - i \sigma)(\Delta_{ga} + \Delta_{ba})}\right)\\
+			&= 2\pi i \frac{\eta_{ijkl} \sigma}{\pi}  \lim_{\xi \rightarrow i\sigma} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga} - \xi} \frac{1}{\Delta_{ba} + \xi} \left(\xi - i \sigma\right) \\ 
+			&+ 2\pi i \frac{\eta_{ijkl} \sigma}{\pi} \lim_{\xi \rightarrow -\Delta_{ba}} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga} - \xi} \frac{1}{\Delta_{ba} + \xi} \left(\xi + \Delta_{ba}\right)\\
+			&= 2 \eta_{ijkl} i \sigma \left(\frac{1}{2 i \sigma} \frac{1}{\Delta_{ga} - i\sigma} \frac{1}{\Delta_{ba} + i\sigma} \right) + 2\eta_{ijkl} i \sigma \left(\frac{1}{\sigma^2 + \Delta_{ba} ^2} \frac{1}{\Delta_{ga} + \Delta_{ba}} \right)\\
+			&= \frac{\eta_{ijkl}}{\Delta_{ba} + i \sigma} \left(\frac{1}{\Delta_{ga} - i \sigma} + \frac{2i\sigma}{(\Delta_{ba} - i \sigma)(\Delta_{ga} + \Delta_{ba})}\right)\\
 		\end{split}
 	\end{equation}
 \end{widetext}

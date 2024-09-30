@@ -15,10 +15,7 @@ fontsize = 18
 
 r = 5 #radius of contour
 
-def bottomcontour(k):
-    return -1*np.sqrt(r**2 - k**2) 
-
-def topcontour(k):
+def contour(k):
     return np.sqrt(r**2 - k**2) 
 
 x = np.linspace(-r, r, 50000)
@@ -38,7 +35,7 @@ points = [0, 0, 2, 3]
 
 
 #plot it
-ax0.plot(x, topcontour(x), linewidth = '2', color = 'black')
+ax0.plot(x, contour(x), linewidth = '2', color = 'black')
 for i in [0,1,2,3]:
     ax0.scatter(points[i], poles[i], color = 'blue')
     label = [r'$\mathsf{i \sigma}$', r'$\mathsf{-i \sigma}$', r'$\mathsf{\Delta_{ga}}$', r'$\mathsf{\Delta_{ba}}$']
@@ -60,7 +57,7 @@ for i in [0,1,2,3]:
     ax1.text(points[i]+0.1, poles[i]+0.1, label[i], fontsize = 24)
 ax0.set_title('Anti-Correlated (c = -1)')
 
-ax1.plot(x,bottomcontour(x), linewidth = '2', color = 'black')
+ax1.plot(x,contour(x), linewidth = '2', color = 'black')
 ax1.set_title('Correlated (c = 1)')
 
 #beautification

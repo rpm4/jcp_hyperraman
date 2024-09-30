@@ -256,4 +256,4 @@ for i, ax in enumerate(fig.axes):
     wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.25, bbox = True, fontsize = fontsize, background_alpha=0.75)
 
 if save:
-    wt.artists.savefig(here / "drsive_spectrum.png", transparent = True, bbox_inches='tight')
+    wt.artists.savefig(here / "drsive_chgsign.png", transparent = True, bbox_inches='tight')

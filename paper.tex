@@ -433,6 +433,7 @@ If the frequency of $\ket{g,v}$ is written as $\omega_{gv} + \xi$, where $\xi$ i
 We assume the fluctuations controlling the frequency variations are slow (the static limit), so that homogeneous lineshapes are unaffected by this fluctuation. 
 When both states positively correlated, $c > 0$; similarly, modes are negatively correlated when $c < 0$.
 For simplicity, we consider only c = $\pm$1.
+To simplify discussion below, we map $\Delta_{e\tilde{v}', gv} \rightarrow \Delta_{ba}$ and $\Delta_{g0,gv} \rightarrow \Delta_{ga}$.
 
 We investigate the impact of inhomogeneity on spectral output by convolving the HDFG output hyperpolarizability $\gamma_{ijkl}(\xi)$ with a normalized Lorentzian distribution $P(\xi)$ of half width $\sigma$ as \cite{Desiderio1979} 
 \begin{widetext}
@@ -447,7 +448,7 @@ While Gaussian distributions are commonly used as a phenomenological description
 Evaluating \autoref{contour} for the HDFG pathway above shows\footnote{See the supporting information for more details.} 
 \begin{subequations}
 \begin{equation}\label{linenarrowa}
-	\gamma_{ijkl} = \frac{- \eta_{ijkl}}{\Delta_{ga}+ i \sigma} \left( \frac{1}{\Delta_{ba}-i \sigma} + \frac{2 i \sigma}{\Delta_{ga}-i \sigma} \frac{1}{\Delta_{ba} + \Delta_{ga}} \right)
+	\gamma_{ijkl} = \frac{\eta_{ijkl}}{\Delta_{ba} + i \sigma} \left(\frac{1}{\Delta_{ga} - i \sigma} + \frac{2i\sigma}{(\Delta_{ba} - i \sigma)(\Delta_{ga} + \Delta_{ba})}\right)
 \end{equation}
 for correlated ($c = 1$) states and
 \begin{equation}
