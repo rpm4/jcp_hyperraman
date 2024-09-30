@@ -53,7 +53,8 @@ We investigate the one dimensional case using the Hamiltonian described in the m
 	\end{equation} 
 \end{subequations}
 Here, $p,q$ are the dimensionless conjugate normal mode coordinates, $\hbar\omega_{eg}$ is the energy difference between $H_e$ and $H_g$, and $\Delta$ is the dimensionless offset of the excited state surface relative to the ground state.
-The Hamiltonians are the well-known quantum harmonic oscillator, and their position space wavefunctions are
+The Hamiltonians are quantum harmonic oscillators.
+The solutions to the harmonic oscillator Hamiltonian are well known, and their position space wavefunctions are
 \begin{equation}
 	\psi_m(q) = \langle q | m \rangle = N_m H_m(q) \exp(-q^2/2),
 \end{equation}
@@ -69,6 +70,7 @@ For an $n$-quantum excited state vibration $| \tilde{n} \rangle$, and a $m$-quan
 \end{equation}
 The integral corresponds to Franck-Condon factors for $k=0$ and Herzberg-Teller matrix elements for $k=1$.
 The vibrational coupling integrals are written assuming the expansion of the dipole moment is taken about the equilibirum point of the ground state geometry ($q=0$), as is done in the main text.
+Note that in the limit $\Delta \rightarrow 0$, typical harmonic oscillator selection rules are restored, as the two wells have the same vibrational Hamiltonian and thus share an identical subspace of orthonormal eigenstates.
 
 \subsection{General Solution to $\langle \tilde{n} | q^k | m \rangle$}
 The matrix elements of \autoref{key} can be computed numerically, but analytic forms of the integral also exist. 
@@ -232,17 +234,33 @@ The products of Franck-Condon and Herzberg-Teller integrals relevant to the $A,B
 
 It is clear from \autoref{fig:fcht_product} that the HDFG spectrum will have a significant dependence upon $\Delta$, even for small deviations from complete overlap. 
 To this end, we plot the impact of resonance frequency and offset on the HDFG spectrum \autoref{fig:chgdelta}, using values reported by Myers et al. and Brennan et al. \cite{Myers1982, Brennan2024}
-In this section, we take $\omega_{eg}$ = $37340$ cm$^{-1}$ and vary the offset ($\Delta$), vibrational frequency ($\omega_{g1,g0}$), and linewidth ($\Gamma$) as noted in the figure.
+In this section, we take $\omega_{eg}$ = $30000$ cm$^{-1}$ and vary the offset ($\Delta$), vibrational frequency ($\omega_{g1,g0}$), and linewidth ($\Gamma$) as noted in the figure.
 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=6.675in]{figures/changedelta.png}
 	\caption{The impact of offset, vibrational resonance, and linewidth on HDFG spectra. Parameters for (a,b) follow from Myers et al., whereas parameters for (c,d) follow from Brennan et al.\cite{Myers1982, Brennan2024}
-	Note that in these plots, the ratio $\abs{A/B} = 0.1$ is enforced} 
+	Note that in these plots, the ratio $\abs{A/B} = 0.1$ is enforced.} 
 	\label{fig:chgdelta}
 \end{figure}
 
-%todo: plot impact of different A,B on output.
+In addition to the linewidth and offset impacting the shape of the HDFG response, the sign of the molecular parameters $M^{ge}_0, \Lambda^{ge}_0, \frac{\partial M^{ge}}{\partial Q} , \frac{\partial \Lambda^{ge}}{\partial Q}$ will significantly impact the HDFG spectrum.
+As discussed in the main text, the atypical lineshape in the post-resonance region of the HDFG region arises due to the sign of all four aforementioned parameters being identical.
+Changing the sign of one (or three) parameters will change the sign of $A, B$ and eliminate interference between the real and imaginary terms.  
+As an example, we demonstrate the resultant HDFG spectrum when $M_0^{ge} < 0$, and all other terms $>0$ (\autoref{fig:chgsign}).
+Compared to Figure 3 of the main text, the contributions from the $A, B_1$ and $B_2$ terms to $\Re(\gamma)$ and $\Im(\gamma)$ significantly change.
+In particular, $\Re(\gamma)$ and $\Im(\gamma)$ are of similar value in the post-resonance region, eliminating the interference seen in Figure 3 of the main text.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=6.675in]{figures/drsive_chgsign.png}
+	\caption{Contributions of $A, B$ to HDFG spectrum for a simple two harmonic well system, identical to the main text, except $M_0^{ge} < 0$.
+		(a) Potential energy surfaces for a two-well system, (b) 1D HDFG spectrum for $\Delta = 0.5$, $\omega_1 = \omega_{g1, g0}$, (c, d) real and imaginary parts of terms plotted in (b), respectively.
+		The spectra are referenced to $\max{(A+B)}$. 
+		The vibronic one and two photon absorption operators are scaled such that $\abs{B}/\abs{A} \sim$ 0.1, following Chung and Ziegler. \cite{Ziegler1988}
+} 
+	\label{fig:chgsign}
+\end{figure}
 
 \section{Evaluating impact of static inhomogeneity on HDFG output}
 In this section, the integral
@@ -254,6 +272,22 @@ In this section, the integral
 	\end{split}
 \end{equation}
 is evaluated for $c=-1$ (electronic state and vibrational state energy fluctuations are anti-correlated) and $c=1$ (electronic state and vibrational state energy fluctuations are correlated).
+Integrals such as those found in \autoref{generalcontour} can be evaluated by using the Residue theorem. %@dan i had too much white space, needed something to fill in... delete if you want.
+If a complex valued function $f(z)$ is integrated along a positively oriented closed contour,%guessing on this one
+\begin{subequations}\label{eq:generalcontour}
+	\begin{equation}
+		\oint \mathrm{d}z f(z) = 2\pi i \sum_k \Res[f(z_k)]
+	\end{equation}
+where the residue of an n$^{\text{th}}$ order pole at $z = z_k$, $\Res[f(z_k)]$ is evaluated as
+	\begin{equation}
+		\Res[f(z_k)] = \lim_{z \rightarrow z_k} \frac{1}{\left(n-1\right)!} \frac{\mathrm{d}^{n-1}}{\mathrm{d}z^{n-1}} \left[f(z) (z-z_k) \right]
+	\end{equation}
+For first order poles (the cases considered below), $n=1$, so that 
+	\begin{equation}
+		\oint \mathrm{d}z f(z) = 2\pi i \sum_k \lim_{z \rightarrow z_k} f(z) (z-z_k)
+	\end{equation}
+\end{subequations}
+Note that in \autoref{eq:generalcontour}, the integrals are closed along a contour which wraps all the poles. 
 
 \subsection{Anti-correlated Modes}
 For anti-correlated modes ($c = -1$), the poles ($\xi_k$) are situated in the complex plane as shown in \autoref{fig:contours}a.
@@ -261,7 +295,7 @@ Since \autoref{generalcontour} is evaluated along the real axis, one can choose 
 In other words, we can choose the contour which wraps around the least number of poles.
 For c = -1, there are four poles: $\pm i \sigma, \Delta_{ga}, \Delta_{ba}$. 
 The contour that wraps the upper half of the complex plane has only one pole, $i \sigma$; as such, we choose to evaluate \autoref{generalcontour} in the upper half of the complex plane for the case of anti-correlated modes, as it contains the least number of poles.
-Using the residue theorem, we see
+Using the residue theorem for a first order pole,\cite{Carlson1990line} we see
 \begin{widetext}
 	\begin{equation}
 		\begin{split}
@@ -279,7 +313,7 @@ Using the residue theorem, we see
 For correlated modes, the poles are situated in the complex plane as shown in \autoref{fig:contours}b.
 It is clear that no matter which contour is chosen, the contour will envelop two poles.
 We choose to evaluate along the contour in the bottom half of the complex plane (see \autoref{fig:contours}b), where the poles are $\{-i\sigma, \Delta_{ga}\}$.
-Since the $\xi_k$ are nondegenerate, we see
+Since the $\xi_k$ are nondegenerate,
 \begin{widetext}
 	\begin{equation}
 		\begin{split}
@@ -296,10 +330,11 @@ Since the $\xi_k$ are nondegenerate, we see
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=6.675in]{figures/corr_contour.png}
-	\caption{Poles (blue dots) and contours (black line) used to evaluate \autoref{generalcontour} for (a) anti-correlated and (b) correlated modes.} 
+	\caption{Poles (blue dots) and contours (black lines) used to evaluate \autoref{generalcontour} for (a) anti-correlated ($c=-1$) and (b) correlated ($c=1$) modes. 
+	} 
 	\label{fig:contours}
 \end{figure}
-
+\break
 
 \section{References}
 % Create the reference section using BibTeX:

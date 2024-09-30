@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jan 17 09:28:39 2023
-
-@author: rpm
-"""
 import numpy as np
 import WrightTools as wt
 import matplotlib.pyplot as plt 

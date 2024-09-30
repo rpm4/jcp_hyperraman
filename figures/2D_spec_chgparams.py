@@ -1,13 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jan 17 09:28:39 2023
-
-@author: rpm
-"""
 import numpy as np
 import WrightTools as wt
 import matplotlib.pyplot as plt 
-from matplotlib.patches import FancyArrowPatch
 import pathlib
 
 wt.artists.apply_rcparams(kind="publication")
@@ -63,8 +56,8 @@ def h10(q): #<1|Q|0>
 def h11(q): #<1|Q|1>
     return -q/2 * (-1 + q**2 / 2) * f00(q)
 
-def h12(q): #<1|Q|2>
-    return (-1/8) * (q**4 - 2*q**2 - 8) * f00(q)
+# def h12(q): #<1|Q|2>
+#     return (-1/8) * (q**4 - 2*q**2 - 8) * f00(q)
 
 def h21(q): #<2|Q|1>
     return (1/8)*(8 - 6*q**2 + q**4) * f00(q)
@@ -100,40 +93,21 @@ def B1(Mge, dLeg):
 def B2(Lge, dMgedQ):
     return dMgedQ * Lge *(h01(d) * f00(d)) * Deltaevgo(0, y, 0) + dMgedQ * Lge *(h11(d) * f10(d)) * Deltaevgo(1, y, 1) + dMgedQ * Lge *(h21(d) * f20(d)) * Deltaevgo(2, y, 2) #the v' = 2 term
 
-# #Real parts
-# totRe = A.real + B1.real + B2.real
-# ARe = A.real / totRe.max()
-# BRe = (B1+B2).real / totRe.max()
-# B1Re = B1.real / totRe.max()
-# B2Re = B2.real / totRe.max()
-
-# #Im parts
-# totIm = A.imag + B1.imag + B2.imag
-# AIm = A.imag / totIm.max()
-# BIm = (B1+B2).imag / totIm.max()
-# B1Im = B1.imag / totIm.max()
-# B2Im = B2.imag / totIm.max()
-
 
 # absolute value
 def tot(Mge, Lge, dLeg, dMgedQ):
     return np.abs(A(Mge, Lge) + B1(Mge, dLeg) + B2(dMgedQ, Lge))
-# abs_max = tot.max()
 
 #plot the A and B
 ax0 = plt.subplot(gs[0,0])
+ax0.plot(y, tot(-Mge0, Lge0, dLeg0, dMgedQ0) / tot(-Mge0, Lge0, dLeg0, dMgedQ0).max(), linewidth = '2', label = r'$\mathsf{B/A < 0}$', zorder = 4)
+ax0.plot(y, tot(Mge0, Lge0, dLeg0, dMgedQ0) / tot(Mge0, Lge0, dLeg0, dMgedQ0).max(), linewidth = '2', label = r'$\mathsf{B/A > 0}$', zorder = 3)
+# ax0.plot(y, tot(Mge0, -Lge0, dLeg0, dMgedQ0) / tot(Mge0, -Lge0, dLeg0, dMgedQ0).max(), linewidth = '2', label = r'$\mathsf{+-++}$', zorder = 4)
+# ax0.plot(y, tot(Mge0, Lge0, -dLeg0, dMgedQ0) / tot(Mge0, Lge0, -dLeg0, dMgedQ0).max(), linewidth = '2', label = r'$\mathsf{++-+}$', zorder = 4)
+# ax1 = plt.subplot(gs[0,1])
+# ax1.plot(y, tot(-Mge0, Lge0, dLeg0, dMgedQ0) / tot(-Mge0, Lge0, dLeg0, dMgedQ0).max(), linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
 
-ax0.plot(y, tot(Mge0, Lge0, dLeg0, dMgedQ0) / tot(Mge0, Lge0, dLeg0, dMgedQ0).max(), linewidth = '2', label = r'$\mathsf{++++}$', zorder = 4)
-ax0.plot(y, tot(-Mge0, Lge0, dLeg0, dMgedQ0) / tot(-Mge0, Lge0, dLeg0, dMgedQ0).max(), linewidth = '2', label = r'$\mathsf{-+++}$', zorder = 4)
-ax0.plot(y, tot(Mge0, -Lge0, dLeg0, dMgedQ0) / tot(Mge0, -Lge0, dLeg0, dMgedQ0).max(), linewidth = '2', label = r'$\mathsf{+-++}$', zorder = 4)
-ax0.plot(y, tot(Mge0, Lge0, -dLeg0, dMgedQ0) / tot(Mge0, Lge0, -dLeg0, dMgedQ0).max(), linewidth = '2', label = r'$\mathsf{++-+}$', zorder = 4)
-
-
-
-ax1 = plt.subplot(gs[0,1])
-ax1.plot(y, tot(-Mge0, Lge0, dLeg0, dMgedQ0) / tot(-Mge0, Lge0, dLeg0, dMgedQ0).max(), linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
-
-for ax in [ax0, ax1]:
+for ax in [ax0]:
     ax.set_ylabel(r'$\mathsf{Amplitude \ (norm.)}$', fontsize = fontsize)
     ax.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
     
@@ -149,9 +123,6 @@ for ax in [ax0, ax1]:
     for i in [0,1,2]:
         ax.vlines(x = 30000+1600*i, ymin = 0.0005, ymax = 4, color = 'gray', linestyle = '--', linewidth = 1)
 
-for i, ax in enumerate(fig.axes):
-    # ax.grid(visible=True, color="k", lw=0.5, linestyle=":")
-    wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.25, bbox = True, fontsize = fontsize, background_alpha=0.75)
 
 if save:
     wt.artists.savefig(here / "drsive_spectrum.png", transparent = True, bbox_inches='tight')

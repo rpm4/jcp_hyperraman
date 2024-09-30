@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jan 17 09:28:39 2023
-
-@author: rpm
-"""
 import numpy as np
 import WrightTools as wt
 import matplotlib.pyplot as plt
@@ -74,13 +68,13 @@ def h20(q): #<2|Q|0>
 #plot
 fig, gs = wt.artists.create_figure(width="dissertation", nrows=2, cols=cols, aspects=aspects, wspace=1) 
 ax0 = plt.subplot(gs[0,0])
-ax0.plot(d, f00(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{0}|0\rangle}$', color = 'black', zorder = 4)
-ax0.plot(d, f01(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{0}|1\rangle}$', color = 'pink', zorder = 3)
-ax0.plot(d, f10(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{1}|0\rangle}$', color = 'cyan', zorder = 3)
-ax0.plot(d, f11(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{1}|1\rangle}$', color = 'red', zorder = 2)
+ax0.plot(d, f00(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{0}|0\rangle}$', zorder = 4)
+ax0.plot(d, f01(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{0}|1\rangle}$', zorder = 3)
+ax0.plot(d, f10(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{1}|0\rangle}$', zorder = 3)
+ax0.plot(d, f11(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{1}|1\rangle}$', zorder = 2)
 # ax0.plot(d, f02(d), linewidth = '2', label = r'$\mathsf{02}$', color = 'green', zorder = 1)
-ax0.plot(d, f20(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{2}|0\rangle}$', color = 'orange', zorder = 1)
-ax0.plot(d, f21(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{2}|1\rangle}$', color = 'green', zorder = 1)
+ax0.plot(d, f20(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{2}|0\rangle}$', zorder = 1)
+ax0.plot(d, f21(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{2}|1\rangle}$', zorder = 1)
 
 # ax0.text(20000, 2, r'$\mathsf{\Delta = 1/\sqrt{2}}$', fontsize = 16)
 
@@ -88,12 +82,12 @@ ax0.plot(d, f21(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{2}|1\rangl
 #plot the A and B
 
 ax1 = plt.subplot(gs[0,1])
-ax1.plot(d, h00(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{0}|q|0\rangle}$', color = 'black', zorder = 4)
-ax1.plot(d, h01(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{0}|q|1\rangle}$', color = 'pink', zorder = 3)
-ax1.plot(d, h10(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{1}|q|0\rangle}$', color = 'cyan', zorder = 3)
-ax1.plot(d, h11(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{1}|q|1\rangle}$', color = 'red', zorder = 2)
-ax1.plot(d, h20(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{2}|q|0\rangle}$', color = 'orange', zorder = 1)
-ax1.plot(d, h21(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{2}|q|1\rangle}$', color = 'green', zorder = 1)
+ax1.plot(d, h00(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{0}|q|0\rangle}$', zorder = 4)
+ax1.plot(d, h01(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{0}|q|1\rangle}$', zorder = 3)
+ax1.plot(d, h10(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{1}|q|0\rangle}$', zorder = 3)
+ax1.plot(d, h11(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{1}|q|1\rangle}$', zorder = 2)
+ax1.plot(d, h20(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{2}|q|0\rangle}$', zorder = 1)
+ax1.plot(d, h21(d), linewidth = '2', label = r'$\mathsf{\langle\tilde{2}|q|1\rangle}$', zorder = 1)
 
 
 for ax in [ax0, ax1]:
