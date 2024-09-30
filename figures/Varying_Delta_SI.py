@@ -1,18 +1,11 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jan 17 09:28:39 2023
-
-@author: rpm
-"""
 import numpy as np
 import WrightTools as wt
 import matplotlib.pyplot as plt 
-from matplotlib.patches import FancyArrowPatch
 import pathlib
 
 wt.artists.apply_rcparams(kind="publication")
 
-save = True
+save = False
 fontsize = 18
 here = pathlib.Path(__file__).resolve().parent
 
@@ -72,7 +65,7 @@ def h20(q): #<2|Q|0>
 
 #define resonance denominator
 def Deltaevgo(n,x,l,G):
-    weg = 37430
+    weg = 30000
     return 1/(weg + l*n - x - 1j*G) #assuming the |0> -> |n> transiton is l*n  cm^-1
 
 
@@ -84,7 +77,7 @@ dMgedQ = 0.007 #dM^eg / dQ
 
 
 #define terms
-y = np.linspace(17000, 57000, 3000000)
+y = np.linspace(12000, 52000, 3000000)
 
 
 
@@ -103,6 +96,7 @@ def tot(d,w,G):
     tot = np.abs(A(d,w, G)+B1(d,w,G)+B2(d,w,G))
     return tot
 
+textplace = 18000 #where words will live
 
 #plot
 fig, gs = wt.artists.create_figure(width="dissertation", nrows=2, cols=cols, aspects=aspects, hspace=0.7, wspace=1.2) 
@@ -117,9 +111,9 @@ ax0.plot(y, np.abs(B1(d1, wvib, width)+B2(d1, wvib, width)) / abs_max, linewidth
 
 ax0.set_ylabel(r'$\mathsf{Amplitude \ (norm.)}$', fontsize = fontsize)
 ax0.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
-ax0.text(25000, 0.8, r'$\mathsf{\Delta = 0.87}$', fontsize = 16)
-ax0.text(25000, 0.4, r'$\mathsf{\omega_{g1,g0} = 1190 \ cm^{-1}}$', fontsize = 16)
-ax0.text(25000, 0.2, r'$\mathsf{\Gamma = 175 \ cm^{-1}}$', fontsize = 16)
+ax0.text(textplace, 0.8, r'$\mathsf{\Delta = 0.87}$', fontsize = 16)
+ax0.text(textplace, 0.4, r'$\mathsf{\omega_{g1,g0} = 1190 \ cm^{-1}}$', fontsize = 16)
+ax0.text(textplace, 0.2, r'$\mathsf{\Gamma = 175 \ cm^{-1}}$', fontsize = 16)
 
 
 ax1 = plt.subplot(gs[0,1])
@@ -131,9 +125,9 @@ abs_max1 = tot(d2, wvib_2, width1).max()
 ax1.plot(y, tot(d2, wvib_2, width1)/abs_max1, linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
 ax1.plot(y, np.abs(A(d2, wvib_2, width1)) / abs_max1, linewidth = '2', label = r'$\mathsf{|A|}$', color = 'cyan', zorder = 3)
 ax1.plot(y, np.abs(B1(d2, wvib_2, width1)+B2(d2, wvib_2, width1)) / (3*abs_max1), linewidth = '2', label = r'$\mathsf{|B|}$', color = 'red', zorder = 3)
-ax1.text(25000, 0.8, r'$\mathsf{\Delta = 0.26}$', fontsize = 16)
-ax1.text(25000, 0.4, r'$\mathsf{\omega_{g1,g0} = 932 \ cm^{-1}}$', fontsize = 16)
-ax1.text(25000, 0.2, r'$\mathsf{\Gamma = 175 \ cm^{-1}}$', fontsize = 16)
+ax1.text(textplace, 0.8, r'$\mathsf{\Delta = 0.26}$', fontsize = 16)
+ax1.text(textplace, 0.4, r'$\mathsf{\omega_{g1,g0} = 932 \ cm^{-1}}$', fontsize = 16)
+ax1.text(textplace, 0.2, r'$\mathsf{\Gamma = 175 \ cm^{-1}}$', fontsize = 16)
 
 
 #mof
@@ -146,10 +140,10 @@ abs_max1 = tot(d2, wvib_2, width2).max()
 
 ax2.plot(y, tot(d2, wvib_2, width2)/abs_max1, linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
 ax2.plot(y, np.abs(A(d2, wvib_2, width2)) / abs_max1, linewidth = '2', label = r'$\mathsf{|A|}$', color = 'cyan', zorder = 3)
-ax2.plot(y, np.abs(B1(d2, wvib_2, width2)+B2(d2, wvib_2, width2)) / (10*abs_max1), linewidth = '2', label = r'$\mathsf{|B|}$', color = 'red', zorder = 3)
-ax2.text(25000, 0.8, r'$\mathsf{\Delta = 0.0275}$', fontsize = 16)
-ax2.text(25000, 0.4, r'$\mathsf{\omega_{g1,g0} = 1200 \ cm^{-1}}$', fontsize = 16)
-ax2.text(25000, 0.2, r'$\mathsf{\Gamma = 300 \ cm^{-1}}$', fontsize = 16)
+ax2.plot(y, np.abs(B1(d2, wvib_2, width2)+B2(d2, wvib_2, width2)) / (10*abs_max1), linewidth = '2', label = r'$\mathsf{|B|}$', color = 'red', zorder = 3) #remember we need |A/B| ~ 0.1 even when not exactly the case...
+ax2.text(textplace, 0.8, r'$\mathsf{\Delta = 0.0275}$', fontsize = 16)
+ax2.text(textplace, 0.4, r'$\mathsf{\omega_{g1,g0} = 1200 \ cm^{-1}}$', fontsize = 16)
+ax2.text(textplace, 0.2, r'$\mathsf{\Gamma = 300 \ cm^{-1}}$', fontsize = 16)
 
 ax3 = plt.subplot(gs[1,1])
 d3 = 0.1350 #offset
@@ -160,14 +154,14 @@ abs_max1 = tot(d3, wvib_3, width3).max()
 ax3.plot(y, tot(d3, wvib_3, width3)/abs_max1, linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
 ax3.plot(y, np.abs(A(d3, wvib_3, width3)) / abs_max1, linewidth = '2', label = r'$\mathsf{|A|}$', color = 'cyan', zorder = 3)
 ax3.plot(y, np.abs(B1(d3, wvib_3, width3)+B2(d3, wvib_3, width3)) / (4*abs_max1), linewidth = '2', label = r'$\mathsf{|B|}$', color = 'red', zorder = 3)
-ax3.text(25000, 0.8, r'$\mathsf{\Delta = 0.135}$', fontsize = 16)
-ax3.text(25000, 0.4, r'$\mathsf{\omega_{g1,g0} = 1610 \ cm^{-1}}$', fontsize = 16)
-ax3.text(25000, 0.2, r'$\mathsf{\Gamma = 300 \ cm^{-1}}$', fontsize = 16)
+ax3.text(textplace, 0.8, r'$\mathsf{\Delta = 0.135}$', fontsize = 16)
+ax3.text(textplace, 0.4, r'$\mathsf{\omega_{g1,g0} = 1610 \ cm^{-1}}$', fontsize = 16)
+ax3.text(textplace, 0.2, r'$\mathsf{\Gamma = 300 \ cm^{-1}}$', fontsize = 16)
 
 for ax in [ax0, ax1, ax2, ax3]:
     ax.set_yscale('log')
-    ax.set_xlim(20000, 50000)
-    xticks = np.linspace(20000, 50000, 7)
+    ax.set_xlim(15000, 45000)
+    xticks = np.linspace(15000, 45000, 7)
     ax.set_xticks(xticks)
     ax.set_ylim(0.0001, 1.6)
     ax.legend(loc = 1)
