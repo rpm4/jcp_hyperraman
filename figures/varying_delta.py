@@ -5,7 +5,7 @@ import pathlib
 
 wt.artists.apply_rcparams(kind="publication")
 
-save = False
+save = True
 fontsize = 18
 here = pathlib.Path(__file__).resolve().parent
 
@@ -15,10 +15,10 @@ aspects = [[[0, 0], 1], [[1, 0], 1]]
 
 
 
-#todo: make an array so I can just call specific matrix element of the fc and ht factors, then do a for loop over that array, should work out well.
+"""Defining Franck Condon and Herzberg Teller integrals"""
+'''fc integrals'''
+#<a|b> == |a> is on the ES and |b> is on the GS.
 
-
-#define Franck-Condon factors following page 164 of Roger Carlson's thesis in terms of 'q', the offset
 def f00(q): #<0|0>
     return np.exp(-q**2/4)
 
@@ -40,7 +40,7 @@ def f20(q): #<2|0>
 def f21(q): #<2|1>
     return -q * (1 - q**2/4) *f00(q)
 
-#define Herzberg Teller overlap integrals following page 165 of Roger Carlson's thesis in terms of q
+'''ht integrals'''
 def h00(q): #<0|Q|0>
     return q/2 * f00(q)
 

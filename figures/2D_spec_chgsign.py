@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Jan 17 09:28:39 2023
+
+@author: rpm
+"""
 import numpy as np
 import WrightTools as wt
 import matplotlib.pyplot as plt 
@@ -10,7 +16,7 @@ save = False
 fontsize = 18
 here = pathlib.Path(__file__).resolve().parent
 
-#define harmonic wells and coordinates
+"""define harmonic wells and coordinates"""
 d = 0.5 #offset for es
 do = 0 #gs placement
 
@@ -31,6 +37,7 @@ fig, gs = wt.artists.create_figure(width="dissertation", nrows=2, cols=cols, asp
 
 ax0 = plt.subplot(gs[0,0])
 
+"""Add the arrows and other beautification efforts"""
 #hbar omega_eg arrow insert
 yarrow = [grs(0.6), es(1.3)] #where the arrows start and end
 yarrowstop = [(grs(0.6) + es(1.3))/2 - 0.06, (grs(0.6) + es(1.3))/2 + 0.06] #to put in the hbaromegaeg
@@ -65,8 +72,6 @@ for i in [0,1,2]:
     ax0.hlines(y = es(jes[i]), xmin = -jes[i]+2*d, xmax = jes[i], color = 'black', linestyle = '-', linewidth = 2) #es states
     ax0.text(jgs[i] + 0.25, grs(jgs[i])-0.03, kets[i], fontsize = 16) #labeling gs
     ax0.text(jes[i] + 0.25, es(jes[i])-0.03, kets[i], fontsize = 16) #labeling es
-# for i in [0,1,2]:
-
     
 #harmonic surface labels
 ax0.text(kg.max()+0.12, grs(kg.max())-0.05, r'$\mathsf{|g)}$', fontsize = 24)
@@ -84,7 +89,8 @@ plt.xticks(ticks = [])
 
 
 
-#define Franck-Condon factors following page 164 of Roger Carlson's thesis in terms of 'q', the offset
+"""Defining Franck Condon and Herzberg Teller integrals"""
+'''fc integrals'''
 #<a|b> == |a> is on the ES and |b> is on the GS.
 
 def f00(q): #<0|0>
@@ -108,7 +114,7 @@ def f20(q): #<2|0>
 def f21(q): #<2|1>
     return -q * (1 - q**2/4) *f00(q)
 
-#define Herzberg Teller overlap integrals following page 165 of Roger Carlson's thesis in terms of q
+'''ht integrals'''
 def h00(q): #<0|Q|0>
     return q/2 * f00(q)
 
@@ -144,11 +150,11 @@ dLeg = 0.0007 #dLambda^eg / dQ
 dMgedQ = 0.007 #dM^eg / dQ
 
 
-#define terms
+"""Define the A and B terms"""
 y = np.linspace(5000, 60000, 2750000)
 
 
-A = Mge * Lge * (f01(d)*f00(d)*Deltaevgo(0,y,0) + f11(d)*f10(d)*Deltaevgo(1,y,1) + f21(d)*f20(d)*Deltaevgo(2,y,2)) #there must be a simpler way to do this but idk
+A = Mge * Lge * (f01(d)*f00(d)*Deltaevgo(0,y,0) + f11(d)*f10(d)*Deltaevgo(1,y,1) + f21(d)*f20(d)*Deltaevgo(2,y,2)) 
 
 #B1 terms
 B10 = Mge*f01(d) * (dLeg * h00(d)) * Deltaevgo(0, y, 0) #the v' = 0 term
@@ -181,15 +187,10 @@ B2Im = B2.imag / totIm.max()
 
 # absolute value
 tot = np.abs(A+B1+B2)
-abs_max = tot.max()
+abs_max = tot.max() #need to scale
+"""Plot the A and B terms"""
 
-#plot the A and B
 ax1 = plt.subplot(gs[0,1])
-# ax1.plot(y, tot / tot.max(), linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
-# ax1.plot(y, np.abs(A) / abs_max, linewidth = '2', label = r'$\mathsf{|A|}$', color = 'cyan', zorder = 3)
-# ax1.plot(y, np.abs(B1+B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B|}$', color = 'red', zorder = 3)
-# ax1.plot(y, np.abs(B1) / abs_max, linewidth = '2', label = r'$\mathsf{|B_1|}$', color = 'orange', zorder = 2)
-# ax1.plot(y, np.abs(B2) / abs_max, linewidth = '2', label = r'$\mathsf{|B_2|}$', color = 'green', zorder = 1)
 
 ax1.plot(y, tot / abs_max, linewidth = '2', label = r'$\mathsf{|A + B|}$', color = 'black', zorder = 4)
 ax1.plot(y, np.abs(A) / abs_max, linewidth = '2', label = r'$\mathsf{|A|}$', zorder = 3)
@@ -201,50 +202,38 @@ ax1.set_ylabel(r'$\mathsf{Amplitude \ (norm.)}$', fontsize = fontsize)
 ax1.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
 
 ax1.set_yscale('log')
-ax1.set_xlim(20000, 45000)
-xticks = np.linspace(20000, 45000, 6)
-ax1.set_xticks(xticks)
 ax1.set_ylim(0.001, 2)
-ax1.legend(loc = 1)
 
 
 #put lines at the vibronic resonances
 for i in [0,1,2]:
     ax1.vlines(x = 30000+1600*i, ymin = 0.0005, ymax = 4, color = 'gray', linestyle = '--', linewidth = 1)
 
-others = True #debating if to include the Re and Im parts of gamma
-if others:
-    #plot Re A and B
-    ax2 = plt.subplot(gs[1,0])
-    ax2.plot(y, totRe / totRe.max(), linewidth = '2', label = '$\mathsf{A + B}$', color = 'black', zorder = 4)
-    ax2.plot(y, ARe, linewidth = '2', label = r'$\mathsf{A}$', zorder = 3)
-    ax2.plot(y, BRe, linewidth = '2', label = r'$\mathsf{B}$', zorder = 3)
-    ax2.plot(y, B1Re, linewidth = '2', label = r'$\mathsf{B_1}$', zorder = 2)
-    ax2.plot(y, B2Re, linewidth = '2', label = r'$\mathsf{B_2}$', zorder = 1)
-    ax2.set_ylabel(r'$\mathsf{Re(\gamma)}$', fontsize = fontsize)
-    ax2.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
+"""The Real and Imaginary Parts of Gamma"""
+
+
+#plot Re A and B
+ax2 = plt.subplot(gs[1,0])
+ax2.plot(y, totRe / totRe.max(), linewidth = '2', label = '$\mathsf{A + B}$', color = 'black', zorder = 4)
+ax2.plot(y, ARe, linewidth = '2', label = r'$\mathsf{A}$', zorder = 3)
+ax2.plot(y, BRe, linewidth = '2', label = r'$\mathsf{B}$', zorder = 3)
+ax2.plot(y, B1Re, linewidth = '2', label = r'$\mathsf{B_1}$', zorder = 2)
+ax2.plot(y, B2Re, linewidth = '2', label = r'$\mathsf{B_2}$', zorder = 1)
+ax2.set_ylabel(r'$\mathsf{Re(\gamma)}$', fontsize = fontsize)
+ax2.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
+
+#plot Im A and B
+ax3 = plt.subplot(gs[1,1])
+ax3.plot(y, totIm / totIm.max(), linewidth = '2', label = '$\mathsf{A + B}$', color = 'black', zorder = 4)
+ax3.plot(y, AIm, linewidth = '2', label = r'$\mathsf{A}$', zorder = 3)
+ax3.plot(y, BIm, linewidth = '2', label = r'$\mathsf{B}$', zorder = 3)
+ax3.plot(y, B1Im, linewidth = '2', label = r'$\mathsf{B_1}$', zorder = 2)
+ax3.plot(y, B2Im, linewidth = '2', label = r'$\mathsf{B_2}$', zorder = 1)
+ax3.set_ylabel(r'$\mathsf{Im(\gamma)}$', fontsize = fontsize)
+ax3.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
     
-    #ax2.set_yscale('log')
-    ax2.set_xlim(20000, 45000)
-    # ax2.set_ylim(0.001, 2.2)
-    ax2.legend(loc = 1)
     
-    #plot Im A and B
-    ax3 = plt.subplot(gs[1,1])
-    ax3.plot(y, totIm / totIm.max(), linewidth = '2', label = '$\mathsf{A + B}$', color = 'black', zorder = 4)
-    ax3.plot(y, AIm, linewidth = '2', label = r'$\mathsf{A}$', zorder = 3)
-    ax3.plot(y, BIm, linewidth = '2', label = r'$\mathsf{B}$', zorder = 3)
-    ax3.plot(y, B1Im, linewidth = '2', label = r'$\mathsf{B_1}$', zorder = 2)
-    ax3.plot(y, B2Im, linewidth = '2', label = r'$\mathsf{B_2}$', zorder = 1)
-    ax3.set_ylabel(r'$\mathsf{Im(\gamma)}$', fontsize = fontsize)
-    ax3.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
-    
-    # ax3.set_yscale('log')
-    ax3.set_xlim(20000, 45000)
-    # ax2.set_ylim(0.001, 2.2)
-    ax3.legend(loc = 1)
-    
-for ax in [ax2, ax3]:
+for ax in [ax1, ax2, ax3]:
     ax.set_xlim(20000, 45000)
     xticks = np.linspace(20000, 45000, 6)
     ax.set_xticks(xticks)

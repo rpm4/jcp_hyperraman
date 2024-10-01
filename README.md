@@ -1,5 +1,4 @@
-# Paper for YR Shen Festschrift
-Working Title: Coherent Hyper-Raman Four Wave Mixing Spectroscopies
+# Coherent IR-Hyper-Raman Four Wave Mixing Spectroscopy
 ## Instructions for use
 
 1. Clone this repository and make sure you have the package requirements (see `requirements.txt`)

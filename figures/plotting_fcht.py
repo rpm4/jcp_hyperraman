@@ -17,11 +17,8 @@ cols = [1, 1]
 aspects = [[[0, 0], 1], [[1, 0], 1]] 
 
 
-
-#todo: make an array so I can just call specific matrix element of the fc and ht factors, then do a for loop over that array, should work out well.
-
-
-#define Franck-Condon factors following page 164 of Roger Carlson's thesis in terms of 'q', the offset
+"""Defining Franck Condon and Herzberg Teller integrals"""
+'''fc integrals'''
 def f00(q): #<0|0>
     return np.exp(-q**2/4)
 
@@ -43,7 +40,7 @@ def f20(q): #<2|0>
 def f21(q): #<2|1>
     return -q * (1 - q**2/4) *f00(q)
 
-#define Herzberg Teller overlap integrals following page 165 of Roger Carlson's thesis in terms of q
+'''ht integrals'''
 def h00(q): #<0|Q|0>
     return q/2 * f00(q)
 
@@ -65,6 +62,7 @@ def h21(q): #<2|Q|1>
 def h20(q): #<2|Q|0>
     return -q/np.sqrt(2) * (1 - q**2 /4) * f00(q)
 
+"""Plotting the Franck Condon and Herzberg Teller integrals"""
 #plot
 fig, gs = wt.artists.create_figure(width="dissertation", nrows=2, cols=cols, aspects=aspects, wspace=1) 
 ax0 = plt.subplot(gs[0,0])
@@ -112,7 +110,7 @@ if save:
     wt.artists.savefig(here / "fcht.png", transparent = True, bbox_inches='tight')
     
     
-"""doing the products now"""
+"""Plotting the FC and HT integral products present in defintiions of A and B in the main text"""
 
 cols1 = [1, 1, 1] 
 aspects1 = [[[0, 0], 1], [[1, 0], 1], [[2, 0], 1]] 

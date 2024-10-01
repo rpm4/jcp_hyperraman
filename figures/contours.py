@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 wt.artists.apply_rcparams(kind="publication")
 
-save = False
+save = True
 fontsize = 18
 
 r = 5 #radius of contour
@@ -72,6 +72,13 @@ for ax in [ax0, ax1]:
     ax.vlines(ymin=-10, ymax =10, x = 0, color = 'grey', linestyle = '--', linewidth = 1, zorder = 1)
     ax.set_yticks(ticks = [])
     ax.set_xticks(ticks = [])
+    
+    # j = [0]
+    # for i in j:
+    #     ax.text(i-.1, contour(i)-.17, r'$\mathsf{<}$', fontsize = 24, alpha = 1, color = 'r', weight='bold')    
+    #     ax.text(i-.1, -.17, r'$\mathsf{>}$', fontsize = 24, color = 'r') 
+    
+    
 for i, ax in enumerate(fig.axes):
     wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.2, bbox = True, fontsize = fontsize, background_alpha=0.75)
 
