@@ -250,7 +250,7 @@ Changing the sign of one (or three) parameters will change the sign of $A, B$ an
 As an example, we demonstrate the resultant HDFG spectrum when $M_0^{ge} < 0$, and all other terms $>0$ (\autoref{fig:chgsign}).
 Compared to Figure 3 of the main text, the contributions from the $A, B_1$ and $B_2$ terms to $\Re(\gamma)$ and $\Im(\gamma)$ significantly change.
 In particular, $\Re(\gamma)$ and $\Im(\gamma)$ are of similar value in the post-resonance region, eliminating the interference seen in Figure 3 of the main text.
-
+\newpage
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=6.675in]{figures/drsive_chgsign.png}
@@ -261,7 +261,7 @@ In particular, $\Re(\gamma)$ and $\Im(\gamma)$ are of similar value in the post-
 } 
 	\label{fig:chgsign}
 \end{figure}
-
+\pagebreak
 \section{Evaluating impact of static inhomogeneity on HDFG output}
 In this section, the integral
 \begin{equation}\label{generalcontour}
@@ -272,23 +272,31 @@ In this section, the integral
 	\end{split}
 \end{equation}
 is evaluated for $c=-1$ (electronic state and vibrational state energy fluctuations are anti-correlated) and $c=1$ (electronic state and vibrational state energy fluctuations are correlated).
-Integrals such as those found in \autoref{generalcontour} can be evaluated by using the Residue theorem. %@dan i had too much white space, needed something to fill in... delete if you want.
-Recall that if an analytic, complex valued function $f(z)$ is integrated along a positively oriented closed contour,%guessing on this one
+
+Integrals such as \autoref{generalcontour} can be evaluated by using the Residue theorem.\cite{MorseFeshbach}
+For clarity, we briefly outline the technique.
+%@dan i had too much white space, needed something to fill in... delete if you want.
+Consider the integral
+\begin{equation}
+	\int_{-\infty}^{\infty} \mathrm{d}x f(x)
+\end{equation}
+If $\int_{-\infty}^{\infty} \mathrm{d}x f(x)$ exists %is this strict enough?
+and $f(z)$ is an analytic function, where $z$ is a complex variable, then
 \begin{subequations}\label{eq:generalcontour}
 	\begin{equation}
-		\oint \mathrm{d}z f(z) = 2\pi i \sum_k \Res[f(z_k)]
+		\int_{-\infty}^{\infty}  \mathrm{d}x f(x) = 2\pi i \sum_k \Res[f(z_k)]
 	\end{equation}
-where the residue of an n$^{\text{th}}$ order pole at $z = z_k$, $\Res[f(z_k)]$ is evaluated as
+where $\Res[f(z_k)]$ refers to the residue of $f(z)$ in the upper half of the complex plane at the pole $z_k$ and the sum is taken over all the poles, i.e., non-removable singularities, of $f(z)$.
+Note that the residue of an n$^{\text{th}}$ order pole at $z = z_k$ is evaluated as
 	\begin{equation}
-		\Res[f(z_k)] = \lim_{z \rightarrow z_k} \frac{1}{\left(n-1\right)!} \frac{\mathrm{d}^{n-1}}{\mathrm{d}z^{n-1}} \left[f(z) (z-z_k) \right]
+		\Res[f(z_k)] = \lim_{z \rightarrow z_k} \frac{1}{\left(n-1\right)!} \frac{\mathrm{d}^{n-1}}{\mathrm{d}z^{n-1}} \left[f(z) (z-z_k)^n \right]
 	\end{equation}
 For first order poles (the cases considered below), $n=1$, so that 
 	\begin{equation}
-		\oint \mathrm{d}z f(z) = 2\pi i \sum_k \lim_{z \rightarrow z_k} f(z) (z-z_k)
+		\int_{-\infty}^{\infty} \mathrm{d}x f(x) = 2\pi i \sum_k \lim_{z \rightarrow z_k} f(z) (z-z_k)
 	\end{equation}
 \end{subequations}
-Note that in \autoref{eq:generalcontour}, the integrals are closed along a contour which wraps all the poles. 
-In the case where the integration is only needed along the real axis, the contour can be drawn as a semicircle in the positive half of the complex plane. \cite{MorseFeshbach}
+Note that in \autoref{eq:generalcontour}, the integrals are closed along a contour which wraps all the poles in the positive half of the complex plane. 
 
 \subsection{Anti-correlated Modes}
 For anti-correlated modes ($c = -1$), the poles ($\xi_k$) are situated in the complex plane as shown in \autoref{fig:contours}a.
@@ -332,7 +340,6 @@ Since the $\xi_k$ are nondegenerate,
 	} 
 	\label{fig:contours}
 \end{figure}
-\break
 
 \section{References}
 % Create the reference section using BibTeX:
