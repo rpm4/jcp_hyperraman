@@ -1,4 +1,6 @@
 # Coherent IR-Hyper-Raman Four Wave Mixing Spectroscopy
+<img src="./figures/toc.png" alt="Diagrams of HDFG and HSFG processes" width="400"/>
+
 ## Instructions for use
 
 1. Clone this repository and make sure you have the package requirements (see `requirements.txt`)
