@@ -1,6 +1,9 @@
 import matplotlib.pyplot as plt 
 from WrightTools.diagrams import WMEL
 import WrightTools as wt
+import pathlib
+
+here = pathlib.Path(__file__).resolve().parent
 
 wt.artists.apply_rcparams(kind="publication")
 
@@ -51,7 +54,7 @@ if comparisonwmel:
 
     fig.label_columns(['$\mathsf{DFG}$','$\mathsf{SFG}$','$\mathsf{Raman}$', '$\mathsf{HDFG}$', '$\mathsf{HSFG}$','$\mathsf{Hyper-Raman}$'], font_size = 9)
     
-    plt.savefig("comparisonwmel.png", bbox_inches='tight')
+    plt.savefig(here / "comparisonwmel.png", bbox_inches='tight')
 
 if hdfg:
     fig = WMEL.Artist([1,1], [0, 0.2, 0.6, 1], state_names=("$\mathsf{| g, 0\\rangle}$",
@@ -97,7 +100,7 @@ if timeorderedwmel:
 
     fig.label_columns(['$(\mathsf{c})$','$(\mathsf{d})$', '$(\mathsf{e})$', '$(\mathsf{f})$'], font_size = 9)
     # fig.label_rows(['$\mathsf{II}$'], font_size=15, text_buffer=1.5)
-    plt.savefig("timeorderedwmel.png", bbox_inches='tight')
+    wt.artists.savefig(here / "timeorderedwmel.png")
 
 if timeorderedwmel2:
     fig = WMEL.Artist([2,1], [0, 0.2, 0.6, 1], state_names=("$\mathsf{| g, 0\\rangle}$",
@@ -118,7 +121,7 @@ if timeorderedwmel2:
 
     fig.label_columns(['$(\mathsf{a})$','$(\mathsf{b})$'], font_size = 10)
     # fig.label_rows(['$\mathsf{I}$'], font_size=15, text_buffer=1.5)
-    plt.savefig("testing123.png", bbox_inches='tight')
+    plt.savefig(here / "testing123.png", bbox_inches='tight')
 
     
 if drwmel:
@@ -152,7 +155,7 @@ if drwmel:
 
     fig.label_columns(['$(\mathsf{a})$','$(\mathsf{b})$'], font_size = 10)
     fig.label_rows(['$\mathsf{I}$','$\mathsf{II}$'], font_size=15, text_buffer=1.5)
-    plt.savefig("drwmel.png", bbox_inches='tight')
+    plt.savefig(here / "drwmel.png", bbox_inches='tight')
 
 
     
@@ -187,7 +190,7 @@ if drwmel:
 
     fig.label_columns(['$(\mathsf{a})$','$(\mathsf{b})$'], font_size = 10)
     fig.label_rows(['$\mathsf{I}$','$\mathsf{II}$'], font_size=15, text_buffer=1.5)
-    plt.savefig("drwmel.png", bbox_inches='tight')
+    plt.savefig(here / "drwmel.png", bbox_inches='tight')
     
     
 if test:
@@ -203,7 +206,7 @@ if test:
     fig0.add_arrow([1,0], 1, [1,2], kind='ket', color="k", label = "$\mathsf{2}$", head_length = 0.075)
     fig0.add_arrow([1,0], 2, [2,0], kind='out', color="blue", label = "$\mathsf{3}$", head_length = 0.075)    
     fig0.label_columns(['$\mathsf{vDFG}$','$\mathsf{vSFG}$'], font_size = 9)
-    plt.savefig("test.png", bbox_inches='tight')
+    plt.savefig(here / "test.png", bbox_inches='tight')
 
 
     
@@ -355,4 +358,4 @@ if test:
     
     
     
-    # plt.savefig("test.png")
+    # plt.savefig(here / "test.png")

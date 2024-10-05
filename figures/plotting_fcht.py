@@ -5,7 +5,7 @@ import pathlib
 
 wt.artists.apply_rcparams(kind="publication")
 
-save = False
+save = True
 fontsize =18
 here = pathlib.Path(__file__).resolve().parent
 
@@ -164,4 +164,4 @@ for i, ax in enumerate(fig1.axes):
     wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.35, bbox = True, fontsize = fontsize, background_alpha=0.75)
 
 if save:
-    wt.artists.savefig("fchtproduct.png", transparent = True, bbox_inches='tight')
+    wt.artists.savefig(here / "fchtproduct.png", transparent = True, bbox_inches='tight')
