@@ -101,7 +101,7 @@ Since the selection rules of hyper-Raman scattering differ from Raman scattering
 
 This paper investigates the microscopic parameters that control HDFG output. \cite{RN352, Bonn2024, McDonnell2024}
 HSFG will not be discussed, but the application of our treatment to HSFG is straightforward and the results are similar.
-We note that HDFG emission can be phase-matched in media with normal dispersion while HSFG cannot,\cite{RN279, RN278} although experimental strategies can be implemented to minimize phase-mismatch in HSFG experiments. \cite{Kaufman2024}  
+We note that HDFG emission can be phase-matched in media with normal dispersion while HSFG cannot.\cite{RN279, RN278} 
 In \autoref{steadystate}, we first identify the vibrational selection rules. 
 The selection rules of electronically-resonant HDFG are then identified through an expansion of electronic dipole moments following Chung and Ziegler.\cite{Ziegler1988}
 HDFG is found to be allowed in any harmonic system that has infrared active vibrations.
@@ -111,13 +111,13 @@ After developing selection rules, some quantitative aspects of HDFG are discusse
 \section{Selection Rules for HDFG Spectroscopy}\label{steadystate}
 
 In this section, we investigate the properties of HDFG and make the connections between HDFG and hyper-Raman scattering explicit.
-Coherent spectroscopies are often described using the density matrix formalism, where an n$^{\text{th}}$ order density matrix $\rho^{(n)}$ is propagated using the Liouville-von Neumann equation $via$
+Coherent spectroscopies are often described using the density matrix formalism, where an n$^{\text{th}}$ order density matrix $\rho^{(n)}$ is propagated using the Liouville-von Neumann equation:
 \begin{equation}\label{LVNE}
 	\dot{\rho}^{(n)} = \frac{1}{i \hbar} [H + V(t), \rho^{(n-1)}] + \dot{\rho}^{(n)}_R,
 \end{equation}
 where $H$ is the (static) system Hamiltonian, $V(t)$ is the field-matter interaction and $\rho_R$ is the relaxation density matrix. \cite{RN455}
-In systems where interactions with surroundings are relevant, $\dot{\rho}_R$ becomes a complex function that can be modified to include phenomena such as system-bath interactions, solvent-solute coupling, among others. \cite{Sung2001}
-In the limit where input field pulsewidths are much longer than electronic dephasing times and the individual molecule limit is approached, it becomes acceptable to write $\dot{\rho}^{(n)}_R= \Gamma \rho^{(n)}$, i.e. exponential relaxation, where $\Gamma$ is the system's dephasing rate. \cite{RN455, Sue1986, Sung2001}
+In systems where interactions with surroundings are relevant, expressions for $\dot{\rho}_R$ may be quite complicated due to intricate phenomena such as system-bath interactions and solvent-solute coupling, among others. \cite{Sung2001}
+In the limit where input field pulsewidths are much longer than electronic dephasing times and the individual molecule limit is approached, it becomes acceptable to write a time-independent relaxation matrix $\dot{\rho}^{(n)}_R= \Gamma \rho^{(n)}$, i.e. exponential relaxation, where $\Gamma$ is the system's dephasing rate. \cite{RN455, Sue1986, Sung2001}
 While exponential relaxation is usually an inappropriate description of most physical systems involving solvent-solute interactions,\cite{Sue1986, Yan1988, Li1994, Myers1997} our goal is to introduce simple, quantitative models to understand HDFG response.
 Thus, we write $\dot{\rho}^{(n)}_R= \Gamma \rho^{(n)}$.
 The exponential relaxation limit has proven useful in investigating the properties of 2D-EV, 2D-VE, and doubly resonant SFG using pulses much longer than electronic dephasing times. \cite{Raschke2002, Gaynor2017}
@@ -129,7 +129,7 @@ If $\omega_2$ becomes resonant and $\omega_1$ becomes non-resonant, where $\omeg
 While the methods in \autoref{fig:sivewmel2} possess identical selection rules to \autoref{fig:comparisonwmel}, the pathways presented in \autoref{fig:sivewmel2} will interfere, which can amplify or obscure coherent output.
 \begin{figure*}[!htbp]
 	\centering
-	\includegraphics[width=6.66 in]{figures/timeorderedwmel.png}
+	\includegraphics[width=\textwidth / 2]{figures/timeorderedwmel.png}
 	\caption{WMEL diagrams of HDFG pathways for when (a,b) $\omega_1$ (black arrow) interacts first and (c-f) $\omega_2$ (orange arrow) interacts first. 
 		The states are labeled as $\ket{a,b}$, where $a$ refers to an electronic state and $b$ refers to quanta in a vibration on $a$, described in \autoref{Albrecht}.
 		In all cases, $\omega_2 > \omega_1$.
@@ -250,6 +250,7 @@ The $A$ term contains the static ($\order{Q^0}$) transitions (i.e., Condon appro
 The $C$ term is suppressed in the following discussion as it depends on one and two photon forbidden transitions, making its contribution to $\gamma_{ijkl}$ roughly two orders of magnitude less than $A_{ijk}$. \cite{Ziegler1988, Neddersen1989, Bonang1992}
 Note that some reports obtain $A, B$ coefficients through a Herzberg-Teller expansion of the electronic states to expose vibronic couplings via $\partial H / \partial Q$.\cite{HerzbergTeller1933, Petrov1985, Neddersen1989, Baranov1990}
 This approach is not used here as the expansion of $\vec{M}^{ij}$ in normal mode coordinates provides sufficient physical insight into HDFG selection rules. 
+Duschinsky rotation effects\cite{Duschinsky1937} are ignored.
 
 The $A$ and $B$ coefficients, where $B = B_1 + B_2$, following closure over $\ket{n}$,\cite{Milojevich2013} are written as:
 \begin{widetext}
@@ -284,10 +285,8 @@ The $A$ and $B$ coefficients, where $B = B_1 + B_2$, following closure over $\ke
 	\end{equation}
 \end{subequations}
 \end{widetext}
-It is assumed that all derivatives above are evaluated at $Q_z = 0$.
 Note that it is common in the hyper-Raman literature to write $\Delta_{e\tilde{v}', gv} \Delta_{mn, gv} = \Delta_{e\tilde{v}', gv}$.
 Here, $\langle \tilde{a} | b \rangle$ and $\mel{\tilde{a}}{Q}{b}$ are Franck-Condon factors and Herzberg-Teller-type integrals, respectively.
-Duschinsky rotation effects are ignored in this discussion. \cite{Duschinsky1937}
 At this point, the expressions are valid for both electronically resonant and non-resonant cases.
 
 To understand the vibronic structure of an excited state $|e)$, we restrict consideration to electronic transitions between $|g)$ and $|e)$.  
@@ -331,11 +330,14 @@ where $\Lambda^{ab}_{ij} = 1/\hbar \sum_m M_i^{am}M_j^{mb} $ is the electronic t
 	\label{fig:doubres_spec}
 \end{figure*}
 
-It is important to realize that these expansions are taken about the equilibrium point of the ground state surface, i.e., $Q = 0$.
-Some recent studies investigating interference between Franck-Condon and Herzberg-Teller terms in absorption and emission spectra have found it useful to Taylor expand about the midpoint of the equilibria points of the ground and excited surface.\cite{Kundu2022}
-If such a definition was used here, $B$ would possess non-negligible Franck-Condon character.
-As such, it is more useful to assign Herzberg-Teller character to the $B$ term due to the presence of $\frac {\partial M^{ge}}{\partial Q}$ and $\frac {\partial \Lambda^{ge}}{\partial Q} $ terms.
-Nevertheless, since the molecular response must be invariant to the center point of the Taylor expansion, expanding about $Q = 0$ or the midpoint should provide similar results; if the dipole surface has a kink or node about $Q = 0$, then the midpoint would be a better choice for understanding Herzberg-Teller contributions to the spectra.
+\autoref{ABterms_DR} shows important selection rules for vibronic transitions in HDFG.
+The $A$ term is allowed whenever an electronic transition has a one- and two- photon transition moment.
+For centrosymmetric molecules, an electronic transition cannot be both one- and two- photon allowed by parity, so the $A$ term will vanish.
+This makes HDFG a unique tool for studying the electronic structure of centrosymmetric species in isotropic media, as it is sensitive to non-Condon effects.\cite{Milojevich2011, Olson2018}
+For an allowed electronic transition, the brightness of a vibronic resonance is controlled by overlap of ground and excited state vibrational wavefunctions (Franck-Condon factors).
+The $A$ term relies on excited state perturbations to the vibrational wavefunctions; if the excited electronic state is minimally offset ($\Delta \rightarrow 0$), $\langle 1 | \tilde{v}' \rangle \langle \tilde{v}' | 0 \rangle = 0$ and $A$ vanishes, as discussed in the supporting information.
+Some $B$ terms do survive in the same limit, however; for instance, $B_1$ survives for $\tilde{v}'=1$ and $B_2$ survives for $\tilde{v}'=0$.
+In the absence of an $A$ term, the $B$ terms will dominate.
 
 The signatures of vibronic coupling in the HDFG spectrum are made clear by using a simple model.
 Using a two-well system described by $H = H_g |g) \left(g| + H_e |e\right) (e|$ where
@@ -348,26 +350,22 @@ Using a two-well system described by $H = H_g |g) \left(g| + H_e |e\right) (e|$ 
 		H_e = \frac{\hbar \omega }{2} \left(p^2 +  (q-\Delta)^2 \right) + \hbar \omega_{eg}
 	\end{equation}
 \end{subequations}
-for the ground ($H_g$) and first excited ($H_e$) states, where $p$ (momentum) and $q$ (position) are the dimensionless conjugate coordinates of the normal mode, the A and B contributions can be evaluated using Franck-Condon and Herzberg-Teller integrals tabulated in terms of the dimensionless normal mode $q$ and offset parameter $\Delta$ (\autoref{fig:doubres_spec}a).
-System-bath interactions are neglected in this discussion.
+for the ground ($H_g$) and first excited ($H_e$) states, where $p$ is the dimensionless momentum and $q = \sqrt{\frac{\omega}{\hbar}} Q$ is the dimensionless position, the A and B contributions can be evaluated using Franck-Condon and Herzberg-Teller integrals (\autoref{fig:doubres_spec}a).
 For simplicity, we restrict consideration to $v^\prime \in \{0,1,2\}$ and take $\Delta = 0.5$.
-Note that $q = \sqrt{\frac{\omega}{\hbar}} Q$.
+
 We assume the electronic state is both one and two photon allowed.
+For this simulation, we declare the dipolar coordinate dependences:
+\begin{eqnarray}
+	M^{ge} = M^{ge}_0 (1 + 0.1 q),  \\
+	\Lambda^{ge} = \Lambda^{ge}_0 (1 + 0.1 q).
+\end{eqnarray}
+Here we expand $\vec{M}^{ij}$ about the equilibrium point of the ground state surface, $q = 0$.
+Other reasonable expansion points choices include $q=\Delta$ and $q=\Delta/2$;\cite{Kundu2022}
+so long as $\vec{M}^{ij}(q)$ is roughly linear, the choice minimally affects the total calculation of $\gamma_{ijkl}$, but it does affect the weightings of $A$ and $B$ terms, primarily through changes in $\vec{M}_0^{ij}$ and the Herzberg-Teller integrals.
+In summary, the expansion point somewhat affects the $A$ and $B$ spectra we show, but the overall spectrum $A+B$ is not affected by this choice.
 
-\autoref{ABterms_DR} shows important selection rules for vibronic transitions in HDFG.
-The $A$ term is allowed whenever an electronic transition has a one- and two- photon transition moment.
-For centrosymmetric molecules, an electronic transition cannot be both one- and two- photon allowed by parity, so the $A$ term will vanish.
-This makes HDFG a unique tool for studying the electronic structure of centrosymmetric species in isotropic media, as it is sensitive to non-Condon effects.\cite{Milojevich2011, Olson2018}
-For an allowed electronic transition, the brightness of a vibronic resonance is controlled by overlap of ground and excited state vibrational wavefunctions (Franck-Condon factors).
-The $A$ term relies on excited state perturbations to the vibrational wavefunctions; if the excited electronic state is minimally offset ($\Delta \rightarrow 0$), $\langle 1 | \tilde{v}' \rangle \langle \tilde{v}' | 0 \rangle = 0$ and $A$ vanishes, as discussed in the supporting information.
-Some $B$ terms do survive in the same limit, however; for instance, $B_1$ survives for $\tilde{v}'=1$ and $B_2$ survives for $\tilde{v}'=0$.
-In the absence of an $A$ term, the $B$ terms will significantly dominate.
-The $B_1$ and $B_2$ terms involve different types of vibronic coupling pathways.
-In $B_1$, the Herzberg-Teller coupling is associated with the two-photon absorption process, whereas in $B_2$, the Herzberg-Teller coupling is associated with one-photon emission.\footnote{Franck-Condon factors and Herzberg-Teller integrals are most easily evaluated in the position basis. A sample calculation is provided in the supporting information.}
-For small $\Delta$ values, it is clear by comparing the relative Franck-Condon and Herzberg-Teller integral products that $B$ term resonances can dominate the spectrum (Figure S2).
-Similar ideas have been observed in resonance hyper-Raman spectra, which makes HDFG a sensitive probe of non-Condon effects for those modes with small $\Delta$ values.
-
-\autoref{fig:doubres_spec}b shows the simulated $\omega_2+\omega_3$ spectrum for this two-well system.  The spectrum selectively probes vibronic pathways from $\ket{g,0}$ to $\ket{g,1}$.
+% DDK: careful about w_2+w_3 vs 2*w_2; do we ever state that we will use w3=w2 for this experiment?
+\autoref{fig:doubres_spec}b shows the simulated HDFG spectrum for this two-well system.  The spectrum selectively probes vibronic pathways from $\ket{g,0}$ to $\ket{g,1}$.
 In the resonant region, the $A$ and $B$ terms contain character from all three possible transitions between $\ket{g,0}$, $\ket{e,\tilde{v}'}$ and $\ket{g,1}$. 
 Significant contributions from $\ket{e,0}$ and $\ket{e,1}$ in the $A$ term spectrum correspond well with expectations given the relative wavefunction overlap in \autoref{fig:doubres_spec}a, tabulated in \autoref{T:contributions}. 
 The overlaps are plotted as function of offset in Figure S2.
@@ -408,21 +406,18 @@ As such, HDFG will have difficulty examining non-Condon effects ($B$ term contri
 	\end{ruledtabular}
 \end{table*}
 
-Since $\Delta$ can take on a variety of values given a specific system, in the supporting information we demonstrate the impact of $\Delta$ on the HDFG response using previously reported values (Figure S3). \cite{Myers1982, Brennan2024}
+The value of $\Delta$ is system specific and drastically affects the HDFG spectrum.
+In the supporting information we demonstrate the impact of $\Delta$ on the HDFG response using previously reported values (Figure S3). \cite{Myers1982, Brennan2024}
 Clearly, $\Delta$, $\omega_{g1, g0}$ and $\Gamma$ have a significant impact on the HDFG spectral profile.
-Indeed, for some values of $\Delta$, it appears that $B$ term resonances dominate over $A$ term resonances (see also Figure S2), which can allow for significant non-Condon behavior in pre-resonant HDFG response.
+% DDK: we don't care whether $B$ term dominates, but if $A$ term is insufficient to describe the spectrum...
+Indeed, for some values of $\Delta$, $B$ term resonances can dominate over $A$ term resonances (see also Figure S2), which can allow for significant non-Condon behavior in pre-resonant HDFG response.
 
-In the post-resonance region, the amplitude takes on an unexpected lineshape.
-This arises due to interference between the real and imaginary parts of $\gamma$ (\autoref{fig:doubres_spec}c, d).
-The abnormal lineshape arises due to the sign of the Franck-Condon factor and Herzberg-Teller integrals, as well as the molecular parameters that drive the output of the vibronic transitions.
-Such effects have been seen elsewhere in spontaneous, surface enhanced hyper-Raman studies. \cite{Milojevich2011}
-The main source of interference in the HDFG spectra arises from the sign of the molecular parameters. 
-In the HDFG spectrum presented in \autoref{fig:doubres_spec}, the signs of all molecular parameters are taken to be positive. 
+In the post-resonance region, the amplitude takes on an unusual lineshape.
+This arises due to interference between the $A$ and $B$ terms; for our parameters, this interference is destructive in the post-resonance region (\autoref{fig:doubres_spec}c, d).
+Examination of \autoref{ABterms_DR} shows that, while $A$ and $B$ terms share the same resonances, the relative phases of the contributions can vary due to Franck Condon integrals, Herzberg Teller integrals, and the dipoles. 
+In the supporting information we illustrate how changing some of these parameters affects the interference.
 Inverting the sign of one parameter eliminates the interference and restores the expected, purely Lorentzian lineshape (Figure S4).
-It is important to note that these spectra simulate a single element of the hyperpolarizability tensor, $\gamma_{ijkl}$.
-The true HDFG response must be averaged over the molecular frame, or, the true, HDFG response is a linear combination of different $\gamma_{ijkl}$ terms.
-Nevertheless, if the resultant linear combination results in destructive interference between the $A$ and $B$ terms, it could be possible to elucidate both the amplitude and sign of $\Delta$ from a HDFG experiment.
-
+In bulk systems the HDFG response must be averaged over molecular frame orientations, which may also play a role in the interference.
 
 \subsection{Inhomogeneity in HDFG}
 

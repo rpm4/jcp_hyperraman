@@ -7,9 +7,11 @@ Created on Tue Jan 17 09:28:39 2023
 import numpy as np
 import WrightTools as wt
 import matplotlib.pyplot as plt 
+import pathlib
 
 wt.artists.apply_rcparams(kind="publication")
 
+here = pathlib.Path(__file__).resolve().parent
 save = True
 fontsize = 18
 
@@ -83,4 +85,4 @@ for i, ax in enumerate(fig.axes):
     wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.2, bbox = True, fontsize = fontsize, background_alpha=0.75)
 
 if save:
-    wt.artists.savefig("contour.png", transparent = True, bbox_inches='tight')
+    wt.artists.savefig(here / "contour.png", transparent = True, bbox_inches='tight')
