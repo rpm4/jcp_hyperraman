@@ -101,7 +101,7 @@ Since the selection rules of hyper-Raman scattering differ from Raman scattering
 
 This paper investigates the microscopic parameters that control HDFG output. \cite{RN352, Bonn2024, McDonnell2024}
 HSFG will not be discussed, but the application of our treatment to HSFG is straightforward and the results are similar.
-We note that HDFG emission can be phase-matched in media with normal dispersion while HSFG cannot,\cite{RN279, RN278} although experimental strategies can be implemented to minimize phase-mismatch in HSFG experiments. \cite{Kaufman2024}  
+We note that HDFG emission can be phase-matched in media with normal dispersion while HSFG cannot.\cite{RN279, RN278} 
 In \autoref{steadystate}, we first identify the vibrational selection rules. 
 The selection rules of electronically-resonant HDFG are then identified through an expansion of electronic dipole moments following Chung and Ziegler.\cite{Ziegler1988}
 HDFG is found to be allowed in any harmonic system that has infrared active vibrations.
@@ -111,13 +111,13 @@ After developing selection rules, some quantitative aspects of HDFG are discusse
 \section{Selection Rules for HDFG Spectroscopy}\label{steadystate}
 
 In this section, we investigate the properties of HDFG and make the connections between HDFG and hyper-Raman scattering explicit.
-Coherent spectroscopies are often described using the density matrix formalism, where an n$^{\text{th}}$ order density matrix $\rho^{(n)}$ is propagated using the Liouville-von Neumann equation $via$
+Coherent spectroscopies are often described using the density matrix formalism, where an n$^{\text{th}}$ order density matrix $\rho^{(n)}$ is propagated using the Liouville-von Neumann equation:
 \begin{equation}\label{LVNE}
 	\dot{\rho}^{(n)} = \frac{1}{i \hbar} [H + V(t), \rho^{(n-1)}] + \dot{\rho}^{(n)}_R,
 \end{equation}
 where $H$ is the (static) system Hamiltonian, $V(t)$ is the field-matter interaction and $\rho_R$ is the relaxation density matrix. \cite{RN455}
-In systems where interactions with surroundings are relevant, $\dot{\rho}_R$ becomes a complex function that can be modified to include phenomena such as system-bath interactions, solvent-solute coupling, among others. \cite{Sung2001}
-In the limit where input field pulsewidths are much longer than electronic dephasing times and the individual molecule limit is approached, it becomes acceptable to write $\dot{\rho}^{(n)}_R= \Gamma \rho^{(n)}$, i.e. exponential relaxation, where $\Gamma$ is the system's dephasing rate. \cite{RN455, Sue1986, Sung2001}
+In systems where interactions with surroundings are relevant, expressions for $\dot{\rho}_R$ may be quite complicated due to intricate phenomena such as system-bath interactions and solvent-solute coupling, among others. \cite{Sung2001}
+In the limit where input field pulsewidths are much longer than electronic dephasing times and the individual molecule limit is approached, it becomes acceptable to write a time-independent relaxation matrix $\dot{\rho}^{(n)}_R= \Gamma \rho^{(n)}$, i.e. exponential relaxation, where $\Gamma$ is the system's dephasing rate. \cite{RN455, Sue1986, Sung2001}
 While exponential relaxation is usually an inappropriate description of most physical systems involving solvent-solute interactions,\cite{Sue1986, Yan1988, Li1994, Myers1997} our goal is to introduce simple, quantitative models to understand HDFG response.
 Thus, we write $\dot{\rho}^{(n)}_R= \Gamma \rho^{(n)}$.
 The exponential relaxation limit has proven useful in investigating the properties of 2D-EV, 2D-VE, and doubly resonant SFG using pulses much longer than electronic dephasing times. \cite{Raschke2002, Gaynor2017}
@@ -129,7 +129,7 @@ If $\omega_2$ becomes resonant and $\omega_1$ becomes non-resonant, where $\omeg
 While the methods in \autoref{fig:sivewmel2} possess identical selection rules to \autoref{fig:comparisonwmel}, the pathways presented in \autoref{fig:sivewmel2} will interfere, which can amplify or obscure coherent output.
 \begin{figure*}[!htbp]
 	\centering
-	\includegraphics[width=6.66 in]{figures/timeorderedwmel.png}
+	\includegraphics[width=\textwidth / 2]{figures/timeorderedwmel.png}
 	\caption{WMEL diagrams of HDFG pathways for when (a,b) $\omega_1$ (black arrow) interacts first and (c-f) $\omega_2$ (orange arrow) interacts first. 
 		The states are labeled as $\ket{a,b}$, where $a$ refers to an electronic state and $b$ refers to quanta in a vibration on $a$, described in \autoref{Albrecht}.
 		In all cases, $\omega_2 > \omega_1$.
