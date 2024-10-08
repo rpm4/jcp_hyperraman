@@ -12,7 +12,7 @@ import pathlib
 
 wt.artists.apply_rcparams(kind="publication")
 
-save = False
+save = True
 fontsize = 18
 here = pathlib.Path(__file__).resolve().parent
 
@@ -145,14 +145,14 @@ def Deltaevgo(v,x,l):
 
 
 #define numbers for AB terms
-Mge = 1 #M^eg_0
+Mge = -1 #M^eg_0
 dMgedQ = 0.04 #dM^eg / dQ
 Lge = 0.1 #Lambda^eg_0
 dLeg = 0.004 #dLambda^eg / dQ
 
 
 """Define the A and B terms"""
-y = np.linspace(5000, 60000, 2750000) #the frequency
+y = np.linspace(5000, 60000, 2750000)
 
 
 A = Mge * Lge * (f01(d)*f00(d)*Deltaevgo(0,y,0) + f11(d)*f10(d)*Deltaevgo(1,y,1) + f21(d)*f20(d)*Deltaevgo(2,y,2)) 
@@ -243,7 +243,7 @@ for ax in [ax1, ax2, ax3]:
 
 for i, ax in enumerate(fig.axes):
     # ax.grid(visible=True, color="k", lw=0.5, linestyle=":")
-    wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.25, bbox = True, fontsize = fontsize, background_alpha=0.75)
+    wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.3, bbox = True, fontsize = fontsize, background_alpha=0.75)
 
 if save:
-    wt.artists.savefig(here / "drsive_spectrum.png", transparent = True, bbox_inches='tight')
+    wt.artists.savefig(here / "drsive_chgsign.png", transparent = True, bbox_inches='tight')

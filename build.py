@@ -35,12 +35,19 @@ def _build_documents():
     print_with_line("paper", "-")
     build_paper.tex2pdf("paper", here)
     build_paper.tex2pdf("paper", here, False)
+    print_with_line("si", "-")
+    build_paper.tex2pdf("si", here)
+    build_paper.tex2pdf("si", here, False)
 
 
 def _build_figures():
     print_with_line('figures')
-    print_then_call(python, str(here / "figures" / "wmels.py"))
     print_then_call(python, str(here / "figures" / "2D_spec.py"))
+    print_then_call(python, str(here / "figures" / "toc.py"))
+    print_then_call(python, str(here / "figures" / "2D_spec_chgsign.py"))
+    print_then_call(python, str(here / "figures" / "contours.py"))
+    print_then_call(python, str(here / "figures" / "plotting_fcht.py"))
+    print_then_call(python, str(here / "figures" / "varying_delta.py"))
 
 @click.group()
 def main():
