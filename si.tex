@@ -52,7 +52,7 @@ We investigate the one dimensional case using the Hamiltonian described in the m
 		H_e = \frac{\hbar \omega }{2} \left(p^2 +  (q-\Delta)^2 \right) + \hbar \omega_{eg}.
 	\end{equation} 
 \end{subequations}
-Here, $p,q$ are the dimensionless conjugate normal mode coordinates, $\hbar\omega_{eg}$ is the energy difference between $H_e$ and $H_g$, and $\Delta$ is the dimensionless offset of the excited state surface relative to the ground state.
+Here, $p,q$ are the dimensionless conjugate normal mode coordinates, $\hbar\omega_{eg}$ is the energy difference between $|e)$ and $|g)$, and $\Delta$ is the dimensionless offset of the excited state surface relative to the ground state.
 The Hamiltonians are quantum harmonic oscillators.
 The solutions to the harmonic oscillator Hamiltonian are well known, and their position space wavefunctions are
 \begin{equation}
@@ -64,8 +64,8 @@ For an $n$-quantum excited state vibration $| \tilde{n} \rangle$, and a $m$-quan
 \begin{equation}
 	\begin{split}
 		\mel{\tilde{n}}{q^k}{m} &= \int_{-\infty}^\infty \mathrm{d}q \ \psi^*_n(q-\Delta) q^k \psi_m(q)\\
-		&= \int_{-\infty}^\infty \mathrm{d}q \ N_n H_n(q-\Delta) \exp(-\frac{(q - \Delta)^2}{2}) q^k N_m H_m(q) \exp(-\frac{q^2}{2}). \\
-		&= N_n N_m \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ H_n(q-\Delta) q^k H_m(q) \exp(-q^2 + q\Delta)
+		&= \int_{-\infty}^\infty \mathrm{d}q \ N_n H_n(q-\Delta) \exp(-\frac{(q - \Delta)^2}{2}) q^k N_m H_m(q) \exp(-\frac{q^2}{2}) \\
+		&= N_n N_m \exp(-\frac{\Delta^2}{2}) \int_{-\infty}^\infty \mathrm{d}q \ H_n(q-\Delta) q^k H_m(q) \exp(-q^2 + q\Delta).
 	\end{split}\label{key}
 \end{equation}
 The integral corresponds to Franck-Condon factors for $k=0$ and Herzberg-Teller integrals for $k=1$.
@@ -74,12 +74,13 @@ Note that in the limit $\Delta \rightarrow 0$, typical harmonic oscillator selec
 
 \subsection{General Solution to $\langle \tilde{n} | q^k | m \rangle$}
 The matrix elements of \autoref{key} can be computed numerically, but analytic forms of the integral also exist. 
-Due to the polynomial nature of $H_v(q)$, the product $H_n(q-\Delta) q^k H_m(q)$ will also be a polynomial, so that the integral of equation \autoref{key} will be of the form
+Due to the polynomial nature of $H_v(q)$, the product $H_n(q-\Delta) q^k H_m(q)$ will also be a polynomial, so that the integral of \autoref{key} will be of the form
 \begin{eqnarray}
 	\int_{-\infty}^\infty \mathrm{d}q \ P_{nmk}(q) \exp(-q^2 + q\Delta), \\
 	P_{nmk}(q) \equiv \sum_\lambda^{n+m+k} a_\lambda q^\lambda
 \end{eqnarray}
-for some set coefficients $a_\lambda$, to be specified later. We can recast the integral into the linear combination of integrals,
+for some set coefficients $a_\lambda$, to be specified later. 
+We can recast the integral into the linear combination of integrals,
 \begin{equation}\label{eq:analytic_form}
 	\mel{\tilde{n}}{q^k}{m} = N_n N_m \exp(-\frac{\Delta^2}{2}) \sum_\lambda a_\lambda F_\lambda(\Delta),
 \end{equation}
@@ -87,7 +88,8 @@ where
 \begin{equation}\label{integral}
 	F_w(\Delta) \equiv \int_{-\infty}^\infty \mathrm{d}q \ q^w \exp(-q^2 + q\Delta).
 \end{equation}
-\autoref{integral} can be readily evaluated, as we now show.  When $w=0$, the integral is evaluated by completing the square:\footnote{$\int_{-\infty}^{\infty} \mathrm{d}x \exp(-(x-a)^2) = \sqrt{\pi}$}
+\autoref{integral} can be readily evaluated, as we now show. 
+ When $w=0$, the integral is evaluated by completing the square:\footnote{$\int_{-\infty}^{\infty} \mathrm{d}x \exp(-(x-a)^2) = \sqrt{\pi}$}
 \begin{equation}
 	\begin{split}
 		F_0(\Delta) &= \int_{-\infty}^\infty \mathrm{d}q \exp(-(q^2 - q\Delta +\frac{\Delta^2}{4} - \frac{\Delta^2}{4}))\\
@@ -233,14 +235,14 @@ The products of Franck-Condon factors and Herzberg-Teller integrals relevant to 
 \pagebreak
 
 It is clear from \autoref{fig:fcht_product} that the HDFG spectrum will have a significant dependence upon $\Delta$, even for small deviations from complete overlap. 
-To this end, we plot the impact of resonance frequency and offset on the HDFG spectrum \autoref{fig:chgdelta}, using values reported by Myers et al. and Brennan et al. \cite{Myers1982, Brennan2024}
-In this section, we take $\omega_{eg}$ = $30000$ cm$^{-1}$ and vary the offset ($\Delta$), vibrational frequency ($\omega_{g1,g0}$), and linewidth ($\Gamma$) as noted in the figure.
+To this end, we plot the impact of offset ($\Delta$), vibrational frequency ($\omega_{g1,g0}$), and linewidth ($\Gamma$) on the HDFG spectrum \autoref{fig:chgdelta}, using values reported by Myers et al. and Brennan et al (\autoref{fig:chgdelta}). \cite{Myers1982, Brennan2024}
+We maintain the relationship $\max \left(\abs{B}/\abs{A}\right) \sim$ 0.1 at $\Delta = 0.5$ to facilitate comparison to the results in the main text.
 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=6.675in]{figures/changedelta.png}
 	\caption{The impact of offset, vibrational resonance, and linewidth on HDFG spectra. Parameters for (a,b) follow from Myers et al., whereas parameters for (c,d) follow from Brennan et al.\cite{Myers1982, Brennan2024}
-	Note that in these plots, the ratio $\abs{A/B} = 0.1$ is enforced.} 
+} 
 	\label{fig:chgdelta}
 \end{figure}
 
@@ -254,10 +256,10 @@ In particular, $\Re(\gamma)$ and $\Im(\gamma)$ are of similar value in the post-
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=6.675in]{figures/drsive_chgsign.png}
-	\caption{Contributions of $A, B$ to HDFG spectrum for a simple two harmonic well system, identical to the main text, except $M_0^{ge} < 0$.
+	\caption{Contributions of $A, B$ to HDFG spectrum for a simple two harmonic well system, identical to the main text, except $M^{ge}(q) = M^{ge}_0 \left(-1 + 0.04 q + \order{q^2}\right)$.
 		(a) Potential energy surfaces for a two-well system, (b) 1D HDFG spectrum for $\Delta = 0.5$, $\omega_1 = \omega_{g1, g0}$, (c, d) real and imaginary parts of terms plotted in (b), respectively.
-		The spectra are referenced to $\max{(A+B)}$. 
-		The vibronic one and two photon absorption operators are scaled such that $\abs{B}/\abs{A} \sim$ 0.1, following Chung and Ziegler. \cite{Ziegler1988}
+		The spectra are scaled to $\max{(A+B)}$. 
+		The vibronic one and two photon absorption operators are scaled such that $\max(\abs{B}/\abs{A}) \sim$ 0.1, following Chung and Ziegler. \cite{Ziegler1988}
 } 
 	\label{fig:chgsign}
 \end{figure}
@@ -275,13 +277,12 @@ is evaluated for $c=-1$ (electronic state and vibrational state energy fluctuati
 
 Integrals such as \autoref{generalcontour} can be evaluated by using the Residue theorem.\cite{MorseFeshbach}
 For clarity, we briefly outline the technique.
-%@dan i had too much white space, needed something to fill in... delete if you want.
 Consider the integral
 \begin{equation}
 	\int_{-\infty}^{\infty} \mathrm{d}x f(x)
 \end{equation}
 If $\int_{-\infty}^{\infty} \mathrm{d}x f(x)$ exists %is this strict enough?
-and $f(z)$ is an analytic function, where $z$ is a complex variable, then
+and $f(z)$ is analytic, where $z$ is a complex variable, then
 \begin{subequations}\label{eq:generalcontour}
 	\begin{equation}
 		\int_{-\infty}^{\infty}  \mathrm{d}x f(x) = 2\pi i \sum_k \Res[f(z_k)]
@@ -296,19 +297,19 @@ For first order poles (the cases considered below), $n=1$, so that
 		\int_{-\infty}^{\infty} \mathrm{d}x f(x) = 2\pi i \sum_k \lim_{z \rightarrow z_k} f(z) (z-z_k)
 	\end{equation}
 \end{subequations}
-Note that in \autoref{eq:generalcontour}, the integrals are closed along a contour which wraps all the poles in the positive half of the complex plane. 
+Note that in \autoref{eq:generalcontour}, the integrals are evaluated along a contour which wraps all the poles in the positive half of the complex plane. 
 
 \subsection{Anti-correlated Modes}
 For anti-correlated modes ($c = -1$), the poles ($\xi_k$) are situated in the complex plane as shown in \autoref{fig:contours}a.
 For c = -1, there are four poles: $\pm i \sigma, \Delta_{ga}, \Delta_{ba}$. 
-The contour that wraps the upper half of the complex plane has only one pole, $i \sigma$
+The contour that envelops the upper half of the complex plane has only one pole, $i \sigma$.
 Using the residue theorem for a first order pole,\cite{Carlson1990line} we see
 \begin{widetext}
 	\begin{equation}
 		\begin{split}
-			\int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \gamma_{ijkl}(\xi) &= 2\pi i \sum_k \lim_{\xi \rightarrow \xi_k} P(\xi) \gamma_{ijkl}(\xi) (\xi - \xi_k)\\
-			&= 2\pi i \frac{\eta_{ijkl} \sigma}{\pi} \lim_{\xi \rightarrow i\sigma} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga} - \xi} \frac{1}{\Delta_{ba} - \xi} (\xi - i \sigma)\\
-			&= 2 \eta_{ijkl} \sigma i \lim_{\xi \rightarrow i\sigma} \frac{1}{\xi + i\sigma} \frac{1}{\Delta_{ga} - \xi} \frac{1}{\Delta_{ba} - \xi}\\
+			\int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \gamma_{ijkl}(\xi) &= 2\pi i \sum_k \lim_{z \rightarrow z_k} P(z) \gamma_{ijkl}(z) (z - z_k)\\
+			&= 2\pi i \frac{\eta_{ijkl} \sigma}{\pi} \lim_{z \rightarrow i\sigma} \frac{1}{(z + i\sigma)(z- i\sigma)} \frac{1}{\Delta_{ga} - z} \frac{1}{\Delta_{ba} - z} (z - i \sigma)\\
+			&= 2 \eta_{ijkl} \sigma i \lim_{z \rightarrow i\sigma} \frac{1}{z + i\sigma} \frac{1}{\Delta_{ga} - z} \frac{1}{\Delta_{ba} - z}\\
 			&= 2\eta_{ijkl} \sigma i \frac{1}{2i\sigma} \frac{1}{\Delta_{ga} - i\sigma} \frac{1}{\Delta_{ba} - i\sigma}\\
 			&= \frac{\eta_{ijkl}}{\left(\Delta_{ga}-i\sigma\right)\left(\Delta_{ba}-i \sigma\right)}\\
 		\end{split}
@@ -318,14 +319,14 @@ Using the residue theorem for a first order pole,\cite{Carlson1990line} we see
 
 \subsection{Correlated Modes}
 For correlated modes, the poles are situated in the complex plane as shown in \autoref{fig:contours}b.
-We evaluate along the contour where the poles are $\{i\sigma, -\Delta_{ba}\}$.
-Since the $\xi_k$ are nondegenerate,
+We evaluate along the contour that encloses the poles $\{i\sigma, -\Delta_{ba}\}$.
+Since $i\sigma \neq -\Delta_{ba}$, i.e., the poles are nondegenerate, we have two first order poles, giving
 \begin{widetext}
 	\begin{equation}
 		\begin{split}
-			\int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \gamma_{ijkl}(\xi) &= 2\pi i \sum_k \lim_{\xi \rightarrow \xi_k} P(\xi) \gamma_{ijkl}(\xi) (\xi - \xi_k)\\
-			&= 2\pi i \frac{\eta_{ijkl} \sigma}{\pi}  \lim_{\xi \rightarrow i\sigma} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga} - \xi} \frac{1}{\Delta_{ba} + \xi} \left(\xi - i \sigma\right) \\ 
-			&+ 2\pi i \frac{\eta_{ijkl} \sigma}{\pi} \lim_{\xi \rightarrow -\Delta_{ba}} \frac{1}{(\xi + i\sigma)(\xi - i\sigma)} \frac{1}{\Delta_{ga} - \xi} \frac{1}{\Delta_{ba} + \xi} \left(\xi + \Delta_{ba}\right)\\
+			\int_{-\infty}^\infty \mathrm{d}\xi P(\xi) \gamma_{ijkl}(\xi) &= 2\pi i \sum_k \lim_{z \rightarrow z_k} P(z) \gamma_{ijkl}(z) (z - z_k)\\
+			&= 2\pi i \frac{\eta_{ijkl} \sigma}{\pi}  \lim_{z \rightarrow i\sigma} \frac{1}{(z + i\sigma)(z - i\sigma)} \frac{1}{\Delta_{ga} - z} \frac{1}{\Delta_{ba} + z} \left(z - i \sigma\right) \\ 
+			&+ 2\pi i \frac{\eta_{ijkl} \sigma}{\pi} \lim_{z \rightarrow -\Delta_{ba}} \frac{1}{(z + i\sigma)(z - i\sigma)} \frac{1}{\Delta_{ga} - z} \frac{1}{\Delta_{ba} + z} \left(z + \Delta_{ba}\right)\\
 			&= 2 \eta_{ijkl} i \sigma \left(\frac{1}{2 i \sigma} \frac{1}{\Delta_{ga} - i\sigma} \frac{1}{\Delta_{ba} + i\sigma} \right) + 2\eta_{ijkl} i \sigma \left(\frac{1}{\sigma^2 + \Delta_{ba} ^2} \frac{1}{\Delta_{ga} + \Delta_{ba}} \right)\\
 			&= \frac{\eta_{ijkl}}{\Delta_{ba} + i \sigma} \left(\frac{1}{\Delta_{ga} - i \sigma} + \frac{2i\sigma}{(\Delta_{ba} - i \sigma)(\Delta_{ga} + \Delta_{ba})}\right)\\
 		\end{split}
@@ -335,7 +336,7 @@ Since the $\xi_k$ are nondegenerate,
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=6.675in]{figures/corr_contour.png}
+	\includegraphics[width=6.675in]{figures/contour.png}
 	\caption{Poles (blue dots) and contours (black lines) used to evaluate \autoref{generalcontour} for (a) anti-correlated ($c=-1$) and (b) correlated ($c=1$) modes. 
 	} 
 	\label{fig:contours}

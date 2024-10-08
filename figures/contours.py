@@ -82,7 +82,7 @@ for ax in [ax0, ax1]:
     
     
 for i, ax in enumerate(fig.axes):
-    wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.2, bbox = True, fontsize = fontsize, background_alpha=0.75)
+    wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.3, bbox = True, fontsize = fontsize, background_alpha=0.75)
 
 if save:
     wt.artists.savefig(here / "contour.png", transparent = True, bbox_inches='tight')

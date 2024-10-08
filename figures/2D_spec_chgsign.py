@@ -60,7 +60,7 @@ xiarrow = FancyArrowPatch(posA=(xarrow[0], -0.0257), posB=(xarrow[1], -0.0257), 
 ax0.add_artist(xiarrow)
 
 
-ax0.text((do+d)/2-0.13, -0.103, r'$\mathsf{\Delta}$', fontsize = 24)
+ax0.text((do+d)/2-0.133, -0.103, r'$\mathsf{\Delta}$', fontsize = 24)
 
 #labeling vibrational states
 jgs = [0.6, 1.0, 1.29965]
@@ -144,10 +144,10 @@ def Deltaevgo(v,x,l):
 
 
 #define numbers for AB terms
-Mge = -0.1 #M^eg_0
-Lge = 0.01 #Lambda^eg_0
-dLeg = 0.0007 #dLambda^eg / dQ
-dMgedQ = 0.007 #dM^eg / dQ
+Mge = -1 #M^eg_0
+dMgedQ = 0.04 #dM^eg / dQ
+Lge = 0.1 #Lambda^eg_0
+dLeg = 0.004 #dLambda^eg / dQ
 
 
 """Define the A and B terms"""
@@ -202,12 +202,12 @@ ax1.set_ylabel(r'$\mathsf{Amplitude \ (norm.)}$', fontsize = fontsize)
 ax1.set_xlabel(r'$\mathsf{2\omega_2} \ (\mathsf{cm}^{-1})$', fontsize = fontsize)
 
 ax1.set_yscale('log')
-ax1.set_ylim(0.001, 2)
+ax1.set_ylim(0.0001, 2)
 
 
 #put lines at the vibronic resonances
 for i in [0,1,2]:
-    ax1.vlines(x = 30000+1600*i, ymin = 0.0005, ymax = 4, color = 'gray', linestyle = '--', linewidth = 1)
+    ax1.vlines(x = 30000+1600*i, ymin = 0.00005, ymax = 4, color = 'gray', linestyle = '--', linewidth = 1)
 
 """The Real and Imaginary Parts of Gamma"""
 
