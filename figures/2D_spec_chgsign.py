@@ -243,7 +243,7 @@ for ax in [ax1, ax2, ax3]:
 
 for i, ax in enumerate(fig.axes):
     # ax.grid(visible=True, color="k", lw=0.5, linestyle=":")
-    wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.25, bbox = True, fontsize = fontsize, background_alpha=0.75)
+    wt.artists.corner_text("abcd"[i], ax=ax, corner = 'UL', distance = 0.3, bbox = True, fontsize = fontsize, background_alpha=0.75)
 
 if save:
     wt.artists.savefig(here / "drsive_chgsign.png", transparent = True, bbox_inches='tight')

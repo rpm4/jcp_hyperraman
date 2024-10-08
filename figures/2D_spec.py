@@ -12,7 +12,7 @@ import pathlib
 
 wt.artists.apply_rcparams(kind="publication")
 
-save = True
+save = False
 fontsize = 18
 here = pathlib.Path(__file__).resolve().parent
 

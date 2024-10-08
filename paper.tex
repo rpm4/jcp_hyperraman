@@ -286,7 +286,7 @@ The $A$ and $B$ coefficients, where $B = B_1 + B_2$, following closure over $\ke
 	\end{equation}
 \end{subequations}
 \end{widetext}
-Note that to allow closure over $\ket{n}$, we write $\Delta_{mn, gv} \approx \Delta_{m, g}$, which is allowed since the system is assumed to be sufficently detuned from $\ket{n}$. \cite{Silverstein2012}
+Note that to allow closure over $\ket{n}$, we write $\Delta_{mn, gv} \approx \Delta_{m, g}$, which is allowed since the system is taken to be sufficently detuned from $\ket{m,n}$. \cite{Silverstein2012}
 Here, $\langle \tilde{a} | b \rangle$ and $\mel{\tilde{a}}{Q}{b}$ are Franck-Condon factors and Herzberg-Teller-type integrals, respectively.
 At this point, the expressions are valid for both electronically resonant and non-resonant cases.
 
@@ -350,7 +350,7 @@ Using a two-well system described by $H = H_g |g) \left(g| + H_e |e\right) (e|$ 
 		H_e = \frac{\hbar \omega }{2} \left(p^2 +  (q-\Delta)^2 \right) + \hbar \omega_{eg}
 	\end{equation}
 \end{subequations}
-for the ground ($H_g$) and first excited ($H_e$) states, where $p$ is the dimensionless momentum coordinate and $q = \sqrt{\frac{\omega}{\hbar}} Q$ is the dimensionless position coordinate, the A and B contributions can be evaluated using Franck-Condon factors and Herzberg-Teller integrals (\autoref{fig:doubres_spec}a).
+for the ground ($H_g$) and first excited ($H_e$) states, where $p$ is the dimensionless momentum coordinate, $q = \sqrt{\frac{\omega}{\hbar}} Q$ is the dimensionless position coordinate, and $\Delta$ is the offset of the excited state surface relative to the ground state, the A and B contributions can be evaluated using Franck-Condon factors and Herzberg-Teller integrals (\autoref{fig:doubres_spec}a).
 For simplicity, we restrict consideration to $v^\prime \in \{0,1,2\}$ and take $\Delta = 0.5$.
 
 We assume the electronic state is both one and two photon allowed.
@@ -488,7 +488,7 @@ Therefore, HDFG is a feasible spectroscopy for practitioners of vSFG both in ter
 
 Compared to $\vec{\mu}$ and $\alpha_{ij}$, it is difficult to measure $\beta_{ijk}$ values through spontaneous hyper-Raman experiments.\cite{Kelley2010}
 Only a few experimental determinations of $\beta_{ijk}$ for vibrational modes have been performed.\cite{Xu1997, Shoute2005, Kelley2010}
-Methods reported in the literature to measure absolute hyper-Raman polarizabilities depend upon internal standards such as hyperpolarizabilities of dissolved samples or two-photon absorption cross sections, also difficult to measure. \cite{Kelley2010} 
+Methods reported in the literature to measure absolute hyper-Raman polarizabilities depend upon external standards, such as hyperpolarizabilities or two-photon excited fluorescence of known samples, also difficult to measure. \cite{Kelley2010} 
 In the method introduced by Levenson and Bloembergen (Bloembergen interferometry experiment), an internal standard interferes with the resonant lineshape of a $\chi^{(3)}$ process. \cite{Levenson1974_1, Levenson1974_2}
 Self-heterodyning of the internal standard signal measures $\chi^{(3)}$ and does not require measurement of absolute intensities. 
 Since the Bloembergen interferometry experiment only relies on the third order susceptibility for measured species (e.g., benzene or CaF$_2$),\cite{Levenson1974_2} it is possible to use quantitative four wave mixing spectroscopy to calculate $\beta_{ijk}$ values for infrared active vibrations.
@@ -499,7 +499,7 @@ Using \autoref{eq:nfgamma} and \autoref{sivebeta}, we can write
 		\chi^{(3)}_{IJKL} = -\frac{NF}{4D \hbar \varepsilon_0 \Delta_{gv}} \langle \beta_{ijk} \mu_l \rangle_{IJKL} \rho^{(0)}_{gg}\\
 \end{equation}
 For simplicity, we take $\rho^{(0)}_{gg} = 1$.
-Orientational averaging shows specific polarization schemes isolate linear combinations of different $\beta_{ijk}$ terms. \cite{Bersohn1966, Kauranen1996}
+Orientational averaging shows polarization schemes can isolate specific linear combinations of different $\beta_{ijk}$ terms. \cite{Bersohn1966, Kauranen1996}
 Substituting in \autoref{SIVEselection}, we see
 \begin{equation}\label{betasive}
 	\left\langle \frac{\partial \beta_{ijk}}{\partial Q_v} {\frac{\partial \mu_l}{\partial Q_v}} \right\rangle_{IJKL} = -\frac{8D \varepsilon_0}{NF}  {\Gamma_{gv} \omega_{vg}} \chi^{(3)}_{IJKL}
@@ -541,7 +541,7 @@ The output polarizations for two-beam vSFG and HDFG, respectively, under the ele
 			 \end{equation}
 		 	\begin{equation}
 		 		\begin{split}
-			 		\abs{P^{(3)}_{\text{HDFG}}} &= 6 N_\text{bulk} \abs{{ \frac{-F_{\text{HDFG}} \langle \beta_{ijk} \mu_{l} \rangle }{6D \varepsilon_0 \hbar i \Gamma} E{(\omega_2)}E(\omega_2)E(-\omega_1) }}, 
+			 		\abs{P^{(3)}_{\text{HDFG}}} &= 6 N_\text{bulk} \abs{{ \frac{-F_{\text{HDFG}} \langle \beta_{ijk} \mu_{l} \rangle }{4D \varepsilon_0 \hbar i \Gamma} E{(\omega_2)}E(\omega_2)E(-\omega_1) }}, 
 		 		\end{split}
 			 \end{equation}
 		 \end{subequations}
