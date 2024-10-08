@@ -9,11 +9,15 @@
 *.aux
 *.toc
 *.wt5
-figures/*.png
 data/osfstorage/**
 ~$verletter.docx
-coverletter.docx
 siNotes.bib
 paperNotes.bib
 figures/~$figs.pptx
 ~$verletter_resubmission.docx
+figures/drsive_spectrum.png
+figures/drsive_chgsign.png
+figures/changedelta.png
+figures/fchtproduct.png
+figures/fcht.png
+figures/contour.png
