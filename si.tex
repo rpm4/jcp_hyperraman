@@ -41,7 +41,6 @@
 \section{Evaluating Herzberg-Teller Integrals for Harmonic Wells of Identical Curvature}
 
 In this section, we discuss the evaluation of Herzberg-Teller integrals when the ground and first excited state are harmonic wells of identical curvature.\cite{HerzbergTeller1933}
-% We note that Myers et al. have developed a general expression to evaluate Franck-Condon factors for two displaced harmonic wells of differing curvature,\cite{Myers1982} 
 We investigate the one dimensional case using the Hamiltonian described in the main text, $H = H_g |g) \left(g| + H_e |e\right) (e|$, where
 \begin{subequations}\label{Hamiltonian}
 	\begin{equation}
@@ -69,7 +68,7 @@ For an $n$-quantum excited state vibration $| \tilde{n} \rangle$, and a $m$-quan
 	\end{split}\label{key}
 \end{equation}
 The integral corresponds to Franck-Condon factors for $k=0$ and Herzberg-Teller integrals for $k=1$.
-The vibrational coupling integrals are written assuming the expansion of the dipole moment is taken about the equilibirum point of the ground state geometry ($q=0$), as is done in the main text.
+The vibrational coupling integrals are written assuming the dipole moment is Taylor expanded about the equilibrium point of the ground state geometry ($q=0$), as done in the main text.
 Note that in the limit $\Delta \rightarrow 0$, typical harmonic oscillator selection rules are restored, as the two wells have the same vibrational Hamiltonian and thus share a subspace of orthonormal eigenstates.
 
 \subsection{General Solution to $\langle \tilde{n} | q^k | m \rangle$}
@@ -226,30 +225,27 @@ This is expected, as when $\Delta \rightarrow 0$, the overlap integral, \autoref
 	\label{fig:fcht_product}
 \end{figure}
 
-In the main text, the potential well offset ($\Delta$) was taken as $\Delta = 0.5$.
-Here, we vary $\Delta$ to investigate its impact on the structure of the $\abs{A+B}$ spectrum.
-The dependence of relevant Franck-Condon factors and Herzberg-Teller integrals on displacement are plotted in \autoref{fig:fcht} as a function of offset, $\Delta$.
-\autoref{fig:fcht} shows how different displacements, vibrational frequencies, and vibronic linewidths will alter the vibronic spectrum.
-The products of Franck-Condon factors and Herzberg-Teller integrals relevant to the $A,B$ coefficients discussed in the main text are plotted in \autoref{fig:fcht_product}.
-
-\pagebreak
-
 It is clear from \autoref{fig:fcht_product} that the HDFG spectrum will have a significant dependence upon $\Delta$, even for small deviations from complete overlap. 
 To this end, we plot the impact of offset ($\Delta$), vibrational frequency ($\omega_{g1,g0}$), and linewidth ($\Gamma$) on the HDFG spectrum \autoref{fig:chgdelta}, using values reported by Myers et al. and Brennan et al (\autoref{fig:chgdelta}). \cite{Myers1982, Brennan2024}
 We maintain the relationship $\max \left(\abs{B}/\abs{A}\right) \sim$ 0.1 at $\Delta = 0.5$ to facilitate comparison to the results in the main text.
-
+\pagebreak
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=6.675in]{figures/changedelta.png}
 	\caption{The impact of offset, vibrational resonance, and linewidth on HDFG spectra. Parameters for (a,b) follow from Myers et al., whereas parameters for (c,d) follow from Brennan et al.\cite{Myers1982, Brennan2024}
+	In (a-d), the relationship $\max \left(\abs{B}/\abs{A}\right) \sim$ 0.1 at $\Delta = 0.5$ is enforced.
 } 
 	\label{fig:chgdelta}
 \end{figure}
 
 In addition to the linewidth and offset impacting the shape of the HDFG response, the sign of the molecular parameters $M^{ge}_0, \Lambda^{ge}_0, \frac{\partial M^{ge}}{\partial Q} , \frac{\partial \Lambda^{ge}}{\partial Q}$ will significantly impact the HDFG spectrum.
-As discussed in the main text, the atypical lineshape in the post-resonance region of the HDFG region arises due to the sign of all four aforementioned parameters being identical.
+As discussed in the main text, the atypical lineshape in the post-resonance region of the HDFG spectrum arises due to the sign of all four aforementioned parameters being identical.
 Changing the sign of one (or three) parameters will change the sign of $A, B$ and eliminate interference between the real and imaginary terms.  
-As an example, we demonstrate the resultant HDFG spectrum when $M_0^{ge} < 0$, and all other terms $>0$ (\autoref{fig:chgsign}).
+As an example (\autoref{fig:chgsign}), we demonstrate the resultant HDFG spectrum for \begin{eqnarray}
+	M^{ge}(q) = M^{ge}_0 \left(-1 + 0.04 q + \order{q^2}\right),  \\
+	\Lambda^{ge}(q) = \Lambda^{ge}_0 \left(1 + 0.04 q + \order{q^2}\right),
+\end{eqnarray}
+i.e., $M^{ge}_0 < 0$, $\Lambda^{ge}_0, \frac{\partial M^{ge}}{\partial Q} , \frac{\partial \Lambda^{ge}}{\partial Q} > 0$.
 Compared to Figure 3 of the main text, the contributions from the $A, B_1$ and $B_2$ terms to $\Re(\gamma)$ and $\Im(\gamma)$ significantly change.
 In particular, $\Re(\gamma)$ and $\Im(\gamma)$ are of similar value in the post-resonance region, eliminating the interference seen in Figure 3 of the main text.
 \newpage

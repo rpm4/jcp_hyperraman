@@ -68,10 +68,11 @@ jes = [1.3, 1.7, 1.9965]
 
 for i in [0,1,2]:
     kets = [r'$\mathsf{|0\rangle}$', r'$\mathsf{|1\rangle}$', r'$\mathsf{|2\rangle}$']
+    ekets = [r'$\mathsf{|\tilde{0}\rangle}$', r'$\mathsf{|\tilde{1}\rangle}$', r'$\mathsf{|\tilde{2}\rangle}$']
     ax0.hlines(y = grs(jgs[i]), xmin = -jgs[i], xmax = jgs[i], color = 'black', linestyle = '-', linewidth = 2) #gs states
     ax0.hlines(y = es(jes[i]), xmin = -jes[i]+2*d, xmax = jes[i], color = 'black', linestyle = '-', linewidth = 2) #es states
     ax0.text(jgs[i] + 0.25, grs(jgs[i])-0.03, kets[i], fontsize = 16) #labeling gs
-    ax0.text(jes[i] + 0.25, es(jes[i])-0.03, kets[i], fontsize = 16) #labeling es
+    ax0.text(jes[i] + 0.25, es(jes[i])-0.03, ekets[i], fontsize = 16) #labeling es
     
 #harmonic surface labels
 ax0.text(kg.max()+0.12, grs(kg.max())-0.05, r'$\mathsf{|g)}$', fontsize = 24)
