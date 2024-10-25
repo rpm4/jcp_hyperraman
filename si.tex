@@ -53,13 +53,13 @@ We investigate the one dimensional case using the Hamiltonian described in the m
 \end{subequations}
 Here, $p,q$ are the dimensionless conjugate normal mode coordinates, $\hbar\omega_{eg}$ is the energy difference between $|e)$ and $|g)$, and $\Delta$ is the dimensionless offset of the excited state surface relative to the ground state.
 The Hamiltonians are quantum harmonic oscillators.
-The solutions to the harmonic oscillator Hamiltonian are well known, and their position space wavefunctions are
+The harmonic oscillator wavefunctions are well known, and their position space forms are
 \begin{equation}
-	\psi_m(q) = \langle q | m \rangle = N_m H_m(q) \exp(-q^2/2),
+	\psi_m(q) = \langle q | m \rangle = N_m H_m(q) \exp(-\frac{q^2}{2}),
 \end{equation}
-where $N_m = (m! \ 2^m \pi^{\frac{1}{2}})^{-\frac{1}{2}}$ is the normalization factor and $H_m$ is the $m^{th}$ Hermite Polynomial.\cite{RN230, MorseFeshbach}
+where $N_m = (m! \ 2^m \pi^{\frac{1}{2}})^{-\frac{1}{2}}$ is the normalization factor and $H_m$ is the $m^\text{th}$ Hermite Polynomial.\cite{RN230, MorseFeshbach}
 
-For an $n$-quantum excited state vibration $| \tilde{n} \rangle$, and a $m$-quantum ground state vibration $\ket{m}$, the $k^{th}$-order vibrational coupling term is
+For an $n$-quantum excited state vibration $| \tilde{n} \rangle$, and a $m$-quantum ground state vibration $\ket{m}$, the $k^\text{th}$ order vibrational coupling term is
 \begin{equation}
 	\begin{split}
 		\mel{\tilde{n}}{q^k}{m} &= \int_{-\infty}^\infty \mathrm{d}q \ \psi^*_n(q-\Delta) q^k \psi_m(q)\\
@@ -73,13 +73,13 @@ Note that in the limit $\Delta \rightarrow 0$, typical harmonic oscillator selec
 
 \subsection{General Solution to $\langle \tilde{n} | q^k | m \rangle$}
 The matrix elements of \autoref{key} can be computed numerically, but analytic forms of the integral also exist. 
-Due to the polynomial nature of $H_v(q)$, the product $H_n(q-\Delta) q^k H_m(q)$ will also be a polynomial, so that the integral of \autoref{key} will be of the form
+Due to the polynomial nature of $H_v(q)$, the product $H_n(q-\Delta) q^k H_m(q)$ will also be a polynomial, so that the integral in \autoref{key} will be of the form
 \begin{eqnarray}
 	\int_{-\infty}^\infty \mathrm{d}q \ P_{nmk}(q) \exp(-q^2 + q\Delta), \\
 	P_{nmk}(q) \equiv \sum_\lambda^{n+m+k} a_\lambda q^\lambda
 \end{eqnarray}
-for some set coefficients $a_\lambda$, to be specified later. 
-We can recast the integral into the linear combination of integrals,
+for some set coefficients $a_\lambda$ to be specified later. 
+As a result, we can recast the integral into the linear combination of integrals
 \begin{equation}\label{eq:analytic_form}
 	\mel{\tilde{n}}{q^k}{m} = N_n N_m \exp(-\frac{\Delta^2}{2}) \sum_\lambda a_\lambda F_\lambda(\Delta),
 \end{equation}
