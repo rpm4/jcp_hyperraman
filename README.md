@@ -1,6 +1,6 @@
 # Coherent IR-Hyper-Raman Four Wave Mixing Spectroscopy
 <img src="./figures/toc.png" alt="Diagrams of HDFG and HSFG processes" width="400"/>
-See the article that utilizes this code: [Coherent IR-hyper-Raman four wave mixing spectroscopy](https://doi.org/10.1063/5.0231422).
+See the article that utilizes this code: https://doi.org/10.1063/5.0231422.
 
 ## Instructions for use
 
