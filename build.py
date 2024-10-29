@@ -3,7 +3,7 @@ import subprocess
 import platform
 import click
 
-#osf_project = "2amkq"
+osf_project = "2amkq"
 here = pathlib.Path(__file__).resolve().parent
 
 
@@ -48,6 +48,7 @@ def _build_figures():
     print_then_call(python, str(here / "figures" / "contours.py"))
     print_then_call(python, str(here / "figures" / "plotting_fcht.py"))
     print_then_call(python, str(here / "figures" / "varying_delta.py"))
+    print_then_call(python, str(here / "figures" / "hdfgspec_chg_signs.py"))
 
 @click.group()
 def main():
