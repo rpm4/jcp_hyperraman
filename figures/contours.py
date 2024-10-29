@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jan 17 09:28:39 2023
 
-@author: rpm
-"""
 import numpy as np
 import WrightTools as wt
 import matplotlib.pyplot as plt 
@@ -32,7 +27,7 @@ fig, gs = wt.artists.create_figure(width="dissertation", nrows=1, cols=cols, asp
 ax0 = plt.subplot(gs[0,0]) 
 
 #insert the poles
-poles = [2, -2, -2.6, -3.5]
+poles = [3.5, -3.5, -1.3, -2.2]
 points = [0, 0, 2, 3]
 
 
@@ -48,7 +43,7 @@ for i in [0,1,2,3]:
 ax1 = plt.subplot(gs[0,1]) 
 
 #insert the poles
-poles = [2, -2, -2.6, 3.5]
+poles = [3.5, -3.5, -1.3, 2.2]
 points = [0, 0, 2, -3]
 
 
