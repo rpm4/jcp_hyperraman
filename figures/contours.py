@@ -34,7 +34,7 @@ points = [0, 0, 2, 3]
 #plot it
 ax0.plot(x, contour(x), linewidth = '2', color = 'black')
 for i in [0,1,2,3]:
-    ax0.scatter(points[i], poles[i], color = 'blue')
+    ax0.scatter(points[i], poles[i], color = 'blue', zorder = 4)
     label = [r'$\mathsf{i \sigma}$', r'$\mathsf{-i \sigma}$', r'$\mathsf{\Delta_{ga}}$', r'$\mathsf{\Delta_{ba}}$']
     ax0.text(points[i]+0.1, poles[i]+0.1, label[i], fontsize = 24)
 

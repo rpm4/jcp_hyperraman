@@ -105,7 +105,7 @@ For the general solution, \autoref{integral} is evaluated via repeated use of a 
 	\end{split}
 \end{equation}
 so we can write\footnote{
-	Rearranging the Hermite polynomial generator so that $e^{-x^2} = (-1)^n H_n(x) \frac{\mathrm{d}^n}{\mathrm{d}x^n} e^{-x^2}$, setting $x \ = \ i \Delta /2$ and using the chain rule ($\frac{\mathrm{d}}{\mathrm{d}x} =  \frac{\mathrm{d}}{\mathrm{d}\Delta}  \frac{\mathrm{d\Delta}}{\mathrm{d}x}$) provides the final result in \autoref{eq:F_solved}.
+	Rearranging the Hermite polynomial generator so that $\frac{\mathrm{d}^n}{\mathrm{d}x^n} e^{-x^2} = (-1)^n H_n(x) e^{-x^2}$, setting $x \ = \ i \Delta /2$ and using the chain rule ($\frac{\mathrm{d}}{\mathrm{d}x} =  \frac{\mathrm{d}}{\mathrm{d}\Delta}  \frac{\mathrm{d\Delta}}{\mathrm{d}x}$) provides the final result in \autoref{eq:F_solved}.
 	}
 \begin{equation}\label{eq:F_solved}
 	\begin{split}
@@ -248,11 +248,15 @@ In addition to the linewidth and offset impacting the shape of the HDFG response
 Changing the sign of these parameters can change the sign of $A, B$ and alter the interference between the terms.  
 As a specific example (\autoref{fig:chgsign}), we demonstrate the resultant HDFG spectrum for \begin{eqnarray}
 	M^{ge}(q) = -1 + 0.04 q,  \\
-	\Lambda^{ge}(q) = 1 + 0.04 q,
+	\Lambda^{ge}(q) = 0.1 + 0.004 q,
 \end{eqnarray}
 i.e., $M^{ge}_0 < 0$, $\Lambda^{ge}_0, \frac{\partial M^{ge}}{\partial Q} , \frac{\partial \Lambda^{ge}}{\partial Q} > 0$, keeping $\Delta = 0.5$.
 Compared to Figure 3 of the main text, the contributions from the $A, B_1$ and $B_2$ terms to $\Re(\gamma)$ and $\Im(\gamma)$ significantly change.
 In particular, $\Re(\gamma)$ and $\Im(\gamma)$ are of similar value in the post-resonance region, eliminating the destructive interference seen in Figure 3 of the main text.
+Similar effects have been recently observed in 1D and 2D coherent resonant Raman experiments.\cite{Fumero2020, Batignani2022}
+When the sign of $\Delta$, $M(q)$ and $\Lambda(q)$ match, interference in the output lineshape can be observed.
+Changing the absolute sign of these parameters can manipulate the interference (\autoref{fig:chgsign2}).
+HDFG therefore has the ability to discern the absolute sign of $\Delta$ and assign offsets in potential energy wells for some systems.
 
 %\newpage
 \begin{figure}[!htbp]
@@ -265,15 +269,10 @@ In particular, $\Re(\gamma)$ and $\Im(\gamma)$ are of similar value in the post-
 	\label{fig:chgsign}
 \end{figure}
 
-These effects have been recently observed in 1D and 2D coherent resonant Raman experiments.\cite{Fumero2020, Batignani2022}
-When the sign of $\Delta$, $M(q)$ and $\Lambda(q)$ match, interference in the output lineshape can be observed.
-Changing the absolute sign of these parameters can manipulate the interference (\autoref{fig:chgsign2}).
-HDFG therefore has the ability to discern the absolute sign of $\Delta$ and assign offsets in potential energy wells for some systems.
-
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=6.675in]{figures/changedeltaM.png}
-	\caption{HDFG spectra for the system described by \autoref{Hamiltonian} with $M^{ge}(q) = M^{ge}_0 + 0.04 q,\ \Lambda^{ge}(q) = 1 + 0.04 q$. 
+	\caption{HDFG spectra for the system described by \autoref{Hamiltonian} with $M^{ge}(q) = M^{ge}_0 + 0.04 q,\ \Lambda^{ge}(q) = 0.01 + 0.004 q$. 
 	The respective $\Delta, M^{0}_{ge}$ values are listed above the panels.
 	Black trace: $\abs{A+B}$, blue trace: $\abs{A}$, orange trace: $\abs{B}$.
 	The spectra are scaled to $\max{\abs{A+B}}$. 
@@ -293,18 +292,18 @@ In this section, the integral
 is evaluated for $c=-1$ (electronic state and vibrational state energy fluctuations are anti-correlated) and $c=1$ (electronic state and vibrational state energy fluctuations are correlated).
 
 Integrals such as \autoref{generalcontour} can be evaluated by using the Residue theorem.\cite{MorseFeshbach}
-For clarity, we briefly outline the technique.
+For clarity, we briefly outline the technique.\footnote{See \S 4.5 of Morse and Feshbach \cite{MorseFeshbach} for more details.} 
 Consider the integral
 \begin{equation}\label{eq:integral}
 	\int_{-\infty}^{\infty} \mathrm{d}x f(x).
 \end{equation}
 Assume \autoref{eq:integral} converges.
-If $f(z)$ is analytic on the upper half of the complex plane (except for poles on the real axis), where $z$ is a complex variable, and $f(z)$ asymptotically approaches zero with the form $\abs{Az}^{-m}$, $m > 1$, as $z \rightarrow \infty$, then
+If $f(z)$ is analytic on the upper half of the complex plane (except for poles not on the real axis), where $z$ is a complex variable, and $\abs{f(z)}$ asymptotically approaches zero with the form $\abs{Az}^{-m}$, $m > 1$, as $\abs{z} \rightarrow \infty$, then
 \begin{subequations}\label{eq:generalcontour}
 	\begin{equation}
 		\int_{-\infty}^{\infty}  \mathrm{d}x f(x) = 2\pi i \sum_k \Res[f(z_k)],
 	\end{equation}
-where $\Res[f(z_k)]$ refers to the residue of $f(z)$ in the upper half of the complex plane at the pole $z_k$ and the sum is taken over all the poles, i.e., non-removable singularities, of $f(z)$.\cite{MorseFeshbach}
+where $\Res[f(z_k)]$ refers to the residue of $f(z)$ at the pole $z_k$ and the sum is taken over all the poles of $f(z)$ in the upper half of the complex plane.\cite{MorseFeshbach}
 Note that the residue of an n$^{\text{th}}$ order pole at $z = z_k$ is evaluated as
 	\begin{equation}
 		\Res[f(z_k)] = \lim_{z \rightarrow z_k} \frac{1}{\left(n-1\right)!} \frac{\mathrm{d}^{n-1}}{\mathrm{d}z^{n-1}} \left[f(z) (z-z_k)^n \right].
@@ -314,7 +313,7 @@ For first order poles (the cases considered below), $n=1$, so that
 		\int_{-\infty}^{\infty} \mathrm{d}x f(x) = 2\pi i \sum_k \lim_{z \rightarrow z_k} f(z) (z-z_k).
 	\end{equation}
 \end{subequations}
-Note that in \autoref{eq:generalcontour}, the integrals are evaluated along a contour which wraps all the poles in the positive half of the complex plane. 
+Note that in \autoref{eq:generalcontour}, the integrals are evaluated along a counter-clockwise contour that wraps all the poles in the positive half of the complex plane. 
 
 \subsection{Anti-correlated Modes}
 For anti-correlated modes ($c = -1$), the poles are situated in the complex plane as shown in \autoref{fig:contours}a.
@@ -355,6 +354,7 @@ Since $i\sigma \neq -\Delta_{ba}$, i.e., the poles are nondegenerate, we have tw
 	\centering
 	\includegraphics[width=6.675in]{figures/contour.png}
 	\caption{Poles (blue dots) and contours (black lines) used to evaluate \autoref{generalcontour} for (a) anti-correlated ($c=-1$) and (b) correlated ($c=1$) modes. 
+	The contours are oriented counter-clockwise.
 	} 
 	\label{fig:contours}
 \end{figure}
