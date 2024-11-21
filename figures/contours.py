@@ -49,7 +49,7 @@ points = [0, 0, 2, -3]
 
 #plot it
 for i in [0,1,2,3]:
-    ax1.scatter(points[i], poles[i], color = 'blue')
+    ax1.scatter(points[i], poles[i], color = 'blue', zorder = 4)
     label = [r'$\mathsf{i \sigma}$', r'$\mathsf{-i \sigma}$', r'$\mathsf{\Delta_{ga}}$', r'$\mathsf{-\Delta_{ba}}$']
     ax1.text(points[i]+0.1, poles[i]+0.1, label[i], fontsize = 24)
 ax0.set_title('Anti-Correlated (c = -1)')
@@ -69,11 +69,6 @@ for ax in [ax0, ax1]:
     ax.vlines(ymin=-10, ymax =10, x = 0, color = 'grey', linestyle = '--', linewidth = 1, zorder = 1)
     ax.set_yticks(ticks = [])
     ax.set_xticks(ticks = [])
-    
-    # j = [0]
-    # for i in j:
-    #     ax.text(i-.1, contour(i)-.17, r'$\mathsf{<}$', fontsize = 24, alpha = 1, color = 'r', weight='bold')    
-    #     ax.text(i-.1, -.17, r'$\mathsf{>}$', fontsize = 24, color = 'r') 
     
     
 for i, ax in enumerate(fig.axes):
